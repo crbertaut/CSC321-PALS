@@ -12,21 +12,4 @@
 
 ActiveRecord::Schema.define(version: 20171007004731) do
 
-  create_table "interests", force: :cascade do |t|
-    t.string "name"
-    t.string "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "phone"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["phone"], name: "index_users_on_phone", unique: true
-  end
-
 end
