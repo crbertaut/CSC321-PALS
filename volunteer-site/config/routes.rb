@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   
-  devise_for :users, ActiveAdmin::Devise.config
+  # devise_for :admin_users, {class_name: 'User'}.merge(ActiveAdmin::Devise.config)
+  devise_for ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
+  devise_for :users
   devise_scope :user do
-    # get  '/signup',  to: 'devise/registrations#new'
     root :to => redirect('/users/sign_up')
   end
     
