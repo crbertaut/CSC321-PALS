@@ -10,4 +10,10 @@ class User < ApplicationRecord
   
   def name
   end
+  
+  def phone
+  end
+  
+  def interests
+  end
 end
