@@ -37,6 +37,9 @@ gem 'devise'
 # For admin stuff
 gem 'activeadmin'
 
+gem 'jquery-rails'
+gem 'maskedinput-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
