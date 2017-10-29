@@ -7,7 +7,7 @@ margin:0;
 }
 
 fieldset{
-margin:30px 30% 20px 0;
+margin:30px 45% 20px 2%;
 padding:5px 15px 15px 15px;
 border:1px solid #ccc;
 background:#f5f5f5;
@@ -17,6 +17,7 @@ border-radius:5px;
 position: relative;
 top:0;
 left:0;
+min-width:300px;
 }
 
 	legend{
@@ -55,6 +56,10 @@ box-sizing: border-box;
 	label.inline{
 	display:inline;
 	margin:0;
+	}
+	
+	label.faded{
+		color:#bbbbbb;
 	}
 
 	label span{
