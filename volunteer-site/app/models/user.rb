@@ -8,7 +8,10 @@ class User < ApplicationRecord
   def born_on
   end
   
-  def name
+  def firstname
+  end
+  
+  def lastname
   end
   
   def phone
