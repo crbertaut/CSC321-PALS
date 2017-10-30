@@ -19,6 +19,7 @@ en:
     mailer:
       confirmation_instructions:
         subject: "Confirmation instructions"
+        #user_subject: 'Hello User! Please confirm your email'
       reset_password_instructions:
         subject: "Reset password instructions"
       unlock_instructions:

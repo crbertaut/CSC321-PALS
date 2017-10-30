@@ -5,7 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
          
-  def born_on
+  def dob
+  end
+  
+  def age
   end
   
   def firstname
@@ -15,6 +18,9 @@ class User < ApplicationRecord
   end
   
   def phone
+  end
+  
+  def email
   end
   
   def interests

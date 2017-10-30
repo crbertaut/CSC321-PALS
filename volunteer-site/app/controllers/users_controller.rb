@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :authenticate_user!
     
     def user_params
-        params.require(:name).permit(:password, :email, :phone, :birthdate)
+        params.require(:firstname, :lastname, :password, :email, :phone, :dob).permit(:interests)
     end
   
     # GET /users/new
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     end
     
     def edit
-        @user = session[:user]
+        @user = current_user
     end
     
     # POST /users
