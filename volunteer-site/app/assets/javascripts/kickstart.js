@@ -335,8 +335,8 @@ showNavArrows:!0,enableEscapeButton:!0,enableKeyboardNav:!0,onStart:function(){}
     if ( options ) {
       $.extend( settings, options );
     }
-
-    return this.each(function(){
+    
+     return this.each(function(){
       var selectors = [
         "iframe[src*='player.vimeo.com']",
         "iframe[src*='www.youtube.com']",

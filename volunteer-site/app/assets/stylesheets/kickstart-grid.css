@@ -30,11 +30,6 @@ padding:0 2%;
 padding:2em;
 }
 
-.row{
-display:block;
-overflow:hidden;
-clear:both;
-}
 
 *[class*="col_"].alpha{margin-left:0;}
 *[class*="col_"].omega{margin-right:0;}

@@ -1,7 +1,6 @@
 /*
 	99Lime.com HTML KickStart by Joshua Gatcke
 	kickstart-buttons.css
-
 	Super Easy Cross Browser CSS3 Gradients
 	http://www.colorzilla.com/gradient-editor/
 */
@@ -160,7 +159,7 @@ background:0;
 	-webkit-background-clip: border;
 	background-clip: content-box;
 	}
-
+	
 	ul.button-bar li.last,
 	ul.button-bar li.last a{
 	-moz-border-radius-bottomright: 5px;

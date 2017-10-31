@@ -16,4 +16,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require maskedinput
+//= require jquery3
+//= require popper
+//= require bootstrap
 //= require_tree .
