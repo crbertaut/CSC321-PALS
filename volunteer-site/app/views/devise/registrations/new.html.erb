@@ -67,32 +67,32 @@
     </label>
     -->
     
-    <div class="col_6 column" style="margin-top:-40px; text-align:center; font-size:18px">
+    <div class="col_6 column" style="margin-top:-45px; text-align:center; font-size:18px">
       <fieldset>
         <legend>Interests</legend>
         <table>
           <tr>
             <div style="text-align:left">
-            <td>
-            	<input type="checkbox" id="dogs" onclick="toggleCheckboxes('dogs')" />
-              <label for="dogs" class="inline">Dogs</label><br/>
-            </td>
-            <td>
-              <input type="checkbox" id="dogwalker" name="dogs" disabled="true"/>
-              <label for="dogwalker" class="inline faded" name="dogs">Walking</label><br/>
-              
-              <input type="checkbox" id="dogfeeder" name="dogs"  disabled="true"/>
-              <label for="dogfeeder" class="inline faded" name="dogs">Feeding</label><br/>
-              
-              <input type="checkbox" id="dogplayer" name="dogs" disabled="true" />
-              <label for="dogplayer" class="inline faded" name="dogs">Playing</label><br/>
-              
-              <input type="checkbox" id="doggroomer" name="dogs" disabled="true" />
-              <label for="doggroomer" class="inline faded" name="dogs">Grooming</label><br/>
-              
-              <input type="checkbox" id="dogcleaner" name="dogs" disabled="true" />
-              <label for="dogcleaner" class="inline faded" name="dogs">Cleaning</label><br/>
-            </td>
+              <td>
+              	<input type="checkbox" id="dogs" onclick="toggleCheckboxes('dogs')" />
+                <label for="dogs" class="inline">Dogs</label><br/>
+              </td>
+              <td>
+                <input type="checkbox" id="dogwalker" name="dogs" disabled="true"/>
+                <label for="dogwalker" class="inline faded" name="dogs">Walking</label><br/>
+                
+                <input type="checkbox" id="dogfeeder" name="dogs"  disabled="true"/>
+                <label for="dogfeeder" class="inline faded" name="dogs">Feeding</label><br/>
+                
+                <input type="checkbox" id="dogplayer" name="dogs" disabled="true" />
+                <label for="dogplayer" class="inline faded" name="dogs">Playing</label><br/>
+                
+                <input type="checkbox" id="doggroomer" name="dogs" disabled="true" />
+                <label for="doggroomer" class="inline faded" name="dogs">Grooming</label><br/>
+                
+                <input type="checkbox" id="dogcleaner" name="dogs" disabled="true" />
+                <label for="dogcleaner" class="inline faded" name="dogs">Cleaning</label><br/>
+              </td>
             </div>
           </tr>
           <tr>
@@ -127,9 +127,8 @@
               <input type="checkbox" id="maintainer" />
               <label for="maintainer" class="inline">Machine maintenance</label><br/>
               
-              <input type="checkbox" id="other" name="othercheck"/>
-              <label for="other" class="inline">Other</label><br/>
-              <input id="other" type="text" size="10" style="height:25px" onclick="toggleOther('othercheck')"/>
+              <input type="checkbox" id="othercheck" name="other"/>
+              <input id="otherbox" class="inline" placeholder="Other..." type="text" size="13" style="height:25px" onclick="toggleOther('other')"/>
             </td>
           </tr>
         </table>

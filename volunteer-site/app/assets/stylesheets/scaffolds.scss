@@ -7,24 +7,6 @@ body {
   line-height: 18px;
 }
 
-#bg-left-right {
-  background-color: #ffd6b6;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 20%;
-  right: 20%;
-  z-index: -1;
-}
-
-#container {
-    background-color: #000000;
-    width: 70%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative
-}
-
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;

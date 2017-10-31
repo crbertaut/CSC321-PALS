@@ -7,8 +7,8 @@ margin:0;
 }
 
 fieldset{
-margin:30px 45% 20px 2%;
-padding:5px 15px 15px 15px;
+margin:30px 47% 20px 2%;
+padding:5px 15px 15px 18px;
 border:1px solid #ccc;
 background:#fff7f9;
 -moz-border-radius:5px;
@@ -56,6 +56,7 @@ box-sizing: border-box;
 	label.inline{
 	display:inline;
 	margin:0;
+	font-size:18px;
 	}
 	
 	label.faded{
@@ -88,7 +89,7 @@ width:auto;
 zoom:1;
 margin:0;
 border:1px solid #ccc;
-font-size:.9em;
+font-size:.87em;
 padding:5px 0;
 text-indent: 5px;
 -moz-border-radius:5px;
