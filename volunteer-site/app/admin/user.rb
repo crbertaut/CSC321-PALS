@@ -1,10 +1,15 @@
 ActiveAdmin.register User do
     permit_params :email, :password, :password_confirmation
     
-    index do
+    menu priority: 2
+    menu label: "Volunteers"
+
+    
+    index title: 'Volunteers' do
         selectable_column
         id_column
         column :email
+        column :posts
         actions
     end
     
