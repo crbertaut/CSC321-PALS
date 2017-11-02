@@ -25,7 +25,6 @@ class PostsController < ApplicationController
 		@checked_types = (session[:types].keys if session.key?(:types)) || @all_types
     @posts = Post.where(type: @checked_types).order(session[:sort_by])
   end
-  
 
   def new
     # default: render 'new' template
