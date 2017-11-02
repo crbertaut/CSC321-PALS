@@ -36,6 +36,7 @@ gem 'devise'
 
 # For admin stuff
 gem 'activeadmin'
+gem 'activeadmin_blaze_theme'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
