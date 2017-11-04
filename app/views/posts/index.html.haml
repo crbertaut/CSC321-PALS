@@ -1,11 +1,13 @@
 %h1 All Posts
 
+= stylesheet_link_tag "posts"
 = form_tag posts_path, :method => :get, :id => 'types_form' do
   Include:
   - @all_types.each do |type|
     = type
     = check_box_tag "types[#{type}]", "1", @checked_types.include?(type), :id => "types_#{type}"
-  = submit_tag 'Refresh', :id => 'types_submit'
+  %button#types_submit.small.purple.pop Update
+  // = submit_tag 'Refresh', :id => 'types_submit'
 
 %table#posts
   %thead

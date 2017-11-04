@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+    
   def show
     id = params[:id] # retrieve movie ID from URI route
     @post = Post.find(id) # look up movie by unique ID
@@ -12,15 +12,17 @@ class PostsController < ApplicationController
 			session[:sort_by] = params[:sort_by]
 		elsif session.key?(:sort_by)
 			params[:sort_by] = session[:sort_by]
-			redirect_to posts_path(params) and return
+			redirect_to posts_path(params.permit(params.keys)) and return
+			#:action, :commit, :controller, :sort_by, :types, :utf8, :post, :authenticity_token
 		end
 		
 		if params.key?(:types)
 			session[:types] = params[:types]
 		elsif session.key?(:types)
 			params[:types] = session[:types]
-			redirect_to posts_path(params) and return
+			redirect_to posts_path(params.permit(params.keys)) and return
 		end
+		
 		
 		@checked_types = (session[:types].keys if session.key?(:types)) || @all_types
     @posts = Post.where(type: @checked_types).order(session[:sort_by])
@@ -32,7 +34,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create!(params[:post])
+    @post = Post.create!(params[:post].permit(params.keys))
+    # :title, :rating, :date
     flash[:notice] = "#{@post.title} was successfully created."
     redirect_to posts_path
   end
