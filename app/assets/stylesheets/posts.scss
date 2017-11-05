@@ -1,0 +1,78 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: White;
+  color: Black;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 10pt;
+}
+div#main {
+  margin: 0;
+  padding: 0 20px 20px;
+}
+a {
+  background: transparent;
+  color: #9A1500 !important;
+  text-decoration: underline;
+  font-weight: bold;
+  
+    &:hover {
+    color: #fff !important;
+    background-color: #000;
+    }
+}
+h1 {
+  color: #4B0082;
+  font-size: 150%;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid DarkSlateGrey;
+}
+h1.title {
+  margin: 0 0 1em;
+  padding: 10px;
+  background-color: #4B0082;
+  color: white;
+  border-bottom: 4px solid #A88BD7;
+  font-size: 2em;
+  font-style: normal;
+}
+table#posts {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+table#posts th {
+  border: 2px solid white;
+  font-weight: bold;
+  background-color: #006A3D;
+}
+table#posts th, table#posts td {
+  padding: 4px;
+  text-align: left;
+}
+table#posts th.hilite { 
+  background-color: #84D8B4;
+}
+#notice #warning {
+  background: maroon;
+  margin: 1em 0;
+  padding: 4px;
+}
+form label {
+  display: block;
+  line-height: 25px;
+  font-weight: bold;
+  color: maroon;
+}
+
+.hilite {
+  color: #000 !important;
+}
