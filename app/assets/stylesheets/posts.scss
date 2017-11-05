@@ -9,7 +9,7 @@ html, body {
   background: White;
   color: Black;
   font-family: Tahoma, Verdana, sans-serif;
-  font-size: 10pt;
+  font-size: 1em;
 }
 div#main {
   margin: 0;
@@ -17,7 +17,7 @@ div#main {
 }
 a {
   background: transparent;
-  color: #9A1500 !important;
+  color: #4E0B00 !important;
   text-decoration: underline;
   font-weight: bold;
   
@@ -29,7 +29,7 @@ a {
 h1 {
   color: #4B0082;
   font-size: 150%;
-  font-style: italic;
+  font-style: italic ;
   display: block;
   width: 100%;
   border-bottom: 1px solid DarkSlateGrey;
@@ -52,7 +52,7 @@ table#posts {
 table#posts th {
   border: 2px solid white;
   font-weight: bold;
-  background-color: #006A3D;
+  background-color: #10945B;
 }
 table#posts th, table#posts td {
   padding: 4px;
@@ -76,3 +76,22 @@ form label {
 .hilite {
   color: #000 !important;
 }
+
+.default{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+.update-button{
+  font-size:1em;
+  padding:5px 10px;
+}
+button.purple:hover,
+a.btn.purple:hover,
+a.button.purple:hover{
+	text-shadow:0 1px 0 #5A22C7 !important;
+	border:1px solid #5A22C7 !important;
+	background: rgb(190, 158, 255) !important; /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(190, 158, 255,1) 0%, rgba(175, 138, 250, 1) 44%, rgba(156, 114, 243,1) 100%) !important; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(190, 158, 255,1)), color-stop(44%,rgba(251, 126, 207,1)), color-stop(100%,rgba(110,176,242,1))) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* Opera 11.10+ */
+	background: linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BE9EFF', endColorstr='#9C72F3',GradientType=0 ) !important; /* IE6-9 */
+	}

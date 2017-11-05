@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    
     before_action :authenticate_user!
     
     def user_params
@@ -8,6 +7,7 @@ class UsersController < ApplicationController
   
     # GET /users/new
     def new
+        render layout: "users"
     end
     
     def edit

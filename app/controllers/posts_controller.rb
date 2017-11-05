@@ -34,9 +34,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create!(params[:post].permit(params.keys))
-    # :title, :rating, :date
-    flash[:notice] = "#{@post.title} was successfully created."
+    @post = Post.create!(params[:post].permit(:title, :description, :type, :date))
+    flash[:notice] = "'#{@post.title}' was successfully created."
     redirect_to posts_path
   end
 

@@ -7,12 +7,14 @@
   text-align: right;
   font-size: 18px;
   line-height:21px;
+  font-family: Georgia;
 }
 
 .right-col{
   text-align: center;
   font-size: 18px;
   margin-top:-37px;
+  font-family: Georgia;
 }
 
 .faded{
@@ -27,3 +29,48 @@
     font-size:19px;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  background: White;
+  color: Black;
+  font-family: Georgia;
+  font-size: 1em;
+}
+div#main {
+  margin: 0;
+  padding: 0 20px 0;
+}
+a {
+  background: transparent;
+  color: #4E0B00 !important;
+  text-decoration: underline;
+  font-weight: bold;
+  
+    &:hover {
+    color: #fff !important;
+    background-color: #000;
+    }
+}
+h1 {
+  color: #4B0082;
+  font-size: 150%;
+  font-style: italic ;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid DarkSlateGrey;
+}
+h1.title {
+  margin: 0 0 0;
+  padding: 10px;
+  background-color: #4B0082;
+  color: white;
+  border-bottom: 4px solid #A88BD7;
+  font-size: 2em;
+  font-style: normal;
+}
+h2{
+  font-size:2.5em;
+  font-weight: bold;
+  font-family: Georgia;
+}
