@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{name: "viewport", content: "text/html; charset=UTF-8; width=device-width, initial-scale=1, shrink-to-fit=no", "http-equiv" => "Content-Type"}/
+    %title Welcome to PALS Community Board!
+    = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    %h1.title Welcome to PALS Community Board!
+    #main
+      - if flash[:notice]
+        #notice.message= flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]
+
+      = yield
