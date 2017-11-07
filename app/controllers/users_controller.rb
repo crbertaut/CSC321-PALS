@@ -27,6 +27,7 @@ class UsersController < ApplicationController
             format.json { render json: @user.errors, status: :unprocessable_entity }
           end
         end
+        redirect_to user_path(@user)
     end
     
 end
