@@ -3,7 +3,7 @@
 %ul#details
   %li
     Type:
-    = @post.rating
+    = @post.thread_type
   %li
     Date:
     = @post.date.strftime("%B %d, %Y")
@@ -12,6 +12,6 @@
 
 %p#description= @post.description
 
-= link_to 'Edit', edit_post_path(@post)
-= button_to 'Delete', post_path(@post), :method => :delete, :confirm => 'Are you sure?'
-= link_to 'Back to post list', posts_path
+%div{style:"display:inline-block"}= link_to 'Edit', edit_post_path(@post)
+%div{style:"display:inline-block"}= link_to 'Back to post list', posts_path
+%div{style:"display:inline-block"}= button_to 'Delete', post_path(@post), :method => :delete, :confirm => 'Are you sure?'

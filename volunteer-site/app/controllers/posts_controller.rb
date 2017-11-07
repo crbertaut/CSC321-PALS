@@ -1,29 +1,30 @@
 class PostsController < ApplicationController
+  
+  def post_params
+    params.require(:post).permit(:title, :thread_type, :date, :description)
+  end
 
   def show
-    id = params[:id] # retrieve movie ID from URI route
+    id = params[:id] # retrieve post ID from URI route
     @post = Post.find(id) # look up movie by unique ID
-    # will render app/views/movies/show.<extension> by default
   end
 
   def index
-   @all_types = ['Shift', 'Ride', 'Other']
+    @all_types = ['Shift', 'Ride', 'Other']
 		if params.key?(:sort_by)
 			session[:sort_by] = params[:sort_by]
 		elsif session.key?(:sort_by)
-			params[:sort_by] = session[:sort_by]
-			redirect_to posts_path(params) and return
+			redirect_to sort_by: session[:sort_by] and return
 		end
 		
 		if params.key?(:types)
 			session[:types] = params[:types]
 		elsif session.key?(:types)
-			params[:types] = session[:types]
-			redirect_to posts_path(params) and return
+			redirect_to types: session[:types] and return
 		end
 		
 		@checked_types = (session[:types].keys if session.key?(:types)) || @all_types
-    @posts = Post.where(type: @checked_types).order(session[:sort_by])
+    @posts = Post.where(thread_type: @checked_types).order(session[:sort_by])
   end
   
 
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create!(params[:post])
+    @post = Post.create!(post_params)
     flash[:notice] = "#{@post.title} was successfully created."
     redirect_to posts_path
   end
@@ -43,7 +44,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find params[:id]
-    @post.update_attributes!(params[:post])
+    @post.update_attributes!(post_params)
     flash[:notice] = "#{@post.title} was successfully updated."
     redirect_to post_path(@post)
   end

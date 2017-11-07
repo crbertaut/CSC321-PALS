@@ -19,7 +19,7 @@
       %tr
         %td= post.date
         %td= post.title 
-        %td= post.type
+        %td= post.thread_type
         %td= link_to "More about #{post.title}", post_path(post)
 
 = link_to 'Add new post', new_post_path

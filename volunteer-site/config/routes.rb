@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  devise_for :users, path: 'volunteers', path_names: { sign_in: 'login', sign_out: 'logout', registration: 'register' }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  
-  get  '/signup',  to: 'users#new'
     
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # The priority is based upon order of creation: first created -> highest priority.
