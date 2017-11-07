@@ -6,19 +6,26 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Recently registered voluneteers" do
-          User.all.order(created_at: :desc).each do |user|
-            li user.email
-            li user.created_at
+          table_for User.order(created_at: :desc) do
+            # column :name
+            column :email
+            column :created_at
+            column "View" do |user|
+              link_to "View profile", user_path(user)
+            end
           end
         end
       end
       
       column do
         panel "Recent posts" do
-          Post.all.order(created_at: :desc).each do |post|
-            li post.title
-            li post.date
-            li post.thread_type
+          table_for Post.order(updated_at: :desc) do
+            column :title
+            column :updated_at
+            column :thread_type
+            column "View" do |post|
+              link_to "View post", post_path(post) #will need to change once Post is linked to User
+            end
           end
         end
       end
