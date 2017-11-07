@@ -36,6 +36,7 @@ gem 'devise'
 
 # For admin stuff
 gem 'activeadmin'
+gem 'activeadmin_blaze_theme'
 
 # For styling stuff
 gem 'jquery-rails'
