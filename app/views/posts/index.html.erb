@@ -26,13 +26,13 @@
     <% @posts.each do |post| %>
       <tr>
         <td>
+          <%= post.title %>
+        </td>
+        <td>
+          <%= post.thread_type  %>
+        </td>
+        <td>
           <%= post.date %>
-        </td>
-        <td>
-          <%= post.title  %>
-        </td>
-        <td>
-          <%= post.type %>
         </td>
         <td>
           <%= link_to "More about #{post.title}", post_path(post) %>

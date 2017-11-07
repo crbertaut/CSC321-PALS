@@ -6,11 +6,12 @@
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    = button_to 'LOG IN' 
-    = button_to 'SIGN UP'
 
   %body
     %h1.title Welcome to PALS Community Board!
+    %div{style:"display:inline-block"}= button_to 'LOG IN', user_session_path
+    %div{style:"display:inline-block"}= button_to 'SIGN UP', new_user_registration_path
+    
     #main
       - if flash[:notice]
         #notice.message= flash[:notice]
