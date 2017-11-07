@@ -6,6 +6,8 @@
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    = button_to 'LOG IN' 
+    = button_to 'SIGN UP'
 
   %body
     %h1.title Welcome to PALS Community Board!
@@ -16,3 +18,4 @@
         #warning.message= flash[:warning]
 
       = yield
+
