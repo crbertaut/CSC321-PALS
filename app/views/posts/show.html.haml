@@ -1,0 +1,17 @@
+%h2 Details about: #{@post.title}
+
+%ul#details
+  %li
+    Type:
+    = @post.thread_type
+  %li
+    Date:
+    = @post.date.strftime("%B %d, %Y")
+
+%h3 Description:
+
+%p#description= @post.description
+
+%div{style:"display:inline-block"}= link_to 'Edit', edit_post_path(@post)
+%div{style:"display:inline-block"}= link_to 'Back to post list', posts_path
+%div{style:"display:inline-block"}= button_to 'Delete', post_path(@post), :method => :delete, :confirm => 'Are you sure?'
