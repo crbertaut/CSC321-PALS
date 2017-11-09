@@ -5,24 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
          
-  def firstname
-  end
-  
-  def lastname
-  end
-  
-  def dob
-  end
-  
-  def age
-  end
-  
-  def phone
-  end
-  
-  def email
-  end
-  
-  def interests
-  end
 end
