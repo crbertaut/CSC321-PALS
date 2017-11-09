@@ -1,9 +1,7 @@
-ActiveAdmin.register User do
+ActiveAdmin.register User, as: 'Volunteer' do
     permit_params :email, :password, :password_confirmation
     
     menu priority: 2
-    menu label: "Volunteers"
-
     
     index title: 'Volunteers' do
         selectable_column
