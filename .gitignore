@@ -12,36 +12,36 @@
 
 # Ignore bundler config.
 
-/.bundle
+.bundle
 
 # Ignore c9 settings
 
-/.c9
+.c9
 
 
 # Ignore the default SQLite database.
 
-/db/*.sqlite3
+db/*.sqlite3
 
-/db/*.sqlite3-journal
+db/*.sqlite3-journal
 
 
 
 # Ignore all logfiles and tempfiles.
 
-/log/*
+log/*
 
-/tmp/*
+tmp/*
 
-!/log/.keep
+!log/.keep
 
-!/tmp/.keep
+!tmp/.keep
 
 
 
-/node_modules
+.node_modules
 
-/yarn-error.log
+.yarn-error.log
 
 
 
