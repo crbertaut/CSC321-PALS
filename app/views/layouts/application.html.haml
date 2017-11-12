@@ -10,7 +10,8 @@
   %body
     %h1.title Welcome to PALS Community Board!
     %div{style:"display:inline-block"}= button_to 'LOG IN', user_session_path
-    %div{style:"display:inline-block"}= link_to 'SIGN UP', new_user_registration_path
+    %div{style:"display:inline-block"}= button_to 'SIGN UP', new_user_registration_path, method: :get
+    %div{style:"display:inline-block"}= button_to 'LOG OUT', destroy_user_session_path, method: :delete
     
     #main
       - if flash[:notice]

@@ -10,7 +10,7 @@
   <div class="container" style="background-color:white">
     <div class="row" style="text-align:center">
       <div class="col-md-12">
-        <h2>Sign UP</h2>
+        <h2>Sign up</h2>
       </div>
     </div>
     
@@ -26,7 +26,7 @@
           
           <div class="field padded">
             <label>Date of birth:</label>
-            <%= date_select :user, :dob, :start_year => 1900, :end_year => 2017, :use_month_numbers => true, :order => [:month, :day, :year] %>
+            <%= f.date_select :dob, :start_year => 1900, :end_year => 2017, :use_month_numbers => true, :order => [:year, :month, :day] %>
           </div>
           
           <div class="field">
@@ -64,20 +64,11 @@
                       <label for="dogs" class="inline">Dogs</label>
                     </td>
                     <td>
-                      <input type="checkbox" id="dogwalker" name="dogs" disabled="true"/>
-                      <label for="dogwalker" class="inline faded" name="dogs">Walking</label><br/>
-                      
-                      <input type="checkbox" id="dogfeeder" name="dogs"  disabled="true"/>
-                      <label for="dogfeeder" class="inline faded" name="dogs">Feeding</label><br/>
-                      
-                      <input type="checkbox" id="dogplayer" name="dogs" disabled="true" />
-                      <label for="dogplayer" class="inline faded" name="dogs">Playing</label><br/>
-                      
-                      <input type="checkbox" id="doggroomer" name="dogs" disabled="true" />
-                      <label for="doggroomer" class="inline faded" name="dogs">Grooming</label><br/>
-                      
-                      <input type="checkbox" id="dogcleaner" name="dogs" disabled="true" />
-                      <label for="dogcleaner" class="inline faded" name="dogs">Cleaning</label><br/>
+                      <% @dogs.each do |interest| %>
+                        <%= check_box_tag "interests[]", interest, false, id: "dog_" + interest, name: "dogs", disabled: true %>
+                        <%= label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dogs" %>
+                        <br/>
+                      <% end %>
                     </td>
                   </div>
                 </tr>
@@ -87,40 +78,26 @@
                     <label for="cats" class="inline">Cats</label>
                   </td>
                   <td>
-                    <input type="checkbox" id="catfeeder" name="cats" disabled="true"/>
-                    <label for="catfeeder" class="inline faded" name="cats" >Feeding</label><br/>
-                    
-                    <input type="checkbox" id="catplayer" name="cats" disabled="true" />
-                    <label for="catplayer" class="inline faded" name="cats" >Playing</label><br/>
-                    
-                    <input type="checkbox" id="catcleaner" name="cats" disabled="true" />
-                    <label for="catcleaner" class="inline faded" name="cats" >Cleaning</label><br/>
+                    <% @cats.each do |interest| %>
+                      <%= check_box_tag "interests[]", interest, false, id: "cat_" + interest, name: "cats", disabled: true %>
+                      <%= label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cats" %>
+                      <br/>
+                    <% end %>
                   </td>
                 </tr>
                 <tr>
                   <td>
                   </td>
                   <td>
-                    <input type="checkbox" id="baker" />
-                    <label for="baker" class="inline">Cooking/baking</label><br/>
+                      
+                    <% @other.each do |interest| %>
+                      <%= check_box_tag "interests[]", interest, false, id: interest %>
+                      <%= label_tag :interests, "#{interest}", for: interest, class: "inline" %>
+                      <br/>
+                    <% end %>
                     
-                    <input type="checkbox" id="organizer" />
-                    <label for="organizer" class="inline">Organizing events</label><br/>
-                    
-                    <input type="checkbox" id="fundraiser" />
-                    <label for="fundraiser" class="inline">Fundraising</label><br/>
-                    
-                    <input type="checkbox" id="maintainer" />
-                    <label for="maintainer" class="inline">Machine maintenance</label><br/>
-                    
-                    <input type="checkbox" id="othercheck" name="other"/>
-                    <input id="otherbox" class="inline" placeholder="Other..." type="text" size="13" style="height:25px; font-size:17px" onclick="toggleOther('other')"/>
-                  
-                    <!-- An alternative way to put checkboxes on lines with labels:
-                    <label>
-                      <%#= f.check_box :interests %> Dogs
-                    </label>
-                    -->
+                    <%= check_box_tag "interests[]", "other", false, name: "other" %>
+                    <%= text_field_tag "interests[]", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')" %>
                   </td>
                 </tr>
               </table>

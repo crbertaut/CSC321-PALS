@@ -3,9 +3,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @dogs = Interest.dog_interests
+    @cats = Interest.cat_interests
+    @other = Interest.other_interests
+    super
+  end
 
   # POST /resource
   # def create

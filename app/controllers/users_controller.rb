@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authenticate_user!
+    #before_action :authenticate_user!
     
     def user_params
         params.require(:firstname, :lastname, :password, :email, :phone, :dob).permit(:interests)
@@ -28,6 +28,11 @@ class UsersController < ApplicationController
           end
         end
         redirect_to user_path(@user)
+    end
+    
+    def show
+        id = params[:id]
+        @user = User.find(id)
     end
     
 end
