@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
   
   def post_params
-    params.require(:post).permit(:title, :thread_type, :date, :description)
+    params.require(:post, :user_id).permit(:title, :thread_type, :date, :description)
   end
 
   def show

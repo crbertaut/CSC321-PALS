@@ -11,6 +11,7 @@ ActiveAdmin.register Post do
       column :title
       column :description
       column :thread_type
+      column :user
       column :date
       actions
     end
@@ -18,12 +19,14 @@ ActiveAdmin.register Post do
     filter :title
     filter :thread_type
     filter :date
+    filter :user
 
     form do |f|
         f.inputs do
             f.input :title
             f.input :description
             f.input :thread_type
+            f.input :user
         end
         f.actions
     end
