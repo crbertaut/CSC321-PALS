@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   
   def post_params
     params.require(:post).permit(:title, :thread_type, :date, :description)
