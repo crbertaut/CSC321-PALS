@@ -4,7 +4,7 @@
   <%= stylesheet_link_tag "users" %>
 </head>
 
-<body style="background-color:#FFDAD3">
+<body style="background-image:url('/assets/dogcats.png')">
   <div class="container" style="background-color:white">
     <div class="row">
       <div class="col-md-6">
@@ -33,6 +33,8 @@
         <div style="display:inline-block">
           <%= button_to 'Delete', @user, :method => :delete, data: {:confirm => 'Are you sure?'} %>
         </div>
+        <br/>
+        <br/>
       </div>
     </div>
   </div>

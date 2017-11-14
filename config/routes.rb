@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'posts#index'
   
-  get '/volunteers/:id', to: 'users#show', as: :user
-  get '/volunteers/:id/edit', to: 'devise/registrations#edit'
+  get '/volunteers/profiles/:id', to: 'users#show', as: :user
+  get '/volunteers/profiles/:id/edit', to: 'devise/registrations#edit'
   
   resources :posts
 

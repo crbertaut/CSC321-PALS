@@ -1,17 +1,39 @@
 !!!
 %html
   %head
-    %meta{name: "viewport", content: "text/html; charset=UTF-8; width=device-width, initial-scale=1, shrink-to-fit=no", "http-equiv" => "Content-Type"}/
+    %meta{name: "viewport", content: "text/html, charset=UTF-8, width=device-width, initial-scale=1, shrink-to-fit=no", "http-equiv" => "Content-Type"}/
     %title Welcome to PALS Community Board!
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
   %body
-    %h1.title Welcome to PALS Community Board!
-    %div{style:"display:inline-block"}= button_to 'LOG IN', user_session_path
-    %div{style:"display:inline-block"}= button_to 'SIGN UP', new_user_registration_path, method: :get
-    %div{style:"display:inline-block"}= button_to 'LOG OUT', destroy_user_session_path, method: :delete
+    %div.container.title
+      %div.row.title
+        %div.col-md-12
+          %nav.navbar.navbar-expand-md.navbar-light{style:"display:inline-block"}
+            %span.h1.title{style:"margin-right:50px"} Welcome to PALS Community Board!
+            #navbarSupportedContent.collapse.navbar-collapse{style:"display:inline-block"}
+              %ul.navbar-nav.mr-auto
+                %li.nav-item
+                  %div{style:"display:inline-block; margin-right:20px"}
+                  - if current_user
+                    %div{style:"display:inline-block"}= button_to 'LOG OUT', destroy_user_session_path, method: :delete
+                  - else
+                    %a.button.green.large.default{href: user_session_path} Log in
+                //%a.button.green.large.default{href: destroy_user_session_path, method: :delete} Log out
+                //%a.title.nav-link{href: destroy_user_session_path, method: :delete} Log out
+                //%a.title.nav-link{href: user_session_path} Log in
+                %li.nav-item
+                  %div{style:"display:inline-block"}
+                    %a.button.green.large.default{href: new_user_registration_path, method: :get} Sign up
+                  //%a.title.nav-link{href: new_user_registration_path, method: :get} Sign up
+
+
+    //%h1.title Welcome to PALS Community Board!
+    //%div{style:"display:inline-block"}= button_to 'LOG IN', user_session_path
+    //%div{style:"display:inline-block"}= button_to 'SIGN UP', new_user_registration_path, method: :get
+    //%div{style:"display:inline-block"}= button_to 'LOG OUT', destroy_user_session_path, method: :delete
     
     #main
       - if flash[:notice]

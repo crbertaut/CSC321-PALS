@@ -29,10 +29,6 @@
     font-size:19px;
 }
 
-.container {
-  height:100vh;
-}
-
 html, body {
   height:100vh;
   margin: 0;
@@ -79,4 +75,28 @@ h2{
   font-weight: bold;
   font-family: Georgia;
   margin:10px 0 0 0;
+}
+
+a.title {
+  color: white !important;
+  font-style: normal;
+}
+a.button {
+  color: white !important;
+}
+.row.title {
+  margin: 0 0 0;
+  padding: 10px;
+  background-color: #4B0082;
+  color: white;
+  border-bottom: 4px solid #A88BD7;
+  font-style: normal;
+}
+.container.full {
+  
+}
+.container.title {
+  margin: 0 0 0 0;
+  padding: 0;
+  max-width: 100%;
 }
