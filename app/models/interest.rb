@@ -1,4 +1,5 @@
 class Interest < ApplicationRecord
+    has_and_belongs_to_many :users
     
     def self.cat_interests 
         ["Feeding", "Playing", "Cleaning"]

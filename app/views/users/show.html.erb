@@ -7,33 +7,28 @@
 <body style="background-image:url('/assets/dogcats.png')">
   <div class="container" style="background-color:white">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <h2 style="text-align:center">Your Profile</h2>
-    
-            <ul class="alt">
-              <li>
-                <b>Name:</b>&emsp;<%= @user.name %>
-              </li><li>
-                <b>Birthdate:</b>&emsp;<%= @user.dob %>
-              </li><li>
-                <b>Phone:</b>&emsp;<%= @user.phone %>
-              </li><li>
-                <b>Email:</b>&emsp;<%= @user.email %>
-              </li><li>
+              <div style="margin-left:20%">
+              <h5>Personal Information</h5>
+                <b>Name:</b>&emsp;<%= @user.name %><br/>
+                <b>Birthdate:</b>&emsp;<%= @user.dob %><br/>
                 <b>Interests:</b>&emsp;<%= @user.interests %>
-              </li>
-            </ul>
+              <hr class="line"/>
+              <h5>Contact Information</h5>
+                <b>Phone:</b>&emsp;<%= @user.phone %><br/>
+                <b>Email:</b>&emsp;<%= @user.email %><br/><br/>
+                
+              </div>
         
-        <div style="display:inline-block">
-          <%= link_to 'Edit', edit_user_registration_path(@user) %>
+        <div style="text-align:center">
+          <a class="button large purple default" href="<%= edit_user_registration_path %>" method="<%= :get %>">Edit profile</a>
+          <%#= button_to 'Edit profile', edit_user_registration_path(@user), :method => :get %>
+        </div><br/>
+        <div style="text-align:center">
+          <a class="button red default" href="<%= @user %>" method="<%= :delete%>" data="<%= {:confirm => 'Are you sure?'}%>">Delete your account</a>
+          <%#= button_to 'Delete your account', @user, :method => :delete, data: {:confirm => 'Are you sure?'} %>
         </div>
-        <div style="display:inline-block">
-          <%= link_to 'Back to post list', posts_path %>
-        </div>
-        <div style="display:inline-block">
-          <%= button_to 'Delete', @user, :method => :delete, data: {:confirm => 'Are you sure?'} %>
-        </div>
-        <br/>
         <br/>
       </div>
     </div>

@@ -30,13 +30,13 @@
 }
 
 html, body {
-  height:100vh;
   margin: 0;
   padding: 0;
   background: White;
   color: Black;
   font-family: Georgia;
   font-size: 1em;
+  height:100vh;
 }
 div#main {
   margin: 0;
@@ -92,11 +92,13 @@ a.button {
   border-bottom: 4px solid #A88BD7;
   font-style: normal;
 }
-.container.full {
-  
-}
 .container.title {
   margin: 0 0 0 0;
   padding: 0;
   max-width: 100%;
+}
+.line {
+  width: 70%;
+  text-align:center;
+  margin:20px 0 20px 0;
 }

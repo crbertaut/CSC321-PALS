@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     # POST /users.json
     def create
         @user = User.create!(user_params)
+        params[:interests].each do |interest| 
+            puts "HELLO"
+            @interest = Interest.where(name: interest)
+            @user.interests << @interest
+        end
         respond_to do |format|
           if @user.save
             format.html { redirect_to @user, notice: 'Interest was successfully created.' }

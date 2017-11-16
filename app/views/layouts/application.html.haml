@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %meta{name: "viewport", content: "text/html, charset=UTF-8, width=device-width, initial-scale=1, shrink-to-fit=no", "http-equiv" => "Content-Type"}/
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no", "http-equiv" => "Content-Type"}/
     %title Welcome to PALS Community Board!
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -11,7 +11,7 @@
     %div.container.title
       %div.row.title
         %div.col-md-12
-          %nav.navbar.navbar-expand-md.navbar-light{style:"display:inline-block"}
+          %nav.navbar.navbar-expand-md.navbar-light
             %span.h1.title{style:"margin-right:50px"} Welcome to PALS Community Board!
             #navbarSupportedContent.collapse.navbar-collapse{style:"display:inline-block"}
               %ul.navbar-nav.mr-auto
@@ -35,7 +35,7 @@
     //%div{style:"display:inline-block"}= button_to 'SIGN UP', new_user_registration_path, method: :get
     //%div{style:"display:inline-block"}= button_to 'LOG OUT', destroy_user_session_path, method: :delete
     
-    #main
+    #main.full
       - if flash[:notice]
         #notice.message= flash[:notice]
       - elsif flash[:warning]
