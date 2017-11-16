@@ -1,0 +1,36 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/kickstart.css" media="all" /> <!-- KICKSTART -->
+  <%= stylesheet_link_tag "users" %>
+</head>
+
+<body style="background-image:url('/assets/dogcats.png')">
+  <div class="container" style="background-color:white">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="text-align:center">Your Profile</h2>
+              <div style="margin-left:20%">
+              <h5>Personal Information</h5>
+                <b>Name:</b>&emsp;<%= @user.name %><br/>
+                <b>Birthdate:</b>&emsp;<%= @user.dob %><br/>
+                <b>Interests:</b>&emsp;<%= @user.interests %>
+              <hr class="line"/>
+              <h5>Contact Information</h5>
+                <b>Phone:</b>&emsp;<%= @user.phone %><br/>
+                <b>Email:</b>&emsp;<%= @user.email %><br/><br/>
+                
+              </div>
+        
+        <div style="text-align:center">
+          <a class="button large purple default" href="<%= edit_user_registration_path %>" method="<%= :get %>">Edit profile</a>
+          <%#= button_to 'Edit profile', edit_user_registration_path(@user), :method => :get %>
+        </div><br/>
+        <div style="text-align:center">
+          <a class="button red default" href="<%= @user %>" method="<%= :delete%>" data="<%= {:confirm => 'Are you sure?'}%>">Delete your account</a>
+          <%#= button_to 'Delete your account', @user, :method => :delete, data: {:confirm => 'Are you sure?'} %>
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+</body>
