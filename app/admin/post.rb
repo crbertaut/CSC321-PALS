@@ -26,7 +26,6 @@ ActiveAdmin.register Post do
             f.input :title
             f.input :description
             f.input :thread_type
-            f.input :user
         end
         f.actions
     end

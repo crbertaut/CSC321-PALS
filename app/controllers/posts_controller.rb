@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: :index
   
   def post_params
-    params.require(:post, :user_id).permit(:title, :thread_type, :date, :description)
+    params.require(:post).permit(:title, :thread_type, :date, :description, :user_id)
   end
 
   def show
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create!(post_params)
+    @post = current_user.posts.create!(post_params)
     flash[:notice] = "#{@post.title} was successfully created."
     redirect_to posts_path
   end

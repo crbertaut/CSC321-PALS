@@ -15,6 +15,8 @@
       %th Type
       %th{:class => "#{('hilite' if session[:sort_by] == 'date')}"}
         = link_to "Date", posts_path(:sort_by => 'date'), id: "date_header"
+      - if user_signed_in?
+        %th Posted By
       %th More Info
   %tbody
     - @posts.each do |post|
@@ -25,6 +27,9 @@
           = post.thread_type
         %td
           = post.date
+        - if user_signed_in?
+          %td
+            = User.find(post.user_id).name
         %td
           = link_to "More about #{post.title}", post_path(post)
 = link_to 'Add new post', new_post_path
