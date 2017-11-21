@@ -1,6 +1,9 @@
 %h2 Details about: #{@post.title}
 
 %ul#details
+  %ls
+    Posted by:
+    = User.find(@post.user_id).name
   %li
     Type:
     = @post.thread_type

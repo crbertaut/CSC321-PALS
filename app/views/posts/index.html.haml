@@ -1,0 +1,35 @@
+%h1 All Posts
+= stylesheet_link_tag "posts"
+= form_tag posts_path, :method => :get, :id => 'types_form' do
+  Include:
+  - @all_types.each do |type|
+    = type
+    = check_box_tag "types[#{type}]", "1", @checked_types.include?(type), :id => "types_#{type}"
+  %button#types_submit.update-button.purple.default Update
+  / = submit_tag 'Refresh', :id => 'types_submit'
+%table#posts
+  %thead
+    %tr
+      %th{:class => "#{('hilite' if session[:sort_by] == 'title')}"}
+        = link_to "Post Title", posts_path(:sort_by => 'title'), id: "title_header"
+      %th Type
+      %th{:class => "#{('hilite' if session[:sort_by] == 'date')}"}
+        = link_to "Date", posts_path(:sort_by => 'date'), id: "date_header"
+      - if user_signed_in?
+        %th Posted By
+      %th More Info
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td
+          = post.title
+        %td
+          = post.thread_type
+        %td
+          = post.date
+        - if user_signed_in?
+          %td
+            = User.find(post.user_id).name
+        %td
+          = link_to "More about #{post.title}", post_path(post)
+= link_to 'Add new post', new_post_path
