@@ -2,6 +2,23 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .button_new {
+  background-color: #8b9297;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#8b9297), to(#484d51));
+    background-image: linear-gradient(180deg, #8b9297, #484d51);
+    border-radius: 200px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.0em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 12px;
+    margin-right: 3px;
+    padding: 7px 16px 6px;
+    text-decoration: none;
+    color: #ffffff !important;
+    
+}
 
 html, body {
   margin: 0;
