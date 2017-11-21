@@ -2,7 +2,12 @@ class UsersController < ApplicationController
     before_action :authenticate_user!
     
     def user_params
-        params.require(:firstname, :lastname, :password, :email, :phone, :dob).permit(:interests)
+        params.require(:name, :password, :email, :phone, :dob).permit(:interests)
+    end
+  
+    def show
+        id = params[:id] # retrieve post ID from URI route
+        @user = User.find(id) # look up movie by unique ID
     end
   
     # GET /users/new
