@@ -8,7 +8,7 @@ html, body {
   padding: 0;
   background: White;
   color: Black;
-  font-family: Tahoma, Verdana, sans-serif;
+  font-family: Georgia;
   font-size: 1em;
 }
 div#main {
@@ -77,21 +77,40 @@ form label {
   color: #000 !important;
 }
 
-.default{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;}
+.default{-moz-border-radius:5px !important;-webkit-border-radius:5px !important;border-radius:5px !important;}
 .update-button{
   font-size:1em;
   padding:5px 10px;
 }
-button.purple:hover,
-a.btn.purple:hover,
-a.button.purple:hover{
-	text-shadow:0 1px 0 #5A22C7 !important;
-	border:1px solid #5A22C7 !important;
-	background: rgb(190, 158, 255) !important; /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(190, 158, 255,1) 0%, rgba(175, 138, 250, 1) 44%, rgba(156, 114, 243,1) 100%) !important; /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(190, 158, 255,1)), color-stop(44%,rgba(251, 126, 207,1)), color-stop(100%,rgba(110,176,242,1))) !important; /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* Opera 11.10+ */
-	background: linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BE9EFF', endColorstr='#9C72F3',GradientType=0 ) !important; /* IE6-9 */
-	}
+span.h1.title {
+  color: white;
+  font-size: 2em;
+  font-style: normal;
+}
+a.title {
+  color: white !important;
+  font-style: normal;
+}
+a.button {
+  color: white !important;
+}
+.row.title {
+  margin: 0 0 0;
+  padding: 10px;
+  background-color: #4B0082;
+  color: white;
+  border-bottom: 4px solid #A88BD7;
+  font-style: normal;
+}
+.container.title {
+  margin: 0 0 0 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+li.nav-item {
+  display: inline-block;
+}

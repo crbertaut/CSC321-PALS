@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113035739) do
+ActiveRecord::Schema.define(version: 20171116165422) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 20171113035739) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "interests_users", id: false, force: :cascade do |t|
+    t.integer "interest_id", null: false
+    t.integer "user_id", null: false
+    t.index ["interest_id"], name: "index_interests_users_on_interest_id"
+    t.index ["user_id"], name: "index_interests_users_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "thread_type"
@@ -81,7 +88,8 @@ ActiveRecord::Schema.define(version: 20171113035739) do
     t.string "name"
     t.string "phone"
     t.date "dob"
-    t.text "interests"
+    t.text "experience"
+    t.text "username"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
