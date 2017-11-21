@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     before_action :authenticate_user!
     
     def user_params
-        params.require(:name, :password, :email, :phone, :dob).permit(:interests)
+        params.require(:name, :password, :email, :phone, :dob, :username).permit(:experience)
     end
   
     def show
