@@ -7,7 +7,7 @@
 
 <body style="background-image:url('/assets/dogcats.png')">
 
-  <div class="container" style="background-color:white">
+  <div class="container full" style="background-color:white">
     <div class="row" style="text-align:center">
       <div class="col-md-12">
         <h2>Sign up</h2>
@@ -22,6 +22,11 @@
           <div class="field padded" style="margin-top:15px">
             <label>Full name:</label>
             <%= f.text_field :name, size: "30" %>
+          </div>
+          
+            <div class="field padded" >
+            <label>Username:</label>
+            <%= f.text_field :username, size: "30" %>
           </div>
           
           <div class="field padded">
@@ -65,7 +70,7 @@
                       <label for="dogs" class="inline">Dogs</label>
                     </td>
                     <td>
-                      <% @dogs.each do |interest| %>
+                     <% @dogs.each do |interest| %> 
                         <%= check_box_tag "interests[]", interest, false, id: "dog_" + interest, name: "dogs", disabled: true %>
                         <%= label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dogs" %>
                         <br/>
@@ -102,7 +107,12 @@
                   </td>
                 </tr>
               </table>
+             
             </fieldset>
+               <div class="field padded" style="margin-top:5px">
+            <label>Experience:</label>
+            <%= f.text_area :experience, size: "30" %>
+          </div>
           </div>
         </div>
       </div>

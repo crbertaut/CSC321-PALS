@@ -1,2 +1,3 @@
 class InterestsController < ApplicationController
+    
 end
