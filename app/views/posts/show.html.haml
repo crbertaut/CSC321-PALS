@@ -1,5 +1,6 @@
-%h2 Details about: #{@post.title}
+%h1 Details about: #{@post.title}
 
+= stylesheet_link_tag "posts"
 %ul#details
   %ls
     Posted by:
@@ -10,10 +11,9 @@
   %li
     Date:
     = @post.date.strftime("%B %d, %Y")
-
-%h3 Description:
-
-%p#description= @post.description
+  %li
+    Description:
+    %p#description= @post.description
 
 %div{style:"display:inline-block"}= link_to 'Edit', edit_post_path(@post)
 %div{style:"display:inline-block"}= link_to 'Back to post list', posts_path
