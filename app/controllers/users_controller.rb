@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     #before_action :authenticate_user!
     
     def user_params
-        params.require(:firstname, :lastname, :password, :email, :phone, :dob).permit(:interests)
+        params.require(:name, :password, :email, :phone, :dob)
     end
   
     # GET /users/new
@@ -18,11 +18,6 @@ class UsersController < ApplicationController
     # POST /users.json
     def create
         @user = User.create!(user_params)
-        params[:interests].each do |interest| 
-            puts "HELLO"
-            @interest = Interest.where(name: interest)
-            @user.interests << @interest
-        end
         respond_to do |format|
           if @user.save
             format.html { redirect_to @user, notice: 'Interest was successfully created.' }
