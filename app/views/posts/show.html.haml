@@ -1,5 +1,6 @@
-%h2 Details about: #{@post.title}
+%h1 Details about: #{@post.title}
 
+= stylesheet_link_tag "posts"
 %ul#details
   %li
     Type:
@@ -7,8 +8,8 @@
   %li
     Date:
     = @post.date.strftime("%B %d, %Y")
-
-%h3 Description:
+  %li
+    Description:
 
 %p#description= @post.description
 

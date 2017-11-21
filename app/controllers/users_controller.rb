@@ -2,12 +2,12 @@ class UsersController < ApplicationController
     #before_action :authenticate_user!
     
     def user_params
-        params.require(:name, :password, :email, :phone, :dob)
+        params.require(:name, :username, :password, :email, :phone, :dob, :experience)
     end
   
     # GET /users/new
     def new
-        render layout: "users"
+     #   render layout: "users"
     end
     
     def edit
