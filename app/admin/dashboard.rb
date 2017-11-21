@@ -9,10 +9,10 @@ ActiveAdmin.register_page "Dashboard" do
           table_for User.order(created_at: :desc) do
             # column :name
             column :email
-            column :created_at
-            column "View" do |user|
-              link_to "View profile", user_path(user)
-            end
+            column "Registered at", :created_at
+            #column "View" do |user|
+              #link_to "View profile", user_path(user)
+            #end
           end
         end
       end

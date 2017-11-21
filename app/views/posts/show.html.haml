@@ -2,6 +2,9 @@
 
 = stylesheet_link_tag "posts"
 %ul#details
+  %ls
+    Posted by:
+    = User.find(@post.user_id).name
   %li
     Type:
     = @post.thread_type
@@ -10,8 +13,7 @@
     = @post.date.strftime("%B %d, %Y")
   %li
     Description:
-
-%p#description= @post.description
+    %p#description= @post.description
 
 %div{style:"display:inline-block"}= link_to 'Edit', edit_post_path(@post)
 %div{style:"display:inline-block"}= link_to 'Back to post list', posts_path

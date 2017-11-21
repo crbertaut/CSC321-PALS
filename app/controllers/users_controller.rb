@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
     
     def user_params
         params.require(:name, :password, :email, :phone, :dob, :username).permit(:experience)
+    end
+  
+    def show
+        id = params[:id] # retrieve post ID from URI route
+        @user = User.find(id) # look up movie by unique ID
     end
   
     # GET /users/new
@@ -29,10 +34,4 @@ class UsersController < ApplicationController
         end
         redirect_to user_path(@user)
     end
-    
-    def show
-        id = params[:id]
-        @user = User.find(id)
-    end
-    
 end

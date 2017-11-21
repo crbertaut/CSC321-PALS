@@ -1,14 +1,14 @@
-ActiveAdmin.register User do
-    permit_params :email, :password, :password_confirmation
+ActiveAdmin.register User, as: 'Volunteer' do
+    permit_params :email, :password, :password_confirmation, :name, :phone, :dob
     
     menu priority: 2
-    menu label: "Volunteers"
-
     
     index title: 'Volunteers' do
         selectable_column
         id_column
         column :email
+        column :name
+        column :phone
         column :posts
         actions
     end
@@ -19,8 +19,10 @@ ActiveAdmin.register User do
     form do |f|
         f.inputs do
             f.input :email
+            f.input :name
+            f.input :phone
             f.input :password
-            f.input :password_confirmation
+            f.input :dob
         end
         f.actions
     end

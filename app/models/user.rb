@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
         # :confirmable
          
+  has_many :posts
   has_and_belongs_to_many :interests
 end
