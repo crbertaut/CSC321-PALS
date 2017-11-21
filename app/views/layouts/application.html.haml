@@ -20,13 +20,13 @@
                   - if current_user
                     %div{style:"display:inline-block"}= button_to 'LOG OUT', destroy_user_session_path, method: :delete
                   - else
-                    %a.button.green.large.default{href: user_session_path} Log in
+                    %a.button.purple.large.default{href: user_session_path} Log in
                 //%a.button.green.large.default{href: destroy_user_session_path, method: :delete} Log out
                 //%a.title.nav-link{href: destroy_user_session_path, method: :delete} Log out
                 //%a.title.nav-link{href: user_session_path} Log in
                 %li.nav-item
                   %div{style:"display:inline-block"}
-                    %a.button.green.large.default{href: new_user_registration_path, method: :get} Sign up
+                    %a.button.purple.large.default{href: new_user_registration_path, method: :get} Sign up
                   //%a.title.nav-link{href: new_user_registration_path, method: :get} Sign up
 
 

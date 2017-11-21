@@ -11,9 +11,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    params[:interests].each do |int| 
+      @interest = Interest.find_by name: int
+      @user.interests << @interest
+    end
+  #  redirect_to user_path(User.last)
+  end
 
   # GET /resource/edit
   # def edit

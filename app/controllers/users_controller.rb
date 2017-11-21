@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   
     # GET /users/new
     def new
-        render layout: "users"
+     #   render layout: "users"
     end
     
     def edit

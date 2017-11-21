@@ -13,7 +13,12 @@
     = @post.date.strftime("%B %d, %Y")
   %li
     Description:
+<<<<<<< HEAD
     %p#description= @post.description
+=======
+
+%p#description= @post.description
+>>>>>>> 5b906f270301b196ebd70b2fc951eb7d3de3612f
 
 %div{style:"display:inline-block"}= link_to 'Edit', edit_post_path(@post)
 %div{style:"display:inline-block"}= link_to 'Back to post list', posts_path
