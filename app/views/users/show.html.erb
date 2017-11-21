@@ -12,13 +12,16 @@
               <div style="margin-left:20%">
               <h5>Personal Information</h5>
                 <b>Name:</b>&emsp;<%= @user.name %><br/>
+                <b>Username:</b>&emsp;<%= @user.username %><br/>
                 <b>Birthdate:</b>&emsp;<%= @user.dob %><br/>
                 <b>Interests:</b>&emsp;<%= @user.interests.collect(&:name) %>
               <hr class="line"/>
               <h5>Contact Information</h5>
                 <b>Phone:</b>&emsp;<%= @user.phone %><br/>
                 <b>Email:</b>&emsp;<%= @user.email %><br/><br/>
-                
+              <hr class="line"/>
+              <H5>Experience:</H5>
+                <b></b>&emsp;<%= @user.experience %><br/>
               </div>
         
         <div style="text-align:center">
