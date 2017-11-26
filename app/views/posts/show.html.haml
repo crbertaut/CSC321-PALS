@@ -14,7 +14,46 @@
   %li
     Description:
     %p#description= @post.description
+    
+HERE
+
+%h2 Details about: #{@post.title}
+
+%ul#details
+  %li
+    Type:
+    = @post.thread_type
+  %li
+    Date:
+    = @post.date.strftime("%B %d, %Y")
+
+%h3 Description:
+
+%p#description= @post.description
 
 %div{style:"display:inline-block"}= link_to 'Edit', edit_post_path(@post)
 %div{style:"display:inline-block"}= link_to 'Back to post list', posts_path
 %div{style:"display:inline-block"}= button_to 'Delete', post_path(@post), :method => :delete, :confirm => 'Are you sure?'
+
+= form_for [@post, Reply.new], remote: true do |f|
+  = f.hidden_field :user_id, value: User.last.id #current_user.id
+  = f.label :message, 'Reply:'
+  = f.text_area :message
+  = f.submit "Reply"
+  
+%table
+  %thead
+    %tr
+      %th Message
+      %th Posted By
+      %th Created At
+      %th
+      %th
+  %tbody#replies
+    - @post.replies.each do |reply|
+      %tr
+        %td= reply.message
+        %td= reply.user.name
+        %td= reply.created_at
+        %td= link_to "Edit", edit_post_reply_path(@post, reply)
+        %td= link_to "Destroy", post_reply_path(@post, reply), method: :delete
