@@ -1,0 +1,50 @@
+%head
+  %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
+  %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
+  / KICKSTART
+  = stylesheet_link_tag "users"
+%body{:style => "background-image:url('/assets/dogcats.png')"}
+  .container{:style => "background-color:white"}
+    .row
+      .col-md-12
+        %h2{:style => "text-align:center"} Your Profile
+        %div{:style => "margin-left:20%"}
+          %h5 Personal Information
+          = succeed "\u2003" do
+            %b Name:
+          = @user.name
+          %br/
+          = succeed "\u2003" do
+            %b Username:
+          = @user.username
+          %br/
+          = succeed "\u2003" do
+            %b Birthdate:
+          = @user.dob
+          %br/
+          = succeed "\u2003" do
+            %b Interests:
+          = @user.interests.collect(&:name)
+          %hr.line/
+          %h5 Contact Information
+          = succeed "\u2003" do
+            %b Phone:
+          = @user.phone
+          %br/
+          = succeed "\u2003" do
+            %b Email:
+          = @user.email
+          %br/
+          %br/
+          %hr.line/
+          %h5 Experience:
+          = succeed "\u2003" do
+            %b
+          = @user.experience
+          %br/
+        %div{:style => "text-align:center"}
+          %a.button.large.purple.default{:href => edit_user_registration_path, :method => :get} Edit profile
+        %br/
+        %div{:style => "text-align:center"}
+          %a.button.red.default{:data => "#{{:confirm => 'Are you sure?'}}", :href => "#{@user}", :method => :delete} Delete your account
+        %br/

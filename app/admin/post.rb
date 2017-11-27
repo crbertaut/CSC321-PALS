@@ -1,6 +1,4 @@
 ActiveAdmin.register Post do
-    #belongs_to :user
-  
     menu priority: 3
     
     permit_params :title, :description, :thread_type
@@ -28,5 +26,6 @@ ActiveAdmin.register Post do
             f.input :thread_type
         end
         f.actions
+        para "Press cancel to return to the list without saving."
     end
 end
