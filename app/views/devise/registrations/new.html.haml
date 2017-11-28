@@ -1,10 +1,10 @@
 %head
   / Include Bootstrap and HTML Kickstart (for style)
   %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
-  %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
+  %link{:href => "/assets/stylesheets/kickstart.scss", :media => "all", :rel => "stylesheet"}/
   / KICKSTART
   = stylesheet_link_tag "users"
-%body{:style => "background-image:url('/assets/dogcats.png')"}
+%body{:style => "background-image:url('/assets/images/dogcats.png')"}
   .container.full{:style => "background-color:white"}
     .row{:style => "text-align:center"}
       .col-md-12
@@ -85,9 +85,9 @@
   %script{:crossorigin => "anonymous", :integrity => "sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"}
   / Include jQuery and MaskedInput (for formatting phone numbers)
   %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
-  %script{:src => "/assets/kickstart.js"}
+  %script{:src => "/assets/javascripts/kickstart.js"}
   / KICKSTART
-  %script{:src => "/assets/jquery.maskedinput.js", :type => "text/javascript"}
+  %script{:src => "/assets/javascripts/jquery.maskedinput.js", :type => "text/javascript"}
   :javascript
     jQuery(function($){
         $("#phone").mask("(999) 999-9999");
