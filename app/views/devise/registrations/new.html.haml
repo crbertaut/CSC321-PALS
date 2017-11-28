@@ -45,21 +45,21 @@
                 %tr
                   %div{:style => "text-align:left"}
                     %td
-                      %input#dogs{:onclick => "toggleCheckboxes('dogs')", :type => "checkbox"}/
+                      %input#dogs{:onclick => "toggleCheckboxes('dog_interests[]')", :type => "checkbox"}/
                       %label.inline{:for => "dogs"} Dogs
                     %td
                       - @dogs.each do |interest|
-                        = check_box_tag "interests[]", interest, false, id: "dog_" + interest, name: "dogs", disabled: true
-                        = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dogs"
+                        = check_box_tag "dog_interests[]", interest, false, id: "dog_" + interest, disabled: true
+                        = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dog_interests[]"
                         %br/
                 %tr
                   %td
-                    %input#cats{:onclick => "toggleCheckboxes('cats')", :type => "checkbox"}/
+                    %input#cats{:onclick => "toggleCheckboxes('cat_interests[]')", :type => "checkbox"}/
                     %label.inline{:for => "cats"} Cats
                   %td
                     - @cats.each do |interest|
-                      = check_box_tag "interests[]", interest, false, id: "cat_" + interest, name: "cats", disabled: true
-                      = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cats"
+                      = check_box_tag "cat_interests[]", interest, false, id: "cat_" + interest, disabled: true
+                      = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cat_interests[]"
                       %br/
                 %tr
                   %td
