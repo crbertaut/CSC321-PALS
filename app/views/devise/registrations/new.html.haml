@@ -2,7 +2,6 @@
   / Include Bootstrap and HTML Kickstart (for style)
   %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
   %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
-  / KICKSTART
   = stylesheet_link_tag "users"
 %body{:style => "background-image:url('/assets/dogcats.png')"}
   .container.full{:style => "background-color:white"}
@@ -70,7 +69,7 @@
                       = label_tag :interests, "#{interest}", for: interest, class: "inline"
                       %br/
                     = check_box_tag "interests[]", "other", false, name: "other"
-                    = text_field_tag "interests[]", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
+                    = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
             .field.padded.experience
               %label Experience:
               %br/

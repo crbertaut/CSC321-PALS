@@ -68,6 +68,7 @@ h1 {
 }
 h1.title {
   margin: 0 0 0;
+  margin-right: 50px;
   padding: 10px;
   background-color: #4B0082;
   color: white;
@@ -106,4 +107,8 @@ a.button {
   width: 70%;
   text-align:center;
   margin:20px 0 20px 0;
+}
+li.nav-item {
+  text-align:right;
+  margin:0 0 0 0;
 }

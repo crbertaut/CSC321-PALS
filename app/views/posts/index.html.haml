@@ -1,5 +1,9 @@
+%head
+  / Include Bootstrap and HTML Kickstart (for style)
+  %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
+  %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
+  = stylesheet_link_tag "posts"
 %h1 All Posts
-= stylesheet_link_tag "posts"
 = form_tag posts_path, :method => :get, :id => 'types_form' do
   Include:
   - @all_types.each do |type|
