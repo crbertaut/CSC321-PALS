@@ -7,40 +7,28 @@
   .container{:style => "background-color:white"}
     .row
       .col-md-12
-        %h2{:style => "text-align:center"} Your Profile
+        %h2{:style => "text-align:center"} #{@user.username}'s Profile
         %div{:style => "margin-left:20%"}
           %h5 Personal Information
-          = succeed "\u2003" do
-            %b Name:
+          %b Name:
           = @user.name
           %br/
-          = succeed "\u2003" do
-            %b Username:
-          = @user.username
-          %br/
-          = succeed "\u2003" do
-            %b Birthdate:
+          %b Birthdate:
           = @user.dob
           %br/
-          = succeed "\u2003" do
-            %b Interests:
-          = @user.interests.collect(&:name)
+          %b Interests:
+          = @user.interests.map(&:name).join(", ")
+          %br/
+          %b Experience:
+          = @user.experience
           %hr.line/
           %h5 Contact Information
-          = succeed "\u2003" do
-            %b Phone:
+          %b Phone:
           = @user.phone
           %br/
-          = succeed "\u2003" do
-            %b Email:
+          %b Email:
           = @user.email
           %br/
-          %br/
-          %hr.line/
-          %h5 Experience:
-          = succeed "\u2003" do
-            %b
-          = @user.experience
           %br/
         %div{:style => "text-align:center"}
           %a.button.large.purple.default{:href => edit_user_registration_path, :method => :get} Edit profile
