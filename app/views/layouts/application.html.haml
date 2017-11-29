@@ -25,6 +25,9 @@
                       %div{style:"display:inline-block"}
                       %a.button.purple.large.default{href: new_user_registration_path, method: :get} Sign up
                       //%a.title.nav-link{href: new_user_registration_path, method: :get} Sign up
+                  -if controller_name != 'posts'
+                    %li.nav-item
+                      %a.button.purple.large.default{href: posts_path} Community Board
     
     #main.full
       - if flash[:notice]
