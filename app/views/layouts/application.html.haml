@@ -18,17 +18,18 @@
                 %li.nav-item
                   %div{style:"display:inline-block; margin-right:20px"}
                   - if current_user
-                    = button_to 'Log Out', destroy_user_session_path, {method: :delete, class:"button purple large default"}
+                    = button_to 'Log Out', destroy_user_session_path, {method: :delete, class:"purple default"}
                   - else
-                    %a.button.purple.large.default{href: user_session_path} Log in
+                    %a.button.purple.medium.default{href: user_session_path} Log in
                     %li.nav-item
                       %div{style:"display:inline-block"}
-                      %a.button.purple.large.default{href: new_user_registration_path, method: :get} Sign up
+                      %a.button.purple.medium.default{href: new_user_registration_path, method: :get} Sign up
                       //%a.title.nav-link{href: new_user_registration_path, method: :get} Sign up
-                -if controller_name != 'posts'
-                  %li.nav-item
-                    %div{style:"display:inline-block"}
-                    %a.button.purple.large.default{href: posts_path} Community Board
+                  -if controller_name != 'posts'
+                    %li.nav-item
+                      %div{style:"display:inline-block"}
+                      = button_to 'Community Board', posts_path, class: "purple default"
+                      /%a.button.purple.medium.default{href: posts_path} Community Board
     
     #main.full
       - if flash[:notice]
