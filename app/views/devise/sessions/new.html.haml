@@ -1,18 +1,21 @@
 = stylesheet_link_tag "posts"
-%h2 Log in
+%h1 Log in
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true
   .field
-    = f.label :password
+    = f.label :password, class: "inline"
     %br/
     = f.password_field :password, autocomplete: "off"
+    - if devise_mapping.recoverable?
+      = link_to 'Forgot your password?', new_password_path(resource_name)
   - if devise_mapping.rememberable?
     .field
       = f.check_box :remember_me
-      = f.label :remember_me
+      = f.label :remember_me, class: "checkbox inline"
   .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+    = f.submit "Log in", class: "purple"
+
+/= render "devise/shared/links"

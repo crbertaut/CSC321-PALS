@@ -5,8 +5,9 @@
   - @all_types.each do |type|
     = type
     = check_box_tag "types[#{type}]", "1", @checked_types.include?(type), :id => "types_#{type}"
-  %button#types_submit.update-button.purple.default Update
-  / = submit_tag 'Refresh', :id => 'types_submit'
+  = button_to 'Update', posts_path, class:"button purple default small"
+  /%button#types_submit.default.update-button.purple Update
+/= submit_tag 'Update', class: "button purple small square"
 %table#posts
   %thead
     %tr
@@ -31,5 +32,5 @@
           %td
             = User.find(post.user_id).name
         %td
-          = link_to "More about #{post.title}", post_path(post)
+          = link_to "Read the post '#{post.title}'", post_path(post)
 = link_to 'Add new post', new_post_path
