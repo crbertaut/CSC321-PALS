@@ -2,11 +2,11 @@
 %h1 Log in
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
-    = f.label :email
+    = f.label :email, class:"link"
     %br/
     = f.email_field :email, autofocus: true
   .field
-    = f.label :password, class: "inline"
+    = f.label :password, class: "inline", class:"link"
     %br/
     = f.password_field :password, autocomplete: "off"
     - if devise_mapping.recoverable?
@@ -14,7 +14,7 @@
   - if devise_mapping.rememberable?
     .field
       = f.check_box :remember_me
-      = f.label :remember_me, class: "checkbox inline"
+      = f.label :remember_me, class: "checkbox inline", class:"link"
   .actions
     = f.submit "Log in", class: "purple"
 
