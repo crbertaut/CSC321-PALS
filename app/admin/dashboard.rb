@@ -5,7 +5,7 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc{ I18n.t("active_admin.dashboard") } do
     columns do
       column do
-        panel "Recently registered voluneteers" do
+        panel "Recently registered volunteers" do
           table_for User.order(created_at: :desc) do
             column :name
             column :email
