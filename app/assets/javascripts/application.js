@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require kickstart
-//= require rails-ujs
 //= require turbolinks
 //= require maskedinput
 //= require jquery3

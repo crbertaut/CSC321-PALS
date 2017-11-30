@@ -1,1 +1,1 @@
-web: rails s -b $IP -p $PORT
+web: bundle exec puma -C config/puma.rb

@@ -7,12 +7,12 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recently registered voluneteers" do
           table_for User.order(created_at: :desc) do
-            # column :name
+            column :name
             column :email
             column "Registered at", :created_at
-            #column "View" do |user|
-              #link_to "View profile", user_path(user)
-            #end
+            column "View" do |user|
+              link_to "View profile", user_path(user)
+            end
           end
         end
       end
@@ -21,6 +21,9 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent posts" do
           table_for Post.order(updated_at: :desc) do
             column :title
+            column "Posted by" do |post|
+              link_to User.find(post.user_id).name, user_path(User.find(post.user_id))
+            end
             column :updated_at
             column :thread_type
             column "View" do |post|
