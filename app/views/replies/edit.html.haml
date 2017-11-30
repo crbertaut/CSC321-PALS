@@ -5,4 +5,4 @@
 = form_for [@post, @reply], remote: true do |f|
   = f.label :message, 'Reply:'
   = f.text_area :message
-  = f.submit "Reply"
+  = f.submit "Reply", class:"button purple default small"
