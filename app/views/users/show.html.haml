@@ -10,36 +10,29 @@
         %h2{:style => "text-align:center"} Your Profile
         %div{:style => "margin-left:20%"}
           %h5 Personal Information
-          = succeed "\u2003" do
-            %b Name:
+          %b Name:
           = @user.name
           %br/
-          = succeed "\u2003" do
-            %b Username:
+          %b Username:
           = @user.username
           %br/
-          = succeed "\u2003" do
-            %b Birthdate:
+          %b Birthdate:
           = @user.dob
           %br/
-          = succeed "\u2003" do
-            %b Interests:
+          %b Interests:
           = @user.interests.collect(&:name)
           %hr.line/
           %h5 Contact Information
-          = succeed "\u2003" do
-            %b Phone:
+          %b Phone:
           = @user.phone
           %br/
-          = succeed "\u2003" do
-            %b Email:
+          %b Email:
           = @user.email
           %br/
           %br/
           %hr.line/
           %h5 Experience:
-          = succeed "\u2003" do
-            %b
+          %b
           = @user.experience
           %br/
         %div{:style => "text-align:center"}
