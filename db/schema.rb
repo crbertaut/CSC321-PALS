@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171126014148) do
+=======
+ActiveRecord::Schema.define(version: 20171116165422) do
+>>>>>>> profile button
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
