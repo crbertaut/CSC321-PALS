@@ -43,6 +43,6 @@
         %td= reply.message
         %td= reply.user.name
         %td= reply.created_at
-        %td= link_to "Edit", edit_post_reply_path(@post, reply), class:"button purple default small"
-        %td= link_to "Destroy", post_reply_path(@post, reply), method: :delete, class:"button purple default small"
+        %td= link_to "Edit", edit_post_reply_path(@post, reply)
+        %td= link_to "Destroy", post_reply_path(@post, reply), method: :delete
         
