@@ -32,5 +32,5 @@
           %td
             = User.find(post.user_id).name
         %td
-          = link_to "Read the post '#{post.title}'", post_path(post)
-= link_to 'Add new post', new_post_path
+          = link_to "Read the post '#{post.title}'", post_path(post), class:"link"
+= link_to 'Add new post', new_post_path, class:"link"

@@ -16,8 +16,8 @@
     %p#description= @post.description
     
     
-%div{style:"display:inline-block"}= link_to 'Edit', edit_post_path(@post)
-%div{style:"display:inline-block"}= link_to 'Back to post list', posts_path
+%div{style:"display:inline-block"}= link_to 'Edit', edit_post_path(@post), class:"link"
+%div{style:"display:inline-block"}= link_to 'Back to post list', posts_path, class:"link"
 %div{style:"display:inline-block"}= button_to 'Delete', post_path(@post), :method => :delete, :confirm => 'Are you sure?', class:"button purple default small"
 
 = form_for [@post, Reply.new] do |f|
@@ -43,6 +43,6 @@
         %td= reply.message
         %td= reply.user.name
         %td= reply.created_at
-        %td= link_to "Edit", edit_post_reply_path(@post, reply)
-        %td= link_to "Destroy", post_reply_path(@post, reply), method: :delete
+        %td= link_to "Edit", edit_post_reply_path(@post, reply), class:"link"
+        %td= link_to "Destroy", post_reply_path(@post, reply), method: :delete, class:"link"
         
