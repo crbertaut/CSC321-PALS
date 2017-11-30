@@ -48,6 +48,8 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'rails-controller-testing'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -55,8 +57,17 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  gem 'vcr'
+end
+
+group :test do
+    gem 'webmock'
+    gem 'capybara'
 end
 
 group :development do
