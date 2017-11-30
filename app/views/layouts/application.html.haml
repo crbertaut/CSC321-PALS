@@ -17,19 +17,26 @@
               %ul.navbar-nav.mr-auto
                 %li.nav-item
                   %div{style:"display:inline-block; margin-right:20px"}
+                  -if controller_name != 'posts'
+                    %li.nav-item
+                      %div{style:"display:inline-block"}
+                      = button_to 'Community Board', root_path, {method: :get, class: "purple default"}
+                      /%a.button.purple.medium.default{href: posts_path} Community Board
                   - if current_user
-                    = button_to 'Log Out', destroy_user_session_path, {method: :delete, class:"purple default"}
+                    %li.nav-item
+                      %div{style:"display:inline-block"}
+                      = button_to 'Log Out', destroy_user_session_path, {method: :delete, class:"purple default"}
+                    %li.nav-item
+                      %div{style:"display:inline-block"}
+                      = button_to 'Profile', user_path(current_user), {method: :get, class: "purple default"}
+                      //%a.button.purple.medium.default{href: user_path(current_user), method: :get} Profile
                   - else
                     %a.button.purple.medium.default{href: user_session_path} Log in
                     %li.nav-item
                       %div{style:"display:inline-block"}
                       %a.button.purple.medium.default{href: new_user_registration_path, method: :get} Sign up
                       //%a.title.nav-link{href: new_user_registration_path, method: :get} Sign up
-                  -if controller_name != 'posts'
-                    %li.nav-item
-                      %div{style:"display:inline-block"}
-                      = button_to 'Community Board', posts_path, class: "purple default"
-                      /%a.button.purple.medium.default{href: posts_path} Community Board
+                  
     
     #main.full
       - if flash[:notice]

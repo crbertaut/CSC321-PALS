@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
   def prepare_for_mobile
     prepend_view_path Rails.root + 'app' + 'views_mobile'
   end
+  
+  def application
+    @current_user = current_user
+  end
 
   def mobile_device?
     if session[:mobile_override]
