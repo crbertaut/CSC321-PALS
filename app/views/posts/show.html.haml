@@ -16,9 +16,10 @@
     %p#description= @post.description
     
     
-%div{style:"display:inline-block"}= link_to 'Edit', edit_post_path(@post), class:"link"
-%div{style:"display:inline-block"}= link_to 'Back to post list', posts_path, class:"link"
-%div{style:"display:inline-block"}= link_to 'Delete', post_path(@post), :method => :delete, :confirm => 'Are you sure?', class:"link"
+%div{style:"display:inline-block; padding-right:10px"}
+  = link_to 'Edit', edit_post_path(@post), {class:"link", style:"padding-right:10px"}
+  = link_to 'Back to post list', posts_path, {class:"link", style:"padding-right:10px"}
+  = link_to 'Delete', post_path(@post), {:method => :delete, :confirm => 'Are you sure?', class:"link", style:"padding-right:10px"}
 
 = form_for [@post, Reply.new] do |f|
   = f.hidden_field :user_id, value: User.last.id #current_user.id

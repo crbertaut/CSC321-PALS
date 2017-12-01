@@ -3,6 +3,6 @@
 = stylesheet_link_tag "posts"
 
 = form_for [@post, @reply], remote: true do |f|
-  = f.label :message, 'Reply:'
+  = f.label :message, 'Update Reply:'
   = f.text_area :message
-  = f.submit "Reply", class:"button purple default small"
+  = f.submit "Update", class:"button purple default small"
