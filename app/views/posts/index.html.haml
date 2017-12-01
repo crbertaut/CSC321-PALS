@@ -1,14 +1,16 @@
 %h1 All Posts
 = stylesheet_link_tag "posts"
+
 = form_tag posts_path, :method => :get, :id => 'types_form' do
-  Include:
+  %b{style:"margin-right:1em"} Include:
   - @all_types.each do |type|
-    = type
-    = check_box_tag "types[#{type}]", "1", @checked_types.include?(type), :id => "types_#{type}"
-  = button_to 'Update', posts_path, class:"button purple default small"
+    %div{style:"display:inline;margin-right:0.5em"}
+      = type
+      = check_box_tag "types[#{type}]", "1", @checked_types.include?(type), :id => "types_#{type}"
+  = button_to 'Refresh', posts_path, class:"button purple default small"
   /%button#types_submit.default.update-button.purple Update
 /= submit_tag 'Update', class: "button purple small square"
-%table#posts
+%table#posts{style:"margin-bottom:1em"}
   %thead
     %tr
       %th{:class => "#{('hilite' if session[:sort_by] == 'title')}"}
