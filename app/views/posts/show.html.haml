@@ -2,33 +2,32 @@
 
 = stylesheet_link_tag "posts"
 %ul#details
-  %ls
-    Posted by:
+  %li
+    %b Posted by:
     = User.find(@post.user_id).name
   %li
-    Type:
+    %b Type:
     = @post.thread_type
   %li
-    Date:
+    %b Date:
     = @post.date.strftime("%B %d, %Y")
   %li
-    Description:
+    %b Description:
     %p#description= @post.description
     
     
-%div{style:"display:inline-block; padding-right:10px"}
+%div{style:"display:inline-block; padding-top:0.25em; padding-right:0.5em; padding-bottom:1.5em"}
   = link_to 'Edit', edit_post_path(@post), {class:"link", style:"padding-right:10px"}
   = link_to 'Back to post list', posts_path, {class:"link", style:"padding-right:10px"}
   = link_to 'Delete', post_path(@post), {:method => :delete, :confirm => 'Are you sure?', class:"link", style:"padding-right:10px"}
 
 = form_for [@post, Reply.new] do |f|
   = f.hidden_field :user_id, value: User.last.id #current_user.id
-  = f.label :message, 'Reply:'
+  = f.label :message, 'Write a reply:', style:"padding-bottom:0.5em"
   = f.text_area :message
   = f.submit "Reply", class:"button purple default small"
-  
 
-%h1 Replies
+%h1{style:"padding-top:30px"}Replies
 
 %table
   %thead
