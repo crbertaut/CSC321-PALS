@@ -21,9 +21,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    if current_user != params[:id]
+      flash[:warning] = "Illegal action. You do not have permissions."
+      redirect_to root_path
+    else
+      super
+    end
+  end
 
   # PUT /resource
   # def update

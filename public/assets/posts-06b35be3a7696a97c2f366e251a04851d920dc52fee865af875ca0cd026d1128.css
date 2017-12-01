@@ -13094,7 +13094,7 @@ input[type="button"] {
   vertical-align: middle;
   margin: 0;
   padding: 10px 15px;
-  line-height: 100%;
+  line-height: 100% !important;
   border-radius: 5px;
   cursor: pointer;
   width: auto;
@@ -13105,6 +13105,7 @@ input[type="button"] {
   text-shadow: 0 1px 0 #fff;
   color: #666;
   text-decoration: none;
+  text-align: center;
   vertical-align: middle;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -13127,7 +13128,7 @@ input[type="button"] {
   /* W3C */
 }
 
-/* line 55, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 56, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button:active,
 a.btn:active,
 a.btn:visited:active,
@@ -13140,13 +13141,13 @@ input[type="button"]:active {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2), inset 0 -10px 20px rgba(0, 0, 0, 0.07);
 }
 
-/* line 63, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 64, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button[disabled], .disabled:active {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-/* line 65, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 66, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button,
 input[type="submit"],
 input[type="reset"],
@@ -13156,33 +13157,33 @@ input[type="button"] {
 
 /*IE 7 ONLY*/
 /*overrides*/
-/* line 71, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 72, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.small, a.btn.small, a.button.small {
   font-size: 0.8em;
   padding: 5px 10px;
 }
 
 /*default*/
-/* line 73, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.large, a.btn.large, a.button.large {
   font-size: 1.3em;
   padding: 10px 20px;
 }
 
-/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 75, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.disabled, a.btn.disabled, a.button.disabled {
   color: #ccc;
   cursor: default;
   background: #efefef;
 }
 
-/* line 75, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 76, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.disabled:hover, a.btn.disabled:hover, a.button.disabled:hover {
   border: 1px solid #ccc;
   background: #efefef;
 }
 
-/* line 77, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 78, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button:hover,
 a.btn:hover,
 a.button:hover,
@@ -13207,7 +13208,7 @@ input[type="button"]:hover {
 /*---------------------------------
 	BUTTON BAR
 -----------------------------------*/
-/* line 97, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 98, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 ul.button-bar {
   display: inline-block;
   *display: inline;
@@ -13222,7 +13223,7 @@ ul.button-bar {
   background: 0;
 }
 
-/* line 111, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 112, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 ul.button-bar li {
   display: inline-block;
   *display: inline;
@@ -13249,7 +13250,7 @@ ul.button-bar li {
   /* W3C */
 }
 
-/* line 132, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 133, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 ul.button-bar li a {
   margin: 0;
   display: inline-block;
@@ -13263,6 +13264,7 @@ ul.button-bar li a {
   font-size: 14px;
   /*Pixels for consistancy*/
   text-shadow: 0 1px 0 #fff;
+  text-align: center;
   color: #666;
   text-decoration: none;
   vertical-align: middle;
@@ -13270,7 +13272,7 @@ ul.button-bar li a {
   border-left: 1px solid #fff;
 }
 
-/* line 151, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 153, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 ul.button-bar li.first,
 ul.button-bar li.first a {
   -moz-border-radius-bottomleft: 5px;
@@ -13281,7 +13283,7 @@ ul.button-bar li.first a {
   background-clip: content-box;
 }
 
-/* line 164, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 166, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 ul.button-bar li.last,
 ul.button-bar li.last a {
   -moz-border-radius-bottomright: 5px;
@@ -13293,7 +13295,7 @@ ul.button-bar li.last a {
   -webkit-background-clip: border;
 }
 
-/* line 176, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 178, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 ul.button-bar li a:hover {
   background: #fcfcfc;
   /* Old browsers */
@@ -13309,7 +13311,7 @@ ul.button-bar li a:hover {
   /* W3C */
 }
 
-/* line 186, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 188, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 ul.button-bar li a:active {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2), inset 0 -10px 20px rgba(0, 0, 0, 0.07);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2), inset 0 -10px 20px rgba(0, 0, 0, 0.07);
@@ -13319,24 +13321,24 @@ ul.button-bar li a:active {
 /*---------------------------------
 	STYLES
 -----------------------------------*/
-/* line 191, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 193, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 .pill {
   border-radius: 200em;
 }
 
-/* line 192, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 194, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 .pop {
   -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* line 193, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 195, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 .inset {
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* line 194, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 196, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 .square {
   border-radius: 0;
 }
@@ -13344,7 +13346,7 @@ ul.button-bar li a:active {
 /*---------------------------------
 	ORANGE
 -----------------------------------*/
-/* line 199, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 201, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.orange,
 a.btn.orange,
 a.button.orange,
@@ -13367,7 +13369,7 @@ input[type=button].orange {
   /* IE6-9 */
 }
 
-/* line 217, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 219, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.orange:hover,
 a.btn.orange:hover,
 a.button.orange:hover {
@@ -13389,7 +13391,7 @@ a.button.orange:hover {
 /*---------------------------------
 	BLUE
 -----------------------------------*/
-/* line 234, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 236, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.blue,
 a.btn.blue,
 a.button.blue,
@@ -13413,7 +13415,7 @@ input[type=button].blue {
   /* W3C */
 }
 
-/* line 252, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 254, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.blue:hover,
 a.btn.blue:hover,
 a.button.blue:hover {
@@ -13435,7 +13437,7 @@ a.button.blue:hover {
 /*---------------------------------
 	PURPLE
 -----------------------------------*/
-/* line 269, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 271, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.purple,
 a.btn.purple,
 a.button.purple,
@@ -13459,10 +13461,13 @@ input[type=button].purple {
   /* W3C */
 }
 
-/* line 287, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 289, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.purple:hover,
 a.btn.purple:hover,
-a.button.purple:hover {
+a.button.purple:hover,
+input[type="submit"].purple:hover,
+input[type="reset"].purple:hover,
+input[type="button"].purple:hover {
   text-shadow: 0 1px 0 #5A22C7 !important;
   border: 1px solid #5A22C7 !important;
   background: #be9eff !important;
@@ -13481,7 +13486,7 @@ a.button.purple:hover {
 /*---------------------------------
 	PINK
 -----------------------------------*/
-/* line 304, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 309, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.pink,
 a.btn.pink,
 a.button.pink,
@@ -13504,7 +13509,7 @@ input[type=button].pink {
   /* IE6-9 */
 }
 
-/* line 322, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 327, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.pink:hover,
 a.btn.pink:hover,
 a.button.pink:hover {
@@ -13526,7 +13531,7 @@ a.button.pink:hover {
 /*---------------------------------
 	GREEN
 -----------------------------------*/
-/* line 339, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 344, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.green,
 a.btn.green,
 a.button.green,
@@ -13549,29 +13554,29 @@ input[type=button].green {
   /* IE6-9 */
 }
 
-/* line 357, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 362, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.green:hover,
 a.btn.green:hover,
 a.button.green:hover {
-  text-shadow: 0 1px 0 #669E00 !important;
-  border: 1px solid #669E00 !important;
-  background: #c6e278 !important;
+  text-shadow: 0 1px 0 #669E00;
+  border: 1px solid #669E00;
+  background: #c6e278;
   /* Old browsers */
   /* FF3.6+ */
   /* Chrome,Safari4+ */
   /* Chrome10+,Safari5.1+ */
   /* Opera 11.10+ */
-  background: -webkit-gradient(linear, left top, left bottom, from(#c6e278), to(#a7d32c)) !important;
-  background: linear-gradient(top, #c6e278 0%, #a7d32c 100%) !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#c6e278), to(#a7d32c));
+  background: linear-gradient(top, #c6e278 0%, #a7d32c 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e278', endColorstr='#a7d32c',GradientType=0 ) !important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e278', endColorstr='#a7d32c',GradientType=0 );
   /* IE6-9 */
 }
 
 /*---------------------------------
 	RED
 -----------------------------------*/
-/* line 374, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 379, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.red,
 a.btn.red,
 a.button.red,
@@ -13594,7 +13599,7 @@ input[type=button].red {
   /* IE6-9 */
 }
 
-/* line 392, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+/* line 397, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.red:hover,
 a.btn.red:hover,
 a.button.red:hover {
@@ -13717,7 +13722,6 @@ input {
   border: 1px solid #ccc;
   font-size: .87em;
   padding: 5px 0;
-  text-indent: 5px;
   border-radius: 5px;
   background: #fff;
   -webkit-box-shadow: inset 0 1px 6px #ccc;
@@ -14934,7 +14938,7 @@ select.error {
 @import url(kickstart-slideshow.css);
 @import url(prettify.css);
 @import url(tiptip.css);
-@import url(fonts/font-awesome-4.2.0/css/font-awesome.min.css);
+@import url(../fonts/font-awesome-4.2.0/css/font-awesome.min.css);
 /*---------------------------------
 	HTML ELEMENTS
 -----------------------------------*/
@@ -15669,29 +15673,154 @@ div.caption span {
   text-decoration: none;
   font-size: 0.8em;
 }
-.pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.pun,.opn,.clo{color:#660}.tag{color:#008}.atn{color:#606}.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.str{color:#060}.kwd{color:#006;font-weight:bold}.com{color:#600;font-style:italic}.typ{color:#404;font-weight:bold}.lit{color:#044}.pun,.opn,.clo{color:#440}.tag{color:#006;font-weight:bold}.atn{color:#404}.atv{color:#060}}pre.prettyprint{}ol.linenums{margin-top:0;margin-bottom:0}li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}li.L1,li.L3,li.L5,li.L7,li.L9{background:#eee}
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+.pln {
+  color: #000;
+}
+
+@media screen {
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .str {
+    color: #080;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .kwd {
+    color: #008;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .com {
+    color: #800;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .typ {
+    color: #606;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .lit {
+    color: #066;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .pun, .opn, .clo {
+    color: #660;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .tag {
+    color: #008;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .atn {
+    color: #606;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .atv {
+    color: #080;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .dec, .var {
+    color: #606;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .fun {
+    color: red;
+  }
+}
+@media print, projection {
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .str {
+    color: #060;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .com {
+    color: #600;
+    font-style: italic;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .typ {
+    color: #404;
+    font-weight: bold;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .lit {
+    color: #044;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .pun, .opn, .clo {
+    color: #440;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .tag {
+    color: #006;
+    font-weight: bold;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .atn {
+    color: #404;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .atv {
+    color: #060;
+  }
+}
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
+  list-style-type: none;
+}
+
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+  background: #eee;
+}
 /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
 body {
   background-color: #fff;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 20;
+  line-height: 25px;
 }
 
 /* line 10, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 /* line 16, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
+  font-size: 18px;
 }
 
 /* line 22, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
@@ -15748,14 +15877,14 @@ div.field, div.actions {
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
-  font-size: 12px;
+  font-size: 19px;
   margin: -7px -7px 0;
   background-color: #c00;
   color: #fff;
 }
 /* line 76, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
 #error_explanation ul li {
-  font-size: 12px;
+  font-size: 19px;
   list-style: square;
 }
 
@@ -15800,19 +15929,18 @@ label {
 #tiptip_content {
   font-size: 11px;
   color: #fff;
-  text-shadow: 0 0 2px #000;
   padding: 4px 8px;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: #212121;
-  background-color: rgba(25, 25, 25, 0.92);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(#000));
+  background: #dcd0ff;
+  background-color: rgba(220, 208, 255, 0.92);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(#dcd0ff));
   border-radius: 3px;
   -webkit-box-shadow: 0 0 3px #555;
   box-shadow: 0 0 3px #555;
-  *background: #212121;
+  *background: #dcd0ff;
 }
 
-/* line 31, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+/* line 30, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_arrow, #tiptip_arrow_inner {
   position: absolute;
   border-color: transparent;
@@ -15822,31 +15950,31 @@ label {
   width: 0;
 }
 
-/* line 40, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+/* line 39, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_top #tiptip_arrow {
   border-top-color: #fff;
   border-top-color: rgba(255, 255, 255, 0.35);
 }
 
-/* line 45, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+/* line 44, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_bottom #tiptip_arrow {
   border-bottom-color: #fff;
   border-bottom-color: rgba(255, 255, 255, 0.35);
 }
 
-/* line 50, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+/* line 49, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_right #tiptip_arrow {
   border-right-color: #fff;
   border-right-color: rgba(255, 255, 255, 0.35);
 }
 
-/* line 55, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+/* line 54, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_left #tiptip_arrow {
   border-left-color: #fff;
   border-left-color: rgba(255, 255, 255, 0.35);
 }
 
-/* line 60, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+/* line 59, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_top #tiptip_arrow_inner {
   margin-top: -7px;
   margin-left: -6px;
@@ -15854,7 +15982,7 @@ label {
   border-top-color: rgba(25, 25, 25, 0.92);
 }
 
-/* line 67, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+/* line 66, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_bottom #tiptip_arrow_inner {
   margin-top: -5px;
   margin-left: -6px;
@@ -15862,7 +15990,7 @@ label {
   border-bottom-color: rgba(25, 25, 25, 0.92);
 }
 
-/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+/* line 73, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_right #tiptip_arrow_inner {
   margin-top: -6px;
   margin-left: -5px;
@@ -15870,7 +15998,7 @@ label {
   border-right-color: rgba(25, 25, 25, 0.92);
 }
 
-/* line 81, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+/* line 80, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_left #tiptip_arrow_inner {
   margin-top: -6px;
   margin-left: -7px;
@@ -15880,18 +16008,18 @@ label {
 
 /* Webkit Hacks  */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  /* line 90, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+  /* line 89, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
   #tiptip_content {
     padding: 4px 8px 5px 8px;
     background-color: rgba(45, 45, 45, 0.88);
   }
 
-  /* line 94, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+  /* line 93, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
   #tiptip_holder.tip_bottom #tiptip_arrow_inner {
     border-bottom-color: rgba(45, 45, 45, 0.88);
   }
 
-  /* line 97, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+  /* line 96, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
   #tiptip_holder.tip_top #tiptip_arrow_inner {
     border-top-color: rgba(20, 20, 20, 0.92);
   }
@@ -16033,7 +16161,7 @@ a.button {
  */
 /* line 7, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .button_new {
-  background-color: #8b9297;
+  background-color: #666;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#8b9297), to(#484d51));
   background-image: linear-gradient(180deg, #8b9297, #484d51);
   border-radius: 200px;
@@ -16048,36 +16176,42 @@ a.button {
   color: #ffffff !important;
 }
 
-/* line 24, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 23, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+.link {
+  color: #4B0082 !important;
+  font-style: normal;
+}
+
+/* line 28, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 html, body {
   margin: 0;
   padding: 0;
   background: White;
   color: Black;
   font-family: Georgia;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
-/* line 32, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 div#main {
   margin: 0;
   padding: 0 20px 20px;
 }
 
-/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 40, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 a {
   background: transparent;
   color: #4E0B00 !important;
   text-decoration: underline;
   font-weight: bold;
 }
-/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 46, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 a:hover {
   color: #fff !important;
   background-color: #000;
 }
 
-/* line 47, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 51, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 h1 {
   color: #4B0082;
   font-size: 150%;
@@ -16087,7 +16221,7 @@ h1 {
   border-bottom: 1px solid DarkSlateGrey;
 }
 
-/* line 58, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 62, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 h1.title {
   margin: 0 0 1em;
   padding: 10px;
@@ -16098,7 +16232,7 @@ h1.title {
   font-style: normal;
 }
 
-/* line 67, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 71, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 table#posts {
   margin: 10px;
   border-collapse: collapse;
@@ -16106,32 +16240,32 @@ table#posts {
   border-bottom: 2px solid black;
 }
 
-/* line 73, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 77, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 table#posts th {
   border: 2px solid white;
   font-weight: bold;
   background-color: #ADA2D1;
 }
 
-/* line 78, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 table#posts th, table#posts td {
   padding: 4px;
   text-align: left;
 }
 
-/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 86, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 table#posts th.hilite {
   background-color: #84D8B4;
 }
 
-/* line 85, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 89, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 #notice #warning {
   background: maroon;
   margin: 1em 0;
   padding: 4px;
 }
 
-/* line 90, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 94, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 form label {
   display: block;
   line-height: 25px;
@@ -16139,41 +16273,41 @@ form label {
   color: maroon;
 }
 
-/* line 97, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 101, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .hilite {
   color: #000 !important;
 }
 
-/* line 101, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 105, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .default {
   border-radius: 5px !important;
 }
 
-/* line 102, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 106, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .update-button {
   font-size: 1em;
   padding: 5px 10px;
 }
 
-/* line 106, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 110, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 span.h1.title {
   color: white;
   font-size: 2em;
   font-style: normal;
 }
 
-/* line 111, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 115, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 a.title {
   color: white !important;
   font-style: normal;
 }
 
-/* line 115, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 119, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 a.button {
   color: white !important;
 }
 
-/* line 118, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 122, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .row.title {
   margin: 0 0 0;
   padding: 10px;
@@ -16183,19 +16317,19 @@ a.button {
   font-style: normal;
 }
 
-/* line 126, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 130, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .container.title {
   margin: 0 0 0 0;
   padding: 0;
   max-width: 100%;
 }
 
-/* line 132, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 136, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 ul {
   list-style-type: none;
 }
 
-/* line 135, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 139, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 li.nav-item {
   display: inline-block;
 }
