@@ -12604,367 +12604,482 @@ body.active_admin .no_rounded .action_items span.action_item > a {
  *   http://www.opensource.org/licenses/mit-license.php
  *   http://www.gnu.org/licenses/gpl.html
  */
-
-
+/* line 19, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-loading {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	width: 40px;
-	height: 40px;
-	margin-top: -20px;
-	margin-left: -20px;
-	cursor: pointer;
-	overflow: hidden;
-	z-index: 1104;
-	display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1104;
+  display: none;
 }
 
+/* line 33, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-loading div {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 40px;
-	height: 480px;
-	background-image: url('img/fancybox/fancybox.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 480px;
+  background-image: url("img/fancybox/fancybox.png");
 }
 
+/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 1100;
-	display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  display: none;
 }
 
+/* line 51, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-tmp {
-	padding: 0;
-	margin: 0;
-	border: 0;
-	overflow: auto;
-	display: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: auto;
+  display: none;
 }
 
+/* line 59, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-wrap {
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 20px;
-	z-index: 1101;
-	outline: none;
-	display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 1101;
+  outline: none;
+  display: none;
 }
 
+/* line 69, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-outer {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	background: #fff;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
 }
 
+/* line 76, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-wrap,
-#fancybox-wrap *{
--webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */    /* Firefox, other Gecko */
-box-sizing: 		content-box;         /* Opera/IE 8+ */
+#fancybox-wrap * {
+  -webkit-box-sizing: content-box;
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: content-box;
+  /* Opera/IE 8+ */
 }
 
+/* line 83, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-content {
-	width: 0;
-	height: 0;
-	padding: 0;
-	outline: none;
-	position: relative;
-	overflow: hidden;
-	z-index: 1102;
-	border: 0 solid #fff;
+  width: 0;
+  height: 0;
+  padding: 0;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1102;
+  border: 0 solid #fff;
 }
 
+/* line 94, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-hide-sel-frame {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: transparent;
-	z-index: 1101;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1101;
 }
 
+/* line 104, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-close {
-	position: absolute;
-	top: -15px;
-	right: -15px;
-	width: 30px;
-	height: 30px;
-	background: transparent url('img/fancybox/fancybox.png') -40px 0;
-	cursor: pointer;
-	z-index: 1103;
-	display: none;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background: transparent url("img/fancybox/fancybox.png") -40px 0;
+  cursor: pointer;
+  z-index: 1103;
+  display: none;
 }
 
+/* line 116, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-error {
-	color: #444;
-	font: normal 12px/20px Arial;
-	padding: 14px;
-	margin: 0;
+  color: #444;
+  font: normal 12px/20px Arial;
+  padding: 14px;
+  margin: 0;
 }
 
+/* line 123, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-img {
-	width: 100%;
-	height: 100%;
-	padding: 0;
-	margin: 0;
-	border: none;
-	outline: none;
-	line-height: 0;
-	vertical-align: top;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  line-height: 0;
+  vertical-align: top;
 }
 
+/* line 134, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-frame {
-	width: 100%;
-	height: 100%;
-	border: none;
-	display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
+/* line 141, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-left, #fancybox-right {
-	position: absolute;
-	bottom: 0;
-	height: 100%;
-	width: 35%;
-	cursor: pointer;
-	outline: none;
-	background: transparent url('img/fancybox/blank.gif');
-	z-index: 1102;
-	display: none;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 35%;
+  cursor: pointer;
+  outline: none;
+  background: transparent url("img/fancybox/blank.gif");
+  z-index: 1102;
+  display: none;
 }
 
+/* line 153, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-left {
-	left: 0;
+  left: 0;
 }
 
+/* line 157, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-right {
-	right: 0;
+  right: 0;
 }
 
+/* line 161, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-left-ico, #fancybox-right-ico {
-	position: absolute;
-	top: 50%;
-	left: -9999px;
-	width: 30px;
-	height: 30px;
-	margin-top: -15px;
-	cursor: pointer;
-	z-index: 1102;
-	display: block;
+  position: absolute;
+  top: 50%;
+  left: -9999px;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  cursor: pointer;
+  z-index: 1102;
+  display: block;
 }
 
+/* line 173, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-left-ico {
-	background-image: url('img/fancybox/fancybox.png');
-	background-position: -40px -30px;
+  background-image: url("img/fancybox/fancybox.png");
+  background-position: -40px -30px;
 }
 
+/* line 178, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-right-ico {
-	background-image: url('img/fancybox/fancybox.png');
-	background-position: -40px -60px;
+  background-image: url("img/fancybox/fancybox.png");
+  background-position: -40px -60px;
 }
 
+/* line 183, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-left:hover, #fancybox-right:hover {
-	visibility: visible; /* IE6 */
+  visibility: visible;
+  /* IE6 */
 }
 
+/* line 187, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-left:hover span {
-	left: 20px;
+  left: 20px;
 }
 
+/* line 191, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-right:hover span {
-	left: auto;
-	right: 20px;
+  left: auto;
+  right: 20px;
 }
 
+/* line 196, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 .fancybox-bg {
-	position: absolute;
-	padding: 0;
-	margin: 0;
-	border: 0;
-	width: 20px;
-	height: 20px;
-	z-index: 1001;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 20px;
+  height: 20px;
+  z-index: 1001;
 }
 
+/* line 206, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-bg-n {
-	top: -20px;
-	left: 0;
-	width: 100%;
-	background-image: url('img/fancybox/fancybox-x.png');
+  top: -20px;
+  left: 0;
+  width: 100%;
+  background-image: url("img/fancybox/fancybox-x.png");
 }
 
+/* line 213, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-bg-ne {
-	top: -20px;
-	right: -20px;
-	background-image: url('img/fancybox/fancybox.png');
-	background-position: -40px -162px;
+  top: -20px;
+  right: -20px;
+  background-image: url("img/fancybox/fancybox.png");
+  background-position: -40px -162px;
 }
 
+/* line 220, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-bg-e {
-	top: 0;
-	right: -20px;
-	height: 100%;
-	background-image: url('img/fancybox/fancybox-y.png');
-	background-position: -20px 0;
+  top: 0;
+  right: -20px;
+  height: 100%;
+  background-image: url("img/fancybox/fancybox-y.png");
+  background-position: -20px 0;
 }
 
+/* line 228, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-bg-se {
-	bottom: -20px;
-	right: -20px;
-	background-image: url('img/fancybox/fancybox.png');
-	background-position: -40px -182px;
+  bottom: -20px;
+  right: -20px;
+  background-image: url("img/fancybox/fancybox.png");
+  background-position: -40px -182px;
 }
 
+/* line 235, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-bg-s {
-	bottom: -20px;
-	left: 0;
-	width: 100%;
-	background-image: url('img/fancybox/fancybox-x.png');
-	background-position: 0 -20px;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  background-image: url("img/fancybox/fancybox-x.png");
+  background-position: 0 -20px;
 }
 
+/* line 243, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-bg-sw {
-	bottom: -20px;
-	left: -20px;
-	background-image: url('img/fancybox/fancybox.png');
-	background-position: -40px -142px;
+  bottom: -20px;
+  left: -20px;
+  background-image: url("img/fancybox/fancybox.png");
+  background-position: -40px -142px;
 }
 
+/* line 250, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-bg-w {
-	top: 0;
-	left: -20px;
-	height: 100%;
-	background-image: url('img/fancybox/fancybox-y.png');
+  top: 0;
+  left: -20px;
+  height: 100%;
+  background-image: url("img/fancybox/fancybox-y.png");
 }
 
+/* line 257, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-bg-nw {
-	top: -20px;
-	left: -20px;
-	background-image: url('img/fancybox/fancybox.png');
-	background-position: -40px -122px;
+  top: -20px;
+  left: -20px;
+  background-image: url("img/fancybox/fancybox.png");
+  background-position: -40px -122px;
 }
 
+/* line 264, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-title {
-	font-family: Helvetica;
-	font-size: 12px;
-	z-index: 1102;
+  font-family: Helvetica;
+  font-size: 12px;
+  z-index: 1102;
 }
 
+/* line 270, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 .fancybox-title-inside {
-	padding-bottom: 10px;
-	text-align: center;
-	color: #333;
-	background: #fff;
-	position: relative;
+  padding-bottom: 10px;
+  text-align: center;
+  color: #333;
+  background: #fff;
+  position: relative;
 }
 
+/* line 278, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 .fancybox-title-outside {
-	padding-top: 10px;
-	color: #fff;
+  padding-top: 10px;
+  color: #fff;
 }
 
+/* line 283, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 .fancybox-title-over {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	color: #FFF;
-	text-align: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #FFF;
+  text-align: left;
 }
 
+/* line 291, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-title-over {
-	padding: 10px;
-	background-image: url('img/fancybox/fancy_title_over.png');
-	display: block;
+  padding: 10px;
+  background-image: url("img/fancybox/fancy_title_over.png");
+  display: block;
 }
 
+/* line 297, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 .fancybox-title-float {
-	position: absolute;
-	left: 0;
-	bottom: -20px;
-	height: 32px;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  height: 32px;
 }
 
+/* line 304, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-title-float-wrap {
-	border: none;
-	border-collapse: collapse;
-	width: auto;
+  border: none;
+  border-collapse: collapse;
+  width: auto;
 }
 
+/* line 310, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-title-float-wrap td {
-	border: none;
-	white-space: nowrap;
+  border: none;
+  white-space: nowrap;
 }
 
+/* line 315, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-title-float-left {
-	padding: 0 0 0 15px;
-	background: url('img/fancybox/fancybox.png') -40px -90px no-repeat;
+  padding: 0 0 0 15px;
+  background: url("img/fancybox/fancybox.png") -40px -90px no-repeat;
 }
 
+/* line 320, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-title-float-main {
-	color: #FFF;
-	line-height: 29px;
-	font-weight: bold;
-	padding: 0 0 3px 0;
-	background: url('img/fancybox/fancybox-x.png') 0 -40px;
+  color: #FFF;
+  line-height: 29px;
+  font-weight: bold;
+  padding: 0 0 3px 0;
+  background: url("img/fancybox/fancybox-x.png") 0 -40px;
 }
 
+/* line 328, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-title-float-right {
-	padding: 0 0 0 15px;
-	background: url('img/fancybox/fancybox.png') -55px -90px no-repeat;
+  padding: 0 0 0 15px;
+  background: url("img/fancybox/fancybox.png") -55px -90px no-repeat;
 }
 
 /* IE6 */
+/* line 335, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie6 #fancybox-close {
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_close.png', sizingMethod='scale');
+}
 
-.fancybox-ie6 #fancybox-close { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_close.png', sizingMethod='scale'); }
+/* line 337, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie6 #fancybox-left-ico {
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_nav_left.png', sizingMethod='scale');
+}
 
-.fancybox-ie6 #fancybox-left-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_nav_left.png', sizingMethod='scale'); }
-.fancybox-ie6 #fancybox-right-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_nav_right.png', sizingMethod='scale'); }
+/* line 338, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie6 #fancybox-right-ico {
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_nav_right.png', sizingMethod='scale');
+}
 
-.fancybox-ie6 #fancybox-title-over { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
-.fancybox-ie6 #fancybox-title-float-left { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_title_left.png', sizingMethod='scale'); }
-.fancybox-ie6 #fancybox-title-float-main { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_title_main.png', sizingMethod='scale'); }
-.fancybox-ie6 #fancybox-title-float-right { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_title_right.png', sizingMethod='scale'); }
+/* line 340, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie6 #fancybox-title-over {
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_title_over.png', sizingMethod='scale');
+  zoom: 1;
+}
 
+/* line 341, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie6 #fancybox-title-float-left {
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_title_left.png', sizingMethod='scale');
+}
+
+/* line 342, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie6 #fancybox-title-float-main {
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_title_main.png', sizingMethod='scale');
+}
+
+/* line 343, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie6 #fancybox-title-float-right {
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_title_right.png', sizingMethod='scale');
+}
+
+/* line 345, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 .fancybox-ie6 #fancybox-bg-w, .fancybox-ie6 #fancybox-bg-e, .fancybox-ie6 #fancybox-left, .fancybox-ie6 #fancybox-right, #fancybox-hide-sel-frame {
-	height: expression(this.parentNode.clientHeight + "px");
+  height: expression(this.parentNode.clientHeight + "px");
 }
 
+/* line 349, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
 #fancybox-loading.fancybox-ie6 {
-	position: absolute; margin-top: 0;
-	top: expression( (-20 + (document.documentElement.clientHeight ? document.documentElement.clientHeight/2 : document.body.clientHeight/2 ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop )) + 'px');
+  position: absolute;
+  margin-top: 0;
+  top: expression( (-20 + (document.documentElement.clientHeight ? document.documentElement.clientHeight/2 : document.body.clientHeight/2 ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop )) + 'px');
 }
 
-#fancybox-loading.fancybox-ie6 div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_loading.png', sizingMethod='scale'); }
+/* line 354, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+#fancybox-loading.fancybox-ie6 div {
+  background: transparent;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_loading.png', sizingMethod='scale');
+}
 
 /* IE6, IE7, IE8 */
+/* line 358, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie .fancybox-bg {
+  background: transparent !important;
+}
 
-.fancybox-ie .fancybox-bg { background: transparent !important; }
+/* line 360, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie #fancybox-bg-n {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_n.png', sizingMethod='scale');
+}
 
-.fancybox-ie #fancybox-bg-n { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_n.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-ne { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_ne.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-e { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_e.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-se { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_se.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-s { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_s.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-sw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_sw.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-w { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_w.png', sizingMethod='scale'); }
-.fancybox-ie #fancybox-bg-nw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_nw.png', sizingMethod='scale'); }
+/* line 361, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie #fancybox-bg-ne {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_ne.png', sizingMethod='scale');
+}
+
+/* line 362, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie #fancybox-bg-e {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_e.png', sizingMethod='scale');
+}
+
+/* line 363, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie #fancybox-bg-se {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_se.png', sizingMethod='scale');
+}
+
+/* line 364, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie #fancybox-bg-s {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_s.png', sizingMethod='scale');
+}
+
+/* line 365, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie #fancybox-bg-sw {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_sw.png', sizingMethod='scale');
+}
+
+/* line 366, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie #fancybox-bg-w {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_w.png', sizingMethod='scale');
+}
+
+/* line 367, /home/ubuntu/workspace/app/assets/stylesheets/jquery.fancybox-1.3.4.scss */
+.fancybox-ie #fancybox-bg-nw {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/fancybox/fancy_shadow_nw.png', sizingMethod='scale');
+}
 /*
 	99Lime.com HTML KickStart by Joshua Gatcke
 	kickstart-buttons.css
 	Super Easy Cross Browser CSS3 Gradients
 	http://www.colorzilla.com/gradient-editor/
 */
-
 /*---------------------------------
 	BUTTONS
 -----------------------------------*/
-
+/* line 12, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button,
 a.btn,
 a.btn:visited,
@@ -12972,37 +13087,48 @@ a.button,
 a.button:visited,
 input[type="submit"],
 input[type="reset"],
-input[type="button"]{
-position:relative;
-top:0;
-left:0;
-vertical-align: middle;
-margin:0;
-padding:10px 15px;
-line-height:100%;
-border-radius:5px;
-cursor: pointer;
-width:auto;
-overflow:visible;
-font-weight:normal;
-font-size:14px; /*Pixels for consistancy*/
-text-shadow:0 1px 0 #fff;
-color:#666;
-text-decoration:none;
-vertical-align: middle;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
-display:inline-block;
-*display:inline;/*IE ONLY*/
-zoom:1;
-border:1px solid #ccc;
-background: rgb(252,252,252); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(224,224,224,1) 100%); /* Opera11.10+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(252,252,252,1)),to(rgba(224,224,224,1)));
-background: linear-gradient(top, rgba(252,252,252,1) 0%,rgba(224,224,224,1) 100%); /* W3C */
+input[type="button"] {
+  position: relative;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+  margin: 0;
+  padding: 10px 15px;
+  line-height: 100% !important;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+  overflow: visible;
+  font-weight: normal;
+  font-size: 14px;
+  /*Pixels for consistancy*/
+  text-shadow: 0 1px 0 #fff;
+  color: #666;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  *display: inline;
+  /*IE ONLY*/
+  zoom: 1;
+  border: 1px solid #ccc;
+  background: #fcfcfc;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fcfcfc 0%, #e0e0e0 100%);
+  /* Opera11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#e0e0e0',GradientType=0 );
+  /* IE6-9 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#e0e0e0));
+  background: linear-gradient(top, #fcfcfc 0%, #e0e0e0 100%);
+  /* W3C */
 }
 
+/* line 56, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button:active,
 a.btn:active,
 a.btn:visited:active,
@@ -13010,582 +13136,865 @@ a.button:active,
 a.button:visited:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
-input[type="button"]:active{-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,0.2),inset 0 -10px 20px rgba(0,0,0,0.07);box-shadow:inset 0 3px 5px rgba(0,0,0,0.2),inset 0 -10px 20px rgba(0,0,0,0.07);}
-button[disabled],.disabled:active{-webkit-box-shadow:none;box-shadow:none;}
+input[type="button"]:active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2), inset 0 -10px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2), inset 0 -10px 20px rgba(0, 0, 0, 0.07);
+}
 
+/* line 64, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button[disabled], .disabled:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 66, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button,
 input[type="submit"],
 input[type="reset"],
-input[type="button"]{*padding:7px 15px;}/*IE 7 ONLY*/
+input[type="button"] {
+  *padding: 7px 15px;
+}
 
-	a.btn,a.button{}/*overrides*/
-	button.small, a.btn.small, a.button.small{font-size:0.8em;padding:5px 10px;}
-	button.medium, a.btn.medium, a.button.medium{}/*default*/
-	button.large, a.btn.large, a.button.large{font-size:1.3em;padding:10px 20px;}
-	button.disabled, a.btn.disabled, a.button.disabled{color:#ccc;cursor:default;background:#efefef;}
-	button.disabled:hover, a.btn.disabled:hover, a.button.disabled:hover{border:1px solid #ccc;background:#efefef;}
+/*IE 7 ONLY*/
+/*overrides*/
+/* line 72, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.small, a.btn.small, a.button.small {
+  font-size: 0.8em;
+  padding: 5px 10px;
+}
 
-	button:hover,
-	a.btn:hover,
-	a.button:hover,
-	input[type="submit"]:hover,
-	input[type="reset"]:hover,
-	input[type="button"]:hover{
-	border:1px solid #bbb;
-	background: rgb(252,252,252); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera11.10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(252,252,252,1)),to(rgba(237,237,237,1)));
-	background: linear-gradient(top, rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
-	}
+/*default*/
+/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.large, a.btn.large, a.button.large {
+  font-size: 1.3em;
+  padding: 10px 20px;
+}
 
+/* line 75, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.disabled, a.btn.disabled, a.button.disabled {
+  color: #ccc;
+  cursor: default;
+  background: #efefef;
+}
+
+/* line 76, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.disabled:hover, a.btn.disabled:hover, a.button.disabled:hover {
+  border: 1px solid #ccc;
+  background: #efefef;
+}
+
+/* line 78, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button:hover,
+a.btn:hover,
+a.button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  border: 1px solid #bbb;
+  background: #fcfcfc;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fcfcfc 0%, #ededed 100%);
+  /* Opera11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 );
+  /* IE6-9 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#ededed));
+  background: linear-gradient(top, #fcfcfc 0%, #ededed 100%);
+  /* W3C */
+}
 
 /*---------------------------------
 	BUTTON BAR
 -----------------------------------*/
-ul.button-bar{
-display:inline-block;
-*display:inline;
-margin:0;
-padding:0;
-font-size:0;
-position:relative;
-top:0;
-left:0;
-zoom:1;
-border:0;
-background:0;
+/* line 98, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+ul.button-bar {
+  display: inline-block;
+  *display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  zoom: 1;
+  border: 0;
+  background: 0;
 }
 
-	ul.button-bar li{
-	display:inline-block;
-	*display:inline;
-	position:relative;
-	top:0;
-	left:0;
-	zoom:1;
-	margin:0 -1px 0 0;
-	padding:0;
-	line-height:100%;
-	font-size:0px;
-	border:1px solid #ccc;
-	background: rgb(252,252,252); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(224,224,224,1) 100%); /* Opera11.10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(252,252,252,1)),to(rgba(224,224,224,1)));
-	background: linear-gradient(top, rgba(252,252,252,1) 0%,rgba(224,224,224,1) 100%); /* W3C */
-	}
+/* line 112, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+ul.button-bar li {
+  display: inline-block;
+  *display: inline;
+  position: relative;
+  top: 0;
+  left: 0;
+  zoom: 1;
+  margin: 0 -1px 0 0;
+  padding: 0;
+  line-height: 100%;
+  font-size: 0px;
+  border: 1px solid #ccc;
+  background: #fcfcfc;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fcfcfc 0%, #e0e0e0 100%);
+  /* Opera11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#e0e0e0',GradientType=0 );
+  /* IE6-9 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#e0e0e0));
+  background: linear-gradient(top, #fcfcfc 0%, #e0e0e0 100%);
+  /* W3C */
+}
 
-	ul.button-bar li a{
-	margin:0;
-	display:inline-block;
-	*display:inline;
-	padding:7px 10px;
-	position:relative;
-	top:0;
-	left:0;
-	zoom:1;
-	font-weight:normal;
-	font-size:14px; /*Pixels for consistancy*/
-	text-shadow:0 1px 0 #fff;
-	color:#666;
-	text-decoration:none;
-	vertical-align: middle;
-	line-height:100%;
-	border-left:1px solid #fff;
-	}
+/* line 133, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+ul.button-bar li a {
+  margin: 0;
+  display: inline-block;
+  *display: inline;
+  padding: 7px 10px;
+  position: relative;
+  top: 0;
+  left: 0;
+  zoom: 1;
+  font-weight: normal;
+  font-size: 14px;
+  /*Pixels for consistancy*/
+  text-shadow: 0 1px 0 #fff;
+  text-align: center;
+  color: #666;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 100%;
+  border-left: 1px solid #fff;
+}
 
-	ul.button-bar li.first,
-	ul.button-bar li.first a{
-	-moz-border-radius-bottomleft: 5px;
-	-moz-border-radius-topleft: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-	background-clip: content-box;
-	}
-	
-	ul.button-bar li.last,
-	ul.button-bar li.last a{
-	-moz-border-radius-bottomright: 5px;
-	-moz-border-radius-topright: 5px;
-	-webkit-border-bottom-right-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	-moz-background-clip:content-box;
-	-webkit-background-clip: border;
-	}
+/* line 153, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+ul.button-bar li.first,
+ul.button-bar li.first a {
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-clip: content-box;
+}
 
-	ul.button-bar li a:hover{
-	background: rgb(252,252,252); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera11.10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(252,252,252,1)),to(rgba(237,237,237,1)));
-	background: linear-gradient(top, rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
-	}
+/* line 166, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+ul.button-bar li.last,
+ul.button-bar li.last a {
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -moz-background-clip: content-box;
+  -webkit-background-clip: border;
+}
 
-	ul.button-bar li a:active{-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,0.2),inset 0 -10px 20px rgba(0,0,0,0.07);box-shadow:inset 0 3px 5px rgba(0,0,0,0.2),inset 0 -10px 20px rgba(0,0,0,0.07);border-left:1px solid #ccc;}
+/* line 178, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+ul.button-bar li a:hover {
+  background: #fcfcfc;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #fcfcfc 0%, #ededed 100%);
+  /* Opera11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 );
+  /* IE6-9 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#ededed));
+  background: linear-gradient(top, #fcfcfc 0%, #ededed 100%);
+  /* W3C */
+}
+
+/* line 188, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+ul.button-bar li a:active {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2), inset 0 -10px 20px rgba(0, 0, 0, 0.07);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.2), inset 0 -10px 20px rgba(0, 0, 0, 0.07);
+  border-left: 1px solid #ccc;
+}
 
 /*---------------------------------
 	STYLES
 -----------------------------------*/
-.pill{border-radius:200em;}
-.pop{-webkit-box-shadow:0px 1px 5px rgba(0,0,0,0.2);box-shadow:0px 1px 5px rgba(0,0,0,0.2);}
-.inset{-webkit-box-shadow:inset 0 1px 3px rgba(0,0,0,0.3);box-shadow:inset 0 1px 3px rgba(0,0,0,0.3);}
-.square{border-radius:0;}
+/* line 193, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+.pill {
+  border-radius: 200em;
+}
+
+/* line 194, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+.pop {
+  -webkit-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* line 195, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+.inset {
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* line 196, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+.square {
+  border-radius: 0;
+}
 
 /*---------------------------------
 	ORANGE
 -----------------------------------*/
+/* line 201, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.orange,
 a.btn.orange,
 a.button.orange,
 input[type=submit].orange,
 input[type=reset].orange,
-input[type=button].orange{
-text-shadow:0 -1px 0 #FC730A;
-color:#fff;
-border:1px solid #FC730A;
-background: rgb(255,168,76); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,168,76,1)),to(rgba(255,123,13,1)));
-background: linear-gradient(top, rgba(255,168,76,1) 0%,rgba(255,123,13,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 ); /* IE6-9 */
+input[type=button].orange {
+  text-shadow: 0 -1px 0 #FC730A;
+  color: #fff;
+  border: 1px solid #FC730A;
+  background: #ffa84c;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffa84c), to(#ff7b0d));
+  background: linear-gradient(top, #ffa84c 0%, #ff7b0d 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d',GradientType=0 );
+  /* IE6-9 */
 }
 
-	button.orange:hover,
-	a.btn.orange:hover,
-	a.button.orange:hover{
-	text-shadow:0 1px 0 #FC730A;
-	border:1px solid #FC730A;
-	background: rgb(249,191,74); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(249,191,74,1)),to(rgba(249,181,9,1)));
-	background: linear-gradient(top, rgba(249,191,74,1) 0%,rgba(249,181,9,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9bf4a', endColorstr='#f9b509',GradientType=0 ); /* IE6-9 */
-	}
+/* line 219, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.orange:hover,
+a.btn.orange:hover,
+a.button.orange:hover {
+  text-shadow: 0 1px 0 #FC730A;
+  border: 1px solid #FC730A;
+  background: #f9bf4a;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9bf4a), to(#f9b509));
+  background: linear-gradient(top, #f9bf4a 0%, #f9b509 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9bf4a', endColorstr='#f9b509',GradientType=0 );
+  /* IE6-9 */
+}
 
 /*---------------------------------
 	BLUE
 -----------------------------------*/
+/* line 236, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.blue,
 a.btn.blue,
 a.button.blue,
 input[type=submit].blue,
 input[type=reset].blue,
-input[type=button].blue{
-text-shadow:0 -1px 0 #1D6DC1;
-color:#fff;
-border:1px solid #1D6DC1;
-background: rgb(122,188,255); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* Opera11.10+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(122,188,255,1)),color-stop(44%, rgba(96,171,248,1)),to(rgba(64,150,238,1)));
-background: linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* W3C */
+input[type=button].blue {
+  text-shadow: 0 -1px 0 #1D6DC1;
+  color: #fff;
+  border: 1px solid #1D6DC1;
+  background: #7abcff;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+  /* Opera11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 );
+  /* IE6-9 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#7abcff), color-stop(44%, #60abf8), to(#4096ee));
+  background: linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+  /* W3C */
 }
 
-	button.blue:hover,
-	a.btn.blue:hover,
-	a.button.blue:hover{
-	text-shadow:0 1px 0 #1D6DC1;
-	border:1px solid #1D6DC1;
-	background: rgb(155,205,255); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(155,205,255,1)),color-stop(44%, rgba(134,192,250,1)),to(rgba(110,176,242,1)));
-	background: linear-gradient(top, rgba(155,205,255,1) 0%,rgba(134,192,250,1) 44%,rgba(110,176,242,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#6eb0f2',GradientType=0 ); /* IE6-9 */
-	}
+/* line 254, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.blue:hover,
+a.btn.blue:hover,
+a.button.blue:hover {
+  text-shadow: 0 1px 0 #1D6DC1;
+  border: 1px solid #1D6DC1;
+  background: #9bcdff;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#9bcdff), color-stop(44%, #86c0fa), to(#6eb0f2));
+  background: linear-gradient(top, #9bcdff 0%, #86c0fa 44%, #6eb0f2 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9bcdff', endColorstr='#6eb0f2',GradientType=0 );
+  /* IE6-9 */
+}
 
 /*---------------------------------
 	PURPLE
 -----------------------------------*/
+/* line 271, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.purple,
 a.btn.purple,
 a.button.purple,
 input[type=submit].purple,
 input[type=reset].purple,
-input[type=button].purple{
-text-shadow:0 -1px 0 #5A22C7;
-color:#fff;
-border:1px solid #5A22C7;
-background: rgb(169, 125, 255); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(169,125,255,1) 0%,rgba(151,100,249,1) 44%,rgba(127,69,240,1) 100%); /* Opera11.10+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A97DFF', endColorstr='#7F45F0',GradientType=0 ); /* IE6-9 */
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(169,125,255,1)),color-stop(44%, rgba(151,100,249,1)),to(rgba(127,69,240,1)));
-background: linear-gradient(top, rgba(169,125,255,1) 0%,rgba(151,100,249,1) 44%,rgba(127,69,240,1) 100%); /* W3C */
+input[type=button].purple {
+  text-shadow: 0 -1px 0 #5A22C7;
+  color: #fff;
+  border: 1px solid #5A22C7;
+  background: #a97dff;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #a97dff 0%, #9764f9 44%, #7f45f0 100%);
+  /* Opera11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A97DFF', endColorstr='#7F45F0',GradientType=0 );
+  /* IE6-9 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#a97dff), color-stop(44%, #9764f9), to(#7f45f0));
+  background: linear-gradient(top, #a97dff 0%, #9764f9 44%, #7f45f0 100%);
+  /* W3C */
 }
 
-	button.purple:hover,
-	a.btn.purple:hover,
-	a.button.purple:hover{
-	text-shadow:0 1px 0 #5A22C7 !important;
-	border:1px solid #5A22C7 !important;
-	background: rgb(190, 158, 255) !important; /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(190, 158, 255,1)),color-stop(44%, rgba(175, 138, 250,1)),to(rgba(156, 114, 243,1))) !important;
-	background: linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BE9EFF', endColorstr='#9C72F3',GradientType=0 ) !important; /* IE6-9 */
-	}
+/* line 289, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.purple:hover,
+a.btn.purple:hover,
+a.button.purple:hover,
+input[type="submit"].purple:hover,
+input[type="reset"].purple:hover,
+input[type="button"].purple:hover {
+  text-shadow: 0 1px 0 #5A22C7 !important;
+  border: 1px solid #5A22C7 !important;
+  background: #be9eff !important;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#be9eff), color-stop(44%, #af8afa), to(#9c72f3)) !important;
+  background: linear-gradient(top, #be9eff 0%, #af8afa 44%, #9c72f3 100%) !important;
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BE9EFF', endColorstr='#9C72F3',GradientType=0 ) !important;
+  /* IE6-9 */
+}
 
 /*---------------------------------
 	PINK
 -----------------------------------*/
+/* line 309, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.pink,
 a.btn.pink,
 a.button.pink,
 input[type=submit].pink,
 input[type=reset].pink,
-input[type=button].pink{
-text-shadow:0 -1px 0 #EF0251;
-color:#fff;
-border:1px solid #EF0251;
-background: rgb(255,93,177); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,93,177,1)),to(rgba(239,1,124,1)));
-background: linear-gradient(top, rgba(255,93,177,1) 0%,rgba(239,1,124,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c',GradientType=0 ); /* IE6-9 */
+input[type=button].pink {
+  text-shadow: 0 -1px 0 #EF0251;
+  color: #fff;
+  border: 1px solid #EF0251;
+  background: #ff5db1;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff5db1), to(#ef017c));
+  background: linear-gradient(top, #ff5db1 0%, #ef017c 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#ef017c',GradientType=0 );
+  /* IE6-9 */
 }
 
-	button.pink:hover,
-	a.btn.pink:hover,
-	a.button.pink:hover{
-	text-shadow:0 1px 0 #EF0251;
-	border:1px solid #EF0251;
-	background: rgb(255,169,213); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,169,213,1)),to(rgba(254,112,185,1)));
-	background: linear-gradient(top, rgba(255,169,213,1) 0%,rgba(254,112,185,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa9d5', endColorstr='#fe70b9',GradientType=0 ); /* IE6-9 */
-	}
+/* line 327, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.pink:hover,
+a.btn.pink:hover,
+a.button.pink:hover {
+  text-shadow: 0 1px 0 #EF0251;
+  border: 1px solid #EF0251;
+  background: #ffa9d5;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffa9d5), to(#fe70b9));
+  background: linear-gradient(top, #ffa9d5 0%, #fe70b9 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa9d5', endColorstr='#fe70b9',GradientType=0 );
+  /* IE6-9 */
+}
 
 /*---------------------------------
 	GREEN
 -----------------------------------*/
+/* line 344, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.green,
 a.btn.green,
 a.button.green,
 input[type=submit].green,
 input[type=reset].green,
-input[type=button].green{
-text-shadow:0 -1px 0 #669E00;
-color:#fff;
-border:1px solid #669E00;
-background: rgb(143,196,0); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(143,196,0,1)),to(rgba(107,165,0,1)));
-background: linear-gradient(top, rgba(143,196,0,1) 0%,rgba(107,165,0,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc400', endColorstr='#6ba500',GradientType=0 ); /* IE6-9 */
+input[type=button].green {
+  text-shadow: 0 -1px 0 #669E00;
+  color: #fff;
+  border: 1px solid #669E00;
+  background: #8fc400;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#8fc400), to(#6ba500));
+  background: linear-gradient(top, #8fc400 0%, #6ba500 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fc400', endColorstr='#6ba500',GradientType=0 );
+  /* IE6-9 */
 }
 
-	button.green:hover,
-	a.btn.green:hover,
-	a.button.green:hover{
-	text-shadow:0 1px 0 #669E00 !important;
-	border:1px solid #669E00 !important;
-	background: rgb(198,226,120) !important; /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(198,226,120,1)),to(rgba(167,211,44,1))) !important;
-	background: linear-gradient(top, rgba(198,226,120,1) 0%,rgba(167,211,44,1) 100%) !important; /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e278', endColorstr='#a7d32c',GradientType=0 ) !important; /* IE6-9 */
-	}
+/* line 362, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.green:hover,
+a.btn.green:hover,
+a.button.green:hover {
+  text-shadow: 0 1px 0 #669E00;
+  border: 1px solid #669E00;
+  background: #c6e278;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#c6e278), to(#a7d32c));
+  background: linear-gradient(top, #c6e278 0%, #a7d32c 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6e278', endColorstr='#a7d32c',GradientType=0 );
+  /* IE6-9 */
+}
 
 /*---------------------------------
 	RED
 -----------------------------------*/
+/* line 379, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
 button.red,
 a.btn.red,
 a.button.red,
 input[type=submit].red,
 input[type=reset].red,
-input[type=button].red{
-text-shadow:0 -1px 0 #B21203;
-color:#fff;
-border:1px solid #B21203;
-background: rgb(229,60,22); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(229,60,22,1)),to(rgba(207,4,4,1)));
-background: linear-gradient(top, rgba(229,60,22,1) 0%,rgba(207,4,4,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53c16', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
+input[type=button].red {
+  text-shadow: 0 -1px 0 #B21203;
+  color: #fff;
+  border: 1px solid #B21203;
+  background: #e53c16;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#e53c16), to(#cf0404));
+  background: linear-gradient(top, #e53c16 0%, #cf0404 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53c16', endColorstr='#cf0404',GradientType=0 );
+  /* IE6-9 */
 }
 
-	button.red:hover,
-	a.btn.red:hover,
-	a.button.red:hover{
-	text-shadow:0 1px 0 #B21203;
-	border:1px solid #B21203;
-	background: rgb(238,106,76); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(238,106,76,1)),to(rgba(251,33,33,1)));
-	background: linear-gradient(top, rgba(238,106,76,1) 0%,rgba(251,33,33,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee6a4c', endColorstr='#fb2121',GradientType=0 ); /* IE6-9 */
-	}
+/* line 397, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-buttons.scss */
+button.red:hover,
+a.btn.red:hover,
+a.button.red:hover {
+  text-shadow: 0 1px 0 #B21203;
+  border: 1px solid #B21203;
+  background: #ee6a4c;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#ee6a4c), to(#fb2121));
+  background: linear-gradient(top, #ee6a4c 0%, #fb2121 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee6a4c', endColorstr='#fb2121',GradientType=0 );
+  /* IE6-9 */
+}
 /*---------------------------------
 	FORMS
 -----------------------------------*/
-
-form{
-padding:0;
-margin:0;
+/* line 5, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+form {
+  padding: 0;
+  margin: 0;
 }
 
-fieldset{
-margin:45px 47% 20px 2%;
-padding:5px 15px 5px 18px;
-border:1px solid #ccc;
-background:#fff7f9;
-border-radius:5px;
-position: relative;
-top:0;
-left:0;
-width:340px;
-min-width:300px;
+/* line 10, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+fieldset {
+  margin: 45px 47% 20px 2%;
+  padding: 5px 15px 5px 18px;
+  border: 1px solid #ccc;
+  background: #fff7f9;
+  border-radius: 5px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 340px;
+  min-width: 300px;
 }
 
-	legend{
-	border-radius:5px;
-	border:1px solid #ccc;
-	background:#ffffff;
-	padding:2px 10px;
-	margin:0 0 0 0;
-	display:block;
-	position: relative;
-	top:0;
-	left:0;
-	width:100px;
-	font-size:18px;
-	}
-
-	/*IE ONLY - I know, this is a stop gap*/
-	.msie fieldset{padding-top:25px;}
-	.msie legend{position:absolute;top:-0.7em;left:10px;}
-
-label{
-display:inline-block;
-*display:inline;
-vertical-align: middle;
-margin:0;
-padding:0;
-position:relative;
-top:0;
-left:0;
-zoom:1;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
+/* line 25, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+legend {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  padding: 2px 10px;
+  margin: 0 0 0 0;
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100px;
+  font-size: 18px;
 }
 
-	label.inline{
-	display:inline;
-	margin:0;
-	font-size:18px;
-	}
-
-	label span{
-	color:#999;
-	font-size:0.9em;
-	}
-
-	label span.right{
-	position:absolute;
-	bottom:0;
-	right:0;
-	text-align:right;
-	display:inline-block;
-	*display:inline;
-	}
-
-	label.disabled{
-	color:#ccc;
-	}
-
-input{
-display:inline-block;
-*display:inline;
-vertical-align: middle;
-width:auto;
-zoom:1;
-margin:0;
-border:1px solid #ccc;
-font-size:.87em;
-padding:5px 0;
-text-indent: 5px;
-border-radius:5px;
-background:#fff;
--webkit-box-shadow:inset 0 1px 6px #ccc;
-box-shadow:inset 0 1px 6px #ccc;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
+/*IE ONLY - I know, this is a stop gap*/
+/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+.msie fieldset {
+  padding-top: 25px;
 }
 
-	input::-webkit-input-placeholder,
-	input:-moz-placeholder,
-	.placeholder{
-	color:#bbb;
-	}
+/* line 43, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+.msie legend {
+  position: absolute;
+  top: -0.7em;
+  left: 10px;
+}
 
-	input::-moz-focus-inner {border:0;}
+/* line 45, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+label {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  zoom: 1;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
-	input[disabled="disabled"], input.disabled{
-	color:#999;
-	background:#f5f5f5;
-	-webkit-box-shadow:inset 0 1px 2px #ddd;
-	box-shadow:inset 0 1px 2px #ddd;
-	}
+/* line 60, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+label.inline {
+  display: inline;
+  margin: 0;
+  font-size: 18px;
+}
 
-	/* FOCUS STATES */
-	input[type="text"]:focus,
-	textarea:focus,
-	button:focus,
-	a.button:focus,
-	select:focus,
-	input[type="file"]:focus,
-	input[type="password"]:focus{
-	-webkit-box-shadow: 0 0 7px #6DB9FF;
-	box-shadow        : 0 0 7px #6DB9FF;
-	border: 1px solid #50B1FE;
-	outline: none;
-	}
+/* line 66, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+label span {
+  color: #999;
+  font-size: 0.9em;
+}
 
-	/* TRANSITION */
-	input[type="text"],
-	textarea,
-	button,
-	a.button,
-	a,
-	input[type="file"]{
-	-webkit-transition: -webkit-box-shadow 0.5s, border 0.5s, background 0.5s;
-	-webkit-transition: border 0.5s, background 0.5s, -webkit-box-shadow 0.5s;
-	transition: border 0.5s, background 0.5s, -webkit-box-shadow 0.5s;
-	transition: box-shadow 0.5s, border 0.5s, background 0.5s;
-	transition: box-shadow 0.5s, border 0.5s, background 0.5s, -webkit-box-shadow 0.5s;
-	}
+/* line 71, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+label span.right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  display: inline-block;
+  *display: inline;
+}
 
+/* line 80, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+label.disabled {
+  color: #ccc;
+}
+
+/* line 84, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+input {
+  display: inline-block;
+  *display: inline;
+  vertical-align: middle;
+  width: auto;
+  zoom: 1;
+  margin: 0;
+  border: 1px solid #ccc;
+  font-size: .87em;
+  padding: 5px 0;
+  border-radius: 5px;
+  background: #fff;
+  -webkit-box-shadow: inset 0 1px 6px #ccc;
+  box-shadow: inset 0 1px 6px #ccc;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 107, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
+.placeholder {
+  color: #bbb;
+}
+
+/* line 113, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+input::-moz-focus-inner {
+  border: 0;
+}
+
+/* line 115, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+input[disabled="disabled"], input.disabled {
+  color: #999;
+  background: #f5f5f5;
+  -webkit-box-shadow: inset 0 1px 2px #ddd;
+  box-shadow: inset 0 1px 2px #ddd;
+}
+
+/* FOCUS STATES */
+/* line 124, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+input[type="text"]:focus,
+textarea:focus,
+button:focus,
+a.button:focus,
+select:focus,
+input[type="file"]:focus,
+input[type="password"]:focus {
+  -webkit-box-shadow: 0 0 7px #6DB9FF;
+  box-shadow: 0 0 7px #6DB9FF;
+  border: 1px solid #50B1FE;
+  outline: none;
+}
+
+/* TRANSITION */
+/* line 139, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+input[type="text"],
+textarea,
+button,
+a.button,
+a,
+input[type="file"] {
+  -webkit-transition: -webkit-box-shadow 0.5s, border 0.5s, background 0.5s;
+  -webkit-transition: border 0.5s, background 0.5s, -webkit-box-shadow 0.5s;
+  transition: border 0.5s, background 0.5s, -webkit-box-shadow 0.5s;
+  transition: box-shadow 0.5s, border 0.5s, background 0.5s;
+  transition: box-shadow 0.5s, border 0.5s, background 0.5s, -webkit-box-shadow 0.5s;
+}
+
+/* line 151, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
 input.checkbox,
-input[type="checkbox"]{
-display:inline;
-width:auto;
-margin:0;
-padding:0;
-border:0;
-background:none;
-vertical-align:center;
-*vertical-align: top;
+input[type="checkbox"] {
+  display: inline;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  vertical-align: center;
+  *vertical-align: top;
 }
 
+/* line 163, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
 input.radio,
-input[type="radio"]{
-display:inline;
-width:auto;
-margin:0;
-padding:0;
-border:0;
-background:none;
-vertical-align:center;
-*vertical-align: top;
+input[type="radio"] {
+  display: inline;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  vertical-align: center;
+  *vertical-align: top;
 }
 
-	input[type="radio"]:focus,
-	input[ type="checkbox"]:focus{
-	-webkit-box-shadow: 0 0 5px #6DB9FF;
-	box-shadow        : 0 0 5px #6DB9FF;
-	outline-color: #6DB9FF;
-	}
+/* line 175, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  -webkit-box-shadow: 0 0 5px #6DB9FF;
+  box-shadow: 0 0 5px #6DB9FF;
+  outline-color: #6DB9FF;
+}
 
+/* line 183, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
 input.file,
-input[type="file"]{
-/*font-size:0.8em;*/
--webkit-box-shadow:none;
-box-shadow:none;
-border:none;
+input[type="file"] {
+  /*font-size:0.8em;*/
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
 }
 
-select{
-display:inline;
-width:auto;
-margin:0;
-border:1px solid #ccc;
-line-height:100%;
-padding:3px;
-vertical-align: middle;
+/* line 192, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+select {
+  display: inline;
+  width: auto;
+  margin: 0;
+  border: 1px solid #ccc;
+  line-height: 100%;
+  padding: 3px;
+  vertical-align: middle;
 }
 
-        select[disabled="disabled"], select.disabled{
-        color:#999;
-        background:#f5f5f5;
-        -webkit-box-shadow:inset 0 1px 2px #ddd;
-        box-shadow:inset 0 1px 2px #ddd;
-        }
+/* line 202, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+select[disabled="disabled"], select.disabled {
+  color: #999;
+  background: #f5f5f5;
+  -webkit-box-shadow: inset 0 1px 2px #ddd;
+  box-shadow: inset 0 1px 2px #ddd;
+}
 
-textarea{
-width:auto;
-height:70px;
-margin:0;
-border:1px solid #ccc;
-padding:5px;
-vertical-align: middle;
-font-family:inherit;
-font-size:0.9em;
-border-radius:5px;
--webkit-box-shadow:inset 0 1px 6px #ccc;
-box-shadow:inset 0 1px 6px #ccc;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
+/* line 210, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+textarea {
+  width: auto;
+  height: 70px;
+  margin: 0;
+  border: 1px solid #ccc;
+  padding: 5px;
+  vertical-align: middle;
+  font-family: inherit;
+  font-size: 0.9em;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 6px #ccc;
+  box-shadow: inset 0 1px 6px #ccc;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /*---------------------------------
 	COLUMN SIZES
 -----------------------------------*/
-
 /* sizes */
+/* line 235, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
 input[class*="col_"],
 select[class*="col_"],
-label[class*="col_"]{
-float:none;display:inline-block;*display:inline;margin-bottom:0;
-*margin-left: 0.5%;*margin-right: 0.5%;/* this is for IE 7 Only and is not a good fix - work needed here */
+label[class*="col_"] {
+  float: none;
+  display: inline-block;
+  *display: inline;
+  margin-bottom: 0;
+  *margin-left: 0.5%;
+  *margin-right: 0.5%;
+  /* this is for IE 7 Only and is not a good fix - work needed here */
 }
 
 /*---------------------------------
 	FORMS VERTICAL
 -----------------------------------*/
-form.vertical{
-
+/* line 249, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+form.vertical label {
+  display: block;
 }
 
-	form.vertical label{display:block;}
-	form.vertical input,
-	form.vertical select,
-	form.vertical textarea{width:100%;display:block;margin-bottom:10px;}
-	form.vertical .chzn-container{display:block;margin-bottom:10px;}
-	form.vertical .chzn-choices{display:block;margin-bottom:10px;}
+/* line 250, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+form.vertical input,
+form.vertical select,
+form.vertical textarea {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
 
-	/* radios & checks */
-	form.vertical input.checkbox,
-	form.vertical input[type="checkbox"],
-	form.vertical input.radio,
-	form.vertical input[type="radio"],
-	form.vertical label.inline{display:inline;width:auto;margin:0;}
+/* line 253, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+form.vertical .chzn-container {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* line 254, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+form.vertical .chzn-choices {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* radios & checks */
+/* line 257, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+form.vertical input.checkbox,
+form.vertical input[type="checkbox"],
+form.vertical input.radio,
+form.vertical input[type="radio"],
+form.vertical label.inline {
+  display: inline;
+  width: auto;
+  margin: 0;
+}
+
 /*---------------------------------
 	FORM VALIDATION
 -----------------------------------*/
-label.error{color:red;}
-input.error{border:1px solid red;}
-select.error{border:1px solid red;}
+/* line 265, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+label.error {
+  color: red;
+}
+
+/* line 266, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+input.error {
+  border: 1px solid red;
+}
+
+/* line 267, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+select.error {
+  border: 1px solid red;
+}
 
 /*---------------------------------
 	NOTICES
 -----------------------------------*/
-.notice{
-border:1px solid gold;
-background:lightyellow;
-padding:10px 20px 10px 40px;
-margin:10px 0;
-border-radius:5px;
-color:#DEAE00;
-line-height:120%;
-vertical-align: center;
-text-shadow:0px 1px rgba(255,255,255,0.5);
-position:relative;
-top:0;
-left:0;
-clear:both;
+/* line 272, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+.notice {
+  border: 1px solid gold;
+  background: lightyellow;
+  padding: 10px 20px 10px 40px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: #DEAE00;
+  line-height: 120%;
+  vertical-align: center;
+  text-shadow: 0px 1px rgba(255, 255, 255, 0.5);
+  position: relative;
+  top: 0;
+  left: 0;
+  clear: both;
 }
 
-	.notice.warning{}/*default*/
-	.notice.error{border:1px solid red;background:#F4C1CE;color:red; width:50%; left:25%; font-size:1.1em;}
-	.notice.success{border:1px solid green;background:lightgreen;color:green;}
-	.notice i[class*='fa-']{position:absolute;top:50%;left:0.8em;margin-top:-0.6em;}
-	.notice a[class*='fa-remove'],
-	.notice a[class*='fa-remove']:active,
-	.notice a[class*='fa-remove']:visited{text-decoration:none;font-size:12px;position:absolute;top:5px;right:5px;left:auto;color:inherit;margin-top:0;left:auto;}
+/*default*/
+/* line 291, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+.notice.error {
+  border: 1px solid red;
+  background: #F4C1CE;
+  color: red;
+  width: 50%;
+  left: 25%;
+  font-size: 1.1em;
+}
+
+/* line 292, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+.notice.success {
+  border: 1px solid green;
+  background: lightgreen;
+  color: green;
+}
+
+/* line 293, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+.notice i[class*='fa-'] {
+  position: absolute;
+  top: 50%;
+  left: 0.8em;
+  margin-top: -0.6em;
+}
+
+/* line 294, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-forms.scss */
+.notice a[class*='fa-remove'],
+.notice a[class*='fa-remove']:active,
+.notice a[class*='fa-remove']:visited {
+  text-decoration: none;
+  font-size: 12px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  left: auto;
+  color: inherit;
+  margin-top: 0;
+  left: auto;
+}
 /*
 	99Lime.com HTML KickStart by Joshua Gatcke
 	kickstart-grids.css
@@ -13599,70 +14008,148 @@ clear:both;
 	& girlfriendnyc.com
 	with changes by 99Lime
 -----------------------------------*/
- /*
- & Columns : 12 
- & Gutter %: 20% 
- & MaxWidth: 1280px
- */
-
- 
-.grid{
-max-width:1220px;
-margin:0 auto;
-padding:0 2em;
+/*
+& Columns : 12 
+& Gutter %: 20% 
+& MaxWidth: 1280px
+*/
+/* line 21, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.grid {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 2em;
 }
 
-.grid.flex{
-width:100%;
-max-width:100%;
-padding:0 2%;
-padding:2em;
+/* line 27, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.grid.flex {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 2%;
+  padding: 2em;
 }
 
-
-*[class*="col_"].alpha{margin-left:0;}
-*[class*="col_"].omega{margin-right:0;}
- 
-.col_1  { width: 6.6666666666667%; }
-.col_2  { width: 15%; }
-.col_3  { width: 23.333333333333%; }
-.col_4  { width: 31.666666666667%; }
-.col_5  { width: 40%; }
-.col_6  { width: 48.333333333333%; }
-.col_7  { width: 56.666666666667%; }
-.col_8  { width: 65%; }
-.col_9  { width: 73.333333333333%; }
-.col_10 { width: 81.666666666667%; }
-.col_11 { width: 90%; }
-.col_12 { width: 98.333333333333%; }
-
-*[class*="col_"]{
-margin-left: 0.83333333333333%;
-margin-right: 0.83333333333333%;
-margin-top:0.5em;
-margin-bottom:0.5em;
-float: left;
-display: block;
+/* line 35, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+*[class*="col_"].alpha {
+  margin-left: 0;
 }
 
-.grid img{
-max-width: 100%;
-height:auto;
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+*[class*="col_"].omega {
+  margin-right: 0;
 }
 
-.clear{clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
-.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}
-* html .clearfix, *:first-child+html .clearfix{zoom:1}
+/* line 38, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_1 {
+  width: 6.6666666666667%;
+}
+
+/* line 39, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_2 {
+  width: 15%;
+}
+
+/* line 40, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_3 {
+  width: 23.333333333333%;
+}
+
+/* line 41, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_4 {
+  width: 31.666666666667%;
+}
+
+/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_5 {
+  width: 40%;
+}
+
+/* line 43, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_6 {
+  width: 48.333333333333%;
+}
+
+/* line 44, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_7 {
+  width: 56.666666666667%;
+}
+
+/* line 45, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_8 {
+  width: 65%;
+}
+
+/* line 46, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_9 {
+  width: 73.333333333333%;
+}
+
+/* line 47, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_10 {
+  width: 81.666666666667%;
+}
+
+/* line 48, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_11 {
+  width: 90%;
+}
+
+/* line 49, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.col_12 {
+  width: 98.333333333333%;
+}
+
+/* line 51, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+*[class*="col_"] {
+  margin-left: 0.83333333333333%;
+  margin-right: 0.83333333333333%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  float: left;
+  display: block;
+}
+
+/* line 60, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.grid img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 65, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* line 66, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* line 67, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+* html .clearfix, *:first-child + html .clearfix {
+  zoom: 1;
+}
 
 /* Viewable Grids 
 	To view your grids, add the class .visible to any grid container.
 	This will add a background color so you can see the layout of your grids. 
 */
-*[class*="col_"].visible{
-background:#eee;
-border:1px dotted #ccc;
+/* line 73, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+*[class*="col_"].visible {
+  background: #eee;
+  border: 1px dotted #ccc;
 }
-
 
 /*---------------------------------
 	Responsive Grid Media Queries - 1280, 1024, 768, 480
@@ -13672,280 +14159,546 @@ border:1px dotted #ccc;
 	480-less 	- phone landscape & smaller
 -----------------------------------*/
 @media all and (min-width: 1024px) and (max-width: 1280px) {
-	
-	.grid *[class*="col_"]{}
-	.grid{max-width: 1024px;}
-	.show-desktop	{display:block;}
-	.hide-desktop	{display:none;}
-	.show-tablet	{display:none;}
-	.hide-tablet	{display:block;}
-	.show-phone		{display:none;}
-	.hide-phone		{display:block;}
-	
-}
+  /* line 89, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .grid {
+    max-width: 1024px;
+  }
 
+  /* line 90, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-desktop {
+    display: block;
+  }
+
+  /* line 91, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-desktop {
+    display: none;
+  }
+
+  /* line 92, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-tablet {
+    display: none;
+  }
+
+  /* line 93, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-tablet {
+    display: block;
+  }
+
+  /* line 94, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-phone {
+    display: none;
+  }
+
+  /* line 95, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-phone {
+    display: block;
+  }
+}
 @media all and (min-width: 768px) and (max-width: 1024px) {
-	
-	.grid *[class*="col_"]{}
-	.grid{max-width: 768px;}
-	.show-desktop	{display:none;}
-	.hide-desktop	{display:block;}
-	.show-tablet	{display:block;}
-	.hide-tablet	{display:none;}
-	.show-phone		{display:none;}
-	.hide-phone		{display:block;}
-	
+  /* line 102, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .grid {
+    max-width: 768px;
+  }
+
+  /* line 103, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-desktop {
+    display: none;
+  }
+
+  /* line 104, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-desktop {
+    display: block;
+  }
+
+  /* line 105, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-tablet {
+    display: block;
+  }
+
+  /* line 106, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-tablet {
+    display: none;
+  }
+
+  /* line 107, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-phone {
+    display: none;
+  }
+
+  /* line 108, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-phone {
+    display: block;
+  }
 }
-
-
 @media all and (min-width: 480px) and (max-width: 768px) {
+  /* line 115, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .grid *[class*="col_"] {
+    float: none;
+    width: auto;
+    clear: both;
+    display: block;
+  }
 
-	.grid *[class*="col_"]{
-	float:none;
-	width:auto;
-	clear:both;
-	display:block;
-	}
-	
-	/* columns inside of columns */
-	.grid *[class*="col_"] [class*="col_"]{
-	margin-left:0;
-	margin-right:0;
-	width:100%;
-	}
-	
-	.grid{max-width: 480px;}
-	.show-desktop	{display:none;}
-	.hide-desktop	{display:block;}
-	.show-tablet	{display:block;}
-	.hide-tablet	{display:none;}
-	.show-phone		{display:none;}
-	.hide-phone		{display:block;}
-	
+  /* columns inside of columns */
+  /* line 123, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .grid *[class*="col_"] [class*="col_"] {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  /* line 129, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .grid {
+    max-width: 480px;
+  }
+
+  /* line 130, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-desktop {
+    display: none;
+  }
+
+  /* line 131, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-desktop {
+    display: block;
+  }
+
+  /* line 132, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-tablet {
+    display: block;
+  }
+
+  /* line 133, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-tablet {
+    display: none;
+  }
+
+  /* line 134, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-phone {
+    display: none;
+  }
+
+  /* line 135, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-phone {
+    display: block;
+  }
 }
-
 @media all and (max-width: 480px) {
-	
-	.grid *[class*="col_"]{
-	float:none;
-	width:auto;
-	clear:both;
-	display:block;
-	}
-	
-	/* columns inside of columns */
-	.grid *[class*="col_"] [class*="col_"]{
-	margin-left:0;
-	margin-right:0;
-	width:100%;
-	}
-	
-	.grid{max-width: 100%;/*320*/}
-	.show-desktop	{display:none;}
-	.hide-desktop	{display:block;}
-	.show-tablet	{display:none;}
-	.hide-tablet	{display:block;}
-	.show-phone		{display:block;}
-	.hide-phone		{display:none;}
-	
+  /* line 141, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .grid *[class*="col_"] {
+    float: none;
+    width: auto;
+    clear: both;
+    display: block;
+  }
+
+  /* columns inside of columns */
+  /* line 149, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .grid *[class*="col_"] [class*="col_"] {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  /* line 155, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .grid {
+    max-width: 100%;
+    /*320*/
+  }
+
+  /* line 156, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-desktop {
+    display: none;
+  }
+
+  /* line 157, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-desktop {
+    display: block;
+  }
+
+  /* line 158, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-tablet {
+    display: none;
+  }
+
+  /* line 159, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-tablet {
+    display: block;
+  }
+
+  /* line 160, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .show-phone {
+    display: block;
+  }
+
+  /* line 161, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-grid.scss */
+  .hide-phone {
+    display: none;
+  }
 }
 /*
 	99Lime.com HTML KickStart by Joshua Gatcke
 	kickstart-menus.css
 */
-
 /*---------------------------------
 	MENU LAYOUT
 	DO NOT EDIT This Section (unless you know what you are doing)
 -----------------------------------*/
+/* line 11, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu {
+  margin: 0;
+  padding: 0;
+  line-height: 100%;
+  font-size: 0;
+  /* Kill white space gap between LI elements */
+  position: relative;
+  z-index: 1000;
+}
 
-.menu{margin:0;padding:0;line-height:100%;
-font-size:0; /* Kill white space gap between LI elements */
-position:relative;z-index:1000;}
+/* line 15, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
 
-	.menu:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}
-	.menu li{margin:0;padding:0;list-style-type:none;display:inline-block;*display:inline;position:relative;zoom:1;line-height:inherit;
-	top:0;left:0;font-size:16px; /* fixed font-size to replace font-size:0 in parent .menu 1em/16px default */}
-		.menu li a{margin:0;padding:0;display:block;display:inline;display:inline-block;position:relative;zoom:1;line-height:100%;top:0;left:0;}
+/* line 16, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+  *display: inline;
+  position: relative;
+  zoom: 1;
+  line-height: inherit;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  /* fixed font-size to replace font-size:0 in parent .menu 1em/16px default */
+}
 
+/* line 18, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li a {
+  margin: 0;
+  padding: 0;
+  display: block;
+  display: inline;
+  display: inline-block;
+  position: relative;
+  zoom: 1;
+  line-height: 100%;
+  top: 0;
+  left: 0;
+}
 
 /*--------------Sub Menus-------------------*/
-	/*.menu li:hover > ul{display:block;}*/
-	.menu ul{margin:0;padding:0;position: absolute;top:100%;left:0;display:none;min-width:150px;max-width:150%;*width:150px;}
-	.menu ul li{display:block;width:100%;}
-	.menu ul li a{display:block;}
-		.menu ul ul{top:0;left:100%;}
+/*.menu li:hover > ul{display:block;}*/
+/* line 23, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu ul {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  min-width: 150px;
+  max-width: 150%;
+  *width: 150px;
+}
+
+/* line 24, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu ul li {
+  display: block;
+  width: 100%;
+}
+
+/* line 25, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu ul li a {
+  display: block;
+}
+
+/* line 26, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu ul ul {
+  top: 0;
+  left: 100%;
+}
 
 /*--------------Dividers-------------------*/
-	.menu ul li.divider{border-top:1px solid #ccc;}
-	.menu ul li.divider a{border-top:1px solid #fff;}
+/* line 29, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu ul li.divider {
+  border-top: 1px solid #ccc;
+}
 
+/* line 30, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu ul li.divider a {
+  border-top: 1px solid #fff;
+}
 
 /*--------------Right---------------------*/
-	.menu li.right{float:right;}
-
+/* line 34, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li.right {
+  float: right;
+}
 
 /*--------------Arrows-------------------*/
-	.menu li.has-menu a{padding-right:25px;}
-	.menu li.has-menu span.arrow{border-style:solid;border-width:5px;
-	display:block;position:absolute;top:50%;right:5px;font-size:0;line-height:0;height:0;width:0;}
-	.menu li li.has-menu span.arrow{margin-top:-4px;}
+/* line 38, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li.has-menu a {
+  padding-right: 25px;
+}
+
+/* line 39, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li.has-menu span.arrow {
+  border-style: solid;
+  border-width: 5px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  width: 0;
+}
+
+/* line 41, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li li.has-menu span.arrow {
+  margin-top: -4px;
+}
 
 /*--------------Vertical Menu Layout-------------------*/
-.menu.vertical{}
-	.menu.vertical li{display:block;}
-	.menu.vertical li a{display:block;}
-	.menu.vertical ul{top:0;left:100%;}
-	.menu.vertical li.has-menu span.arrow{margin-top:-4px;}
+/* line 45, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu.vertical li {
+  display: block;
+}
+
+/* line 46, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu.vertical li a {
+  display: block;
+}
+
+/* line 47, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu.vertical ul {
+  top: 0;
+  left: 100%;
+}
+
+/* line 48, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu.vertical li.has-menu span.arrow {
+  margin-top: -4px;
+}
 
 /*--------------Vertical Right Menu Layout-------------------*/
-.menu.vertical.right{text-align:left;}
-	.menu.vertical.right ul{top:0;right:100%;left:auto;}
-	.menu.vertical.right li a{padding-left:25px;padding-right:20px;}
-	.menu.vertical.right li.has-menu span.arrow{right:auto;left:5px;margin-top:-4px;}
+/* line 51, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu.vertical.right {
+  text-align: left;
+}
 
+/* line 52, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu.vertical.right ul {
+  top: 0;
+  right: 100%;
+  left: auto;
+}
+
+/* line 53, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu.vertical.right li a {
+  padding-left: 25px;
+  padding-right: 20px;
+}
+
+/* line 54, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu.vertical.right li.has-menu span.arrow {
+  right: auto;
+  left: 5px;
+  margin-top: -4px;
+}
 
 /*---------------------------------
 	MENU STYLES
 	EDIT BELOW THIS LINE TO CUSTOMIZE
 -----------------------------------*/
-.menu{
-border:1px solid #ccc;
-background: #eee; /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */ /* Opera11.10+ */
-background: -webkit-gradient(linear, left top, left bottom, from(rgba(252,252,252,1)),to(rgba(224,224,224,1)));
-background: linear-gradient(top, rgba(252,252,252,1) 0%,rgba(224,224,224,1) 100%); /* W3C */
-z-index:600;
+/* line 61, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu {
+  border: 1px solid #ccc;
+  background: #eee;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera11.10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#e0e0e0));
+  background: linear-gradient(top, #fcfcfc 0%, #e0e0e0 100%);
+  /* W3C */
+  z-index: 600;
 }
 
-	.menu li{}
+/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li a {
+  text-shadow: 0px 1px 1px #fff;
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 0.9em;
+  color: #777;
+}
 
-		.menu li a{
-		text-shadow:0px 1px 1px #fff;
-		padding:15px 20px;
-		text-decoration:none;
-		font-size:0.9em;
-		color: #777;
-		}
+/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li.current > a,
+.menu li.current > a:hover,
+.menu li.current.hover > a {
+  background: #7abcff;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+  /* Opera11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 );
+  /* IE6-9 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#7abcff), color-stop(44%, #60abf8), to(#4096ee));
+  background: linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%);
+  /* W3C */
+  color: #fff;
+  text-shadow: 0px -1px 0 rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
 
-		.menu li.current>a,
-		.menu li.current>a:hover,
-		.menu li.current.hover>a{
-		background: rgb(122,188,255); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */ /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* Opera11.10+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
-		background: -webkit-gradient(linear, left top, left bottom, from(rgba(122,188,255,1)),color-stop(44%, rgba(96,171,248,1)),to(rgba(64,150,238,1)));
-		background: linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* W3C */
-		color:#fff;
-		text-shadow:0px -1px 0 rgba(0,0,0,0.2);
-		cursor: default;
-		}
+/* line 97, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li a:hover,
+.menu li.hover > a {
+  background: #f5f5f5;
+}
 
-		.menu li a:hover,
-		.menu li.hover>a{
-		background:#f5f5f5;
-		}
+/* sub menus */
+/* line 103, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu ul {
+  background: #efefef;
+  border: 1px solid #ccc;
+}
 
-	/* sub menus */
-	.menu ul{
-	background: #efefef;
-	border:1px solid #ccc;
-	}
+/* sub-sub menus */
+/* arrows */
+/* arrow down */
+/* line 117, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li.has-menu span.arrow {
+  border-color-top: #ccc;
+  border-color: #ccc transparent transparent transparent;
+}
 
-	.menu ul li{}
-	.menu ul li a{}
+/* arrow left */
+/* line 118, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li li.has-menu span.arrow, .menu.vertical li.has-menu span.arrow {
+  border-color-left: #ccc;
+  border-color: transparent transparent transparent #ccc;
+}
 
-		/* sub-sub menus */
-		.menu ul ul{}
-		.menu ul ul li{}
-		.menu ul ul li a{}
+/* arrow right */
+/* line 120, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu.vertical.right li.has-menu span.arrow {
+  border-color-right: #ccc;
+  border-color: transparent #ccc transparent transparent;
+}
 
-	/* arrows */
-	/* arrow down */  .menu li.has-menu span.arrow{border-color-top:#ccc;border-color:#ccc transparent transparent transparent;}
-	/* arrow left */  .menu li li.has-menu span.arrow, .menu.vertical li.has-menu span.arrow
-					   {border-color-left:#ccc;border-color:transparent transparent transparent #ccc;}
-	/* arrow right */ .menu.vertical.right li.has-menu span.arrow{border-color-right:#ccc;border-color:transparent #ccc transparent transparent;}
+/* dividers */
+/* line 122, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu ul li.divider {
+  border-top: 1px solid #ccc;
+}
 
-	/* dividers */ 	  .menu ul li.divider{border-top:1px solid #ccc;}
-					  .menu ul li.divider a{border-top:1px solid #fff;}
-
-
+/* line 123, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu ul li.divider a {
+  border-top: 1px solid #fff;
+}
 
 /*---------------------------------
 	RESPONSIVE MENU STYLES
 	DO NOT EDIT unless you know what you are doing
 -----------------------------------*/
-
-.menu li.menu-toggle{display:none;}
-
+/* line 132, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+.menu li.menu-toggle {
+  display: none;
+}
 
 @media all and (max-width: 768px) {
+  /* line 137, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+  .grid .menu li,
+  .grid .menu.vertical li,
+  .grid .menu.vertical.right li {
+    display: block;
+    display: none;
+  }
 
-	.grid .menu li,
-	.grid .menu.vertical li,
-	.grid .menu.vertical.right li{
-	display:block;
-	display:none;
-	}
+  /* line 144, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+  .grid .menu li.menu-toggle,
+  .grid .menu.vertical li.menu-toggle,
+  .grid .menu.vertical.right li.menu-toggle {
+    display: block;
+  }
 
-	.grid .menu li.menu-toggle,
-	.grid .menu.vertical li.menu-toggle,
-	.grid .menu.vertical.right li.menu-toggle{
-	display:block;
-	}
+  /* line 150, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+  .grid .menu:hover li,
+  .grid .menu.vertical:hover li,
+  .grid .menu.vertical.right:hover li {
+    display: block;
+  }
 
-	.grid .menu:hover li,
-	.grid .menu.vertical:hover li,
-	.grid .menu.vertical.right:hover li{
-	display:block;
-	}
+  /* arrows */
+  /* line 157, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+  .grid .menu li.has-menu span.arrow,
+  .grid .menu.vertical li.has-menu span.arrow,
+  .grid .menu.vertical.right li.has-menu span.arrow,
+  .grid .menu li li.has-menu span.arrow, .menu.vertical li.has-menu span.arrow {
+    border-color-top: #ccc;
+    border-color: #ccc transparent transparent transparent;
+  }
 
-	/* arrows */
-	.grid .menu li.has-menu span.arrow,
-	.grid .menu.vertical li.has-menu span.arrow,
-	.grid .menu.vertical.right li.has-menu span.arrow,
-	.grid .menu li li.has-menu span.arrow, .menu.vertical li.has-menu span.arrow
-	{border-color-top:#ccc;border-color:#ccc transparent transparent transparent;}
+  /* line 163, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+  .grid .menu.vertical.right li.has-menu span.arrow {
+    right: 5px;
+    left: auto;
+  }
 
-	.grid .menu.vertical.right li.has-menu span.arrow{
-	right:5px;left:auto;
-	}
+  /* line 167, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+  .grid .menu li a {
+    display: block;
+  }
 
-	.grid .menu li a{
-	display:block;
-	}
-
-	.grid .menu ul,
-	.grid .menu ul ul,
-	.grid .menu.vertical ul,
-	.grid .menu.vertical.right ul{
-	position:relative;
-	top:0;
-	left:0;
-	margin:10px;
-	}
-
+  /* line 171, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-menus.scss */
+  .grid .menu ul,
+  .grid .menu ul ul,
+  .grid .menu.vertical ul,
+  .grid .menu.vertical.right ul {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 10px;
+  }
 }
 /*---------------------------------
 	SLIDESHOW2 - Slight Fixes for the slideshow layout *needs work
 -----------------------------------*/
+/* line 6, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
+.slideshow {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
 
-
-	.slideshow{
-	clear:both;
-	margin:0;
-	padding:0;
-	width:auto;
-	height:auto;
-	overflow:hidden;
-	}
-
-		.slideshow li{
-		list-style-type:none;
-		margin:0;
-		padding:0;
-		float:left;
-		display:block;
-		}
+/* line 15, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
+.slideshow li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  display: block;
+}
 
 /**
  * BxSlider v4.0 - Fully loaded, responsive content slider
@@ -13958,192 +14711,211 @@ z-index:600;
  * CEO and founder of bxCreative, LTD
  * http://bxcreative.com
  */
-
-
 /** RESET AND LAYOUT
 ===================================*/
-.bx-wrapper, .bx-wrapper *{
-	-webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */    /* Firefox, other Gecko */
-  	box-sizing: content-box;         /* Opera/IE 8+ */
+/* line 38, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
+.bx-wrapper, .bx-wrapper * {
+  -webkit-box-sizing: content-box;
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: content-box;
+  /* Opera/IE 8+ */
 }
 
+/* line 44, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper {
-	position: relative;
-	margin: 0 0 60px;
-	padding: 0;
-	*zoom: 1;
+  position: relative;
+  margin: 0 0 60px;
+  padding: 0;
+  *zoom: 1;
 }
 
+/* line 51, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper img {
-	width: 100%;
-	display: block;
+  width: 100%;
+  display: block;
 }
 
 /** THEME
 ===================================*/
-
+/* line 59, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-viewport {
-	-webkit-box-shadow: 0 0 5px #ccc;
-	box-shadow: 0 0 5px #ccc;
-	border: solid #fff 5px;
-	left: 0;
-	background: #fff;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  border: solid #fff 5px;
+  left: 0;
+  background: #fff;
 }
 
+/* line 68, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-pager,
 .bx-wrapper .bx-controls-auto {
-	position: absolute;
-	bottom: -30px;
-	width: 100%;
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
 }
 
 /* LOADER */
-
+/* line 77, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-loading {
-	min-height: 50px;
-	background: url(img/bx_loader.gif) center center no-repeat #fff;
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 2000;
+  min-height: 50px;
+  background: url(img/bx_loader.gif) center center no-repeat #fff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
 }
 
 /* PAGER */
-
+/* line 90, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-pager {
-	text-align: center;
-	font-size: .85em;
-	font-family: Arial;
-	font-weight: bold;
-	color: #666;
-	padding-top: 20px;
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
 }
 
+/* line 99, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-pager .bx-pager-item,
 .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
-	display: inline-block;
-	*zoom: 1;
-	*display: inline;
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
 }
 
+/* line 106, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-pager.bx-default-pager a {
-	background: #666;
-	text-indent: -9999px;
-	display: block;
-	width: 10px;
-	height: 10px;
-	margin: 0 5px;
-	outline: 0;
-	border-radius: 5px;
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  border-radius: 5px;
 }
 
+/* line 119, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-pager.bx-default-pager a:hover,
 .bx-wrapper .bx-pager.bx-default-pager a.active {
-	background: #000;
+  background: #000;
 }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
-
+/* line 126, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-prev {
-	left: 10px;
-	background: url(img/controls.png) no-repeat 0 -32px;
+  left: 10px;
+  background: url(img/controls.png) no-repeat 0 -32px;
 }
 
+/* line 131, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-next {
-	right: 10px;
-	background: url(img/controls.png) no-repeat -43px -32px;
+  right: 10px;
+  background: url(img/controls.png) no-repeat -43px -32px;
 }
 
+/* line 136, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-prev:hover {
-	background-position: 0 0;
+  background-position: 0 0;
 }
 
+/* line 140, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-next:hover {
-	background-position: -43px 0;
+  background-position: -43px 0;
 }
 
+/* line 144, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-controls-direction a {
-	position: absolute;
-	top: 50%;
-	margin-top: -16px;
-	outline: 0;
-	width: 32px;
-	height: 32px;
-	text-indent: -9999px;
-	z-index: 9999;
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
 }
 
+/* line 155, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-controls-direction a.disabled {
-	display: none;
+  display: none;
 }
 
 /* AUTO CONTROLS (START / STOP) */
-
+/* line 161, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-controls-auto {
-	text-align: center;
+  text-align: center;
 }
 
+/* line 165, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-controls-auto .bx-start {
-	display: block;
-	text-indent: -9999px;
-	width: 10px;
-	height: 11px;
-	outline: 0;
-	background: url(img/controls.png) -86px -11px no-repeat;
-	margin: 0 3px;
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url(img/controls.png) -86px -11px no-repeat;
+  margin: 0 3px;
 }
 
+/* line 175, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-controls-auto .bx-start:hover,
 .bx-wrapper .bx-controls-auto .bx-start.active {
-	background-position: -86px 0;
+  background-position: -86px 0;
 }
 
+/* line 180, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-controls-auto .bx-stop {
-	display: block;
-	text-indent: -9999px;
-	width: 9px;
-	height: 11px;
-	outline: 0;
-	background: url(img/controls.png) -86px -44px no-repeat;
-	margin: 0 3px;
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url(img/controls.png) -86px -44px no-repeat;
+  margin: 0 3px;
 }
 
+/* line 190, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-controls-auto .bx-stop:hover,
 .bx-wrapper .bx-controls-auto .bx-stop.active {
-	background-position: -86px -33px;
+  background-position: -86px -33px;
 }
 
 /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
-
+/* line 197, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
-	text-align: left;
-	width: 80%;
+  text-align: left;
+  width: 80%;
 }
 
+/* line 202, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
-	right: 0;
-	width: 35px;
+  right: 0;
+  width: 35px;
 }
 
 /* IMAGE CAPTIONS */
-
+/* line 209, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-caption {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background: #666\9;
-	background: rgba(80, 80, 80, 0.75);
-	width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666 \9;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
 }
 
+/* line 218, /home/ubuntu/workspace/app/assets/stylesheets/kickstart-slideshow.scss */
 .bx-wrapper .bx-caption span {
-	color: #fff;
-	font-family: Arial;
-	display: block;
-	font-size: .85em;
-	padding: 10px;
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
 }
 /*
 	99Lime.com HTML KickStart by Joshua Gatcke
@@ -14158,7 +14930,6 @@ z-index:600;
 /*---------------------------------
 	IMPORTS
 -----------------------------------*/
-
 @import url(kickstart-buttons.css);
 @import url(kickstart-forms.css);
 @import url(kickstart-menus.css);
@@ -14168,364 +14939,569 @@ z-index:600;
 @import url(prettify.css);
 @import url(tiptip.css);
 @import url(fonts/font-awesome-4.2.0/css/font-awesome.min.css);
-
 /*---------------------------------
 	HTML ELEMENTS
 -----------------------------------*/
-*{
--webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */    /* Firefox, other Gecko */
-box-sizing: border-box;         /* Opera/IE 8+ */
+/* line 28, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+* {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
 }
-a{color:#4D99E0;outline:0;}
-a:active{color:inherit;}
-a:visited{}
-a:hover{}
-a img{border:0;}
-a [class^="icon-"]{color:inherit;text-decoration:none;}
-strong,b{color:#000;font-weight:bold;}
-strike{}
-em,i{}
-.hide{display:none;}
-.show{display:block;}
+
+/* line 33, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+a {
+  color: #4D99E0;
+  outline: 0;
+}
+
+/* line 34, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+a:active {
+  color: inherit;
+}
+
+/* line 37, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+a img {
+  border: 0;
+}
+
+/* line 38, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+a [class^="icon-"] {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 39, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+strong, b {
+  color: #000;
+  font-weight: bold;
+}
+
+/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.hide {
+  display: none;
+}
+
+/* line 43, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.show {
+  display: block;
+}
 
 /*---------------------------------
 	UTILITY
 -----------------------------------*/
-.center{text-align:center;}
-.left{text-align:left;}
-.right{text-align:right;}
+/* line 48, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.center {
+  text-align: center;
+}
+
+/* line 49, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.left {
+  text-align: left;
+}
+
+/* line 50, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.right {
+  text-align: right;
+}
 
 /*---------------------------------
 	HR
 -----------------------------------*/
-hr{clear:both;border-bottom:0;border-top:1px dotted #ccc;border-right:0;border-left:0;margin:30px 0;min-height: 0;height:1px;}
-hr.alt1{border-style: solid;}
-hr.alt2{border-style: dashed;}
+/* line 55, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+hr {
+  clear: both;
+  border-bottom: 0;
+  border-top: 1px dotted #ccc;
+  border-right: 0;
+  border-left: 0;
+  margin: 30px 0;
+  min-height: 0;
+  height: 1px;
+}
+
+/* line 56, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+hr.alt1 {
+  border-style: solid;
+}
+
+/* line 57, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+hr.alt2 {
+  border-style: dashed;
+}
 
 /*---------------------------------
 	HTML5 ELEMENTS (shim)
 -----------------------------------*/
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-display:block;
+/* line 62, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 /*---------------------------------
 	HEADINGS
 -----------------------------------*/
-h1,h2,h3,h4,h5,h6{
-line-height:140%;
+/* line 70, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 140%;
 }
 
-h1{
-font-size:3.5em;
-margin:10px 0 10px 0;
+/* line 74, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+h1 {
+  font-size: 3.5em;
+  margin: 10px 0 10px 0;
 }
 
-h2{
-font-size:2.5em;
-margin:10px 0 10px 0;
+/* line 79, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+h2 {
+  font-size: 2.5em;
+  margin: 10px 0 10px 0;
 }
 
-h3{
-font-size:2.5em;
-margin:10px 0 10px 0;
-line-height:130%;
+/* line 84, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+h3 {
+  font-size: 2.5em;
+  margin: 10px 0 10px 0;
+  line-height: 130%;
 }
 
-h4{
-font-size:2em;
-margin:10px 0 10px 0;
+/* line 90, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+h4 {
+  font-size: 2em;
+  margin: 10px 0 10px 0;
 }
 
-h5{
-font-size:1.5em;
-margin:10px 0 10px 0;
+/* line 95, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+h5 {
+  font-size: 1.5em;
+  margin: 10px 0 10px 0;
 }
 
-h6{
-font-size:1.2em;
-margin:10px 0 5px 0;
+/* line 100, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+h6 {
+  font-size: 1.2em;
+  margin: 10px 0 5px 0;
 }
 
 /*---------------------------------
 	PARAGRAPHS
 -----------------------------------*/
-p{
-margin:10px 0;
+/* line 108, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+p {
+  margin: 10px 0;
 }
 
 /*---------------------------------
 	BLOCKQUOTES
 -----------------------------------*/
-blockquote{
-font-size:1.5em;
-line-height:1.5em;
-font-style: italic;
-margin:30px 30px 30px 0;
-padding:0 0 0 20px;
-border-left:1px solid #ccc;
+/* line 115, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+blockquote {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-style: italic;
+  margin: 30px 30px 30px 0;
+  padding: 0 0 0 20px;
+  border-left: 1px solid #ccc;
 }
 
-	blockquote span{font-size:0.7em;display:block;}
-	blockquote.small{font-size:1.2em;}
+/* line 124, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+blockquote span {
+  font-size: 0.7em;
+  display: block;
+}
+
+/* line 125, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+blockquote.small {
+  font-size: 1.2em;
+}
 
 /*---------------------------------
 	LISTS
 -----------------------------------*/
-ul, ol{
-padding:0;
-margin:0 0 0 30px;
+/* line 130, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul, ol {
+  padding: 0;
+  margin: 0 0 0 30px;
 }
 
-li{
-padding:5px 0;
-margin:0;
+/* line 135, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+li {
+  padding: 5px 0;
+  margin: 0;
 }
 
-ul.list-unstyled{
-padding:0;
-margin:0 0 20px 0;
+/* line 140, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.list-unstyled {
+  padding: 0;
+  margin: 0 0 20px 0;
 }
 
-ul.list-unstyled li{
-padding:5px 0;
-margin:0;
-list-style-type:none;
-
-}
-	
-ul.alt{
-padding:0;
-margin:0 0 20px 0;
+/* line 145, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.list-unstyled li {
+  padding: 5px 0;
+  margin: 0;
+  list-style-type: none;
 }
 
-ul.alt li{
-list-style-type:none;
-border-top:1px dotted #ccc;
-border-bottom:1px dotted #ccc;
-margin:0 0 -1px 0;
-background:url(img/icon-arrow-right.png) no-repeat 5px 0.7em;
-padding-left:20px;
+/* line 152, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.alt {
+  padding: 0;
+  margin: 0 0 20px 0;
 }
 
-ul.icons{
-margin:0 0 20px 0;
-padding:0;
+/* line 157, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.alt li {
+  list-style-type: none;
+  border-top: 1px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
+  margin: 0 0 -1px 0;
+  background: url(img/icon-arrow-right.png) no-repeat 5px 0.7em;
+  padding-left: 20px;
 }
 
-ul.icons li{
-list-style-type:none;
-margin:0;
-padding:5px 0;
+/* line 166, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.icons {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+/* line 171, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.icons li {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0;
 }
 
 /*---------------------------------
 	PRE & CODE
 -----------------------------------*/
-code{
-font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-font-size:0.9em;
-border:1px solid lightblue;
-padding:3px;
-border-radius:3px;
-color:#518BAB;
+/* line 180, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+code {
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  border: 1px solid lightblue;
+  padding: 3px;
+  border-radius: 3px;
+  color: #518BAB;
 }
 
-pre{
-white-space: pre-wrap;       /* css-3 */
-white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
-white-space: -pre-wrap;      /* Opera 4-6 */
-white-space: -o-pre-wrap;    /* Opera 7 */
-word-wrap: break-word;       /* Internet Explorer 5.5+ */
-margin: 0 0 0 0;
-padding:5px 5px 3px 5px;
-background:#fff;
-border-radius:5px;
--webkit-box-shadow:inset 0 0 7px rgba(0,0,0,0.2);
-box-shadow:inset 0 0 7px rgba(0,0,0,0.2);
-padding:10px;
-margin:0 0;
-border:1px solid #ddd;
-font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-font-size:0.9em;
+/* line 191, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+pre {
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap !important;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+  margin: 0 0 0 0;
+  padding: 5px 5px 3px 5px;
+  background: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 0 0;
+  border: 1px solid #ddd;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  font-size: 0.9em;
 }
 
 /*---------------------------------
 	TABLES
 -----------------------------------*/
-table{width:100%;margin:0 0 10px 0;text-align:left;border-collapse: collapse;}
-	thead, tbody{margin:0;padding:0;}
-	th, td{padding:7px 10px;font-size:0.9em;border-bottom:0 #ddd;text-align:left;}
-	thead th{font-size:0.9em;padding:3px 10px;border-bottom:1px solid #ddd;}
-	tbody tr.last th,
-	tbody tr.last td{border-bottom:0;}
+/* line 216, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table {
+  width: 100%;
+  margin: 0 0 10px 0;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+/* line 217, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+thead, tbody {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 218, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+th, td {
+  padding: 7px 10px;
+  font-size: 0.9em;
+  border-bottom: 0 #ddd;
+  text-align: left;
+}
+
+/* line 219, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+thead th {
+  font-size: 0.9em;
+  padding: 3px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* line 220, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+tbody tr.last th,
+tbody tr.last td {
+  border-bottom: 0;
+}
 
 /* striped */
-table.striped{}
-	table.striped tr.alt{background:#f5f5f5;}
-	table.striped thead th{background:#fff;}
-	table.striped tbody th{background:#f5f5f5;text-align:right;padding-right:15px;border-right:1px dotted #e5e5e5;}
-	table.striped tbody tr.alt th{background:#efefef;}
+/* line 225, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.striped tr.alt {
+  background: #f5f5f5;
+}
+
+/* line 226, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.striped thead th {
+  background: #fff;
+}
+
+/* line 227, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.striped tbody th {
+  background: #f5f5f5;
+  text-align: right;
+  padding-right: 15px;
+  border-right: 1px dotted #e5e5e5;
+}
+
+/* line 228, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.striped tbody tr.alt th {
+  background: #efefef;
+}
 
 /* tight */
-table.tight{}
-	table.tight th, .tight td{padding:2px 10px;}
+/* line 232, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.tight th, .tight td {
+  padding: 2px 10px;
+}
 
 /* sortable */
-table.sortable{border:1px solid #ddd;}
-	table.sortable thead th{cursor: pointer;position:relative;top:0;left:0;border-right:1px solid #ddd;}
-	table.sortable thead th:hover{background:#efefef;}
-	table.sortable span.arrow{border-style:solid;border-width:5px;
-	display:block;position:absolute;top:50%;right:5px;font-size:0;
-	border-color:#ccc transparent transparent transparent;
-	line-height:0;height:0;width:0;margin-top:-2px;}
-	table.sortable span.arrow.up{border-color:transparent transparent #ccc transparent;margin-top:-7px;}
+/* line 235, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.sortable {
+  border: 1px solid #ddd;
+}
+
+/* line 236, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.sortable thead th {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-right: 1px solid #ddd;
+}
+
+/* line 237, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.sortable thead th:hover {
+  background: #efefef;
+}
+
+/* line 238, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.sortable span.arrow {
+  border-style: solid;
+  border-width: 5px;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  font-size: 0;
+  border-color: #ccc transparent transparent transparent;
+  line-height: 0;
+  height: 0;
+  width: 0;
+  margin-top: -2px;
+}
+
+/* line 242, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+table.sortable span.arrow.up {
+  border-color: transparent transparent #ccc transparent;
+  margin-top: -7px;
+}
 
 /*---------------------------------
 	TABS
 -----------------------------------*/
-ul.tabs{
-margin:10px 0 -1px 0;
-padding:0;
-width:100%;
-border-bottom:1px solid #e5e5e5;
-float:left;
-font-size:0;
+/* line 247, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.tabs {
+  margin: 10px 0 -1px 0;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  float: left;
+  font-size: 0;
 }
 
-	ul.tabs.left{text-align:left;}
-	ul.tabs.center{text-align:center;}
-	ul.tabs.right{text-align:right;}
-	ul.tabs.right li{margin:0 0 0 -2px;}
+/* line 256, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.tabs.left {
+  text-align: left;
+}
 
-	ul.tabs li{
-	font-size:14px;
-	list-style-type:none;
-	margin:0 -2px 0 0;
-	padding:0;
-	display:inline-block;
-	*display:inline;/*IE ONLY*/
-	position:relative;
-	top:0;
-	left:0;
-	*top:1px;/*IE 7 ONLY*/
-	zoom:1;
-	}
+/* line 257, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.tabs.center {
+  text-align: center;
+}
 
-	ul.tabs li a{
-	text-decoration:none;
-	color:#666;
-	display:inline-block;
-	padding:9px 15px;
-	position: relative;
-	top:0;
-	left:0;
-	line-height:100%;
-	background:#f5f5f5;
-	-webkit-box-shadow: inset 0 -3px 3px rgba(0,0,0,0.03);
-	box-shadow: inset 0 -3px 3px rgba(0,0,0,0.03);
-	border:1px solid #e5e5e5;
-	border-bottom:0;
-	font-size:0.9em;
-	zoom:1;
-	}
+/* line 258, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.tabs.right {
+  text-align: right;
+}
 
-	ul.tabs li a:hover{
-	background:#fff;
-	}
+/* line 259, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.tabs.right li {
+  margin: 0 0 0 -2px;
+}
 
-	ul.tabs li.current a{
-	position:relative;
-	top:1px;
-	left:0;
-	background:#fff;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	color:#222;
-	}
+/* line 261, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.tabs li {
+  font-size: 14px;
+  list-style-type: none;
+  margin: 0 -2px 0 0;
+  padding: 0;
+  display: inline-block;
+  *display: inline;
+  /*IE ONLY*/
+  position: relative;
+  top: 0;
+  left: 0;
+  *top: 1px;
+  /*IE 7 ONLY*/
+  zoom: 1;
+}
 
-	.tab-content{
-	border:1px solid #efefef;
-	border:1px solid #e5e5e5;
-	background:#fff;
-	clear:both;
-	padding:20px;
-	margin:0 0 40px 0;
-	}
+/* line 275, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.tabs li a {
+  text-decoration: none;
+  color: #666;
+  display: inline-block;
+  padding: 9px 15px;
+  position: relative;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  background: #f5f5f5;
+  -webkit-box-shadow: inset 0 -3px 3px rgba(0, 0, 0, 0.03);
+  box-shadow: inset 0 -3px 3px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e5e5e5;
+  border-bottom: 0;
+  font-size: 0.9em;
+  zoom: 1;
+}
 
+/* line 294, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.tabs li a:hover {
+  background: #fff;
+}
+
+/* line 298, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.tabs li.current a {
+  position: relative;
+  top: 1px;
+  left: 0;
+  background: #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #222;
+}
+
+/* line 309, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.tab-content {
+  border: 1px solid #efefef;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  clear: both;
+  padding: 20px;
+  margin: 0 0 40px 0;
+}
 
 /*---------------------------------
 	BREADCRUMBS
 -----------------------------------*/
-ul.breadcrumbs{
-margin:10px 0;
-padding:0;
-line-height:0%;
-font-size:0;
+/* line 322, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs {
+  margin: 10px 0;
+  padding: 0;
+  line-height: 0%;
+  font-size: 0;
 }
 
-	ul.breadcrumbs li{
-	list-style-type:none;
-	margin:0;
-	padding:0;
-	display:inline-block;
-	*display:inline; /* IE ONLY*/
-	position:relative;
-	zoom:1;
-	line-height:100%;
-	font-size:14px; /* 0.8em default to override font-size:0; on parent*/
-	}
+/* line 329, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  *display: inline;
+  /* IE ONLY*/
+  position: relative;
+  zoom: 1;
+  line-height: 100%;
+  font-size: 14px;
+  /* 0.8em default to override font-size:0; on parent*/
+}
 
-	ul.breadcrumbs li a{
-	display:inline-block;
-	*display:inline; /* IE ONLY*/
-	position:relative;
-	padding:5px 15px 5px 5px;
-	font-size:0.9em;
-	zoom:1;
-	margin:0;
-	background:url(img/icon-arrow-right.png) no-repeat right center;
-	}
+/* line 341, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs li a {
+  display: inline-block;
+  *display: inline;
+  /* IE ONLY*/
+  position: relative;
+  padding: 5px 15px 5px 5px;
+  font-size: 0.9em;
+  zoom: 1;
+  margin: 0;
+  background: url(img/icon-arrow-right.png) no-repeat right center;
+}
 
-	ul.breadcrumbs li.last a{
-	color:#333;
-	cursor: default;
-	text-decoration:none;
-	background:none;
-	}
+/* line 352, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs li.last a {
+  color: #333;
+  cursor: default;
+  text-decoration: none;
+  background: none;
+}
 
-	ul.breadcrumbs li.last a:hover{
-	text-decoration:none;
-	}
+/* line 359, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs li.last a:hover {
+  text-decoration: none;
+}
 
-	/* Alternative Style */
-	ul.breadcrumbs.alt1{
-	border:1px solid transparent;
-	font-size:0;
-	}
+/* Alternative Style */
+/* line 364, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs.alt1 {
+  border: 1px solid transparent;
+  font-size: 0;
+}
 
-	ul.breadcrumbs.alt1 li a{
-	padding:10px 25px 10px 15px;
-	background:url(img/breadcrumbs-bg.gif) no-repeat right center;
-	text-decoration:none;
-	border-top:1px solid #efefef;
-	border-bottom:1px solid #efefef;
-	font-size:12px;
-	}
+/* line 369, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs.alt1 li a {
+  padding: 10px 25px 10px 15px;
+  background: url(img/breadcrumbs-bg.gif) no-repeat right center;
+  text-decoration: none;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  font-size: 12px;
+}
 
-	ul.breadcrumbs.alt1 a:hover{
-	text-decoration:underline;
-	}
+/* line 378, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs.alt1 a:hover {
+  text-decoration: underline;
+}
 
-	ul.breadcrumbs.alt1 li.first a{
-	border-left:1px solid #efefef;
-	}
+/* line 382, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs.alt1 li.first a {
+  border-left: 1px solid #efefef;
+}
 
-	ul.breadcrumbs.alt1 li.last a{
-	background:none;
-	border-right:1px solid #efefef;
-	}
+/* line 386, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+ul.breadcrumbs.alt1 li.last a {
+  background: none;
+  border-right: 1px solid #efefef;
+}
 
 /*---------------------------------
 	IMAGES
@@ -14534,149 +15510,317 @@ font-size:0;
 	for img .style1, .style2, .style3
 	view js/kickstart.js Image Style Helpers
 */
-img{
-margin:0;
-padding:0;
-display:inline-block;
-position:relative;
-zoom:1;
-vertical-align: bottom;
+/* line 398, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+img {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  zoom: 1;
+  vertical-align: bottom;
 }
 
-	img.align-left, .img-wrap.align-left{float:left;margin:0 10px 5px 0;}
-	img.align-right, .img-wrap.align-right{float:right;margin:0 0 5px 10px;}
-	img.full-width{clear:both;display:block;width:100%;height:auto;margin:0 0 10px 0;}
+/* line 407, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+img.align-left, .img-wrap.align-left {
+  float: left;
+  margin: 0 10px 5px 0;
+}
 
-	div.caption{
-	background:#f5f5f5;
-	border:1px solid #ddd;
-	padding:3px;
-	max-width:100%;
-	display:inline-block;
-	height:auto;
-	}
+/* line 408, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+img.align-right, .img-wrap.align-right {
+  float: right;
+  margin: 0 0 5px 10px;
+}
 
-		div.caption img{
-		display:block;
-		padding:0;
-		margin:0;
-		width:100%;
-		height:auto;
-		}
+/* line 409, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+img.full-width {
+  clear: both;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 10px 0;
+}
 
-		div.caption span{
-		display:block;
-		margin-top:3px;
-		font-size:0.8em;
-		color:#666;
-		padding:0px 5px;
-		}
+/* line 411, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+div.caption {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 3px;
+  max-width: 100%;
+  display: inline-block;
+  height: auto;
+}
 
-	.gallery{}
+/* line 420, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+div.caption img {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
 
-		.gallery a{
-		display:inline-block;
-		position:relative;
-		border:1px solid #ddd;
-		background:#fff;
-		padding:3px;
-		margin:5px;
-		border-radius:5px;
-		}
+/* line 428, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+div.caption span {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.8em;
+  color: #666;
+  padding: 0px 5px;
+}
 
-		.gallery a img{
-		display: block;
-		position: relative;
-		margin:0;
-		padding:0;
-		}
+/* line 438, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.gallery a {
+  display: inline-block;
+  position: relative;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 3px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+/* line 450, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.gallery a img {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
 
 /*---------------------------------
 	SLIDESHOW2
 -----------------------------------*/
-.slideshow-wrap{
-clear:both;
-margin:0;
-padding:0;
-position:relative;
-top:0;
-left:0;
-overflow:hidden;
-clear:both;
+/* line 460, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.slideshow-wrap {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  clear: both;
 }
 
-	.slideshow-inner{
-	overflow:hidden;
-	clear:both;
-	position:relative;
-	top:0;
-	left:0;
-	border:1px solid #efefef;
-	}
+/* line 471, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.slideshow-inner {
+  overflow: hidden;
+  clear: both;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid #efefef;
+}
 
-	.slideshow{
-	clear:both;
-	margin:0;
-	padding:0;
-	width:auto;
-	height:auto;
-	overflow:hidden;
-	}
+/* line 480, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.slideshow {
+  clear: both;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
 
-		.slideshow li{
-		list-style-type:none;
-		margin:0;
-		padding:0;
-		float:left;
-		display:block;
-		}
+/* line 489, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.slideshow li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  display: block;
+}
 
-			.slideshow img{vertical-align: bottom;}
+/* line 497, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.slideshow img {
+  vertical-align: bottom;
+}
 
-	.slideshow-buttons{
-	text-align:right;
-	margin:3px 0 0 0;
-	padding:0;
-	}
+/* line 499, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.slideshow-buttons {
+  text-align: right;
+  margin: 3px 0 0 0;
+  padding: 0;
+}
 
-		.slideshow-buttons li{display:inline;position:relative;top:0;left:0;line-height:100%;margin:0;padding:0;}
-		.slideshow-buttons li.current a{background:#ddd;}
+/* line 505, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.slideshow-buttons li {
+  display: inline;
+  position: relative;
+  top: 0;
+  left: 0;
+  line-height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-		.slideshow-buttons a{
-		display:inline;
-		position:relative;
-		top:0;
-		left:0;
-		padding:1px 3px;
-		margin:0 1px;
-		line-height:100%;
-		border:1px solid #efefef;
-		text-decoration:none;
-		font-size:0.8em;
-		}
-.pln{color:#000}@media screen{.str{color:#080}.kwd{color:#008}.com{color:#800}.typ{color:#606}.lit{color:#066}.pun,.opn,.clo{color:#660}.tag{color:#008}.atn{color:#606}.atv{color:#080}.dec,.var{color:#606}.fun{color:red}}@media print,projection{.str{color:#060}.kwd{color:#006;font-weight:bold}.com{color:#600;font-style:italic}.typ{color:#404;font-weight:bold}.lit{color:#044}.pun,.opn,.clo{color:#440}.tag{color:#006;font-weight:bold}.atn{color:#404}.atv{color:#060}}pre.prettyprint{}ol.linenums{margin-top:0;margin-bottom:0}li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8{list-style-type:none}li.L1,li.L3,li.L5,li.L7,li.L9{background:#eee}
+/* line 506, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.slideshow-buttons li.current a {
+  background: #ddd;
+}
+
+/* line 508, /home/ubuntu/workspace/app/assets/stylesheets/kickstart.scss */
+.slideshow-buttons a {
+  display: inline;
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 1px 3px;
+  margin: 0 1px;
+  line-height: 100%;
+  border: 1px solid #efefef;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+.pln {
+  color: #000;
+}
+
+@media screen {
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .str {
+    color: #080;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .kwd {
+    color: #008;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .com {
+    color: #800;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .typ {
+    color: #606;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .lit {
+    color: #066;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .pun, .opn, .clo {
+    color: #660;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .tag {
+    color: #008;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .atn {
+    color: #606;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .atv {
+    color: #080;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .dec, .var {
+    color: #606;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .fun {
+    color: red;
+  }
+}
+@media print, projection {
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .str {
+    color: #060;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .kwd {
+    color: #006;
+    font-weight: bold;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .com {
+    color: #600;
+    font-style: italic;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .typ {
+    color: #404;
+    font-weight: bold;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .lit {
+    color: #044;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .pun, .opn, .clo {
+    color: #440;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .tag {
+    color: #006;
+    font-weight: bold;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .atn {
+    color: #404;
+  }
+
+  /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+  .atv {
+    color: #060;
+  }
+}
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+li.L0, li.L1, li.L2, li.L3, li.L5, li.L6, li.L7, li.L8 {
+  list-style-type: none;
+}
+
+/* line 1, /home/ubuntu/workspace/app/assets/stylesheets/prettify.scss */
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+  background: #eee;
+}
 /* line 1, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
 body {
   background-color: #fff;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 20;
+  line-height: 25px;
 }
 
 /* line 10, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 20px;
+  line-height: 25px;
 }
 
 /* line 16, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
+  font-size: 18px;
 }
 
 /* line 22, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
@@ -14733,14 +15877,14 @@ div.field, div.actions {
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
-  font-size: 12px;
+  font-size: 19px;
   margin: -7px -7px 0;
   background-color: #c00;
   color: #fff;
 }
 /* line 76, /home/ubuntu/workspace/app/assets/stylesheets/scaffolds.scss */
 #error_explanation ul li {
-  font-size: 12px;
+  font-size: 19px;
   list-style: square;
 }
 
@@ -14752,98 +15896,133 @@ label {
 	TipTip CSS - Version 1.2 
 	http://code.drewwilson.com/entry/tiptip-jquery-plugin
 */
+/* line 7, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+#tiptip_holder {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+}
 
+/* line 8, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+#tiptip_holder.tip_top {
+  padding-bottom: 5px;
+}
 
-#tiptip_holder { display: none; position: absolute; top: 0; left: 0; z-index: 99999; } 
-#tiptip_holder.tip_top { padding-bottom: 5px; } 
-#tiptip_holder.tip_bottom { padding-top: 5px; } 
-#tiptip_holder.tip_right { padding-left: 5px; } 
-#tiptip_holder.tip_left { padding-right: 5px; } 
+/* line 9, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+#tiptip_holder.tip_bottom {
+  padding-top: 5px;
+}
 
+/* line 10, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+#tiptip_holder.tip_right {
+  padding-left: 5px;
+}
+
+/* line 11, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+#tiptip_holder.tip_left {
+  padding-right: 5px;
+}
+
+/* line 13, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_content {
-font-size: 11px;
-color: #fff;
-text-shadow: 0 0 2px #000;
-padding: 4px 8px;
-border: 1px solid rgba(255,255,255,0.25);
-background:#212121;
-background-color: rgba(25,25,25,0.92);
-background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(#000));
-border-radius: 3px;
--webkit-box-shadow: 0 0 3px #555;
-box-shadow: 0 0 3px #555;
-*background:#212121;
+  font-size: 11px;
+  color: #fff;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #dcd0ff;
+  background-color: rgba(220, 208, 255, 0.92);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(#dcd0ff));
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 3px #555;
+  box-shadow: 0 0 3px #555;
+  *background: #dcd0ff;
 }
 
+/* line 30, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_arrow, #tiptip_arrow_inner {
-position: absolute;
-border-color: transparent;
-border-style: solid;
-border-width: 6px;
-height: 0;
-width: 0;
+  position: absolute;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 6px;
+  height: 0;
+  width: 0;
 }
 
+/* line 39, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_top #tiptip_arrow {
-border-top-color: #fff;
-border-top-color: rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-top-color: rgba(255, 255, 255, 0.35);
 }
 
+/* line 44, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_bottom #tiptip_arrow {
-border-bottom-color: #fff;
-border-bottom-color: rgba(255,255,255,0.35);
+  border-bottom-color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.35);
 }
 
+/* line 49, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_right #tiptip_arrow {
-border-right-color: #fff;
-border-right-color: rgba(255,255,255,0.35);
+  border-right-color: #fff;
+  border-right-color: rgba(255, 255, 255, 0.35);
 }
 
+/* line 54, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_left #tiptip_arrow {
-border-left-color: #fff;
-border-left-color: rgba(255,255,255,0.35);
+  border-left-color: #fff;
+  border-left-color: rgba(255, 255, 255, 0.35);
 }
 
+/* line 59, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_top #tiptip_arrow_inner {
-margin-top: -7px;
-margin-left: -6px;
-border-top-color: rgb(25,25,25);
-border-top-color: rgba(25,25,25,0.92);
+  margin-top: -7px;
+  margin-left: -6px;
+  border-top-color: #191919;
+  border-top-color: rgba(25, 25, 25, 0.92);
 }
 
+/* line 66, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_bottom #tiptip_arrow_inner {
-margin-top: -5px;
-margin-left: -6px;
-border-bottom-color: rgb(25,25,25);
-border-bottom-color: rgba(25,25,25,0.92);
+  margin-top: -5px;
+  margin-left: -6px;
+  border-bottom-color: #191919;
+  border-bottom-color: rgba(25, 25, 25, 0.92);
 }
 
+/* line 73, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_right #tiptip_arrow_inner {
-margin-top: -6px;
-margin-left: -5px;
-border-right-color: rgb(25,25,25);
-border-right-color: rgba(25,25,25,0.92);
+  margin-top: -6px;
+  margin-left: -5px;
+  border-right-color: #191919;
+  border-right-color: rgba(25, 25, 25, 0.92);
 }
 
+/* line 80, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
 #tiptip_holder.tip_left #tiptip_arrow_inner {
-margin-top: -6px;
-margin-left: -7px;
-border-left-color: rgb(25,25,25);
-border-left-color: rgba(25,25,25,0.92);
+  margin-top: -6px;
+  margin-left: -7px;
+  border-left-color: #191919;
+  border-left-color: rgba(25, 25, 25, 0.92);
 }
 
 /* Webkit Hacks  */
-@media screen and (-webkit-min-device-pixel-ratio:0) {	
-	#tiptip_content {
-		padding: 4px 8px 5px 8px;
-		background-color: rgba(45,45,45,0.88);
-	}
-	#tiptip_holder.tip_bottom #tiptip_arrow_inner { 
-		border-bottom-color: rgba(45,45,45,0.88);
-	}
-	#tiptip_holder.tip_top #tiptip_arrow_inner { 
-		border-top-color: rgba(20,20,20,0.92);
-	}
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* line 89, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+  #tiptip_content {
+    padding: 4px 8px 5px 8px;
+    background-color: rgba(45, 45, 45, 0.88);
+  }
+
+  /* line 93, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+  #tiptip_holder.tip_bottom #tiptip_arrow_inner {
+    border-bottom-color: rgba(45, 45, 45, 0.88);
+  }
+
+  /* line 96, /home/ubuntu/workspace/app/assets/stylesheets/tiptip.scss */
+  #tiptip_holder.tip_top #tiptip_arrow_inner {
+    border-top-color: rgba(20, 20, 20, 0.92);
+  }
 }
 /* line 6, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
 .left-col {
@@ -14982,7 +16161,7 @@ a.button {
  */
 /* line 7, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .button_new {
-  background-color: #8b9297;
+  background-color: #666;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#8b9297), to(#484d51));
   background-image: linear-gradient(180deg, #8b9297, #484d51);
   border-radius: 200px;
@@ -14997,36 +16176,42 @@ a.button {
   color: #ffffff !important;
 }
 
-/* line 24, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 23, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+.link {
+  color: #4B0082 !important;
+  font-style: normal;
+}
+
+/* line 28, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 html, body {
   margin: 0;
   padding: 0;
   background: White;
   color: Black;
   font-family: Georgia;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
-/* line 32, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 div#main {
   margin: 0;
   padding: 0 20px 20px;
 }
 
-/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 40, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 a {
   background: transparent;
   color: #4E0B00 !important;
   text-decoration: underline;
   font-weight: bold;
 }
-/* line 42, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 46, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 a:hover {
   color: #fff !important;
   background-color: #000;
 }
 
-/* line 47, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 51, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 h1 {
   color: #4B0082;
   font-size: 150%;
@@ -15036,7 +16221,7 @@ h1 {
   border-bottom: 1px solid DarkSlateGrey;
 }
 
-/* line 58, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 62, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 h1.title {
   margin: 0 0 1em;
   padding: 10px;
@@ -15047,7 +16232,7 @@ h1.title {
   font-style: normal;
 }
 
-/* line 67, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 71, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 table#posts {
   margin: 10px;
   border-collapse: collapse;
@@ -15055,32 +16240,32 @@ table#posts {
   border-bottom: 2px solid black;
 }
 
-/* line 73, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 77, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 table#posts th {
   border: 2px solid white;
   font-weight: bold;
   background-color: #ADA2D1;
 }
 
-/* line 78, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 table#posts th, table#posts td {
   padding: 4px;
   text-align: left;
 }
 
-/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 86, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 table#posts th.hilite {
   background-color: #84D8B4;
 }
 
-/* line 85, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 89, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 #notice #warning {
   background: maroon;
   margin: 1em 0;
   padding: 4px;
 }
 
-/* line 90, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 94, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 form label {
   display: block;
   line-height: 25px;
@@ -15088,41 +16273,41 @@ form label {
   color: maroon;
 }
 
-/* line 97, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 101, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .hilite {
   color: #000 !important;
 }
 
-/* line 101, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 105, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .default {
   border-radius: 5px !important;
 }
 
-/* line 102, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 106, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .update-button {
   font-size: 1em;
   padding: 5px 10px;
 }
 
-/* line 106, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 110, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 span.h1.title {
   color: white;
   font-size: 2em;
   font-style: normal;
 }
 
-/* line 111, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 115, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 a.title {
   color: white !important;
   font-style: normal;
 }
 
-/* line 115, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 119, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 a.button {
   color: white !important;
 }
 
-/* line 118, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 122, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .row.title {
   margin: 0 0 0;
   padding: 10px;
@@ -15132,19 +16317,19 @@ a.button {
   font-style: normal;
 }
 
-/* line 126, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 130, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 .container.title {
   margin: 0 0 0 0;
   padding: 0;
   max-width: 100%;
 }
 
-/* line 132, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 136, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 ul {
   list-style-type: none;
 }
 
-/* line 135, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
+/* line 139, /home/ubuntu/workspace/app/assets/stylesheets/posts.scss */
 li.nav-item {
   display: inline-block;
 }
