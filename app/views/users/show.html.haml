@@ -7,7 +7,7 @@
   .container{:style => "background-color:white"}
     .row
       .col-md-12
-        %h2{:style => "text-align:center"} Your Profile
+        %h2{:style => "text-align:center"} #{@user.name}'s Profile
         %div{:style => "margin-left:20%"}
           %h5 Personal Information
           %b Name:
@@ -35,9 +35,12 @@
           %b
           = @user.experience
           %br/
-        %div{:style => "text-align:center"}
-          %a.button.large.purple.default{:href => edit_user_registration_path, :method => :get} Edit profile
-        %br/
-        %div{:style => "text-align:center"}
-          %a.button.red.default{:data => "#{{:confirm => 'Are you sure?'}}", :href => "#{@user}", :method => :delete} Delete your account
-        %br/
+        -if current_user != @user
+          %br/
+        -else
+          %div{:style => "text-align:center"}
+            %a.button.large.purple.default{:href => edit_user_registration_path, :method => :get} Edit profile
+          %br/
+          %div{:style => "text-align:center"}
+            %a.button.red.default{:data => "#{{:confirm => 'Are you sure?'}}", :href => "#{@user}", :method => :delete} Delete your account
+          %br/
