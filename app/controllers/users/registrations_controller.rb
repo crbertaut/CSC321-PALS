@@ -39,7 +39,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
         @user.interests << @interest
       end
     end
-  #  redirect_to user_path(User.last)
   end
 
   # GET /resource/edit
