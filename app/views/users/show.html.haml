@@ -7,20 +7,20 @@
   .container{:style => "background-color:white"}
     .row
       .col-md-12
-        %h2{:style => "text-align:center"} #{@user.name}'s Profile
+        %h2{:style => "text-align:center"} #{@user.username}'s Profile
         %div{:style => "margin-left:20%"}
           %h5 Personal Information
           %b Name:
           = @user.name
           %br/
-          %b Username:
-          = @user.username
-          %br/
           %b Birthdate:
           = @user.dob
           %br/
           %b Interests:
-          = @user.interests.collect(&:name)
+          = @user.interests.map(&:name).join(", ")
+          %br/
+          %b Experience:
+          = @user.experience
           %hr.line/
           %h5 Contact Information
           %b Phone:
@@ -29,11 +29,6 @@
           %b Email:
           = @user.email
           %br/
-          %br/
-          %hr.line/
-          %h5 Experience:
-          %b
-          = @user.experience
           %br/
         -if current_user != @user
           %br/

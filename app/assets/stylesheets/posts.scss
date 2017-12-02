@@ -59,12 +59,13 @@ h2 {
   
 }
 h1.title {
-  margin: 0 0 1em;
+  margin: 0 0 0;
+  margin-right: 50px;
   padding: 10px;
   background-color: #4B0082;
   color: white;
   border-bottom: 4px solid #A88BD7;
-  font-size: 2em;
+  font-size: 40px;
   font-style: normal;
 }
 table#posts {
@@ -108,7 +109,7 @@ form label {
 }
 span.h1.title {
   color: white;
-  font-size: 2em;
+  font-size: 40px;
   font-style: normal;
 }
 a.title {
@@ -136,5 +137,7 @@ ul {
   list-style-type: none;
 }
 li.nav-item {
-  display: inline-block;
+  display:inline-block;
+  text-align:right;
+  margin:0 10px 0 10px;
 }
