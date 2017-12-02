@@ -6,7 +6,7 @@ describe "the sign up process", :type => :feature do
     login_as nil
     visit '/'
     click_on 'Sign up'
-    within("form") do
+    within('form[class="new_user"]') do
       fill_in 'user_name', with: "User Example"
       select "1990", from: 'user_dob_1i', :match => :first
       select "4", from: 'user_dob_2i', :match => :first
@@ -36,11 +36,12 @@ describe "the login process", :type => :feature do
   it "signs me in" do
     visit '/'
     click_on 'Log in'
-    within("form") do
+    within('form[class="new_user"]') do
       fill_in 'Email', with: 'user@example.com'
       fill_in 'Password', with: 'password'
     end
-    click_button 'Log in'
+    #click_button 'Log in'
+    find('input[class = "purple"]').click
     expect(page).to have_content 'Signed in successfully.'
   end
 end
@@ -53,7 +54,7 @@ describe "the login process", :type => :feature do
   it "logs me out" do
     login_as create( :user )
     visit '/'
-    click_button 'LOG OUT'
+    click_button 'Log Out'
     expect(page).to have_content 'Signed out successfully.'
   end
 end
