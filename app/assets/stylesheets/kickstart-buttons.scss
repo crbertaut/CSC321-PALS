@@ -22,18 +22,20 @@ left:0;
 vertical-align: middle;
 margin:0;
 padding:10px 15px;
-line-height:100%;
+line-height:100% !important;
 -moz-border-radius:5px;
 -webkit-border-radius:5px;
 border-radius:5px;
 cursor: pointer;
 width:auto;
 overflow:visible;
-font-weight:normal;
-font-size:14px; /*Pixels for consistancy*/
+font-weight:bold;
+font-size:18px; /*Pixels for consistancy*/
+font-family:Georgia !important;
 text-shadow:0 1px 0 #fff;
 color:#666;
 text-decoration:none;
+text-align:center;
 vertical-align: middle;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
@@ -140,6 +142,7 @@ background:0;
 	font-weight:normal;
 	font-size:14px; /*Pixels for consistancy*/
 	text-shadow:0 1px 0 #fff;
+	text-align:center;
 	color:#666;
 	text-decoration:none;
 	vertical-align: middle;

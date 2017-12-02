@@ -1,4 +1,8 @@
+%h1 Edit Reply
+
+= stylesheet_link_tag "posts"
+
 = form_for [@post, @reply], remote: true do |f|
-  = f.label :message, 'Reply:'
+  = f.label :message, 'Update Reply:'
   = f.text_area :message
-  = f.submit "Reply"
+  = f.submit "Update", class:"button purple default small"

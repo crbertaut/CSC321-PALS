@@ -12,6 +12,7 @@
       = devise_error_messages!
       .row
         .col-md-6.left-col.form-group
+          %br/
           .field.padded{:style => "margin-top:15px"}
             %label Full name:
             = f.text_field :name, size: "30"
@@ -33,7 +34,7 @@
             = f.text_field :username, size: "24"
           .field.padded
             %label Password:
-            = f.password_field :password, autocomplete: "off", placeholder: "(6 characters minimum)", size: "24"
+            = f.password_field :password, autocomplete: "off", placeholder: " (6 characters minimum)", size: "24"
           .field.padded
             %label Confirm password:
             = f.password_field :password_confirmation, autocomplete: "off", size: "24"
@@ -71,9 +72,9 @@
                     = check_box_tag "interests[]", "other", false, name: "other"
                     = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
             .field.experience
-              %label Experience:
+              %label Experience (if any):
               %br/
-              = f.text_area :experience, size: "30", placeholder: "'None' is fine!"
+              = f.text_area :experience, size: "30"
       %br/
       .row
         .col-md-12{:style => "text-align:center"}
