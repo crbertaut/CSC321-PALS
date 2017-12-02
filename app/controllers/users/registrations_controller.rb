@@ -43,7 +43,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    if current_user != params[:id]
+    if current_user != @user
       flash[:warning] = "Illegal action. You do not have permissions."
       redirect_to root_path
     else
