@@ -4,7 +4,7 @@
 %ul#details
   %li
     %b Posted by:
-    = link_to User.find(post.user_id).name, user_path(User.find(post.user_id))
+    = link_to User.find(@post.user_id).name, user_path(User.find(@post.user_id))
   %li
     %b Type:
     = @post.thread_type
