@@ -1,0 +1,131 @@
+/* line 6, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+.left-col {
+  text-align: right;
+  font-size: 18px;
+  line-height: 21px;
+  font-family: Georgia;
+}
+
+/* line 13, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+.right-col {
+  text-align: center;
+  font-size: 18px;
+  margin-top: -50px;
+  font-family: Georgia;
+}
+
+/* line 20, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+.faded {
+  color: #bbbbbb;
+}
+
+/* line 24, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+.padded {
+  margin-bottom: 20px;
+}
+
+/* line 27, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+.experience {
+  margin-top: 5px;
+  height: 70px;
+  margin-left: -200px;
+}
+
+/* line 33, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+.field {
+  font-size: 19px;
+}
+
+/* line 37, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: White;
+  color: Black;
+  font-family: Georgia;
+  font-size: 1em;
+  height: 100vh;
+}
+
+/* line 46, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+div#main {
+  margin: 0;
+  padding: 0 20px 0;
+}
+
+/* line 50, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+a {
+  background: transparent;
+  color: #4E0B00 !important;
+  text-decoration: underline;
+  font-weight: bold;
+}
+/* line 56, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+a:hover {
+  color: #fff !important;
+  background-color: #000;
+}
+
+/* line 61, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+h1 {
+  color: #4B0082;
+  font-size: 150%;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid DarkSlateGrey;
+}
+
+/* line 69, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+h1.title {
+  margin: 0 0 0;
+  padding: 10px;
+  background-color: #4B0082;
+  color: white;
+  border-bottom: 4px solid #A88BD7;
+  font-size: 2em;
+  font-style: normal;
+}
+
+/* line 78, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: Georgia;
+  margin: 10px 0 0 0;
+}
+
+/* line 85, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+a.title {
+  color: white !important;
+  font-style: normal;
+}
+
+/* line 89, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+a.button {
+  color: white !important;
+}
+
+/* line 92, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+.row.title {
+  margin: 0 0 0;
+  padding: 10px;
+  background-color: #4B0082;
+  color: white;
+  border-bottom: 4px solid #A88BD7;
+  font-style: normal;
+}
+
+/* line 100, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+.container.title {
+  margin: 0 0 0 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* line 105, /home/ubuntu/workspace/app/assets/stylesheets/users.scss */
+.line {
+  width: 70%;
+  text-align: center;
+  margin: 20px 0 20px 0;
+}

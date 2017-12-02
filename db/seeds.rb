@@ -9,6 +9,6 @@
 #AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
-Interest.create!([{ name: 'Dog feeding' }, { name: 'Dog playing' }, { name: 'Dog grooming' }, { name: 'Fundraising' }, 
-    { name: 'Organizing events'}, { name: 'Cooking/baking' }, { name: 'Machine maintenance' }, { name: 'Dog walking' },
-    { name: 'Dog cleaning' }, { name: 'Cat playing' }, { name: 'Cat feeding' }, { name: 'Cat cleaning' }])
+Interest.create!([{ name: 'Dog shifts' }, { name: 'Dog transport' }, { name: 'Dog fostering' }, { name: 'Fundraising' }, 
+    { name: 'Organizing events'}, { name: 'Cooking/baking' }, { name: 'Machine maintenance' }, { name: 'Cat shifts' }, 
+    { name: 'Cat transport' }, { name: 'Cat fostering' }])

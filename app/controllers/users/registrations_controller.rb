@@ -13,17 +13,43 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    params[:interests].each do |int| 
-      @interest = Interest.find_by name: int
-      @user.interests << @interest
+    if params[:interests] then
+      params[:interests].each do |int| 
+        @interest = Interest.find_by name: int
+        @user.interests << @interest
+      end
     end
-  #  redirect_to user_path(User.last)
+    if params[:dog_interests] then
+      params[:dog_interests].each do |int|
+        @interest = Interest.find_by name: "Dog " + int.downcase
+        @user.interests << @interest
+      end
+    end
+    if params[:cat_interests] then
+      params[:cat_interests].each do |int|
+        @interest = Interest.find_by name: "Cat " + int.downcase
+        @user.interests << @interest
+      end
+    end
+    if (params[:other_interests] != "") then
+      @int_params = params[:other_interests].split(',')
+      @int_params.each do |int|
+        Interest.create!(name: int.strip.capitalize)
+        @interest = Interest.find_by name: int.strip.capitalize
+        @user.interests << @interest
+      end
+    end
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    if current_user != params[:id]
+      flash[:warning] = "Illegal action. You do not have permissions."
+      redirect_to root_path
+    else
+      super
+    end
+  end
 
   # PUT /resource
   # def update

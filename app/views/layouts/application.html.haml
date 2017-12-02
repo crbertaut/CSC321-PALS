@@ -10,34 +10,34 @@
   %body
     %div.container.title
       %div.row.title
-        %div.col-md-12
+        %div.col-md-7
           %nav.navbar.navbar-expand-md.navbar-light
-            %span.h1.title{style:"margin-right:50px"} Welcome to PALS Community Board!
-            #navbarSupportedContent.collapse.navbar-collapse{style:"display:inline-block"}
+            %span.h1.title Welcome to PALS Community Board!
+        %div.col-md-5
+          %nav.navbar.navbar-expand-md.navbar-light
+            #navbarSupportedContent.collapse.navbar-collapse{style:"display:inline-block;float:right"}
               %ul.navbar-nav.mr-auto
-                %li.nav-item
-                  %div{style:"display:inline-block; margin-right:20px"}
+                %div{style:"display:inline-block"}
+                  %li.nav-item{style:"display:inline-block"}
+                    = button_to 'Posts', root_path, {method: :get, class: "purple default"}
+                    /%a.button.purple.medium.default{href: posts_path} Community Board
                   - if current_user
-                    %div{style:"display:inline-block"}= button_to 'LOG OUT', destroy_user_session_path, method: :delete
+                    %li.nav-item{style:"display:inline-block"}
+                      = button_to 'Log Out', destroy_user_session_path, {method: :delete, class:"purple default"}
+                    %li.nav-item{style:"display:inline-block"}
+                      = button_to 'My Profile', user_path(current_user), {method: :get, class: "purple default"}
+                      //%a.button.purple.medium.default{href: user_path(current_user), method: :get} Profile
                   - else
-                    %a.button.purple.large.default{href: user_session_path} Log in
-                //%a.button.green.large.default{href: destroy_user_session_path, method: :delete} Log out
-                //%a.title.nav-link{href: destroy_user_session_path, method: :delete} Log out
-                //%a.title.nav-link{href: user_session_path} Log in
-                %li.nav-item
-                  %div{style:"display:inline-block"}
-                    %a.button.purple.large.default{href: new_user_registration_path, method: :get} Sign up
-                  //%a.title.nav-link{href: new_user_registration_path, method: :get} Sign up
-
-
-    //%h1.title Welcome to PALS Community Board!
-    //%div{style:"display:inline-block"}= button_to 'LOG IN', user_session_path
-    //%div{style:"display:inline-block"}= button_to 'SIGN UP', new_user_registration_path, method: :get
-    //%div{style:"display:inline-block"}= button_to 'LOG OUT', destroy_user_session_path, method: :delete
+                    %li.nav-item{style:"display:inline-block"}
+                      =button_to 'Log in', user_session_path, {method: :get, class: "purple default"}
+                    %li.nav-item{style:"display:inline-block"}
+                      =button_to 'Sign up', new_user_registration_path, {method: :get, class: "purple default"}
+                      //%a.title.nav-link{href: new_user_registration_path, method: :get} Sign up
+                  
     
     #main.full
       - if flash[:notice]
-        #notice.message= flash[:notice]
+        #notice.success= flash[:notice]
       - elsif flash[:warning]
         #warning.message= flash[:warning]
 
