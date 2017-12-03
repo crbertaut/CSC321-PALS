@@ -39,4 +39,5 @@
               = link_to User.find(post.user_id).name, user_path(User.find(post.user_id))
           %td
             = link_to "Read the post '#{post.title}'", post_path(post), class:"link", id: post.id
+
   = link_to 'Add new post', new_post_path, class:"link"
