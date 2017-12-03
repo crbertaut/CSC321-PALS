@@ -1,10 +1,10 @@
 require 'rails_helper.rb'
 
 describe "Guest", :type => :feature do 
-  before (:all) do 
-    Post.create(title: 'test1', user_id: '1', thread_type: 'Ride', description: 'This is a (ride) post.')
-    Post.create(title: 'test2', user_id: '1', thread_type: 'Shift', description: 'This is a (shift) post')
-    Post.create(title: 'test3', user_id: '1', thread_type: 'Other', description: 'This is an (other) post')
+  before (:each) do 
+    Post.create!(title: 'test1', user_id: '1', thread_type: 'Ride', description: 'This is a (ride) post.', date: "2017-12-03 00:00:00")
+    Post.create!(title: 'test2', user_id: '1', thread_type: 'Shift', description: 'This is a (shift) post', date:"2017-12-03 00:00:00")
+    Post.create!(title: 'test3', user_id: '1', thread_type: 'Other', description: 'This is an (other) post', date:"2017-12-03 00:00:00")
   end
   
   it "visit home page and see the list of all posts" do
@@ -44,10 +44,10 @@ describe "User", :type => :feature do
     expect(page).to have_content 'Signed in successfully.'
   end
 
-  before :all do 
-    Post.create(title: 'test1', user_id: '1', thread_type: 'Ride', description: 'This is a (ride) post.')
-    Post.create(title: 'test2', user_id: '1', thread_type: 'Shift', description: 'This is a (shift) post')
-    Post.create(title: 'test3', user_id: '1', thread_type: 'Other', description: 'This is an (other) post')
+  before (:each) do 
+    Post.create!(title: 'test1', user_id: '1', thread_type: 'Ride', description: 'This is a (ride) post.', date: "2017-12-03 00:00:00")
+    Post.create!(title: 'test2', user_id: '1', thread_type: 'Shift', description: 'This is a (shift) post,', date: "2017-12-03 00:00:00")
+    Post.create!(title: 'test3', user_id: '1', thread_type: 'Other', description: 'This is an (other) post', date: "2017-12-03 00:00:00")
   end 
 
   it "should let a user see all posts" do
@@ -61,6 +61,7 @@ describe "User", :type => :feature do
   it "should let a user to create new posts" do
     ## Ride:
     click_on "Add new post"
+    puts "hey1"
     current_path.should == new_post_path
     within('form[action="/posts"]') do
       fill_in 'post_title', with: 'Looking for a ride to pals this Sunday'
@@ -68,6 +69,7 @@ describe "User", :type => :feature do
       select "Ride", :from => "post_thread_type"
     end
     click_on "Submit"
+    puts "hey2"
     current_path.should == posts_path
     expect(page).to have_content Post.last.title 
     
@@ -87,11 +89,14 @@ describe "User", :type => :feature do
   
 
   it "should let a user filter posts by type: ride posts" do
-    visit '/posts'
-    check "types_Shift"
-    uncheck "types_Ride"
-    uncheck "types_Other"
-    click_on "Refresh"      ## Note: Having issues with refresh
+    visit posts_path
+    within ("form[id='types_form']") do
+      check "types_Shift"
+      uncheck "types_Ride"
+      uncheck "types_Other"
+      click_button "Refresh"      ## Note: Having issues with refresh
+    end
+    current_path.should == posts_path
     expect(page).to have_content Post.all[1].title
     expect(page).not_to have_content Post.all[2].title
     expect(page).not_to have_content Post.all[3].title

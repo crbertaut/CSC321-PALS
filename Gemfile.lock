@@ -57,7 +57,7 @@ GEM
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (8.0.0)
-    autoprefixer-rails (7.1.6)
+    autoprefixer-rails (7.2.0)
       execjs
     bcrypt (3.1.11)
     better_errors (2.4.0)
@@ -263,7 +263,7 @@ GEM
     rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
-    rspec-rails (3.7.1)
+    rspec-rails (3.7.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)

@@ -33,7 +33,7 @@
           %td
             = post.thread_type
           %td
-            = post.date
+            = post.date.strftime("%B %d, %Y")
           - if user_signed_in?
             %td
               = link_to User.find(post.user_id).name, user_path(User.find(post.user_id))
