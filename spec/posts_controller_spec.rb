@@ -53,9 +53,9 @@ describe "User", :type => :feature do
   it "should let a user see all posts" do
     visit '/posts'
     expect(page).to have_content 'All Posts'
-    expect(page).to have_content 'test1'
-    expect(page).to have_content 'test2'
-    expect(page).to have_content 'test3'
+    expect(page).to have_content Post.all[1].title
+    expect(page).to have_content Post.all[2].title
+    expect(page).to have_content Post.all[3].title
   end 
   
   it "should let a user to create new posts" do
@@ -69,7 +69,7 @@ describe "User", :type => :feature do
     end
     click_on "Submit"
     current_path.should == posts_path
-    expect(page).to have_content 'Looking for a ride to pals this Sunday'
+    expect(page).to have_content Post.last.title 
     
     ## Shift:
     click_on "Add new post"
@@ -82,7 +82,7 @@ describe "User", :type => :feature do
     end
     click_on "Submit"
     current_path.should == posts_path
-    expect(page).to have_content 'Exchange a cat shift for the coming Monday'
+    expect(page).to have_content Post.last.title 
   end
   
 
@@ -92,41 +92,29 @@ describe "User", :type => :feature do
     uncheck "types_Ride"
     uncheck "types_Other"
     click_on "Refresh"      ## Note: Having issues with refresh
-    expect(page).to have_content 'test1'
-    expect(page).not_to have_content 'test2'
-    expect(page).not_to have_content 'test3'
+    expect(page).to have_content Post.all[1].title
+    expect(page).not_to have_content Post.all[2].title
+    expect(page).not_to have_content Post.all[3].title
   end 
+  
+  it "should let a user access posts" do 
+    for i in 1..3
+      link = '/posts' + i.to_s
+      visit link
+      click_link(i.to_s)
+      new_link = '/posts/' + i.to_s
+      current_path.should == new_link
+      expect(page).to have_content Post.all[i].description
+  end 
+  
+  it "should let a user edit posts by leading to edit page" do
+    for i in 1..3 
+      link = '/posts/' + i.to_s
+      visit link
+      click_on 'Edit'
+      new_link = '/posts/' + i.to_s + '/edit'
+      current_path.should == new_link
+      expect(page).to have_content "Edit Existing Post"
+    end
+  end
 end
-=begin  
-  it "should let a user to create a new post" do
-        #post1 = FactoryBot.build( :post )
-        post_params = FactoryBot.attributes_for(:post)
-        
-        #expect(assigns(:posts)).to eq([post])
-        post :create, post: post_params
-        expect ( response ).to change(Post, :count).by(1) 
-      end
-    end
-    
-    describe "anonymous user" do
-    #3) type some things
-    #4) click 'post'
-    #5) see all the correct post information on the home page
-      it "should let a user see all the posts" do
-        login_with create( :user )
-        get :index
-        expect( response ).to render_template( :index )
-      end
-    end
-
-    describe "GET index" do
-      it "assigns @post" do
-        #post = Post.create
-        post = FactoryBot.build( :post )
-        get :index
-        expect(assigns(:posts)).to eq([post])
-      end
-    end
-=end
-
-#end
