@@ -21,7 +21,7 @@
           = link_to "Post Title", posts_path(:sort_by => 'title'), id: "title_header"
         %th Type
         %th{:class => "#{('hilite' if session[:sort_by] == 'date')}"}
-          = link_to "Date", posts_path(:sort_by => 'date'), id: "date_header"
+          = link_to "Date of shift/ride", posts_path(:sort_by => 'date'), id: "date_header"
         - if user_signed_in?
           %th Posted By
         %th More Info
