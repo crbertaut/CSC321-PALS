@@ -60,7 +60,7 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'pry'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.7.1'
   gem "factory_bot_rails"
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
