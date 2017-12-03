@@ -99,12 +99,13 @@ describe "User", :type => :feature do
   
   it "should let a user access posts" do 
     for i in 1..3
-      link = '/posts' + i.to_s
+      link = '/posts/' + i.to_s
       visit link
       click_link(i.to_s)
       new_link = '/posts/' + i.to_s
       current_path.should == new_link
       expect(page).to have_content Post.all[i].description
+    end
   end 
   
   it "should let a user edit posts by leading to edit page" do
