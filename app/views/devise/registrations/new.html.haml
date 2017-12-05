@@ -2,6 +2,7 @@
   / Include Bootstrap and HTML Kickstart (for style)
   %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
   %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
+  / Include 'users' stylesheet
   = stylesheet_link_tag "users"
   
 %body{:style => "background-image:url('/assets/dogcats.png')"}
@@ -39,56 +40,59 @@
           .field.padded
             %label Confirm password:
             = f.password_field :password_confirmation, autocomplete: "off", size: "24"
-        .col-md-6
-          .right-col.form-group
-            %fieldset
-              %legend Interests
-              %table{:style => "line-height:20px"}
-                %tr
-                  %div{:style => "text-align:left"}
-                    %td
-                      %input#dogs{:onclick => "toggleCheckboxes('dog_interests[]')", :type => "checkbox"}/
-                      %label.inline{:for => "dogs"} Dogs
-                    %td
-                      - @dogs.each do |interest|
-                        = check_box_tag "dog_interests[]", interest, false, id: "dog_" + interest, disabled: true
-                        = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dog_interests[]"
-                        %br/
-                %tr
+        .col-md-6.right-col.form-group
+          %fieldset
+            %legend Interests
+            %table{:style => "line-height:20px"}
+              %tr
+                %div{:style => "text-align:left"}
                   %td
-                    %input#cats{:onclick => "toggleCheckboxes('cat_interests[]')", :type => "checkbox"}/
-                    %label.inline{:for => "cats"} Cats
+                    /%input#dogs{:onclick => "toggleCheckboxes('dog_interests[]')", :type => "checkbox"}/
+                    = check_box_tag "dogs", "dogs", false, onclick: "toggleCheckboxes('dog_interests[]')"
+                    %label.inline{:for => "dogs"} Dogs
                   %td
-                    - @cats.each do |interest|
-                      = check_box_tag "cat_interests[]", interest, false, id: "cat_" + interest, disabled: true
-                      = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cat_interests[]"
+                    - @dogs.each do |interest|
+                      = check_box_tag "dog_interests[]", interest, false, id: "dog_" + interest, disabled: true
+                      = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dog_interests[]"
                       %br/
-                %tr
-                  %td
-                  %td
-                    - @other.each do |interest|
-                      = check_box_tag "interests[]", interest, false, id: interest
-                      = label_tag :interests, "#{interest}", for: interest, class: "inline"
-                      %br/
-                    = check_box_tag "interests[]", "other", false, name: "other"
-                    = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
-            .field.experience
-              %label Experience (if any):
-              %br/
-              = f.text_area :experience, size: "30"
+              %tr
+                %td
+                  /%input#cats{:onclick => "toggleCheckboxes('cat_interests[]')", :type => "checkbox"}/
+                  = check_box_tag "cats", "cats", false, onclick: "toggleCheckboxes('cat_interests[]')"
+                  %label.inline{:for => "cats"} Cats
+                %td
+                  - @cats.each do |interest|
+                    = check_box_tag "cat_interests[]", interest, false, id: "cat_" + interest, disabled: true
+                    = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cat_interests[]"
+                    %br/
+              %tr
+                %td
+                %td
+                  - @other.each do |interest|
+                    = check_box_tag "interests[]", interest, false, id: interest
+                    = label_tag :interests, "#{interest}", for: interest, class: "inline"
+                    %br/
+                  = check_box_tag "other", "other", false, name: "other"
+                  = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
+          .field.experience
+            %label Experience (if any):
+            %br/
+            = f.text_area :experience, size: "30"
       %br/
       .row
         .col-md-12{:style => "text-align:center"}
           .actions{:style => "margin-bottom:20px; margin-top:-10px"}
             %button.large.purple Volunteer
+  / jQuery, Popper, and Bootstrap scripts
   %script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
   %script{:crossorigin => "anonymous", :integrity => "sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"}
   %script{:crossorigin => "anonymous", :integrity => "sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"}
   / Include jQuery and MaskedInput (for formatting phone numbers)
   %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
-  %script{:src => "/assets/kickstart.js"}
-  / KICKSTART
   %script{:src => "/assets/jquery.maskedinput.js", :type => "text/javascript"}
+  / HTML Kickstart
+  %script{:src => "/assets/kickstart.js"}
+  / Maskedinput script
   :javascript
     jQuery(function($){
         $("#phone").mask("(999) 999-9999");
@@ -107,6 +111,7 @@
             }
         }
     }
+  / toggleOther function to check 'other' checkbox when 'other' field is clicked
   :javascript
     function toggleOther(name) {
       var elems = document.getElementsByName(name);
