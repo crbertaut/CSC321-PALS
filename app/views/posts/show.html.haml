@@ -22,7 +22,7 @@
   = link_to 'Delete', post_path(@post), {:method => :delete, :confirm => 'Are you sure?', class:"link", style:"padding-right:10px"}
 
 = form_for [@post, Reply.new] do |f|
-  = f.hidden_field :user_id, value: User.last.id #current_user.id
+  = f.hidden_field :user_id, value: current_user
   = f.label :message, 'Write a reply:', style:"padding-bottom:0.5em"
   = f.text_area :message
   = f.submit "Reply", class:"button purple default small"
