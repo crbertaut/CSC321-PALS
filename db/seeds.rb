@@ -9,6 +9,7 @@ Interest.create!([{ name: 'Dog shifts' }, { name: 'Dog transport' }, { name: 'Do
     { name: 'Organizing events'}, { name: 'Cooking/baking' }, { name: 'Machine maintenance' }, { name: 'Cat shifts' }, 
     { name: 'Cat transport' }, { name: 'Cat fostering' }])
 
+
 user1 = User.create!(name: 'Rocky Williams', email: 'rockyrd@example.com', password: 'password', phone: '(641)895-5555', dob:'1990-01-25', username: 'RockyRoad', experience: 'We own two dogs at home!')
 
 user1.interests << (Interest.find_by name: 'Dog shifts')
@@ -29,3 +30,4 @@ user2.posts << (Post.create!(title: 'Help for Rib Dinner next month?', thread_ty
 user2.posts << (Post.create!(title: 'Shift swap Friday!!', thread_type: 'Shift', description: 'I can no longer make it to my 5pm cat shift this Friday. Is anyone willing to swap or cover?', date: '2017-12-08'))
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+

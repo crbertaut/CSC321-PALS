@@ -1,10 +1,11 @@
 require 'rails_helper.rb'
 
 describe "Guest", :type => :feature do 
-  before (:each) do 
-    Post.create!(title: 'test1', user_id: '1', thread_type: 'Ride', description: 'This is a (ride) post.', date: "2017-12-03 00:00:00")
-    Post.create!(title: 'test2', user_id: '1', thread_type: 'Shift', description: 'This is a (shift) post', date:"2017-12-03 00:00:00")
-    Post.create!(title: 'test3', user_id: '1', thread_type: 'Other', description: 'This is an (other) post', date:"2017-12-03 00:00:00")
+  before (:all) do 
+    Post.find_or_create_by(title: 'test1', user_id: '1', thread_type: 'Ride', description: 'This is a (ride) post.', date: "2017-12-03 00:00:00")
+    Post.find_or_create_by(title: 'test2', user_id: '1', thread_type: 'Shift', description: 'This is a (shift) post', date:"2017-12-03 00:00:00")
+    Post.find_or_create_by(title: 'test3', user_id: '1', thread_type: 'Other', description: 'This is an (other) post', date:"2017-12-03 00:00:00")
+    #puts Post.last.date
   end
   
   it "visit home page and see the list of all posts" do
@@ -33,7 +34,7 @@ end
 describe "User", :type => :feature do
   ## sign in as a user:
   before :each do
-    User.create(email: 'user@example.com', password: 'password')
+    User.create!(email: 'user@example.com', password: 'password')
     visit '/'
     click_on 'Log in'
     within('form[class="new_user"]') do
@@ -61,7 +62,6 @@ describe "User", :type => :feature do
   it "should let a user to create new posts" do
     ## Ride:
     click_on "Add new post"
-    puts "hey1"
     current_path.should == new_post_path
     within('form[action="/posts"]') do
       fill_in 'post_title', with: 'Looking for a ride to pals this Sunday'
@@ -69,7 +69,6 @@ describe "User", :type => :feature do
       select "Ride", :from => "post_thread_type"
     end
     click_on "Submit"
-    puts "hey2"
     current_path.should == posts_path
     expect(page).to have_content Post.last.title 
     
@@ -94,8 +93,8 @@ describe "User", :type => :feature do
       check "types_Shift"
       uncheck "types_Ride"
       uncheck "types_Other"
-      click_button "Refresh"      ## Note: Having issues with refresh
     end
+    click_on "Refresh"      ## Note: Having issues with refresh
     current_path.should == posts_path
     expect(page).to have_content Post.all[1].title
     expect(page).not_to have_content Post.all[2].title
@@ -103,18 +102,19 @@ describe "User", :type => :feature do
   end 
   
   it "should let a user access posts" do 
-    for i in 1..3
-      link = '/posts/' + i.to_s
-      visit link
+    post_id_range = (Post.first.id..Post.last.id).step(1).to_a
+    for i in post_id_range 
       click_link(i.to_s)
       new_link = '/posts/' + i.to_s
       current_path.should == new_link
-      expect(page).to have_content Post.all[i].description
+      expect(page).to have_content Post.all[i-Post.first.id].description
+      click_link("Back to post list")
     end
   end 
   
   it "should let a user edit posts by leading to edit page" do
-    for i in 1..3 
+    post_id_range = (Post.first.id..Post.last.id).step(1).to_a
+    for i in post_id_range 
       link = '/posts/' + i.to_s
       visit link
       click_on 'Edit'

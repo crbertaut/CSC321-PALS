@@ -3,12 +3,12 @@ class PostsController < ApplicationController
   
   def post_params
      #params.require(:title).permit(:thread_type, :date, :description, :user_id)
-    params.require(:post).permit(:title, :thread_type, :date, :description, :user_id)
+    params.require(:post).permit(:title, :thread_type, :date, :description, :user_id)#.except(:index)
   end
 
   def show
     id = params[:id] # retrieve post ID from URI route
-    @post = Post.find(id) # look up movie by unique ID
+    @post = Post.find(id) # look up post by unique ID
   end
 
   def index
