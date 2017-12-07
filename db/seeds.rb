@@ -12,3 +12,4 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 Interest.create!([{ name: 'Dog shifts' }, { name: 'Dog transport' }, { name: 'Dog fostering' }, { name: 'Fundraising' }, 
     { name: 'Organizing events'}, { name: 'Cooking/baking' }, { name: 'Machine maintenance' }, { name: 'Cat shifts' }, 
     { name: 'Cat transport' }, { name: 'Cat fostering' }])
+

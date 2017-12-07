@@ -1,7 +1,13 @@
 require 'rails_helper.rb'
 
-# Doesn't pass because our website doesn't work at the moment
+@javascript
 describe "the sign up process", :type => :feature do
+  before :each do
+    Interest.create(name: "Cat fostering")
+    Interest.create(name: "Dog fostering")
+    Interest.create(name: "Cooking/baking")
+  end
+  
   it "lets me create an account" do
     login_as nil
     visit '/'
@@ -16,15 +22,20 @@ describe "the sign up process", :type => :feature do
       fill_in 'user_username', with: "user"
       fill_in 'user_password', with: "password"
       fill_in 'user_password_confirmation', with: "password"
-      check 'dogs'
-      check 'cats'
+      #find('dogs').click
+      click 'dogs'
+      click_on 'cats'
+      #puts page.html
       check 'Cooking/baking'
-      check('cat_Fostering', disabled: true)
-      check('dog_Fostering', disabled: true)
+      check('cat_Fostering')
+      check('dog_Fostering')
       fill_in 'user_experience', with: "I like dogs."
     end
     click_on 'Volunteer'
-    expect(page).to have_content("Signed up successfully")
+    expect(page).to have_content("You have signed up successfully.")
+    expect(page).to have_content('Dog fostering')
+    expect(page).to have_content("Cooking/baking")
+    expect(page).to have_content('Cat fostering')
   end
 end
 
