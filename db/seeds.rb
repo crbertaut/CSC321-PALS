@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
-
 Interest.create!([{ name: 'Dog shifts' }, { name: 'Dog transport' }, { name: 'Dog fostering' }, { name: 'Fundraising' }, 
     { name: 'Organizing events'}, { name: 'Cooking/baking' }, { name: 'Machine maintenance' }, { name: 'Cat shifts' }, 
     { name: 'Cat transport' }, { name: 'Cat fostering' }])
@@ -29,3 +27,5 @@ user2.interests << (Interest.find_by name: 'Machine maintenance')
 user1.posts << (Post.create!(title: 'Need a ride!', thread_type: 'Ride', description: 'I am from the college and don\'t have a car. Can anyone give me a lift this Sunday?', date: '2017-12-09'))
 user2.posts << (Post.create!(title: 'Help for Rib Dinner next month?', thread_type: 'Other', description: 'PALS Rib Dinner will be next month on January 31. If anyone is interested in helping out with organzing, cooking, or serving, please reply to this post!', date: '2018-01-31'))
 user2.posts << (Post.create!(title: 'Shift swap Friday!!', thread_type: 'Shift', description: 'I can no longer make it to my 5pm cat shift this Friday. Is anyone willing to swap or cover?', date: '2017-12-08'))
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
