@@ -14,8 +14,7 @@
       = devise_error_messages!
       .row
         .col-md-6.left-col.form-group
-          %br/
-          .field.padded{:style => "margin-top:15px"}
+          .field.padded{:style => "margin-top:20px"}
             %label Full name:
             = f.text_field :name, size: "30"
           .field.padded
@@ -24,26 +23,24 @@
           .field
             %label Phone:
             = f.text_field :phone, :id => "phone", placeholder: "(___) ___-____", size: "16"
-          = check_box_tag "textable", nil, true
-          = label_tag :phone, "This phone is capable<br/>of receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
-          %br/
-          %br/
+          .padded
+            = check_box_tag "textable", nil, true
+            = label_tag :phone, "This phone is capable of<br/>receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
           .field.padded
             %label Email:
             = f.email_field :email, size: "32"
-          .field.padded
-            %label Username:
-            = f.text_field :username, size: "24"
-          .field.padded
-            %label Password:
-            = f.password_field :password, autocomplete: "off", placeholder: " (6 characters minimum)", size: "24"
-          .field.padded
-            %label Confirm password:
-            = f.password_field :password_confirmation, autocomplete: "off", size: "24"
+          %label Preferred contact method:
+          %br/
+          %label{style:"font-size:16px"} Email
+          = radio_button_tag "contact_method", "email"
+          %label{style:"font-size:16px"} &ensp;Phone
+          = radio_button_tag "contact_method", "phone"
+          %label{style:"font-size:16px"} &ensp;Either
+          = radio_button_tag "contact_method", "either", true
         .col-md-6.right-col.form-group
           %fieldset
             %legend Interests
-            %table{:style => "line-height:20px"}
+            %table
               %tr
                 %div{:style => "text-align:left"}
                   %td
@@ -74,14 +71,18 @@
                     %br/
                   = check_box_tag "other", "other", false, name: "other"
                   = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
-          .field.experience
-            %label Experience (if any):
-            %br/
-            = f.text_area :experience, size: "30"
-      %br/
       .row
-        .col-md-12{:style => "text-align:center"}
-          .actions{:style => "margin-bottom:20px; margin-top:-10px"}
+        .col-md-12
+          .field.padded.center-col{style: "margin-top:10px"}
+            %label Username:
+            = f.text_field :username, size: "24"
+          .field.padded.center-col
+            %label Password:
+            = f.password_field :password, autocomplete: "off", placeholder: " (6 characters minimum)", size: "24"
+          .field.padded.center-col
+            %label Confirm password:
+            = f.password_field :password_confirmation, autocomplete: "off", size: "24"
+          .actions{:style => "margin-bottom:20px; text-align:center"}
             %button.large.purple Volunteer
   / jQuery, Popper, and Bootstrap scripts
   %script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
