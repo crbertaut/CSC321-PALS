@@ -1,6 +1,6 @@
 %h1 Create New Post
 
-= stylesheet_link_tag "posts"
+= stylesheet_link_tag "site"
 = form_tag posts_path do
 
   = label :post, :title, 'Title:'
@@ -12,7 +12,7 @@
   = label :post, :thread_type, 'Type:'
   = select :post, :thread_type, ['Shift', 'Ride', 'Other']
 
-  = label :post, :date, 'Date of shift/ride:'
+  = label :post, :date, 'Date of event:'
   = date_select :post, :date
   
   %br

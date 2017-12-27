@@ -34,12 +34,13 @@
                       =button_to 'Sign up', new_user_registration_path, {method: :get, class: "purple default"}
                       //%a.title.nav-link{href: new_user_registration_path, method: :get} Sign up
                   
-    
     #main.full
-      - if flash[:notice]
-        #notice.success= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
+      %body{:style => "background-image:url('/assets/dogcats.png')"}
+        .container{:style => "background-color:white;height:calc(100vh - 96px)"}
+          - if flash[:notice]
+            #notice.success= flash[:notice]
+          - elsif flash[:warning]
+            #warning.message= flash[:warning]
 
-      = yield
+          = yield
 

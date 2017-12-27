@@ -2,41 +2,38 @@
   / Include Bootstrap and HTML Kickstart (for style)
   %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
   %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
-  = stylesheet_link_tag "posts"
+  = stylesheet_link_tag "site"
 %body
-  %h1 All Posts
+  %h1.centered Posts
   = form_tag posts_path, :method => :get, :id => 'types_form' do
     %b{style:"margin-right:1em"} Include:
     - @all_types.each do |type|
       %div{style:"display:inline;margin-right:0.5em"}
         = type
         = check_box_tag "types[#{type}]", "1", @checked_types.include?(type), :id => "types_#{type}"
-    = button_to 'Refresh', posts_path, {class:"button purple default small", style:"font-family:Helvetica !important"}
-    /%button#types_submit.default.update-button.purple Update
-  /= submit_tag 'Update', class: "button purple small square"
+    = button_to 'Update', posts_path, class: "purple default update-button"
   %table#posts{style:"margin-bottom:1em"}
     %thead
       %tr
         %th{:class => "#{('hilite' if session[:sort_by] == 'title')}"}
-          = link_to "Post Title", posts_path(:sort_by => 'title'), id: "title_header"
+          = link_to "Title", posts_path(:sort_by => 'title'), id: "title_header"
         %th Type
         %th{:class => "#{('hilite' if session[:sort_by] == 'date')}"}
-          = link_to "Date", posts_path(:sort_by => 'date'), id: "date_header"
+          = link_to "Event Date", posts_path(:sort_by => 'date'), id: "date_header"
         - if user_signed_in?
           %th Posted By
-        %th More Info
     %tbody
       - @posts.each do |post|
         %tr
           %td
-            = post.title
+            = link_to post.title, post_path(post), class:"link"
           %td
             = post.thread_type
           %td
-            = post.date
+            = post.date.strftime("%B %d, %Y")
           - if user_signed_in?
             %td
-              = link_to User.find(post.user_id).name, user_path(User.find(post.user_id))
-          %td
-            = link_to "Read the post '#{post.title}'", post_path(post), class:"link"
+              = link_to User.find(post.user_id).username, user_path(User.find(post.user_id))
   = link_to 'Add new post', new_post_path, class:"link"
+  %br/
+  %br/

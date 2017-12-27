@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def show
     id = params[:id] # retrieve post ID from URI route
-    @post = Post.find(id) # look up movie by unique ID
+    @post = Post.find(id) # look up post by unique ID
   end
 
   def index
@@ -24,7 +24,6 @@ class PostsController < ApplicationController
 			redirect_to types: session[:types] and return
 		end
 		
-		
 		@checked_types = (session[:types].keys if session.key?(:types)) || @all_types
     @posts = Post.where(thread_type: @checked_types).order(session[:sort_by])
   end
@@ -35,7 +34,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create!(post_params)
-    flash[:notice] = "#{@post.title} was successfully created."
+    flash[:notice] = "'#{@post.title}' was created successfully."
     redirect_to posts_path
   end
 
@@ -46,7 +45,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find params[:id]
     @post.update_attributes!(post_params)
-    flash[:notice] = "#{@post.title} was successfully updated."
+    flash[:notice] = "'#{@post.title}' was updated successfully."
     redirect_to post_path(@post)
   end
 

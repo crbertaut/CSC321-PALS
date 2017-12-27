@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     before_action :authenticate_user!
     
     def user_params
-        params.require(:name, :password, :email, :phone, :dob, :username).permit(:experience)
+        params.require(:name, :password, :email, :phone, :dob, :username)
     end
   
     def show
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   
     # GET /users/new
     def new
-     #   render layout: "users"
+     #   render layout: "site"
     end
     
     def edit

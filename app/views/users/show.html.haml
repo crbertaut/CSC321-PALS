@@ -1,41 +1,50 @@
 %head
+  / Include Bootstrap and HTML Kickstart (for style)
   %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
   %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
-  / KICKSTART
-  = stylesheet_link_tag "users"
-%body{:style => "background-image:url('/assets/dogcats.png')"}
-  .container{:style => "background-color:white"}
-    .row
-      .col-md-12
-        %h2{:style => "text-align:center"} #{@user.username}'s Profile
-        %div{:style => "margin-left:20%"}
-          %h5 Personal Information
-          %b Name:
-          = @user.name
-          %br/
-          %b Birthdate:
-          = @user.dob
-          %br/
-          %b Interests:
-          = @user.interests.map(&:name).join(", ")
-          %br/
-          %b Experience:
-          = @user.experience
-          %hr.line/
-          %h5 Contact Information
-          %b Phone:
-          = @user.phone
-          %br/
-          %b Email:
-          = @user.email
-          %br/
-          %br/
-        -if current_user != @user
-          %br/
-        -else
-          %div{:style => "text-align:center"}
-            %a.button.large.purple.default{:href => edit_user_registration_path, :method => :get} Edit profile
-          %br/
-          %div{:style => "text-align:center"}
-            %a.button.red.default{:data => "#{{:confirm => 'Are you sure?'}}", :href => "#{@user}", :method => :delete} Delete your account
-          %br/
+  = stylesheet_link_tag "site"
+%body
+  .row
+    .col-md-12
+      %h2{:style => "text-align:center"} #{@user.username}'s Profile
+  .row
+    .col-md-2
+    .col-md-3
+      .centered
+        %br/
+        %img{src: "/assets/blank-avatar.png"} 
+    .col-md-5
+      %div{:style => "margin-left:20px"}
+        %h5 Personal Information
+        %b Name:
+        = @user.name
+        %br/
+        %b Birthdate:
+        = @user.dob.strftime("%B %d, %Y")
+        %br/
+        %b Interests:
+        = @user.interests.map(&:name).join(", ")
+        %br/
+        %b Experience:
+        = @user.experience
+        %hr.line/
+        %h5 Contact Information
+        %b Phone:
+        = @user.phone
+        %br/
+        %b Email:
+        = @user.email
+        %br/
+        %br/
+    .col-md-2
+  .row
+    .col-md-12
+      -if current_user != @user
+        %br/
+      -else
+        %div{:style => "text-align:center"}
+          = button_to 'Edit profile', edit_user_registration_path, method: :get, class: "purple default", style: "font-size:1.3em;padding:10px 20px"
+        %br/
+        %div{:style => "text-align:center"}
+          = button_to 'Delete your account', registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, class: "red default", style: "font-size:0.9em;padding:8px 16px"
+        %br/

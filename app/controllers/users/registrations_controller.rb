@@ -34,8 +34,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if params[:other] then
       @int_params = params[:other_interests].split(',')
       @int_params.each do |int|
-        Interest.create!(name: int.strip.capitalize)
-        @interest = Interest.find_by name: int.strip.capitalize
+        Interest.create!(name: int.strip.downcase.capitalize)
+        @interest = Interest.find_by name: int.strip.downcase.capitalize
         @user.interests << @interest
       end
     end
@@ -43,12 +43,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    if current_user != params[:id]
-      flash[:warning] = "Illegal action. You do not have permission."
-      redirect_to root_path
-    else
-      super
-    end
+    super
   end
 
   # PUT /resource

@@ -1,41 +1,60 @@
 %head
+  / Include Bootstrap and HTML Kickstart (for style)
   %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
   %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
-  / KICKSTART
-  = stylesheet_link_tag "posts"
-%body
-  %h1
-    Edit #{resource_name.to_s.humanize}
-  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = devise_error_messages!
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %div
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-    .field
-      = f.label :password
-      %i (leave blank if you don't want to change it)
-      %br/
-      = f.password_field :password, autocomplete: "off"
-      - if @minimum_password_length
+  = stylesheet_link_tag "site"
+%body.centered
+  %h2 Edit Profile
+  %br/
+  .edit-col
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = devise_error_messages!
+      .field.padded
+        %label Username:
         %br/
-        %em
-          = @minimum_password_length
-          characters minimum
-    .field
-      = f.label :password_confirmation
+        = f.text_field :username, size: "24", autofocus: true, style: "text-align:center"
+      .field.padded
+        %label Email:
+        %br/
+        = f.email_field :email, size: "32", style: "text-align:center"
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %div
+          Currently awaiting confirmation for: #{resource.unconfirmed_email}
+      .field
+        %label Phone:
+        %br/
+        = f.text_field :phone, :id => "phone", placeholder: "(___) ___-____", size: "16", style: "text-align:center"
+      .padded
+        = check_box_tag "textable", nil, true
+        = label_tag :phone, "This phone is capable<br/>of receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
+      .field.padded
+        %lable New password:
+        %br/
+        %i{style:"font-size:0.8em"} Leave blank if you don't want to change it.
+        %br/
+        = f.password_field :password, size: "24", autocomplete: "off", placeholder: " (6 characters minimum)", style: "text-align:center"
+      .field
+        %label Confirm new password:
+        %br/
+        = f.password_field :password_confirmation, size: "24", autocomplete: "off", style: "text-align:center"
+      %hr{style:"width:40%;margin:30px 30% 20px 30%"}
+      .field.padded
+        %label Current password (to confirm your changes):
+        %br/
+        = f.password_field :current_password, size: "24", autocomplete: "off", style: "text-align:center"
       %br/
-      = f.password_field :password_confirmation, autocomplete: "off"
-    .field
-      = f.label :current_password
-      %i (we need your current password to confirm your changes)
+      .actions
+        = f.submit "Update", class: "purple default", style: "font-size:1.3em;padding:10px 20px"
       %br/
-      = f.password_field :current_password, autocomplete: "off"
-    .actions
-      = f.submit "Update", class: "purple"
 
-= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "red"
-/  = link_to "Back", :back
+  = button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "red default", style: "font-size:0.9em;padding:8px 16px"
+  %br/
+
+  / Include jQuery and MaskedInput (for formatting phone numbers)
+  %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+  %script{:src => "/assets/jquery.maskedinput.js", :type => "text/javascript"}
+  / Maskedinput script
+  :javascript
+    jQuery(function($){
+        $("#phone").mask("(999) 999-9999");
+    });
