@@ -7,6 +7,7 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recently registered volunteers" do
           table_for User.order(created_at: :desc) do
+            column :username
             column :name
             column :email
             column "Registered at", :created_at
@@ -22,7 +23,11 @@ ActiveAdmin.register_page "Dashboard" do
           table_for Post.order(updated_at: :desc) do
             column :title
             column "Posted by" do |post|
-              link_to User.find(post.user_id).name, user_path(User.find(post.user_id))
+              if User.exists?(post.user_id)
+                link_to User.find(post.user_id).name, user_path(User.find(post.user_id))
+              else
+                post.username
+              end
             end
             column :updated_at
             column :thread_type

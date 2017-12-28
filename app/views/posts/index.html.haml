@@ -1,10 +1,5 @@
-%head
-  / Include Bootstrap and HTML Kickstart (for style)
-  %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
-  %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
-  = stylesheet_link_tag "site"
 %body
-  %h1.centered Posts
+  %h1.centered.padded Posts
   = form_tag posts_path, :method => :get, :id => 'types_form' do
     %b{style:"margin-right:1em"} Include:
     - @all_types.each do |type|
@@ -23,7 +18,8 @@
         - if user_signed_in?
           %th Posted By
     %tbody
-      - @posts.each do |post|
+      / Reverse_Each so that most recent post appears at the top
+      - @posts.reverse_each do |post|
         %tr
           %td
             = link_to post.title, post_path(post), class:"link"
@@ -33,7 +29,11 @@
             = post.date.strftime("%B %d, %Y")
           - if user_signed_in?
             %td
-              = link_to User.find(post.user_id).username, user_path(User.find(post.user_id))
+              - if User.exists?(post.user_id)
+                = link_to User.find(post.user_id).username, user_path(User.find(post.user_id))
+              - else
+                = post.username
   = link_to 'Add new post', new_post_path, class:"link"
+  %br/
   %br/
   %br/

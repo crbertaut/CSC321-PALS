@@ -1,23 +1,27 @@
-%h1 Create New Post
-
-= stylesheet_link_tag "site"
-= form_tag posts_path do
-
-  = label :post, :title, 'Title:'
-  = text_field :post, 'title'
-
-  = label :post, :description, 'Content:'
-  = text_area :post, 'description'
+%body
+  %h1 Create New Post
+  = form_tag posts_path do
   
-  = label :post, :thread_type, 'Type:'
-  = select :post, :thread_type, ['Shift', 'Ride', 'Other']
-
-  = label :post, :date, 'Date of event:'
-  = date_select :post, :date
-  
-  %br
-  %br
-  
-  %button#types_submit.update-button.purple.default Submit
-
-/= submit_tag 'Save Changes'
+    = label :post, :title, 'Title:'
+    %br/
+    = text_field :post, 'title'
+    %br/
+    %br/
+    = label :post, :description, 'Content:'
+    %br/
+    = text_area :post, 'description'
+    %br/
+    %br/
+    = label :post, :thread_type, 'Type:'
+    %br/
+    = select :post, :thread_type, ['Shift', 'Ride', 'Other']
+    %br/
+    %br/
+    = label :post, :date, 'Date of event:'
+    %br/
+    = date_select :post, :date
+    
+    %br
+    %br
+    
+    %button#types_submit.update-button.purple.default Submit

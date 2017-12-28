@@ -15,7 +15,7 @@ ActiveAdmin.register Post do
     end
     
     filter :title
-    filter :thread_type
+    filter :thread_type, as: :select
     filter :date
     filter :user
 

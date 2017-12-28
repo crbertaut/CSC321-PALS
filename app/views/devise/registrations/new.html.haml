@@ -1,95 +1,85 @@
-%head
-  / Include Bootstrap and HTML Kickstart (for style)
-  %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
-  %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
-  / Include 'users' stylesheet
-  = stylesheet_link_tag "site"
-  
-%body{:style => "background-image:url('/assets/dogcats.png')"}
-  .container.full{:style => "background-color:white"}
-    .row{:style => "text-align:center"}
+%body
+  .row{:style => "text-align:center"}
+    .col-md-12
+      %h2 Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .row
+      .col-md-6.left-col.form-group
+        .field{:style => "margin-top:20px;margin-bottom:24px"}
+          %label Full name:
+          = f.text_field :name, size: "30", autofocus: true
+        .field{:style => "margin-bottom:24px"}
+          %label Date of birth:
+          = f.date_select :dob, :start_year => 1900, :end_year => 2017, :use_month_numbers => true, :order => [:year, :month, :day]
+        .field
+          %label Phone:
+          = f.text_field :phone, :id => "phone", placeholder: "(___) ___-____", size: "16", style: "text-align:center"
+        .padded
+          = check_box_tag "textable", nil, true
+          = label_tag :phone, "This phone is capable of<br/>receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
+        .field.padded
+          %label Email:
+          = f.email_field :email, size: "32"
+        %label Preferred contact method:
+        %br/
+        %label{style:"font-size:16px"} Email
+        = radio_button_tag "contact_method", "email"
+        %label{style:"font-size:16px"} &ensp;Phone
+        = radio_button_tag "contact_method", "phone"
+        %label{style:"font-size:16px"} &ensp;Either
+        = radio_button_tag "contact_method", "either", true
+      .col-md-6.right-col.form-group
+        %fieldset
+          %legend Interests
+          %table
+            %tr
+              %td
+                = check_box_tag "dogs", "dogs", false, onclick: "toggleCheckboxes('dog_interests[]')"
+                %label.inline{:for => "dogs"} Dogs
+              %td
+                - @dogs.each do |interest|
+                  = check_box_tag "dog_interests[]", interest, false, id: "dog_" + interest, disabled: true
+                  = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dog_interests[]"
+                  %br/
+            %tr
+              %td
+                /%input#cats{:onclick => "toggleCheckboxes('cat_interests[]')", :type => "checkbox"}/
+                = check_box_tag "cats", "cats", false, onclick: "toggleCheckboxes('cat_interests[]')"
+                %label.inline{:for => "cats"} Cats
+              %td
+                - @cats.each do |interest|
+                  = check_box_tag "cat_interests[]", interest, false, id: "cat_" + interest, disabled: true
+                  = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cat_interests[]"
+                  %br/
+            %tr
+              %td
+              %td
+                - @other.each do |interest|
+                  = check_box_tag "interests[]", interest, false, id: interest
+                  = label_tag :interests, "#{interest}", for: interest, class: "inline"
+                  %br/
+                = check_box_tag "other", "other", false, name: "other"
+                = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
+    .row
       .col-md-12
-        %h2 Sign up
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = devise_error_messages!
-      .row
-        .col-md-6.left-col.form-group
-          .field{:style => "margin-top:20px;margin-bottom:24px"}
-            %label Full name:
-            = f.text_field :name, size: "30", autofocus: true
-          .field{:style => "margin-bottom:24px"}
-            %label Date of birth:
-            = f.date_select :dob, :start_year => 1900, :end_year => 2017, :use_month_numbers => true, :order => [:year, :month, :day]
-          .field
-            %label Phone:
-            = f.text_field :phone, :id => "phone", placeholder: "(___) ___-____", size: "16", style: "text-align:center"
-          .padded
-            = check_box_tag "textable", nil, true
-            = label_tag :phone, "This phone is capable of<br/>receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
-          .field.padded
-            %label Email:
-            = f.email_field :email, size: "32"
-          %label Preferred contact method:
-          %br/
-          %label{style:"font-size:16px"} Email
-          = radio_button_tag "contact_method", "email"
-          %label{style:"font-size:16px"} &ensp;Phone
-          = radio_button_tag "contact_method", "phone"
-          %label{style:"font-size:16px"} &ensp;Either
-          = radio_button_tag "contact_method", "either", true
-        .col-md-6.right-col.form-group
-          %fieldset
-            %legend Interests
-            %table
-              %tr
-                %div{:style => "text-align:left"}
-                  %td
-                    /%input#dogs{:onclick => "toggleCheckboxes('dog_interests[]')", :type => "checkbox"}/
-                    = check_box_tag "dogs", "dogs", false, onclick: "toggleCheckboxes('dog_interests[]')"
-                    %label.inline{:for => "dogs"} Dogs
-                  %td
-                    - @dogs.each do |interest|
-                      = check_box_tag "dog_interests[]", interest, false, id: "dog_" + interest, disabled: true
-                      = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dog_interests[]"
-                      %br/
-              %tr
-                %td
-                  /%input#cats{:onclick => "toggleCheckboxes('cat_interests[]')", :type => "checkbox"}/
-                  = check_box_tag "cats", "cats", false, onclick: "toggleCheckboxes('cat_interests[]')"
-                  %label.inline{:for => "cats"} Cats
-                %td
-                  - @cats.each do |interest|
-                    = check_box_tag "cat_interests[]", interest, false, id: "cat_" + interest, disabled: true
-                    = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cat_interests[]"
-                    %br/
-              %tr
-                %td
-                %td
-                  - @other.each do |interest|
-                    = check_box_tag "interests[]", interest, false, id: interest
-                    = label_tag :interests, "#{interest}", for: interest, class: "inline"
-                    %br/
-                  = check_box_tag "other", "other", false, name: "other"
-                  = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
-      .row
-        .col-md-12
-          .field.padded.center-col{style: "margin-top:10px"}
-            %label Username:
-            = f.text_field :username, size: "24"
-          .field.padded.center-col
-            %label Password:
-            = f.password_field :password, autocomplete: "off", placeholder: " (6 characters minimum)", size: "24"
-          .field.padded.center-col
-            %label Confirm password:
-            = f.password_field :password_confirmation, autocomplete: "off", size: "24"
-          .actions{:style => "margin-bottom:20px; text-align:center"}
-            %button.large.purple Volunteer
+        .field.padded.center-col{style: "margin-top:10px"}
+          %label Username:
+          = f.text_field :username, size: "24"
+        .field.padded.center-col
+          %label Password:
+          = f.password_field :password, autocomplete: "off", placeholder: " (6 characters minimum)", size: "24"
+        .field.padded.center-col
+          %label Confirm password:
+          = f.password_field :password_confirmation, autocomplete: "off", size: "24"
+        .actions{:style => "margin-bottom:20px; text-align:center"}
+          %button.large.purple Volunteer
+        %br/
   / jQuery, Popper, and Bootstrap scripts
   %script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
   %script{:crossorigin => "anonymous", :integrity => "sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"}
   %script{:crossorigin => "anonymous", :integrity => "sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"}
-  / Include jQuery and MaskedInput (for formatting phone numbers)
-  %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+  / Include MaskedInput (for formatting phone numbers)
   %script{:src => "/assets/jquery.maskedinput.js", :type => "text/javascript"}
   / HTML Kickstart
   %script{:src => "/assets/kickstart.js"}

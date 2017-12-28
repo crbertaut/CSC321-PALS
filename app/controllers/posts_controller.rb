@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  include ApplicationHelper
+  before_action :auth_user!, except: :index
   
   def post_params
-    params.require(:post).permit(:title, :thread_type, :date, :description, :user_id)
+    params.require(:post).permit(:title, :thread_type, :date, :description, :user_id, :username)
   end
 
   def show
@@ -26,6 +27,9 @@ class PostsController < ApplicationController
 		
 		@checked_types = (session[:types].keys if session.key?(:types)) || @all_types
     @posts = Post.where(thread_type: @checked_types).order(session[:sort_by])
+    if session[:sort_by] == 'title'
+      @posts = @posts.reverse
+    end
   end
 
   def new
@@ -34,7 +38,8 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create!(post_params)
-    flash[:notice] = "'#{@post.title}' was created successfully."
+    @post.username = User.find(@post.user_id).username
+    flash[:notice] = "Post was created successfully."
     redirect_to posts_path
   end
 
@@ -45,14 +50,15 @@ class PostsController < ApplicationController
   def update
     @post = Post.find params[:id]
     @post.update_attributes!(post_params)
-    flash[:notice] = "'#{@post.title}' was updated successfully."
+    @post.username = User.find(@post.user_id).username
+    flash[:notice] = "Post was updated successfully."
     redirect_to post_path(@post)
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:notice] = "Post '#{@post.title}' deleted."
+    flash[:notice] = "Post deleted."
     redirect_to posts_path
   end
 
