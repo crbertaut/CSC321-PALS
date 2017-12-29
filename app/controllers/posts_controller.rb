@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :auth_user!, except: :index
   
   def post_params
-    params.require(:post).permit(:title, :thread_type, :date, :description, :user_id, :username)
+    params.require(:post).permit(:title, :date, :description, :user_id, :username)
   end
 
   def show
@@ -38,7 +38,8 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create!(post_params)
-    @post.username = User.find(@post.user_id).username
+    @post.update(thread_type: params[:thread_type])
+    @post.update(username: User.find(@post.user_id).username)
     flash[:notice] = "Post was created successfully."
     redirect_to posts_path
   end
@@ -50,7 +51,8 @@ class PostsController < ApplicationController
   def update
     @post = Post.find params[:id]
     @post.update_attributes!(post_params)
-    @post.username = User.find(@post.user_id).username
+    @post.update(thread_type: params[:thread_type])
+    @post.update(username: User.find(@post.user_id).username)
     flash[:notice] = "Post was updated successfully."
     redirect_to post_path(@post)
   end

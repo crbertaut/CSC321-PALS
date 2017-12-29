@@ -18,7 +18,7 @@
   background: White;
   color: Black;
   font-family: Georgia;
-  font-size: 1em;
+  font-size: 1.1em;
   height:100vh;
   overflow: auto;
 }
@@ -47,20 +47,19 @@ a.button {
 h1 {
   margin:0;
   color: #4B0082;
-  font-size: 150%;
+  font-size: 1.3em;
   font-style: italic ;
   display: block;
   width: 100%;
   border-bottom: 1px solid DarkSlateGrey;
 }
-h1.title {
+span.h1.title {
   margin:0;
   margin-right: 50px;
   padding: 10px;
   background-color: #4B0082;
   color: white;
-  border-bottom: 4px solid #A88BD7;
-  font-size: 40px;
+  font-size: 38px;
   font-style: normal;
 }
 h2{
@@ -126,11 +125,17 @@ li.nav-item {
 .centered{
   text-align:center;
 }
+.righted{
+  text-align:right;
+}
 .faded{
 	color:#bbbbbb;
 }
 .padded{
     margin-bottom:20px;
+}
+.padded_above{
+  padding-top:10px;
 }
 .field{
     font-size:19px;

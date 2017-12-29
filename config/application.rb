@@ -12,7 +12,7 @@ module VolunteerSite
     config.load_defaults 5.1
     
     # Load page-specific css
-    config.assets.precompile += %w( site.scss )
+    #config.assets.precompile += %w( site.scss )
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

@@ -28,12 +28,11 @@ ActiveAdmin.register User, as: 'Volunteer' do
     
     form do |f| 
         f.inputs do
-            f.input :name, required: true
-            f.input :username, required: true
-            if request.original_url.end_with?("new")
-                f.input :password, required: true
-            else 
-                f.input :password, required: false
+            f.input :name, input_html: { required: true }
+            f.input :username, input_html: { required: true }
+            if f.object.new_record?
+                f.input :password
+                f.input :password_confirmation
             end
             f.input :email, required: false
             f.input :phone

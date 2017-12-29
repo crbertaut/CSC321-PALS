@@ -15,7 +15,7 @@
         %th Type
         %th{:class => "#{('hilite' if session[:sort_by] == 'date')}"}
           = link_to "Event Date", posts_path(:sort_by => 'date'), id: "date_header"
-        - if user_signed_in?
+        - if user_signed_in? || admin_user_signed_in?
           %th Posted By
     %tbody
       / Reverse_Each so that most recent post appears at the top
@@ -26,8 +26,8 @@
           %td
             = post.thread_type
           %td
-            = post.date.strftime("%B %d, %Y")
-          - if user_signed_in?
+            = post.date.in_time_zone('Central Time (US & Canada)').strftime("%b %e, %Y | %l:%M %p")
+          - if user_signed_in? || admin_user_signed_in?
             %td
               - if User.exists?(post.user_id)
                 = link_to User.find(post.user_id).username, user_path(User.find(post.user_id))

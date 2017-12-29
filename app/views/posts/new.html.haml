@@ -1,27 +1,38 @@
 %body
-  %h1 Create New Post
+  %h1.centered.padded Create New Post
   = form_tag posts_path do
-  
-    = label :post, :title, 'Title:'
-    %br/
-    = text_field :post, 'title'
-    %br/
-    %br/
-    = label :post, :description, 'Content:'
-    %br/
-    = text_area :post, 'description'
-    %br/
-    %br/
-    = label :post, :thread_type, 'Type:'
-    %br/
-    = select :post, :thread_type, ['Shift', 'Ride', 'Other']
-    %br/
-    %br/
-    = label :post, :date, 'Date of event:'
-    %br/
-    = date_select :post, :date
-    
-    %br
-    %br
-    
-    %button#types_submit.update-button.purple.default Submit
+    .row
+      %b.col-md-3.righted
+        = label :post, :title, 'Title:'
+      .col-md-8
+        .padded
+          = text_field :post, 'title', size: "71"
+    .row
+      %b.col-md-3.righted
+        = label :post, :description, 'Content:'
+      .col-md-8
+        .padded
+          = text_area :post, 'description', size: "70", style: "height:150px"
+    .row
+      %b.col-md-3.righted
+        = label :post, :date, 'Date of event:'
+      .col-md-8
+        .padded
+          - d = DateTime.now.in_time_zone('Central Time (US & Canada)')
+          = datetime_select(:post, :date, ampm: true, start_year: d.year - 1, default:{ day: d.mday, hour: 8, minute: 00 })
+    .row
+      %b.col-md-3.padded.righted
+        = label :post, :thread_type, 'Type:'
+      .col-md-8
+        .padded
+          %label Shift
+          = radio_button_tag :thread_type, "Shift", checked: true
+          %label &ensp;Ride
+          = radio_button_tag :thread_type, "Ride"
+          %label &ensp;Other
+          = radio_button_tag :thread_type, "Other"
+    .row
+      .col-md-12.centered
+        %button#types_submit.update-button.purple.default Submit
+        %br/
+        %br/

@@ -2,6 +2,10 @@ class RepliesController < ApplicationController
     include ApplicationHelper
     before_action :auth_user!
     before_action :load_post
+        
+    def reply_params
+        params.require(:reply).permit(:user_id, :message, :username)
+    end
     
     def edit
         @reply = @post.replies.find(params[:id])
@@ -35,10 +39,6 @@ class RepliesController < ApplicationController
         @reply = @post.replies.find(params[:id])
         @reply.destroy
         redirect_to @post, notice: "Reply deleted."
-    end
-    
-    def reply_params
-        params.require(:reply).permit(:user_id, :message, :username)
     end
     
     private 

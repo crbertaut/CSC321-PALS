@@ -42,14 +42,13 @@
         = stylesheet_link_tag 'application'
       %body{:style => "background-image:url('/assets/gray-pawprints.png')"}
         .container{:style => "background-color:white"}
-          %br/
-          - if flash[:notice]
-            %div.alert.alert-success{:role => "alert"}
-              #notice.success= flash[:notice]
-          - elsif flash[:warning]
-            %div.alert.alert-danger{:role => "alert"}
-              #warning.message= flash[:warning]
-              
+          .padded_above
+            - if flash[:notice]
+              %div.alert.alert-success{:role => "alert"}
+                #notice.success= flash[:notice]
+            - elsif flash[:warning]
+              %div.alert.alert-danger{:role => "alert"}
+                #warning.message= flash[:warning]
 
           = yield
 

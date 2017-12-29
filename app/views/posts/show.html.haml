@@ -43,14 +43,17 @@
               = link_to User.find(reply.user_id).username, user_path(User.find(reply.user_id))
             - else
               = reply.username
-          %td{width:"20%"}= reply.created_at.in_time_zone('Central Time (US & Canada)').strftime("%B %e, %Y | %l:%M %p")
+          %td{width:"20%"}= reply.created_at.in_time_zone('Central Time (US & Canada)').strftime("%b %e, %Y | %l:%M %p")
           %td{width:"5%"}= link_to "Edit", edit_post_reply_path(@post, reply), class:"link"
           %td{width:"5%"}= link_to "Delete", post_reply_path(@post, reply), method: :delete, class:"link"
           
   = form_for [@post, Reply.new] do |f|
     .centered
-      = f.hidden_field :user_id, value: User.last.id #current_user.id
+      - if user_signed_in?
+        = f.hidden_field :user_id, value: current_user.id
+      - elsif admin_user_signed_in?
+        = f.hidden_field :user_id, value: current_admin_user.id
       = f.text_area :message, class: "padded", style:"width:60%"
       %br/
-      = f.submit "Reply", class:"button purple default"
+      = f.submit "Reply", class:"purple default"
   %br/
