@@ -1,41 +1,48 @@
-%head
-  %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
-  %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
-  / KICKSTART
-  = stylesheet_link_tag "users"
-%body{:style => "background-image:url('/assets/dogcats.png')"}
-  .container{:style => "background-color:white"}
-    .row
-      .col-md-12
-        %h2{:style => "text-align:center"} #{@user.username}'s Profile
-        %div{:style => "margin-left:20%"}
-          %h5 Personal Information
+%body
+  .row
+    .col-md-12
+      %h2{:style => "text-align:center"} #{@user.username}'s Profile
+  .row
+    .col-md-2
+    .col-md-3
+      .centered
+        %br/
+        - if @user.avatar_file_name
+          %img{src: "/system/users/avatars/000/000/" + params[:id].rjust(3, "0") + "/medium/" + @user.avatar_file_name, alt: "Image not found"} 
+        - else
+          %img{src: "/assets/blank-avatar.png", alt: "Image not found"}
+        %br/
+        %br/
+        %b About #{@user.username}:
+        %br/
+        = @user.bio
+    .col-md-5
+      %div{:style => "margin-left:20px"}
+        %h5 Personal Information
+        %div{style: "font-size:17px"}
           %b Name:
           = @user.name
           %br/
           %b Birthdate:
-          = @user.dob
+          = @user.dob.strftime("%B %e, %Y")
           %br/
           %b Interests:
           = @user.interests.map(&:name).join(", ")
-          %br/
-          %b Experience:
-          = @user.experience
-          %hr.line/
-          %h5 Contact Information
+        %hr.line/
+        %h5 Contact Information
+        %div{style: "font-size:17px"}
           %b Phone:
           = @user.phone
           %br/
           %b Email:
           = @user.email
-          %br/
-          %br/
-        -if current_user != @user
-          %br/
-        -else
-          %div{:style => "text-align:center"}
-            %a.button.large.purple.default{:href => edit_user_registration_path, :method => :get} Edit profile
-          %br/
-          %div{:style => "text-align:center"}
-            %a.button.red.default{:data => "#{{:confirm => 'Are you sure?'}}", :href => "#{@user}", :method => :delete} Delete your account
-          %br/
+    .col-md-2
+  .row
+    .col-md-12
+      %br/
+      -if current_user != @user
+        %br/
+      -else
+        %div{:style => "text-align:center"}
+          = button_to 'Edit profile', edit_user_registration_path, method: :get, class: "purple default", style: "font-size:1.3em;padding:10px 20px"
+        %br/

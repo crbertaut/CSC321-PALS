@@ -1,8 +1,19 @@
 class UsersController < ApplicationController
-    before_action :authenticate_user!
+    include ApplicationHelper
+    before_action :auth_user!
     
     def user_params
-        params.require(:name, :password, :email, :phone, :dob, :username).permit(:experience)
+        params.require(:name, :password, :email, :phone, :dob, :username).permit(:avatar)
+    end
+    
+    def index
+		if params.key?(:sort_users)
+			session[:sort_users] = params[:sort_users]
+		elsif session.key?(:sort_users)
+			redirect_to sort_users: session[:sort_users] and return
+		end
+		
+        @users = User.all.order(session[:sort_users])
     end
   
     def show
@@ -12,7 +23,7 @@ class UsersController < ApplicationController
   
     # GET /users/new
     def new
-     #   render layout: "users"
+     #   render layout: "site"
     end
     
     def edit

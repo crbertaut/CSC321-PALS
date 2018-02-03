@@ -11,8 +11,7 @@ module DeviseHelper
     messages = resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
 
     html = <<-HTML
-    <div class="notice error"><i class="icon-remove-sign icon-large"></i> #{messages}
-    <a href="#close" class="icon-remove"></a></div>
+    <div class="alert alert-danger" role="alert"> #{messages}</div><br/>
     HTML
 
     html.html_safe

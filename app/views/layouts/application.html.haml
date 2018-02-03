@@ -2,7 +2,7 @@
 %html
   %head
     %meta{name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no", "http-equiv" => "Content-Type"}/
-    %title Welcome to PALS Community Board!
+    %title PALS Volunteer Portal
     = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -10,36 +10,51 @@
   %body
     %div.container.title
       %div.row.title
-        %div.col-md-7
+        %div.col-md-6
           %nav.navbar.navbar-expand-md.navbar-light
-            %span.h1.title Welcome to PALS Community Board!
-        %div.col-md-5
-          %nav.navbar.navbar-expand-md.navbar-light
-            #navbarSupportedContent.collapse.navbar-collapse{style:"display:inline-block;float:right"}
-              %ul.navbar-nav.mr-auto
-                %div{style:"display:inline-block"}
+            %img{src: '/assets/palslogo.png', alt: 'PALS', width: '115', height: '56'}
+            %span.h1.title Volunteer Portal
+        %div.col-md-6
+          %nav.navbar.navbar-expand-md.navbar-light.navbar-toggleable-sm
+            %button.navbar-toggler.navbar-toggler-right{type:"button", "data-toggle" => "collapse", "data-target" => "#navbarSupportedContent", "aria-controls" => "#navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
+              %span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+              %ul.navbar-nav.ml-md-auto
+                %li.nav-item{style:"display:inline-block"}
+                  = button_to 'Posts', root_path, {method: :get, class: "purple default"}
+                - if user_signed_in?
                   %li.nav-item{style:"display:inline-block"}
-                    = button_to 'Posts', root_path, {method: :get, class: "purple default"}
-                    /%a.button.purple.medium.default{href: posts_path} Community Board
-                  - if current_user
-                    %li.nav-item{style:"display:inline-block"}
-                      = button_to 'Log Out', destroy_user_session_path, {method: :delete, class:"purple default"}
-                    %li.nav-item{style:"display:inline-block"}
-                      = button_to 'My Profile', user_path(current_user), {method: :get, class: "purple default"}
-                      //%a.button.purple.medium.default{href: user_path(current_user), method: :get} Profile
-                  - else
-                    %li.nav-item{style:"display:inline-block"}
-                      =button_to 'Log in', user_session_path, {method: :get, class: "purple default"}
-                    %li.nav-item{style:"display:inline-block"}
-                      =button_to 'Sign up', new_user_registration_path, {method: :get, class: "purple default"}
-                      //%a.title.nav-link{href: new_user_registration_path, method: :get} Sign up
+                    = button_to 'Volunteers', users_path, {method: :get, class: "purple default"}
+                  %li.nav-item{style:"display:inline-block"}
+                    = button_to 'My Profile', user_path(current_user), {method: :get, class: "purple default"}
+                  %li.nav-item{style:"display:inline-block"}
+                    = button_to 'Log Out', destroy_user_session_path, {method: :delete, class:"purple default"}
+                - elsif admin_user_signed_in?
+                  %li.nav-item{style:"display:inline-block"}
+                    = button_to 'Dashboard', admin_root_path, {method: :get, class: "purple default"}
+                  %li.nav-item{style:"display:inline-block"}
+                    = button_to 'Log Out', destroy_admin_user_session_path, {method: :delete, class:"purple default"}
+                - else
+                  %li.nav-item{style:"display:inline-block"}
+                    =button_to 'Sign up', new_user_registration_path, {method: :get, class: "purple default"}
+                  %li.nav-item{style:"display:inline-block"}
+                    =button_to 'Log in', user_session_path, {method: :get, class: "purple default"}
                   
-    
     #main.full
-      - if flash[:notice]
-        #notice.success= flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
+      %head
+        / Include Bootstrap and HTML Kickstart (for style)
+        %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
+        %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
+        = stylesheet_link_tag 'application'
+      %body.background
+        .container.full{:style => "background-color:white;height:100%;border-left:1px solid Black;border-right:1px solid Black"}
+          .padded_above
+            - if flash[:notice]
+              %div.alert.alert-success{:role => "alert"}
+                #notice.success= flash[:notice]
+            - elsif flash[:warning]
+              %div.alert.alert-danger{:role => "alert"}
+                #warning.message= flash[:warning]
 
-      = yield
+          = yield
 

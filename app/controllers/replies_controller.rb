@@ -1,10 +1,10 @@
 class RepliesController < ApplicationController
-    
-    #before_action :authenticate_user
+    include ApplicationHelper
+    before_action :auth_user!
     before_action :load_post
-    
-    def trunc_message
-        @reply.message.truncate_words(3)
+        
+    def reply_params
+        params.require(:reply).permit(:user_id, :message)
     end
     
     def edit
@@ -12,35 +12,38 @@ class RepliesController < ApplicationController
     end
     
     def create
-        @reply = @post.replies.build(reply_params)
-        respond_to do |format|
-            if @reply.save
-                format.html { redirect_to @post, notice: "#{trunc_message} created successfully" }
-                format.js
-            else
-                format.html { redirect_to @post, error: "#{trunc_message} has not being created" }
-                format.js
+        if user_signed_in?
+            @reply = @post.replies.build(reply_params)
+            @reply.username = User.find(@reply.user_id).username
+            respond_to do |format|
+                if @reply.save
+                    format.html { redirect_to @post, notice: "Reply created successfully." }
+                    format.js
+                else
+                    format.html { redirect_to @post, error: "Something went wrong! Reply was not created." }
+                    format.js
+                end
             end
+        elsif admin_user_signed_in?
+            flash[:notice] = "You are currently signed in as admin. Please create replies through the admin dashboard."
+            redirect_to post_path(@post)
         end
     end
     
     def update
         @reply = @post.replies.find(params[:id])
         if @reply.update_attributes(reply_params)
-            redirect_to @post, notice: "#{trunc_message} updated successfully"
+            @reply.username = User.find(@reply.user_id).username
+            redirect_to @post, notice: "Reply updated successfully."
         else
-            redirect_to @post, notice: "#{trunc_message} has not being updated"
+            redirect_to @post, notice: "Something went wrong! Reply was not updated."
         end
     end
     
     def destroy
         @reply = @post.replies.find(params[:id])
         @reply.destroy
-        redirect_to @post, notice: "#The reply has been destroyed successfully"
-    end
-    
-    def reply_params
-        params.require(:reply).permit(:user_id, :message)
+        redirect_to @post, notice: "Reply deleted."
     end
     
     private 

@@ -11,3 +11,201 @@
  * It is generally better to create a new file per style scope.
  *
  */
+ 
+ html, body {
+  margin: 0;
+  padding: 0;
+  background: White;
+  color: Black;
+  font-family: Georgia;
+  font-size: 1.1em;
+  height:100vh;
+  overflow: auto;
+}
+div#main {
+  margin: 0;
+  padding: 0 20px;
+}
+a {
+  background: transparent;
+  color: #420199;
+  text-decoration: underline;
+  font-weight: bold;
+  
+    &:hover {
+    color: #fff !important;
+    background-color: #000;
+    }
+}
+a.title {
+  color: white !important;
+  font-style: normal;
+}
+a.button {
+  color: white !important;
+}
+h1 {
+  margin:0;
+  color: #4B0082;
+  font-size: 1.3em;
+  font-style: italic ;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid DarkSlateGrey;
+}
+span.h1.title {
+  margin:0;
+  background-color: #420199;
+  color: white;
+  font-size: 38px;
+  font-style: normal;
+  margin-bottom:7px;
+  margin-left:5px;
+}
+h2{
+  font-size:2em;
+  font-weight: bold;
+  font-family: Georgia;
+  margin:0;
+}
+.background {
+  background-image: url('/assets/CatDogBanner.PNG');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.navbar-light {
+  padding: 0;
+}
+.row.title {
+  margin: 0 0 0;
+  padding: 10px;
+  background-color: #420199;
+  color: white;
+  border-bottom: 4px solid #A88BD7;
+  font-style: normal;
+}
+.container{
+  min-width:86.2%;
+}
+.container.title {
+  margin: 0 0 0 0;
+  padding: 0;
+  max-width: 100%;
+}
+.container.full {
+  min-height:calc(100vh - 80px);
+}
+.line {
+  width: 70%;
+  text-align:center;
+  margin:20px 0 20px 0;
+}
+li.nav-item {
+  display:inline-block;
+  text-align:right;
+  margin:0 10px 0 10px;
+}
+.link {
+  color: #420199 !important;
+  font-style: normal;
+}
+.left-col{
+  text-align: right;
+  font-size: 18px;
+  line-height:21px;
+  font-family: Georgia;
+}
+.right-col{
+  text-align: center;
+  line-height:19px;
+  font-size: 18px;
+  margin-top:-50px;
+  font-family: Georgia;
+}
+.center-col{
+  text-align:right;
+  font-size:18px;
+  margin-right:35%;
+  font-family:Georgia;
+}
+.edit-col{
+  line-height:19px;
+  font-size: 18px;
+}
+.centered{
+  text-align:center;
+}
+.righted{
+  text-align:right;
+}
+.faded{
+	color:#bbbbbb;
+}
+.padded{
+    margin-bottom:20px;
+}
+.padded_above{
+  padding-top:10px;
+}
+.field{
+    font-size:19px;
+}
+.alert{
+  font-size:1.1em;
+  width:60%;
+  text-align:center;
+  margin-left:20%;
+}
+
+.button_new {
+  background-color: #666;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#8b9297), to(#484d51));
+    background-image: linear-gradient(180deg, #8b9297, #484d51);
+    border-radius: 200px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.0em;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 12px;
+    margin-right: 3px;
+    padding: 7px 16px 6px;
+    text-decoration: none;
+    color: #ffffff !important;
+}
+table#posts {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+table#posts th {
+  border: 2px solid white;
+  font-weight: bold;
+  background-color: #ADA2D1;
+}
+table#posts th, table#posts td {
+  padding: 4px;
+  text-align: left;
+}
+table#posts th.hilite { 
+  background-color: #420199;
+  color: #ffffff !important;
+}
+#notice #warning {
+  background: maroon;
+  margin: 1em 0;
+  padding: 4px;
+}
+.hilite {
+  color: #000 !important;
+}
+.update-button{
+  font-size:1em;
+  padding:5px 10px;
+  font-family:Helvetica !important
+}
+ul {
+  list-style-type: none;
+}

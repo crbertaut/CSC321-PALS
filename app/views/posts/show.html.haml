@@ -1,48 +1,57 @@
-%h1 Details about: #{@post.title}
-
-= stylesheet_link_tag "posts"
-%ul#details
-  %li
-    %b Posted by:
-    = link_to User.find(@post.user_id).name, user_path(User.find(@post.user_id))
-  %li
-    %b Type:
-    = @post.thread_type
-  %li
-    %b Date:
-    = @post.date.strftime("%B %d, %Y")
-  %li
-    %b Description:
-    %p#description= @post.description
-    
-    
-%div{style:"display:inline-block; padding-top:0.25em; padding-right:0.5em; padding-bottom:1.5em"}
-  = link_to 'Edit', edit_post_path(@post), {class:"link", style:"padding-right:10px"}
-  = link_to 'Back to post list', posts_path, {class:"link", style:"padding-right:10px"}
-  = link_to 'Delete', post_path(@post), {:method => :delete, :confirm => 'Are you sure?', class:"link", style:"padding-right:10px"}
-
-= form_for [@post, Reply.new] do |f|
-  = f.hidden_field :user_id, value: current_user.id
-  = f.label :message, 'Write a reply:', style:"padding-bottom:0.5em"
-  = f.text_area :message
-  = f.submit "Reply", class:"button purple default small"
-
-%h1{style:"padding-top:30px"}Replies
-
-%table
-  %thead
-    %tr
-      %th Message
-      %th Posted By
-      %th Created At
-      %th
-      %th
-  %tbody#replies
-    - @post.replies.each do |reply|
+%body
+  %h1 #{@post.title}
+  
+  %ul#details
+    %li
+      %b Posted by:
+      - if User.exists?(@post.user_id) 
+        = link_to User.find(@post.user_id).username, user_path(User.find(@post.user_id))
+      - else
+        = @post.username
+    %li
+      %b Type:
+      = @post.thread_type
+    %li
+      %b Event date:
+      = @post.date.strftime("%B %e, %Y")
+    %li
+      %b Description:
+      %p#description= @post.description
+      
+      
+  %div{style:"display:inline-block; padding-top:0.25em; padding-right:0.5em; padding-bottom:1.5em"}
+    = link_to 'Edit', edit_post_path(@post), {class:"link", style:"padding-right:10px"}
+    = link_to 'Back to post list', posts_path, {class:"link", style:"padding-right:10px"}
+    = link_to 'Delete', post_path(@post), {:method => :delete, :confirm => 'Are you sure?', class:"link", style:"padding-right:10px"}
+  
+  %h1{style:"padding-top:20px"}Replies
+  
+  %table
+    %thead
       %tr
-        %td= reply.message
-        %td= reply.user.name
-        %td= reply.created_at
-        %td= link_to "Edit", edit_post_reply_path(@post, reply), class:"link"
-        %td= link_to "Destroy", post_reply_path(@post, reply), method: :delete, class:"link"
-        
+        %th{width:"60%"} Message
+        %th{width:"10%"} Posted By
+        %th{width:"20%"} Created At
+        %th{width:"5%"}
+        %th{width:"5%"}
+    %tbody#replies
+      - @post.replies.each do |reply|
+        %tr
+          %td{width:"60%"}= reply.message
+          %td{width:"10%"}
+            - if User.exists?(reply.user_id) 
+              = link_to User.find(reply.user_id).username, user_path(User.find(reply.user_id))
+            - else
+              = reply.username
+          %td{width:"20%"}= reply.created_at.in_time_zone('Central Time (US & Canada)').strftime("%b %e, %Y | %l:%M %p")
+          %td{width:"5%"}= link_to "Edit", edit_post_reply_path(@post, reply), class:"link"
+          %td{width:"5%"}= link_to "Delete", post_reply_path(@post, reply), method: :delete, class:"link"
+  %br/        
+  = form_for [@post, Reply.new] do |f|
+    .centered
+      - if user_signed_in?
+        = f.hidden_field :user_id, value: current_user.id
+      = f.text_area :message, class: "padded", style:"width:60%"
+      %br/
+      = f.submit "Reply", class:"purple default"
+  %br/

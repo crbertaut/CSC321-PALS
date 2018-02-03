@@ -3,7 +3,7 @@
  *= require_self
  */
  
- .button_new {
+.button_new {
   background-color: #666;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#8b9297), to(#484d51));
     background-image: linear-gradient(180deg, #8b9297, #484d51);
@@ -19,10 +19,10 @@
     color: #ffffff !important;
 }
 
-  .link {
+.link {
   color: #4B0082 !important;
   font-style: normal;
-  }
+}
 
 html, body {
   margin: 0;

@@ -7,10 +7,10 @@ ActiveAdmin.register Post do
       selectable_column
       id_column
       column :title
-      column :description
-      column :thread_type
+      column "Content", :description
+      column "Type", :thread_type
       column :user
-      column :date
+      column "Date of event", :date
       column "Replies" do |post|
         link_to "See replies", admin_post_replies_path(post)
       end
@@ -18,8 +18,8 @@ ActiveAdmin.register Post do
     end
     
     filter :title
-    filter :thread_type
-    filter :date
+    filter :thread_type, as: :select, label: "Post type"
+    filter :date, label: "Date of event"
     filter :user
     
     show do
@@ -47,8 +47,9 @@ ActiveAdmin.register Post do
     form do |f|
         f.inputs do
             f.input :title
-            f.input :description
-            f.input :thread_type
+            f.input :description, label: "Content"
+            f.input :thread_type, label: "Post type", :collection => ['Shift', 'Ride', 'Other']
+            f.input :date, as: :date_select, label: "Date"
         end
         f.actions
         para "Press cancel to return to the list without saving."
