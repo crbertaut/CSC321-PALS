@@ -47,28 +47,29 @@
             %label Profile picture:
             %br/
             - if @user.avatar_file_name
-              %img{src: "/system/users/avatars/000/000/" + @user[:id].to_s.rjust(3, "0") + "/medium/" + @user.avatar_file_name} 
+              %img{src: "/system/users/avatars/000/000/" + @user[:id].to_s.rjust(3, "0") + "/medium/" + @user.avatar_file_name, alt: "Image not found"} 
             - else
-              %img{src: "/assets/blank-avatar.png"}
+              %img{src: "/assets/blank-avatar.png", alt: "Image not found"}
             = f.file_field :avatar, style:"text-align:center;margin-left:20%"
             %br/
           .field.padded
             %label About me:
             %br/
-            = f.text_area :bio, size: "30", style: "text-align:center"
+            = f.text_area :bio, size: "30"
       .col-md-2
     .row
-      .col-md-12
+      .col-md-12.centered
         %hr{style:"width:40%;margin:30px 30% 20px 30%"}
         .field.padded
           %label Current password (to confirm your changes):
           %br/
-          = f.password_field :current_password, size: "24", autocomplete: "off", style: "text-align:center"
+          = f.password_field :current_password, size: "24", autocomplete: "off"
         %br/
         .actions
           = f.submit "Update", class: "purple default", style: "font-size:1.3em;padding:10px 20px"
         %br/
-  = button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "red default", style: "font-size:0.9em;padding:8px 16px"
+  .centered      
+    = button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "red default", style: "font-size:0.9em;padding:8px 16px"
   %br/
   %br/
 

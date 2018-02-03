@@ -5,6 +5,16 @@ class UsersController < ApplicationController
     def user_params
         params.require(:name, :password, :email, :phone, :dob, :username).permit(:avatar)
     end
+    
+    def index
+		if params.key?(:sort_users)
+			session[:sort_users] = params[:sort_users]
+		elsif session.key?(:sort_users)
+			redirect_to sort_users: session[:sort_users] and return
+		end
+		
+        @users = User.all.order(session[:sort_users])
+    end
   
     def show
         id = params[:id] # retrieve post ID from URI route

@@ -8,9 +8,9 @@
       .centered
         %br/
         - if @user.avatar_file_name
-          %img{src: "/system/users/avatars/000/000/" + params[:id].rjust(3, "0") + "/medium/" + @user.avatar_file_name} 
+          %img{src: "/system/users/avatars/000/000/" + params[:id].rjust(3, "0") + "/medium/" + @user.avatar_file_name, alt: "Image not found"} 
         - else
-          %img{src: "/assets/blank-avatar.png"}
+          %img{src: "/assets/blank-avatar.png", alt: "Image not found"}
         %br/
         %br/
         %b About #{@user.username}:

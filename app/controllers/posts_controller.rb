@@ -32,14 +32,18 @@ class PostsController < ApplicationController
     end
   end
 
+  # default: render 'new' template
   def new
-    # default: render 'new' template
+    if admin_user_signed_in?
+      flash[:notice] = "You are currently signed in as admin. Please create posts through the admin dashboard."
+      redirect_to posts_path
+    end
   end
 
   def create
     @post = current_user.posts.create!(post_params)
-    @post.update(thread_type: params[:thread_type])
     @post.update(username: User.find(@post.user_id).username)
+    @post.update(thread_type: params[:thread_type])
     flash[:notice] = "Post was created successfully."
     redirect_to posts_path
   end

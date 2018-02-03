@@ -4,7 +4,7 @@ class RepliesController < ApplicationController
     before_action :load_post
         
     def reply_params
-        params.require(:reply).permit(:user_id, :message, :username)
+        params.require(:reply).permit(:user_id, :message)
     end
     
     def edit
@@ -12,16 +12,21 @@ class RepliesController < ApplicationController
     end
     
     def create
-        @reply = @post.replies.build(reply_params)
-        @reply.username = User.find(@reply.user_id).username
-        respond_to do |format|
-            if @reply.save
-                format.html { redirect_to @post, notice: "Reply created successfully." }
-                format.js
-            else
-                format.html { redirect_to @post, error: "Something went wrong! Reply was not created." }
-                format.js
+        if user_signed_in?
+            @reply = @post.replies.build(reply_params)
+            @reply.username = User.find(@reply.user_id).username
+            respond_to do |format|
+                if @reply.save
+                    format.html { redirect_to @post, notice: "Reply created successfully." }
+                    format.js
+                else
+                    format.html { redirect_to @post, error: "Something went wrong! Reply was not created." }
+                    format.js
+                end
             end
+        elsif admin_user_signed_in?
+            flash[:notice] = "You are currently signed in as admin. Please create replies through the admin dashboard."
+            redirect_to post_path(@post)
         end
     end
     

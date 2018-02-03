@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   
   get '/volunteers/profiles/:id', to: 'users#show', as: :user
+  get '/volunteers', to: 'users#index', as: :users
   
   resources :posts do
     resources :replies, only: [:edit, :create, :update, :destroy]

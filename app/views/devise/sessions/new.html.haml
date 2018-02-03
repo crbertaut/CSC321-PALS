@@ -1,22 +1,23 @@
-%body.centered
+%body
   %br/
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field.padded
-      = f.label :username, class:"link inline"
+  .centered
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field.padded
+        = f.label :username, class:"link inline"
+        %br/
+        = f.text_field :username, autofocus: true
+      .field.padded
+        = f.label :password, class: "link inline"
+        %br/
+        = f.password_field :password, autocomplete: "off"
+      .actions
+        = f.submit "Log in", class: "purple"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me, class: "link checkbox inline"
       %br/
-      = f.text_field :username, autofocus: true
-    .field.padded
-      = f.label :password, class: "link inline"
+      - if devise_mapping.recoverable?
+        = link_to 'Forgot your password?', new_password_path(resource_name)
       %br/
-      = f.password_field :password, autocomplete: "off"
-    .actions
-      = f.submit "Log in", class: "purple"
-    - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me, class: "link checkbox inline"
-    %br/
-    - if devise_mapping.recoverable?
-      = link_to 'Forgot your password?', new_password_path(resource_name)
-    %br/
-    %br/
+      %br/
