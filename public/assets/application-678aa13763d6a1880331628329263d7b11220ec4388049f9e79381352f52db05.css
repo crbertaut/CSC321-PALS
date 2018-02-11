@@ -1,0 +1,282 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+/* line 16, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: White;
+  color: Black;
+  font-family: Georgia;
+  font-size: 1.1em;
+  height: 100vh;
+  overflow: auto;
+}
+
+/* line 26, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+div#main {
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* line 30, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+a {
+  background: transparent;
+  color: #420199;
+  text-decoration: underline;
+  font-weight: bold;
+}
+/* line 36, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+a:hover {
+  color: #fff !important;
+  background-color: #000;
+}
+
+/* line 41, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+a.title {
+  color: white !important;
+  font-style: normal;
+}
+
+/* line 45, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+a.button {
+  color: white !important;
+}
+
+/* line 48, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+h1 {
+  margin: 0;
+  color: #4B0082;
+  font-size: 1.3em;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid DarkSlateGrey;
+}
+
+/* line 57, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+span.h1.title {
+  margin: 0;
+  background-color: #420199;
+  color: white;
+  font-size: 38px;
+  font-style: normal;
+  margin-bottom: 7px;
+  margin-left: 5px;
+}
+
+/* line 66, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+h2 {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: Georgia;
+  margin: 0;
+}
+
+/* line 72, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.background {
+  background-image: url("/assets/CatDogBanner.PNG");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 79, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.navbar-light {
+  padding: 0;
+}
+
+/* line 82, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.row.title {
+  margin: 0 0 0;
+  padding: 10px;
+  background-color: #420199;
+  color: white;
+  border-bottom: 4px solid #A88BD7;
+  font-style: normal;
+}
+
+/* line 90, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.container {
+  min-width: 86.2%;
+}
+
+/* line 93, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.container.title {
+  margin: 0 0 0 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* line 98, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.container.full {
+  min-height: calc(100vh - 80px);
+}
+
+/* line 101, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.line {
+  width: 70%;
+  text-align: center;
+  margin: 20px 0 20px 0;
+}
+
+/* line 106, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+li.nav-item {
+  display: inline-block;
+  text-align: right;
+  margin: 0 10px 0 10px;
+}
+
+/* line 111, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.link {
+  color: #420199 !important;
+  font-style: normal;
+}
+
+/* line 115, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.left-col {
+  text-align: right;
+  font-size: 18px;
+  line-height: 21px;
+  font-family: Georgia;
+}
+
+/* line 121, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.right-col {
+  text-align: center;
+  line-height: 19px;
+  font-size: 18px;
+  margin-top: -50px;
+  font-family: Georgia;
+}
+
+/* line 128, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.center-col {
+  text-align: right;
+  font-size: 18px;
+  margin-right: 35%;
+  font-family: Georgia;
+}
+
+/* line 134, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.edit-col {
+  line-height: 19px;
+  font-size: 18px;
+}
+
+/* line 138, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.centered {
+  text-align: center;
+}
+
+/* line 141, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.righted {
+  text-align: right;
+}
+
+/* line 144, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.faded {
+  color: #bbbbbb;
+}
+
+/* line 147, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.padded {
+  margin-bottom: 20px;
+}
+
+/* line 150, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.padded_above {
+  padding-top: 10px;
+}
+
+/* line 153, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.field {
+  font-size: 19px;
+}
+
+/* line 156, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.alert {
+  font-size: 1.1em;
+  width: 60%;
+  text-align: center;
+  margin-left: 20%;
+}
+
+/* line 163, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.button_new {
+  background-color: #666;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#8b9297), to(#484d51));
+  background-image: linear-gradient(180deg, #8b9297, #484d51);
+  border-radius: 200px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.0em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 12px;
+  margin-right: 3px;
+  padding: 7px 16px 6px;
+  text-decoration: none;
+  color: #ffffff !important;
+}
+
+/* line 178, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+table#posts {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+/* line 184, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+table#posts th {
+  border: 2px solid white;
+  font-weight: bold;
+  background-color: #ADA2D1;
+}
+
+/* line 189, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+table#posts th, table#posts td {
+  padding: 4px;
+  text-align: left;
+}
+
+/* line 193, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+table#posts th.hilite {
+  background-color: #420199;
+  color: #ffffff !important;
+}
+
+/* line 197, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+#notice #warning {
+  background: maroon;
+  margin: 1em 0;
+  padding: 4px;
+}
+
+/* line 202, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.hilite {
+  color: #000 !important;
+}
+
+/* line 205, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+.update-button {
+  font-size: 1em;
+  padding: 5px 10px;
+  font-family: Helvetica !important;
+}
+
+/* line 210, /home/ubuntu/workspace/app/assets/stylesheets/application.scss */
+ul {
+  list-style-type: none;
+}
