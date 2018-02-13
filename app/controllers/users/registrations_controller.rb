@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         @user.interests << @interest
       end
     end
-    if params[:dog_interests] then
+    if params[:dogs] then
       params[:dog_interests].each do |int|
         @interest = Interest.find_by name: "Dog " + int.downcase
         @user.interests << @interest
@@ -49,11 +49,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
+    @dogs = Interest.dog_interests
+    @cats = Interest.cat_interests
+    @other = Interest.other_interests
+    @user = current_user
+    @dogDisabled = @user.interests.where("name like ?", "%Dog%").present? ? false : true
+    @catDisabled = @user.interests.where("name like ?", "%Cat%").present? ? false : true
     super
   end
 
   # PUT /resource
   def update
+    @dogs = Interest.dog_interests
+    @cats = Interest.cat_interests
+    @other = Interest.other_interests
     if (params[:user][:username] == "" || (params[:user][:email] == "" && params[:user][:phone] == "") || params[:user][:name] == "")
       if (params[:user][:name] == "")
         resource.errors.add(:name, "field may not be blank.")
@@ -66,6 +75,36 @@ class Users::RegistrationsController < Devise::RegistrationsController
       end
       respond_with resource
     else
+      @user.interests.clear
+      if params[:interests] then
+        params[:interests].each do |int| 
+          @interest = Interest.find_by name: int
+          @user.interests << @interest
+        end
+      end
+      if params[:dogs] then
+        params[:dog_interests].each do |int|
+          @interest = Interest.find_by name: "Dog " + int.downcase
+          @user.interests << @interest
+        end
+      end
+      if params[:cats] then
+        params[:cat_interests].each do |int|
+          @interest = Interest.find_by name: "Cat " + int.downcase
+          @user.interests << @interest
+        end
+      end
+      if params[:other] then
+        @int_params = params[:other_interests].split(',')
+        @int_params.each do |int|
+          int = int.strip.downcase.capitalize
+          if !(Interest.find_by name: int)
+            Interest.create!(name: int)
+          end
+          @interest = Interest.find_by name: int
+          @user.interests << @interest
+        end
+      end
       super
     end
   end

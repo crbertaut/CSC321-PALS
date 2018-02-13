@@ -7,6 +7,9 @@ class User < ApplicationRecord
          
   attr_accessor :other_interests         
   validates :username, uniqueness: true
+  validates :username, presence: true
+  validates :name, uniqueness: true
+  validates :name, presence: true
   
   has_attached_file :avatar, styles: { medium: "180x180>", thumb: "50x50>" }, default_url: "/assets/blank-avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/

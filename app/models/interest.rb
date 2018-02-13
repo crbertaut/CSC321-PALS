@@ -1,5 +1,6 @@
 class Interest < ApplicationRecord
     has_and_belongs_to_many :users
+    validates :name, uniqueness: true
         
     def self.dog_interests
         ["Shifts", "Fostering", "Transport"]

@@ -209,3 +209,12 @@ table#posts th.hilite {
 ul {
   list-style-type: none;
 }
+fieldset.padded {
+  margin:55px 47% 0 2%;
+  padding:5px 12px 3px 15px;
+}
+fieldset.shrunk {
+  width:300px;
+  min-width:300px;
+  display: inline;
+}
