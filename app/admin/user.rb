@@ -13,7 +13,9 @@ ActiveAdmin.register User, as: 'Volunteer' do
         column :username
         column :email
         column :phone
-        column :posts #link to fitered posts by user
+        column :posts do |user|
+            link_to "View posts", admin_posts_path(q: { user_id_eq: user.id})
+        end
         column "Interests" do |user|
             user.interests.collect(&:name)
         end

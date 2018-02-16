@@ -27,7 +27,7 @@ ActiveAdmin.register Post do
             row :title
             row :thread_type
             row :description
-            row :user
+            row "Volunteer", :user
             row :created_at
             row :updated_at
             row "Replies" do |post|
