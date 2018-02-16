@@ -45,4 +45,41 @@ ActiveAdmin.register User, as: 'Volunteer' do
         f.actions
         para "Press cancel to return to the list without saving."
     end
+    
+    show do
+        attributes_table title: "Profile" do
+          row :name
+          row :username
+          row :email
+          row :phone
+          row :dob
+          row "Interests" do |user|
+            user.interests.collect(&:name)
+          end
+          row :bio
+          row :avatar_file_name
+          row :avatar_file_size do |user|
+              (user.avatar_file_size.to_f / 1024).ceil.to_s + " KB"  # Convert from bytes to kilobytes
+          end
+          row "View public profile" do |user|
+              link_to user_path(user.id)  # This doesn't work, just refreshes page
+          end
+        end
+        attributes_table title: "More Details" do
+          row :created_at
+          row :updated_at
+          row :sign_in_count
+          row :current_sign_in_at
+          row :current_sign_in_ip
+          row :last_sign_in_at
+          row :last_sign_in_ip
+          row :confirmed_at
+          row :confirmation_token
+          row :confirmation_sent_at
+          row :unconfirmed_email
+          row :encrypted_password
+          row :reset_password_token
+          row :reset_password_sent_at
+        end
+    end
 end

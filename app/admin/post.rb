@@ -9,7 +9,7 @@ ActiveAdmin.register Post do
       column :title
       column "Content", :description
       column "Type", :thread_type
-      column :user
+      column "Volunteer", :user
       column "Date of event", :date
       column "Replies" do |post|
         link_to "See replies", admin_post_replies_path(post)
@@ -20,14 +20,14 @@ ActiveAdmin.register Post do
     filter :title
     filter :thread_type, as: :select, label: "Post type"
     filter :date, label: "Date of event"
-    filter :user
+    filter :user, label: "Volunteer"
     
     show do
         attributes_table do
             row :title
             row :thread_type
             row :description
-            row "Volunteer", :user
+            row :user
             row :created_at
             row :updated_at
             row "Replies" do |post|
