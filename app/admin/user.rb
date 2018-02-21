@@ -24,7 +24,7 @@ ActiveAdmin.register User, as: 'Volunteer' do
     filter :username
     filter :email
     filter :created_at
-    filter :interests
+    filter :interests, collection: proc { Interest.all }
     
     form do |f| 
         f.inputs do
