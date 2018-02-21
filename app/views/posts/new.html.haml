@@ -18,7 +18,7 @@
         = label :post, :date, 'Date of event:'
       .col-md-8
         .padded
-          - d = DateTime.now.in_time_zone('Central Time (US & Canada)')
+          - d = DateTime.current
           = datetime_select(:post, :date, ampm: true, start_year: d.year - 1, default:{ day: d.mday, hour: 8, minute: 00 })
     .row
       %b.col-md-3.padded.righted

@@ -1,7 +1,7 @@
 ActiveAdmin.register Post do
     menu priority: 3
     
-    permit_params :title, :description, :thread_type
+    permit_params :title, :description, :date, :user, :thread_type
     
     index title: 'Posts' do
       selectable_column
@@ -46,10 +46,14 @@ ActiveAdmin.register Post do
 
     form do |f|
         f.inputs do
+            f.object.date ||= DateTime.current.change(hour: DateTime.current.hour + 1)  
+            f.object.thread_type ||= 'Other'
+            f.object.user ||= User.find(1)
             f.input :title
             f.input :description, label: "Content"
             f.input :thread_type, label: "Post type", :collection => ['Shift', 'Ride', 'Other']
-            f.input :date, as: :date_select, label: "Date"
+            f.input :date, as: :datetime_select, label: "Date", ampm: true, start_year: DateTime.current.year - 1
+            f.input :user, as: :hidden
         end
         f.actions
         para "Press cancel to return to the list without saving."

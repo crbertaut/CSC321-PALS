@@ -52,6 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @dogs = Interest.dog_interests
     @cats = Interest.cat_interests
     @other = Interest.other_interests
+    @all = Interest.all_interests
     @user = current_user
     @dogDisabled = @user.interests.where("name like ?", "%Dog%").present? ? false : true
     @catDisabled = @user.interests.where("name like ?", "%Cat%").present? ? false : true
@@ -63,6 +64,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @dogs = Interest.dog_interests
     @cats = Interest.cat_interests
     @other = Interest.other_interests
+    @all = Interest.all_interests
     if (params[:user][:username] == "" || (params[:user][:email] == "" && params[:user][:phone] == "") || params[:user][:name] == "")
       if (params[:user][:name] == "")
         resource.errors.add(:name, "field may not be blank.")

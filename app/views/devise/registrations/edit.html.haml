@@ -20,7 +20,7 @@
           .field.padded
             %label Date of birth:
             %br/
-            = f.date_select :dob, :start_year => 1900, :end_year => 2017, :use_month_numbers => true, :order => [:year, :month, :day]
+            = f.date_select :dob, :start_year => 1900, :end_year => Date.current.year, :use_month_numbers => true, :order => [:year, :month, :day]
           .field.padded
             %label Email:
             %br/
@@ -101,9 +101,14 @@
                     = check_box_tag "interests[]", interest,  @user.interests.where(name: interest).present? ? true : false, id: interest
                     = label_tag :interests, "#{interest}", for: interest, class: "inline"
                     %br/
-                  = check_box_tag "other", "other", false, name: "other"
-                  = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
-      .col-md-2
+                  - @other_string = ""
+                  - @user.interests.each do |interest|
+                    - if !(@all.include? interest.name)
+                      - @other_string << interest.name + ", "
+                  = check_box_tag "other", "other", (@other_string == "") ? false : true, name: "other"
+                  - @others = !(@other_string == "")
+                  = text_field_tag "other_interests", nil, class: "inline", placeholder: @others ? "Other..." : nil, value: @others ? @other_string.chomp(", ") : nil, size: "18", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
+      .col-md-2 
     .row
       .col-md-12.centered
         %hr{style:"width:40%;margin:30px 30% 20px 30%"}

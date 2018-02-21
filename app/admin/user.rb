@@ -38,12 +38,41 @@ ActiveAdmin.register User, as: 'Volunteer' do
             end
             f.input :email, required: false
             f.input :phone
-            f.input :dob
+            f.input :dob, as: :date_select, :start_year => 1900, :end_year => Date.current.year, :use_month_numbers => true, :order => [:year, :month, :day]
             f.input :interests, as: :check_boxes
             f.input :other_interests, as: :string
         end
         f.actions
         para "Press cancel to return to the list without saving."
+    end
+    
+    controller do
+        def update
+            super
+            if params[:user][:other_interests] then
+                @int_params = params[:user][:other_interests].split(',')
+                @int_params.each do |int|
+                    int = int.strip.downcase.capitalize
+                    if !(Interest.find_by name: int)
+                        Interest.create!(name: int)
+                    end
+                    (User.find_by id: params[:id]).interests << (Interest.find_by name: int)
+                end
+            end
+        end
+        def create
+            super
+            if params[:user][:other_interests] then
+                @int_params = params[:user][:other_interests].split(',')
+                @int_params.each do |int|
+                    int = int.strip.downcase.capitalize
+                    if !(Interest.find_by name: int)
+                        Interest.create!(name: int)
+                    end
+                    (User.find_by username: params[:user][:username]).interests << (Interest.find_by name: int)
+                end
+            end
+        end
     end
     
     show do

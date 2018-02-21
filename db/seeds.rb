@@ -7,6 +7,10 @@ Interest.create!([{ name: 'Dog shifts' }, { name: 'Dog transport' }, { name: 'Do
     { name: 'Cat transport' }, { name: 'Cat fostering' }])
 
 if Rails.env.development?
+    AdminUser.create!(email: 'admin@example.com', username: "admin", password: 'password', password_confirmation: 'password')
+    # Create dummy user so admin can create posts and the like
+    User.create!(name: 'Admin', email: 'admin@example.com', username: "admin", password: 'password')
+
     user1 = User.create!(name: 'Rocky Williams', email: 'rockyrd@example.com', password: 'password', phone: '(641) 895-5555', dob:'1990-01-25', username: 'RockyRoad', bio: 'We own two dogs at home!')
     user1.interests << (Interest.find_by name: 'Dog shifts')
     
@@ -28,6 +32,5 @@ if Rails.env.development?
     user2.posts << (Post.create!(title: 'Help for Rib Dinner next month?', thread_type: 'Other', description: 'PALS Rib Dinner will be next month on January 31. If anyone is interested in helping out with organzing, cooking, or serving, please reply to this post!', date: '2018-01-31'))
     user2.posts << (Post.create!(title: 'Shift swap Friday!!', thread_type: 'Shift', description: 'I can no longer make it to my 5pm cat shift this Friday. Is anyone willing to swap or cover?', date: '2017-12-08'))
 
-    AdminUser.create!(email: 'admin@example.com', username: "admin", password: 'password', password_confirmation: 'password')
 end
 
