@@ -1,41 +1,49 @@
 %body
   .row
     .col-md-12
-      %h2{:style => "text-align:center"} #{@user.username}'s Profile
+      %h2#profile_title{:style => "text-align:center"} #{@user.username}'s Profile
   .row
     .col-md-2
     .col-md-3
       .centered
         %br/
         - if @user.avatar_file_name
-          %img{src: "/system/users/avatars/000/000/" + params[:id].rjust(3, "0") + "/medium/" + @user.avatar_file_name, alt: "Image not found"} 
+          %img#avatar{src: "/system/users/avatars/000/000/" + params[:id].rjust(3, "0") + "/medium/" + @user.avatar_file_name, alt: "Image not found"} 
         - else
-          %img{src: "/assets/blank-avatar.png", alt: "Image not found"}
+          %img#avatar{src: "/assets/blank-avatar.png", alt: "Image not found"}
         %br/
         %br/
         %b About #{@user.username}:
-        %br/
-        = @user.bio
+        %br
+        %span#bio
+          = @user.bio
     .col-md-5
       %div{:style => "margin-left:20px"}
         %h5 Personal Information
         %div{style: "font-size:17px"}
-          %b Name:
-          = @user.name
-          %br/
-          %b Birthdate:
-          = @user.dob.strftime("%B %e, %Y")
-          %br/
-          %b Interests:
-          = @user.interests.map(&:name).join(", ")
+          %div
+            %b Name:
+            %span#name
+              = @user.name
+          %div
+            %b Birthdate:
+            %span#dob
+              = @user.dob.strftime("%B %e, %Y")
+          %div
+            %b Interests:
+            %span#interests
+              = @user.interests.map(&:name).join(", ")
         %hr.line/
         %h5 Contact Information
         %div{style: "font-size:17px"}
-          %b Phone:
-          = @user.phone
-          %br/
-          %b Email:
-          = @user.email
+          %div
+            %b Phone:
+            %span#phone
+              = @user.phone
+          %div
+            %b Email:
+            %span#email
+              = @user.email
     .col-md-2
   .row
     .col-md-12
