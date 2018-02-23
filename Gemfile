@@ -65,7 +65,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'pry'
   gem 'rspec-rails', '~> 3.7.1'
-  gem "factory_bot_rails"
+  gem "factory_bot_rails", '~> 4.0'
   gem 'guard-rspec'
   gem 'spring-commands-rspec'
   gem 'vcr'
