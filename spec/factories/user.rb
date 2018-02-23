@@ -5,9 +5,10 @@ FactoryBot.define do
 end
 
 FactoryBot.define do
-  factory :user, :class => 'User' do
+  factory :user do
+    name 'Gwen Poole'
+    username 'gwenpool'
+    password 'gutterspace'
     email
-    password '12345678'
-    password_confirmation '12345678'
   end
 end
