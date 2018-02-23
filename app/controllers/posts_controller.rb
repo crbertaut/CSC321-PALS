@@ -15,19 +15,19 @@ class PostsController < ApplicationController
     @all_types = ['Shift', 'Ride', 'Other']
 		if params.key?(:sort_by)
 			session[:sort_by] = params[:sort_by]
-		elsif session.key?(:sort_by)
-			redirect_to sort_by: session[:sort_by] and return
+		#elsif session.key?(:sort_by)
+		#	redirect_to sort_by: session[:sort_by] and return
 		end
 		
 		if params.key?(:types)
 			session[:types] = params[:types]
-		elsif session.key?(:types)
-			redirect_to types: session[:types] and return
+		#elsif session.key?(:types)
+		#	redirect_to types: session[:types] and return
 		end
 		
 		@checked_types = (session[:types].keys if session.key?(:types)) || @all_types
     @posts = Post.where(thread_type: @checked_types).order(session[:sort_by])
-    if session[:sort_by] == 'title'
+    if session[:sort_by] == 'title' || session[:sort_by] == 'username'
       @posts = @posts.reverse
     end
   end
