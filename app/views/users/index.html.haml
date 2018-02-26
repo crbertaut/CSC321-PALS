@@ -1,6 +1,6 @@
 %body
   %h1.centered.padded Volunteers
-  %table#posts{style:"margin-bottom:1em"}
+  %table#posts{style:"margin-bottom:1em; table-layout: fixed; width: 100%"}
     %thead
       %tr
         %th{:class => "#{('hilite' if session[:sort_users] == 'username')}"}
