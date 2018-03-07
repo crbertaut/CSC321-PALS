@@ -9,5 +9,6 @@ FactoryBot.define do
     email
     password '12345678'
     password_confirmation '12345678'
+    gender 3
   end
 end
