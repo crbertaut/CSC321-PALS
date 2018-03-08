@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :name, uniqueness: true
   validates :name, presence: true
-  validates :other_gender, presence: true, if: Proc.new {|u| u.gender.other?}
+  validates :other_gender, presence: true, if: Proc.new {|u| u.other?}
   
   has_attached_file :avatar, styles: { medium: "180x180>", thumb: "50x50>" }, default_url: "/assets/blank-avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
