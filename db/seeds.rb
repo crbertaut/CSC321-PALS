@@ -24,12 +24,19 @@ if Rails.env.development?
     user2.interests << (Interest.find_by name: 'Cooking/baking')
     user2.interests << (Interest.find_by name: 'Machine maintenance')
     
-    User.create!(name: 'Virginia Potts', username: 'whatislove', password: 'babydonthurtme', email: 'whatislove@babydonthurtme.com', phone: '', dob: '1976-03-14')
-    User.create!(name: 'Jane Foster', username: 'fostersauce', password: 'science!', email: 'fostersaucester@science.com', phone: '(123) 456-7890', dob: '1989-04-16')
+    user3 = User.create!(name: 'Virginia Potts', username: 'whatislove', password: 'babydonthurtme', email: 'whatislove@babydonthurtme.com', phone: '', dob: '1976-03-14')
+    user4 = User.create!(name: 'Jane Foster', username: 'fostersauce', password: 'science!', email: 'fostersaucester@science.com', phone: '(123) 456-7890', dob: '1989-04-16')
     User.create!(name: 'Marina Diamondis', username: 'marinara', password: 'iamnotarobot', email: 'diamondis@marinara.com', phone: '', dob: '1992-06-30')
     
-    user1.posts << (Post.create!(title: 'Need a ride!', thread_type: 'Ride', description: 'I am from the college and don\'t have a car. Can anyone give me a lift this Sunday?', date: '2017-12-09'))
-    user2.posts << (Post.create!(title: 'Help for Rib Dinner next month?', thread_type: 'Other', description: 'PALS Rib Dinner will be next month on January 31. If anyone is interested in helping out with organzing, cooking, or serving, please reply to this post!', date: '2018-01-31'))
+    post1 = Post.create!(title: 'Need a ride!', thread_type: 'Ride', description: 'I am from the college and don\'t have a car. Can anyone give me a lift this Sunday?', date: '2017-12-09')
+    user1.posts << post1
+    post1.replies << (Reply.create!(user: user3, message: 'What time do you need to get there?', post: post1))
+    
+    post2 = Post.create!(title: 'Help for Rib Dinner next month?', thread_type: 'Other', description: 'PALS Rib Dinner will be next month on January 31. If anyone is interested in helping out with organzing, cooking, or serving, please reply to this post!', date: '2018-01-31')
+    user2.posts << post2
+    post2.replies << (Reply.create!(user: user4, message: 'I can help cook the ribs! What time are we starting?', post: post2))
+    post2.replies << (Reply.create!(user: user2, message: 'We start cooking at 5 pm. Send me a text when you are heading over.', post: post2))
+    
     user2.posts << (Post.create!(title: 'Shift swap Friday!!', thread_type: 'Shift', description: 'I can no longer make it to my 5pm cat shift this Friday. Is anyone willing to swap or cover?', date: '2017-12-08'))
 
 end
