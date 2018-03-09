@@ -5,7 +5,7 @@ FactoryBot.define do
 end
 
 FactoryBot.define do
-  factory :user, :class => 'User' do
+  factory :user do
     username 'gwenpool'
     name 'Gwen Poole'
     email

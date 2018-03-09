@@ -19,6 +19,7 @@ class User < ApplicationRecord
   
   has_many :posts
   has_and_belongs_to_many :interests
+  has_many :organizations
   
   def email_required?
     false

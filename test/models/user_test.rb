@@ -17,8 +17,10 @@ class UserTest < ActiveSupport::TestCase
   
   test 'should validate username uniqueness' do
     @user.save!
-    user2 = build(:user, username: 'something else') # only testing the username
+    user2 = build(:user)
     assert_not user2.valid?
+    assert_includes user2.errors.details[:username],
+                    { error: :taken, value: user2.username }
   end
   
   test 'should validate name presence' do
@@ -28,8 +30,10 @@ class UserTest < ActiveSupport::TestCase
   
   test 'should validate name uniqueness' do
     @user.save!
-    user2 = build(:user, name: 'something else') # only testing the name
+    user2 = build(:user)
     assert_not user2.valid?
+    assert_includes user2.errors.details[:name],
+                    { error: :taken, value: user2.name }
   end
   
   test 'should validate presence of other_gender when gender is other' do
@@ -38,5 +42,23 @@ class UserTest < ActiveSupport::TestCase
     @user.other_gender = 'genderqueer'
     assert @user.valid?
     assert @user.other?
+  end
+  
+  test 'should be able to have multiple organizations' do
+    @user.organizations << create(:organization)
+    assert @user.valid?
+  end
+  
+  test 'should be able to have an interest' do
+    @user.interests << create(:interest)
+    assert @user.valid?
+  end
+  
+  test 'should be able to have multiple (5) interests' do
+    5.times do |n|
+      interest = create(:interest, name: n)
+      @user.interests << interest
+    end
+    assert @user.valid?
   end
 end
