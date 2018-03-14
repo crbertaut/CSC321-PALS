@@ -20,5 +20,10 @@ module VolunteerSite
     
     config.time_zone = 'Central Time (US & Canada)'
     config.active_record.default_timezone = :local
+    
+    config.generators do |g|
+      g.test_framework :rspec, fixture: false
+      g.fixture_replacement :factory_bot
+    end
   end
 end
