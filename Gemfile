@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # For user authentication
 gem 'devise'
 
+# For user address
+gem 'geocoder'
+
 # For admin stuff
 gem 'activeadmin'
 gem 'activeadmin_blaze_theme'
