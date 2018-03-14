@@ -20,8 +20,6 @@
               %span.navbar-toggler-icon
             #navbarSupportedContent.collapse.navbar-collapse
               %ul.navbar-nav.ml-md-auto
-                %li.nav-item{style:"display:inline-block"}
-                  = button_to 'Posts', root_path, {method: :get, class: "purple default"}
                 - if user_signed_in?
                   %li.nav-item{style:"display:inline-block"}
                     = button_to 'Volunteers', users_path, {method: :get, class: "purple default"}
@@ -47,7 +45,7 @@
         %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
         = stylesheet_link_tag 'application'
       %body.background
-        .container.full{:style => "background-color:white;height:100%;border-left:1px solid Black;border-right:1px solid Black"}
+        .container.full.grad-border-white{:style => "background-color:white;height:100%"}
           .padded_above
             - if flash[:notice]
               %div.alert.alert-success{:role => "alert"}

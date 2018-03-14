@@ -90,7 +90,7 @@ h2{
   margin:0;
 }
 .background {
-  background-image: url('/assets/CatDogBanner.PNG');
+  background-image: url('/assets/palspark.png');
   background-attachment: fixed;
   background-repeat: no-repeat;
   width: 100%;
@@ -114,9 +114,44 @@ h2{
   margin: 0 0 0 0;
   padding: 0;
   max-width: 100%;
+  opacity:.9;
 }
 .container.full {
   min-height:calc(100vh - 80px);
+  //background-image: radial-gradient(farthest-corner at center center, #ADA2D1 50%, #fff 100%);
+}
+.grad-border-white {
+  position: relative;
+}
+.grad-border-white:after {
+  content: "";
+  position: absolute;
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#fff), to(transparent));
+  background-image: -webkit-linear-gradient(left, #fff, transparent);
+  background-image: -moz-linear-gradient(left, #fff, transparent);
+  background-image: -o-linear-gradient(left, #fff, transparent);
+  background-image: linear-gradient(left, #fff, transparent);
+  top: 0;
+  bottom: 0;
+  width: 100px;
+}
+.grad-border-white:after {
+  right: -100px;
+}
+.grad-border-white:before {
+  content: "";
+  position: absolute;
+  background-image: -webkit-gradient(linear, 100% 0, 0 0, from(#fff), to(transparent));
+  background-image: -webkit-linear-gradient(right, #fff, transparent);
+  background-image: -moz-linear-gradient(right, #fff, transparent);
+  background-image: -o-linear-gradient(right, #fff, transparent);
+  background-image: linear-gradient(right, #fff, transparent);
+  top: 0;
+  bottom: 0;
+  width: 100px;
+}
+.grad-border-white:before {
+  left: -100px;
 }
 .line {
   width: 70%;

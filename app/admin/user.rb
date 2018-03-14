@@ -13,9 +13,6 @@ ActiveAdmin.register User, as: 'Volunteer' do
         column :username
         column :email
         column :phone
-        column :posts do |user|
-            link_to "View posts", admin_posts_path(q: { user_id_eq: user.id})
-        end
         column "Interests" do |user|
             user.interests.collect(&:name)
         end
@@ -89,9 +86,6 @@ ActiveAdmin.register User, as: 'Volunteer' do
           row :avatar_file_name
           row :avatar_file_size do |user|
               (user.avatar_file_size.to_f / 1024).ceil.to_s + " KB"  # Convert from bytes to kilobytes
-          end
-          row "View public profile" do |user|
-              link_to user_path(user.id)  # This doesn't work, just refreshes page
           end
         end
         attributes_table title: "More Details" do
