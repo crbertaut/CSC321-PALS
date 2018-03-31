@@ -9,13 +9,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: 'posts#index'
+  root to: 'users#index'
   
   get '/volunteers/profiles/:id', to: 'users#show', as: :user
   get '/volunteers', to: 'users#index', as: :users
-  
-  resources :posts do
-    resources :replies, only: [:edit, :create, :update, :destroy]
-  end
 
 end

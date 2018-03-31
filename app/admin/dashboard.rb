@@ -17,29 +17,6 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
-      
-      column do
-        panel "Recent posts" do
-          table_for Post.order(updated_at: :desc) do
-            column :title
-            column "Posted by" do |post|
-              if User.exists?(post.user_id)
-                link_to User.find(post.user_id).name, user_path(User.find(post.user_id))
-              else
-                post.username
-              end
-            end
-            column :updated_at
-            column :thread_type
-            column "View" do |post|
-              link_to "View post", admin_post_path(post)
-            end
-            column "Replies" do |post|
-              link_to "View replies", admin_post_replies_path(post)
-            end
-          end
-        end
-      end
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180308053839) do
+ActiveRecord::Schema.define(version: 20180314190945) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -49,29 +49,6 @@ ActiveRecord::Schema.define(version: 20180308053839) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_organizations_on_name"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.string "thread_type"
-    t.text "description"
-    t.datetime "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer "user_id"
-    t.string "username"
-    t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "replies", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.text "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "username"
-    t.index ["post_id"], name: "index_replies_on_post_id"
-    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
