@@ -6,9 +6,8 @@ end
 
 FactoryBot.define do
   factory :user do
-    username 'gwenpool'
     name 'Gwen Poole'
-    email
+    email 'gpoole@abcde.com'
     password '12345678'
     password_confirmation '12345678'
     gender 3

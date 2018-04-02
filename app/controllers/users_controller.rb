@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :auth_user!
     
     def user_params
-        params.require(:name, :password, :email, :phone, :dob, :username).permit(:avatar)
+        params.require(:name, :password, :email, :phone, :dob).permit(:avatar)
     end
     
     def index
