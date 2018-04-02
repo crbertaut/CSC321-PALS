@@ -96,7 +96,6 @@ ActiveAdmin.register User, as: 'Volunteer' do
           row :confirmation_token
           row :confirmation_sent_at
           row :unconfirmed_email
-          row :encrypted_password
           row :reset_password_token
           row :reset_password_sent_at
         end

@@ -10,7 +10,7 @@ ActiveAdmin.register_page "Dashboard" do
             column :name
             column :email
             column "Registered at", :created_at
-            column "View" do |user|
+            column "Details" do |user|
               link_to "View info", admin_volunteer_path(user)
             end
           end
