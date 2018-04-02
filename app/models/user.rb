@@ -15,8 +15,13 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :other_gender, presence: true, if: Proc.new {|u| u.other?}
   
-  def validate
+  validate :different_home_work_phone, :different_home_work_email
+  
+  def different_home_work_phone
     errors.add(:home_phone) if home_phone == work_phone
+  end
+  
+  def different_home_work_email
     errors.add(:home_email) if home_email == work_email
   end
   
