@@ -45,7 +45,7 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test 'should reject invalid gender option' do
-    assert_throws(ArgumentError) do
+    assert_raises(ArgumentError) do
       @user.gender = 4
     end
   end
@@ -79,7 +79,7 @@ class UserTest < ActiveSupport::TestCase
   end
   
   test 'should reject invalid contact method option' do
-    assert_throws(ArgumentError) do
+    assert_raises(ArgumentError) do
       @user.contact_method = 3
     end
   end
