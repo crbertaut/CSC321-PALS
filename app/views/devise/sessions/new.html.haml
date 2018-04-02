@@ -3,9 +3,9 @@
   .centered
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field.padded
-        = f.label :username, class:"link inline"
+        = f.label :email, class:"link inline"
         %br/
-        = f.text_field :username, autofocus: true
+        = f.email_field :email, autofocus: true
       .field.padded
         = f.label :password, class: "link inline"
         %br/

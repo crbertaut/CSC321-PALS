@@ -14,10 +14,6 @@
             %br/
             = f.text_field :name, size: "30", autofocus: true
           .field.padded
-            %label Username:
-            %br/
-            = f.text_field :username, size: "24"
-          .field.padded
             %label Date of birth:
             %br/
             = f.date_select :dob, :start_year => 1900, :end_year => Date.current.year, :use_month_numbers => true, :order => [:year, :month, :day]

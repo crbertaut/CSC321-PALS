@@ -8,8 +8,8 @@ class User < ApplicationRecord
   enum gender: [:male, :female, :other, :prefer_not_to_disclose]
          
   attr_accessor :other_interests         
-  validates :username, uniqueness: true
-  validates :username, presence: true
+  validates :email, uniqueness: true
+  validates :email, presence: true
   validates :name, uniqueness: true
   validates :name, presence: true
   validates :other_gender, presence: true, if: Proc.new {|u| u.other?}
