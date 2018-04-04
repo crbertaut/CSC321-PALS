@@ -74,7 +74,48 @@ ActiveRecord::Schema.define(version: 20180402204611) do
     t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
-# Could not dump table "users" because of following StandardError
-#   Unknown type '' for column 'integer'
+  create_table "users", force: :cascade do |t|
+    t.string "home_email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "home_phone"
+    t.date "dob"
+    t.text "interests"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.text "bio"
+    t.string "username"
+    t.integer "gender", default: 3
+    t.string "other_gender"
+    t.string "work_phone"
+    t.string "work_email"
+    t.integer "contact_method", default: 0
+    t.float "latitude"
+    t.float "longitude"
+    t.string "emergency_contact"
+    t.string "emergency_phone"
+    t.string "emergency_relationship"
+    t.string "emergency_phone_other"
+    t.integer "organization_id", default: 0
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["home_email"], name: "index_users_on_home_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
 
 end
