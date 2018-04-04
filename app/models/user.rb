@@ -9,7 +9,9 @@ class User < ApplicationRecord
   enum contact_method: [:phone, :email]
          
   attr_accessor :other_interests
+  validates :home_email, uniqueness: true
   validates :home_email, presence: true
+  validates :work_email, uniqueness: true
   validates :work_email, presence: true
   validates :name, uniqueness: true
   validates :name, presence: true
