@@ -10,17 +10,30 @@ class UserTest < ActiveSupport::TestCase
     assert @user.save
   end
   
-  test 'should validate email presence' do
-    @user.email = nil
+  test 'should validate home email presence' do
+    @user.home_email = nil
     assert_not @user.valid?
   end
   
-  test 'should validate email uniqueness' do
+  test 'should validate home email uniqueness' do
     @user.save!
     user2 = build(:user)
     assert_not user2.valid?
-    assert_includes user2.errors.details[:email],
-                    { error: :taken, value: user2.email }
+    assert_includes user2.errors.details[:home_email],
+                    { error: :taken, value: user2.home_email }
+  end
+  
+  test 'should validate work email presence' do
+    @user.work_email = nil
+    assert_not @user.valid?
+  end
+  
+  test 'should validate work email uniqueness' do
+    @user.save!
+    user2 = build(:user)
+    assert_not user2.valid?
+    assert_includes user2.errors.details[:work_email],
+                    { error: :taken, value: user2.work_email }
   end
   
   test 'should validate name presence' do
