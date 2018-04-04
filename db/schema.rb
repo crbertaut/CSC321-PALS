@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20171228003540) do
   create_table "interests_users", id: false, force: :cascade do |t|
     t.integer "interest_id", null: false
     t.integer "user_id", null: false
-    t.index ["interest_id", "user_id"], name: "index_interests_users_on_interest_id_and_user_id"
-    t.index ["user_id", "interest_id"], name: "index_interests_users_on_user_id_and_interest_id"
+    t.index ["interest_id"], name: "index_interests_users_on_interest_id"
+    t.index ["user_id"], name: "index_interests_users_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 20171228003540) do
     t.string "name"
     t.string "phone"
     t.date "dob"
+    t.text "interests"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
