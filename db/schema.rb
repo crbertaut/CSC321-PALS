@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180331212111) do
+ActiveRecord::Schema.define(version: 20180402204611) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20180331212111) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
+    t.string "home_email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20180331212111) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.string "phone"
+    t.string "home_phone"
     t.date "dob"
     t.text "interests"
     t.string "avatar_file_name"
@@ -78,8 +78,18 @@ ActiveRecord::Schema.define(version: 20180331212111) do
     t.text "bio"
     t.integer "gender", default: 3
     t.string "other_gender"
+    t.string "work_phone"
+    t.string "work_email"
+    t.integer "contact_method", default: 0
+    t.float "latitude"
+    t.float "longitude"
+    t.string "emergency_contact"
+    t.string "emergency_phone"
+    t.string "emergency_relationship"
+    t.string "emergency_phone_other"
+    t.integer "organization_id", default: 0
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["home_email"], name: "index_users_on_home_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
