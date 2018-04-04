@@ -50,8 +50,8 @@ class UserTest < ActiveSupport::TestCase
     end
   end
   
-  test 'should be able to have multiple organizations' do
-    @user.organizations << create(:organization)
+  test 'should be able to have single organization' do
+    @user.organization = create(:organization)
     assert @user.valid?
   end
   
