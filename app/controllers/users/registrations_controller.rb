@@ -65,15 +65,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @cats = Interest.cat_interests
     @other = Interest.other_interests
     @all = Interest.all_interests
-    if (params[:user][:username] == "" || (params[:user][:email] == "" && params[:user][:phone] == "") || params[:user][:name] == "")
+    if (params[:user][:email] == "" || params[:user][:name] == "")
       if (params[:user][:name] == "")
         resource.errors.add(:name, "field may not be blank.")
       end
-      if (params[:user][:username] == "")
-        resource.errors.add(:username, "field may not be blank.")
-      end
-      if (params[:user][:email] == "" && params[:user][:phone] == "")
-        resource.errors.add(:email, "and phone cannot both be blank.")
+      if (params[:user][:email] == "")
+        resource.errors.add(:email, "field may not be blank.")
       end
       respond_with resource
     else

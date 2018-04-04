@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20180402204611) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username"
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
@@ -49,29 +48,6 @@ ActiveRecord::Schema.define(version: 20180402204611) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_organizations_on_name"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.string "thread_type"
-    t.text "description"
-    t.datetime "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer "user_id"
-    t.string "username"
-    t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "replies", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.text "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "username"
-    t.index ["post_id"], name: "index_replies_on_post_id"
-    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,7 +76,6 @@ ActiveRecord::Schema.define(version: 20180402204611) do
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text "bio"
-    t.string "username"
     t.integer "gender", default: 3
     t.string "other_gender"
     t.string "work_phone"

@@ -10,7 +10,6 @@ end
 
 FactoryBot.define do
   factory :user do
-    username 'gwenpool'
     name 'Gwen Poole'
     home_phone { generate(:phone) }
     work_phone { generate(:phone) }
