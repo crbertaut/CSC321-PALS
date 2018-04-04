@@ -20,10 +20,8 @@ class UserTest < ActiveSupport::TestCase
     user2 = build(:user)
     user2.home_email = @user.home_email
     assert_not user2.valid?
-    puts user2.errors
     assert_includes user2.errors.details[:home_email],
-                    { error: :taken, value: user2.home_email },
-                    user2.errors.details
+                    { error: :taken, value: user2.home_email }
   end
   
   test 'should validate work email presence' do
@@ -37,8 +35,7 @@ class UserTest < ActiveSupport::TestCase
     user2.work_email = @user.work_email
     assert_not user2.valid?
     assert_includes user2.errors.details[:work_email],
-                    { error: :taken, value: user2.work_email },
-                    user2.errors.details
+                    { error: :taken, value: user2.work_email }
   end
   
   test 'should validate name presence' do
