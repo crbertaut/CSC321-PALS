@@ -9,8 +9,6 @@ class User < ApplicationRecord
   enum contact_method: [:phone, :email]
          
   attr_accessor :other_interests         
-  validates :email, uniqueness: true
-  validates :email, presence: true
   validates :name, uniqueness: true
   validates :name, presence: true
   validates :other_gender, presence: true, if: Proc.new {|u| u.other?}
