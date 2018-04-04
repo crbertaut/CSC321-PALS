@@ -44,7 +44,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 
 # For images
 #gem "mini_magick"
-gem "paperclip", "~> 5.0.0"
+gem "paperclip", "~> 5.2.1"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

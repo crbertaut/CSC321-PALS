@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :auth_user!
     
     def user_params
-        params.require(:name, :password, :email, :phone, :dob, :username).permit(:avatar)
+        params.require(:name, :password, :email, :phone, :dob).permit(:avatar)
     end
     
     def index
@@ -30,8 +30,6 @@ class UsersController < ApplicationController
         @user = current_user
     end
     
-    # POST /users
-    # POST /users.json
     def create
         @user = User.create!(user_params)
         respond_to do |format|

@@ -19,7 +19,6 @@ describe "the sign up process", :type => :feature do
       select "1", from: 'user_dob_3i', :match => :first
       fill_in 'phone', with: "5555555555"
       fill_in 'user_email', with: "user@ex.com"
-      fill_in 'user_username', with: "user"
       fill_in 'user_password', with: "password"
       fill_in 'user_password_confirmation', with: "password"
       #find('dogs').click

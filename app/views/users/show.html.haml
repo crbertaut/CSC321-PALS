@@ -1,7 +1,7 @@
 %body
   .row
     .col-md-12
-      %h2{:style => "text-align:center"} #{@user.username}'s Profile
+      %h2{:style => "text-align:center"} #{@user.name}'s Profile
   .row
     .col-md-2
     .col-md-3
@@ -13,16 +13,13 @@
           %img{src: "/assets/blank-avatar.png", alt: "Image not found"}
         %br/
         %br/
-        %b About #{@user.username}:
+        %b About #{@user.name}:
         %br/
         = @user.bio
     .col-md-5
       %div{:style => "margin-left:20px"}
         %h5 Personal Information
         %div{style: "font-size:17px"}
-          %b Name:
-          = @user.name
-          %br/
           %b Birthdate:
           = @user.dob.strftime("%B %e, %Y")
           %br/

@@ -1,10 +1,8 @@
 %body
   %h1.centered.padded Volunteers
-  %table#posts{style:"margin-bottom:1em"}
+  %table#posts{style:"margin-bottom:1em; table-layout: fixed; width: 100%"}
     %thead
       %tr
-        %th{:class => "#{('hilite' if session[:sort_users] == 'username')}"}
-          = link_to "Username", users_path(:sort_users => 'username'), id: "username_header"
         %th{:class => "#{('hilite' if session[:sort_users] == 'name')}"}
           = link_to "Name", users_path(:sort_users => 'name'), id: "name_header"
         %th{:class => "#{('hilite' if session[:sort_users] == 'created_at')}"}
@@ -14,9 +12,7 @@
       - @users.each do |user|
         %tr
           %td
-            = link_to user.username, user_path(user), class:"link"
-          %td
-            = user.name
+            = link_to user.name, user_path(user), class:"link"
           %td
             = user.created_at.in_time_zone('Central Time (US & Canada)').strftime("%b %e, %Y")
     %br/

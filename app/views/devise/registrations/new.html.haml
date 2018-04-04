@@ -11,7 +11,7 @@
           = f.text_field :name, size: "30", autofocus: true
         .field{:style => "margin-bottom:24px"}
           %label Date of birth:
-          = f.date_select :dob, :start_year => 1900, :end_year => 2017, :use_month_numbers => true, :order => [:year, :month, :day]
+          = f.date_select :dob, :start_year => 1900, :end_year => Date.current.year, :use_month_numbers => true, :order => [:year, :month, :day]
         .field
           %label Phone:
           = f.text_field :phone, :id => "phone", placeholder: "(___) ___-____", size: "16", style: "text-align:center"
@@ -30,7 +30,7 @@
         %label{style:"font-size:16px"} &ensp;Either
         = radio_button_tag "contact_method", "either", true
       .col-md-6.right-col.form-group
-        %fieldset
+        %fieldset.padded
           %legend Interests
           %table
             %tr
@@ -60,13 +60,10 @@
                   = label_tag :interests, "#{interest}", for: interest, class: "inline"
                   %br/
                 = check_box_tag "other", "other", false, name: "other"
-                = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "13", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
+                = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "18", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
     .row
       .col-md-12
         .field.padded.center-col{style: "margin-top:10px"}
-          %label Username:
-          = f.text_field :username, size: "24"
-        .field.padded.center-col
           %label Password:
           = f.password_field :password, autocomplete: "off", placeholder: " (6 characters minimum)", size: "24"
         .field.padded.center-col

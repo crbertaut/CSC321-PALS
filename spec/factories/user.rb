@@ -5,9 +5,11 @@ FactoryBot.define do
 end
 
 FactoryBot.define do
-  factory :user, :class => 'User' do
-    email
+  factory :user do
+    name 'Gwen Poole'
+    email 'gpoole@abcde.com'
     password '12345678'
     password_confirmation '12345678'
+    gender 3
   end
 end

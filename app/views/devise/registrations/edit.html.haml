@@ -2,7 +2,7 @@
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = devise_error_messages!
     .row
-      .col-md-12
+      .col-md-12.centered
         %h2 Edit Profile
         %br/
     .row
@@ -12,36 +12,45 @@
           .field.padded
             %label Name:
             %br/
-            = f.text_field :name, size: "30", autofocus: true, style: "text-align:center"
+            = f.text_field :name, size: "30", autofocus: true
           .field.padded
-            %label Username:
+            %label Date of birth:
             %br/
-            = f.text_field :username, size: "24", style: "text-align:center"
+            = f.date_select :dob, :start_year => 1900, :end_year => Date.current.year, :use_month_numbers => true, :order => [:year, :month, :day]
           .field.padded
             %label Email:
             %br/
-            = f.email_field :email, size: "32", style: "text-align:center"
+            = f.email_field :email, size: "32"
           - if devise_mapping.confirmable? && resource.pending_reconfirmation?
             %div
               Currently awaiting confirmation for: #{resource.unconfirmed_email}
           .field
             %label Phone:
             %br/
-            = f.text_field :phone, :id => "phone", placeholder: "(___) ___-____", size: "16", style: "text-align:center"
+            = f.text_field :phone, :id => "phone", placeholder: "(___) ___-____", size: "16"
           .padded
             = check_box_tag "textable", nil, true
             = label_tag :phone, "This phone is capable<br/>of receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
+          .padded
+            %Label Preferred contact method:
+            %br/
+            %label{style:"font-size:16px"} Email
+            = radio_button_tag "contact_method", "email"
+            %label{style:"font-size:16px"} &ensp;Phone
+            = radio_button_tag "contact_method", "phone"
+            %label{style:"font-size:16px"} &ensp;Either
+            = radio_button_tag "contact_method", "either", true
           .field.padded
             %label New password:
             %br/
             %i{style:"font-size:0.8em"} Leave blank if you don't want to change it.
             %br/
-            = f.password_field :password, size: "24", autocomplete: "off", placeholder: " (6 characters minimum)", style: "text-align:center"
+            = f.password_field :password, size: "24", autocomplete: "off", placeholder: " (6 characters minimum)"
           .field
             %label Confirm new password:
             %br/
-            = f.password_field :password_confirmation, size: "24", autocomplete: "off", style: "text-align:center"
-      .col-md-4
+            = f.password_field :password_confirmation, size: "24", autocomplete: "off"
+      .col-md-4.centered
         .edit-col
           .field.padded
             %label Profile picture:
@@ -50,13 +59,52 @@
               %img{src: "/system/users/avatars/000/000/" + @user[:id].to_s.rjust(3, "0") + "/medium/" + @user.avatar_file_name, alt: "Image not found"} 
             - else
               %img{src: "/assets/blank-avatar.png", alt: "Image not found"}
-            = f.file_field :avatar, style:"text-align:center;margin-left:20%"
-            %br/
+            = f.file_field :avatar, style:"margin-left:20%"
           .field.padded
             %label About me:
             %br/
             = f.text_area :bio, size: "30"
-      .col-md-2
+          %fieldset.shrunk
+            %legend Interests
+            %table
+              %tr
+                %td
+                  / Create dogs checkbox and check if the user has dog interests
+                  = check_box_tag "dogs", "dogs", @user.interests.where("name like ?", "%Dog%").present? ? true : false, onclick: "toggleCheckboxes('dog_interests[]')"
+                  %label.inline{:for => "dogs"} Dogs
+                %td
+                  - @dogs.each do |interest|
+                    / Create checkbox and check it if it's one of the user's current interests. Set disabled only if no relevant interests
+                    = check_box_tag "dog_interests[]", interest, @user.interests.where(name: "Dog " + interest.downcase).present? ? true : false, id: "dog_" + interest, disabled: @dogDisabled
+                    = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: @dogDisabled ? "inline faded" : "inline", name: "dog_interests[]"
+                    %br/
+              %tr
+                %td
+                  / Create cats checkbox and check if the user has cat interests
+                  = check_box_tag "cats", "cats", @user.interests.where("name like ?", "%Cat%").present? ? true : false, onclick: "toggleCheckboxes('cat_interests[]')"
+                  %label.inline{:for => "cats"} Cats
+                %td
+                  - @cats.each do |interest|
+                    / Create checkbox and check it if it's one of the user's current interests. Set disabled only if no relevant interests
+                    = check_box_tag "cat_interests[]", interest, @user.interests.where(name: "Cat " + interest.downcase).present? ? true : false, id: "cat_" + interest, disabled: @catDisabled
+                    = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: @catDisabled ? "inline faded" : "inline", name: "cat_interests[]"
+                    %br/
+              %tr
+                %td
+                %td
+                  - @other.each do |interest|
+                    / Create checkbox and check it if it's one of the user's current interests
+                    = check_box_tag "interests[]", interest,  @user.interests.where(name: interest).present? ? true : false, id: interest
+                    = label_tag :interests, "#{interest}", for: interest, class: "inline"
+                    %br/
+                  - @other_string = ""
+                  - @user.interests.each do |interest|
+                    - if !(@all.include? interest.name)
+                      - @other_string << interest.name + ", "
+                  = check_box_tag "other", "other", (@other_string == "") ? false : true, name: "other"
+                  - @others = !(@other_string == "")
+                  = text_field_tag "other_interests", nil, class: "inline", placeholder: @others ? "Other..." : nil, value: @others ? @other_string.chomp(", ") : nil, size: "18", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
+      .col-md-2 
     .row
       .col-md-12.centered
         %hr{style:"width:40%;margin:30px 30% 20px 30%"}
@@ -81,3 +129,25 @@
     jQuery(function($){
         $("#phone").mask("(999) 999-9999");
     });
+  / toggleCheckboxes function to toggle dog/cat sections
+  :javascript
+    function toggleCheckboxes(name) {
+        var elems = document.getElementsByName(name);
+        for(i=0; i<elems.length; i++) {
+            elems[i].disabled = !elems[i].disabled;
+            if (elems[i].className == "inline faded") {
+              elems[i].setAttribute("class", "inline")
+            }
+            else {
+              elems[i].setAttribute("class", "inline faded")
+            }
+        }
+    }
+  / toggleOther function to check 'other' checkbox when 'other' field is clicked
+  :javascript
+    function toggleOther(name) {
+      var elems = document.getElementsByName(name);
+      for (i=0; i<elems.length; i++) {
+          elems[i].checked = "true";
+        }
+    }
