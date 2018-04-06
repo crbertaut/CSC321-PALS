@@ -10,17 +10,32 @@ class UserTest < ActiveSupport::TestCase
     assert @user.save
   end
   
-  test 'should validate email presence' do
-    @user.email = nil
+  test 'should validate home email presence' do
+    @user.home_email = nil
     assert_not @user.valid?
   end
   
-  test 'should validate email uniqueness' do
+  test 'should validate home email uniqueness' do
     @user.save!
     user2 = build(:user)
+    user2.home_email = @user.home_email
     assert_not user2.valid?
-    assert_includes user2.errors.details[:email],
-                    { error: :taken, value: user2.email }
+    assert_includes user2.errors.details[:home_email],
+                    { error: :taken, value: user2.home_email }
+  end
+  
+  test 'should validate work email presence' do
+    @user.work_email = nil
+    assert_not @user.valid?
+  end
+  
+  test 'should validate work email uniqueness' do
+    @user.save!
+    user2 = build(:user)
+    user2.work_email = @user.work_email
+    assert_not user2.valid?
+    assert_includes user2.errors.details[:work_email],
+                    { error: :taken, value: user2.work_email }
   end
   
   test 'should validate name presence' do
@@ -44,8 +59,14 @@ class UserTest < ActiveSupport::TestCase
     assert @user.other?
   end
   
-  test 'should be able to have multiple organizations' do
-    @user.organizations << create(:organization)
+  test 'should reject invalid gender option' do
+    assert_raises(ArgumentError) do
+      @user.gender = 4
+    end
+  end
+  
+  test 'should be able to have single organization' do
+    @user.organization = create(:organization)
     assert @user.valid?
   end
   
@@ -60,5 +81,21 @@ class UserTest < ActiveSupport::TestCase
       @user.interests << interest
     end
     assert @user.valid?
+  end
+  
+  test 'should validate difference between home and work phone' do
+    @user.home_phone = @user.work_phone
+    assert_not @user.valid?
+  end
+  
+  test 'should validate difference between home and work email' do
+    @user.home_email = @user.work_email
+    assert_not @user.valid?
+  end
+  
+  test 'should reject invalid contact method option' do
+    assert_raises(ArgumentError) do
+      @user.contact_method = 3
+    end
   end
 end

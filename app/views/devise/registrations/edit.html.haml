@@ -20,7 +20,7 @@
           .field.padded
             %label Email:
             %br/
-            = f.email_field :email, size: "32"
+            = f.email_field :home_email, size: "32"
           - if devise_mapping.confirmable? && resource.pending_reconfirmation?
             %div
               Currently awaiting confirmation for: #{resource.unconfirmed_email}
