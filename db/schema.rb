@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "donations", force: :cascade do |t|
+    t.float "amount"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_donations_on_user_id"
+  end
+
   create_table "interests", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at"
@@ -48,6 +56,16 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_organizations_on_name"
+  end
+
+  create_table "shifts", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "kind", null: false
+    t.datetime "start", null: false
+    t.datetime "finish", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_shifts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

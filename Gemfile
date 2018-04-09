@@ -40,6 +40,10 @@ gem 'geocoder'
 gem 'activeadmin'
 gem 'activeadmin_blaze_theme'
 
+# For admin charts
+gem 'chartkick'
+gem 'groupdate'
+
 # For styling stuff
 gem 'jquery-rails'
 gem 'maskedinput-rails'

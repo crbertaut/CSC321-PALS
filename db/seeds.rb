@@ -12,6 +12,11 @@ if Rails.env.development?
     user1 = User.create!(name: 'Rocky Williams', home_email: 'rockyrd@example.com', password: 'password', home_phone: '(641) 895-5555', dob:'1990-01-25', bio: 'We own two dogs at home!')
     user1.interests << (Interest.find_by name: 'Dog shifts')
     
+    user1.shifts.create!(kind: 0, start: "2018-04-05 15:00:00", finish: "2018-04-05 15:30:00")
+    user1.shifts.create!(kind: 0, start: "2018-04-06 15:00:00", finish: "2018-04-06 15:30:00")
+    user1.shifts.create!(kind: 0, start: "2018-04-06 17:00:00", finish: "2018-04-06 18:30:00")
+    user1.shifts.create!(kind: 0, start: "2018-04-09 15:00:00", finish: "2018-04-09 15:30:00")
+    
     user2 = User.create!(name: 'Matilda Simmion', home_email: 'msims@example.com', password: 'password', home_phone: '(641) 894-3365', dob:'1990-07-10', bio: 'I have volunteered at PALS for 10 years now--it is a wonderful place to volunteer at.')
 
     user2.interests << (Interest.find_by name: 'Organizing events')
