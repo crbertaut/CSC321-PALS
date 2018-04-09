@@ -36,6 +36,7 @@ class User < ApplicationRecord
   belongs_to :organization, optional: true
   
   has_many :donations
+  has_many :shifts
   
   def email_required?
     false
