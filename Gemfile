@@ -39,6 +39,7 @@ gem 'geocoder'
 # For admin stuff
 gem 'activeadmin'
 gem 'activeadmin_blaze_theme'
+gem 'chartkick'
 
 # For styling stuff
 gem 'jquery-rails'
