@@ -16,6 +16,8 @@ class User < ApplicationRecord
   validates :name, uniqueness: true
   validates :name, presence: true
   validates :other_gender, presence: true, if: Proc.new {|u| u.other?}
+  validates :city, format: { with: /[a-zA-Z]/}
+  validates :state, format: { with: /[a-zA-Z]/}
   
   validate :different_home_work_phone, :different_home_work_email
   

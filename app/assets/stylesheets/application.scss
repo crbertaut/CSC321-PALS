@@ -174,10 +174,9 @@ li.nav-item {
   font-family: Georgia;
 }
 .right-col{
-  text-align: center;
-  line-height:19px;
+  text-align: left;
+  line-height:21px;
   font-size: 18px;
-  margin-top:-50px;
   font-family: Georgia;
 }
 .center-col{
@@ -203,7 +202,10 @@ li.nav-item {
     margin-bottom:20px;
 }
 .padded_above{
-  padding-top:10px;
+  margin-top:20px;
+}
+.header_padding{
+  padding-top:10px
 }
 .field{
     font-size:19px;

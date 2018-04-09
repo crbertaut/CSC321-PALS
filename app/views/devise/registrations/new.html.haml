@@ -4,33 +4,104 @@
       %h2 Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
-    .row.center
-      .col-md-12.form-group
-        .field{:style => "margin-top:20px;margin-bottom:24px"}
-          %label Full name:
-          = f.text_field :name, size: "30", autofocus: true
-        .field{:style => "margin-bottom:24px"}
-          %label Date of birth:
-          = f.date_select :dob, :start_year => 1900, :end_year => Date.current.year, :use_month_numbers => true, :order => [:year, :month, :day]
-        .field
-          %label Phone:
-          = f.text_field :phone, :id => "phone", placeholder: "(___) ___-____", size: "16", style: "text-align:center"
-        .padded
-          = check_box_tag "textable", nil, true
-          = label_tag :phone, "This phone is capable of<br/>receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
-        .field.padded
-          %label Email:
-          = f.email_field :email, size: "32"
-        %label Preferred contact method:
-        %br/
-        %label{style:"font-size:16px"} Email
-        = radio_button_tag "contact_method", "email"
-        %label{style:"font-size:16px"} &ensp;Phone (call)
-        = check_box_tag "contact_method", "phonecall"
-        %label{style:"font-size:16px"} &ensp;Phone (text)
-        = radio_button_tag "contact_method", "phonetext"
-        %label{style:"font-size:16px"} &ensp;Any
-        = radio_button_tag "contact_method", "any", true
+    .row
+      .col-md-5.form-group
+        .row
+          .col-md-1
+          .col-md-4.left-col
+            .field.padded{:style => "margin-top:20px;margin-bottom:24px"}
+              %label Full name:
+          .col-md-7.right-col
+            .padded{:style => "margin-top:20px;margin-bottom:24px"}
+              = f.text_field :name, size: "35", autofocus: true
+        .row
+          .col-md-1
+          .col-md-4.left-col
+            .field.padded{:style => "margin-bottom:24px"}
+              %label Date of birth:
+          .col-md-7.right-col
+            .padded
+              = f.date_select :dob, :start_year => 1900, :end_year => Date.current.year, :use_month_numbers => true, :order => [:year, :month, :day]
+        .row
+          .col-md-1
+          .col-md-4.left-col
+            .field.padded
+              %label Phone:
+          .col-md-7.right-col
+            = f.text_field :home_phone, :id => "home_phone", placeholder: "(___) ___-____", size: "16"
+            .padded
+              = check_box_tag "textable", nil, true
+              = label_tag :home_phone, "This phone is capable of<br/>receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
+        .row
+          .col-md-1
+          .col-md-4.left-col
+            .field.padded
+              %label Email:
+          .col-md-7.right-col
+            .padded
+              = f.email_field :home_email, size: "37"
+        .row
+          .col-md-12.center{style: "margin-left: 20%"}
+            %label Preferred contact method:
+            %br/
+            %label{style:"font-size:16px"} Email
+            = radio_button_tag "contact_method", "email"
+            %label{style:"font-size:16px"} &ensp;Phone (call)
+            = radio_button_tag "contact_method", "phonecall"
+            %label{style:"font-size:16px"} &ensp;Phone (text)
+            = radio_button_tag "contact_method", "phonetext"
+            %label{style:"font-size:16px"} &ensp;Any
+            = radio_button_tag "contact_method", "any", true
+      .col-md-7.form-group
+        .row
+          .col-md-4.left-col
+            .padded_above.padded
+              %label Gender:
+          .col-md-8.right-col
+            .padded_above.padded
+              %label{style:"font-size:16px"} Male
+              = radio_button_tag "gender", "male_gender"
+              %label{style:"font-size:16px"} &ensp;Female
+              = radio_button_tag "gender", "female_gender"
+              %label{style:"font-size:16px"} &ensp;Other
+              = radio_button_tag "gender", "other_gender"
+              %br/
+              %label{style:"font-size:16px"} &ensp;Prefer not to disclose
+              = radio_button_tag "gender", "pntd_gender", true
+        .row
+          .col-md-4.left-col
+            .padded
+              %label Street address:
+          .col-md-8.right-col
+            .field.padded
+              = f.text_field :street_address, size: "40"
+        .row
+          .col-md-4.left-col
+            .padded
+              %label City:
+          .col-md-8.right-col
+            .field.padded
+              = f.text_field :city, size: 25
+        .row
+          .col-md-4.left-col
+            .padded
+              %label State:
+          .col-md-8.right-col
+            .field.padded
+              = f.text_field :state, id: "state", size: 4
+        .row
+          .col-md-4.left-col
+            .padded
+              %label Zipcode:
+          .col-md-8.right-col
+            .field.padded
+              = f.text_field :state, id: "zipcode", size: 7
+        .row
+          .col-md-4.left-col
+            %label Organization:
+          .col-md-8.right-col
+            .field
+              = f.text_field :organization, placeholder: "(optional)", size: 30
     .row.center
       .col-md-12.form-group
         %fieldset.padded
@@ -85,7 +156,17 @@
   / Maskedinput script
   :javascript
     jQuery(function($){
-        $("#phone").mask("(999) 999-9999");
+        $("#home_phone").mask("(999) 999-9999");
+    });
+  / Maskedinput for state
+  :javascript
+    jQuery(function($){
+        $("#state").mask("aa", {placeholder: " "});
+    });
+  / Maskedinput for zipcode
+  :javascript
+    jQuery(function($){
+        $("#zipcode").mask("99999", {placeholder: " "});
     });
   / toggleCheckboxes function to toggle dog/cat sections
   :javascript

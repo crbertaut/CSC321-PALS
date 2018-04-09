@@ -45,8 +45,8 @@
         %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
         = stylesheet_link_tag 'application'
       %body.background
-        .container.full.grad-border-white{:style => "background-color:white;height:100%"}
-          .padded_above
+        .container.full.grad-border-white{:style => "background-color:white; height:100%"}
+          .header_padding
             - if flash[:notice]
               %div.alert.alert-success{:role => "alert"}
                 #notice.success= flash[:notice]
