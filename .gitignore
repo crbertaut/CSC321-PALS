@@ -37,6 +37,9 @@ tmp/*
 
 !tmp/.keep
 
+# ignore public/system
+
+public/system/*
 
 
 .node_modules

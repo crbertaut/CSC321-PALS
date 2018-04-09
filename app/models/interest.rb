@@ -5,10 +5,10 @@ class Interest < ApplicationRecord
     def self.all_interests
         ["Dog shifts", "Dog fostering", "Dog transport", "Dog grooming", "Dog training", 
         "Cat shifts", "Cat fostering", "Cat transport", 
-        "Cooking/baking", "Organizing events", "Fundraising", "Machine maintenance",
-        "Dog walking", "Cat cuddling", "Telephone calls", "Volunteer coordination", 
-        "Yard maintenance", "Vet runs", "Baking for fundraisers", "Clerical/office work", "Housekeeping", 
-        "Adoption screening and follow-up", "Laundry", "Grooming", "Public relations",
+        "Organizing events", "Fundraising (cooking/baking)", "Fundraising (telephone calls)", "Machine maintenance",
+        "Telephone calls", "Volunteer coordination", 
+        "Yard maintenance", "Clerical/office work", 
+        "Adoption screening and follow-up", "Laundry", "Public relations",
         "Off-site adoption days", "Public education", "Pet visits to nursing homes"]
     end
         
@@ -21,10 +21,10 @@ class Interest < ApplicationRecord
     end
 
     def self.other_interests
-        ["Cooking/baking", "Organizing events", "Fundraising", "Machine maintenance",
-        "Dog walking", "Cat cuddling", "Telephone calls", "Volunteer coordination", 
-        "Yard maintenance", "Vet runs", "Baking for fundraisers", "Clerical/office work", "Housekeeping", 
-        "Adoption screening and follow-up", "Laundry", "Grooming", "Public relations",
+        ["Organizing events", "Fundraising (cooking/baking)", "Fundraising (telephone calls)", 
+        "Machine maintenance", "Yard maintenance", "Laundry",
+        "Volunteer coordination", "Clerical/office work", 
+        "Adoption screening and follow-up", "Public relations",
         "Off-site adoption days", "Public education", "Pet visits to nursing homes"]
     end
 end

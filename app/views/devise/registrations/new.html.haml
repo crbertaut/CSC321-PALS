@@ -1,11 +1,11 @@
 %body
-  .row{:style => "text-align:center"}
+  .row.center
     .col-md-12
       %h2 Sign up
   = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     = devise_error_messages!
-    .row
-      .col-md-6.left-col.form-group
+    .row.center
+      .col-md-12.form-group
         .field{:style => "margin-top:20px;margin-bottom:24px"}
           %label Full name:
           = f.text_field :name, size: "30", autofocus: true
@@ -25,43 +25,45 @@
         %br/
         %label{style:"font-size:16px"} Email
         = radio_button_tag "contact_method", "email"
-        %label{style:"font-size:16px"} &ensp;Phone
-        = radio_button_tag "contact_method", "phone"
-        %label{style:"font-size:16px"} &ensp;Either
-        = radio_button_tag "contact_method", "either", true
-      .col-md-6.right-col.form-group
+        %label{style:"font-size:16px"} &ensp;Phone (call)
+        = check_box_tag "contact_method", "phonecall"
+        %label{style:"font-size:16px"} &ensp;Phone (text)
+        = radio_button_tag "contact_method", "phonetext"
+        %label{style:"font-size:16px"} &ensp;Any
+        = radio_button_tag "contact_method", "any", true
+    .row.center
+      .col-md-12.form-group
         %fieldset.padded
           %legend Interests
           %table
             %tr
+              %td{:rowspan => "2"}
               %td
                 = check_box_tag "dogs", "dogs", false, onclick: "toggleCheckboxes('dog_interests[]')"
                 %label.inline{:for => "dogs"} Dogs
-              %td
+              %td{:style => "width:30%"}
                 - @dogs.each do |interest|
                   = check_box_tag "dog_interests[]", interest, false, id: "dog_" + interest, disabled: true
                   = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dog_interests[]"
                   %br/
-            %tr
-              %td
-                /%input#cats{:onclick => "toggleCheckboxes('cat_interests[]')", :type => "checkbox"}/
-                = check_box_tag "cats", "cats", false, onclick: "toggleCheckboxes('cat_interests[]')"
-                %label.inline{:for => "cats"} Cats
-              %td
-                - @cats.each do |interest|
-                  = check_box_tag "cat_interests[]", interest, false, id: "cat_" + interest, disabled: true
-                  = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cat_interests[]"
-                  %br/
-            %tr
-              %td
-              %td
+              %td{:rowspan => "2"}
                 - @other.each do |interest|
                   = check_box_tag "interests[]", interest, false, id: interest
                   = label_tag :interests, "#{interest}", for: interest, class: "inline"
                   %br/
                 = check_box_tag "other", "other", false, name: "other"
                 = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "18", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
-    .row
+            %tr
+              %td
+                /%input#cats{:onclick => "toggleCheckboxes('cat_interests[]')", :type => "checkbox"}/
+                = check_box_tag "cats", "cats", false, onclick: "toggleCheckboxes('cat_interests[]')"
+                %label.inline{:for => "cats"} Cats
+              %td{:style => "width:30%"}
+                - @cats.each do |interest|
+                  = check_box_tag "cat_interests[]", interest, false, id: "cat_" + interest, disabled: true
+                  = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cat_interests[]"
+                  %br/
+    .row.center
       .col-md-12
         .field.padded.center-col{style: "margin-top:10px"}
           %label Password:
