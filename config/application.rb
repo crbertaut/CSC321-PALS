@@ -19,7 +19,7 @@ module VolunteerSite
     # -- all .rb files in that directory are automatically loaded.
     
     config.time_zone = 'Central Time (US & Canada)'
-    config.active_record.default_timezone = :local
+    config.active_record.default_timezone = :utc
     
     config.generators do |g|
       g.test_framework :rspec, fixture: false
