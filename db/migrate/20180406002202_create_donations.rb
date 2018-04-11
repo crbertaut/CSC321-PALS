@@ -3,7 +3,7 @@ class CreateDonations < ActiveRecord::Migration[5.1]
     create_table :donations do |t|
       t.float :amount
       t.belongs_to :user, index: true
-      t.timestamps
+      t.timestamps 
     end
   end
 end
