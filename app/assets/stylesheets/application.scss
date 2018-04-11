@@ -76,7 +76,7 @@ h1 {
 }
 span.h1.title {
   margin:0;
-  background-color: #420199;
+  background-color: transparent;
   color: white;
   font-size: 38px;
   font-style: normal;
@@ -102,7 +102,7 @@ h2{
 .row.title {
   margin: 0 0 0;
   padding: 10px;
-  background-color: #420199;
+  background-color: rgba(66, 1, 153, .9);
   color: white;
   border-bottom: 4px solid #A88BD7;
   font-style: normal;
@@ -114,7 +114,6 @@ h2{
   margin: 0 0 0 0;
   padding: 0;
   max-width: 100%;
-  opacity:.9;
 }
 .container.full {
   min-height:calc(100vh - 80px);
@@ -315,7 +314,7 @@ ul {
   list-style-type: none;
 }
 fieldset.padded {
-  margin:55px 47% 0 2%;
+  margin:20px 47% 0 2%;
   padding:5px 12px 3px 15px;
 }
 fieldset.shrunk {

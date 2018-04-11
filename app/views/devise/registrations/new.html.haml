@@ -31,7 +31,7 @@
             = f.text_field :home_phone, :id => "home_phone", placeholder: "(___) ___-____", size: "16"
             .padded
               = check_box_tag "textable", nil, true
-              = label_tag :home_phone, "This phone is capable of<br/>receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
+              = label_tag :home_phone, "This phone is capable of receiving texts.", for: "textable", class: "inline", style: "font-size:16px"
         .row
           .col-md-1
           .col-md-4.left-col
@@ -41,7 +41,7 @@
             .padded
               = f.email_field :home_email, size: "37"
         .row
-          .col-md-12.center{style: "margin-left: 20%"}
+          .col-md-12.center{style: "margin-left: 15%"}
             %label Preferred contact method:
             %br/
             %label{style:"font-size:16px"} Email
