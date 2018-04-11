@@ -16,7 +16,7 @@ class User < ApplicationRecord
   validates :other_gender, presence: true, if: Proc.new {|u| u.other?}
   validates :city, format: { with: /[a-zA-Z]/}, allow_blank: true
   validates :state, format: { with: /[a-zA-Z]/}, allow_blank: true
-  
+
   validate :different_home_work_phone, :different_home_work_email, :home_or_work_email
   
   def different_home_work_phone

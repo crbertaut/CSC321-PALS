@@ -96,10 +96,6 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.text "bio"
     t.integer "gender", default: 3
     t.string "other_gender"
-    t.string "city"
-    t.string "state"
-    t.string "zipcode"
-    t.integer "contactmethod", default: 3
     t.string "work_phone"
     t.string "work_email"
     t.integer "contact_method", default: 0
@@ -110,6 +106,9 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.string "emergency_relationship"
     t.string "emergency_phone_other"
     t.integer "organization_id", default: 0
+    t.string "city"
+    t.string "state"
+    t.string "zipcode"
     t.string "street_address"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["home_email"], name: "index_users_on_home_email", unique: true
