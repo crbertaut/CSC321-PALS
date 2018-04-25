@@ -184,7 +184,6 @@
   / check whether dog/cat section should initially be disabled
   :javascript
     function disabled(name) {
-      console.log("disabled?");
       var elem = document.getElementsByName(name)[0];
       if (elem.checked) {
         if (elem.name == 'cats') {
@@ -218,7 +217,6 @@
     }
   :javascript
     $(document).ready(function() {
-      console.log("document ready");
       disabled('cats');
       disabled('dogs');
     });

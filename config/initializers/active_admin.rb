@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "PALS Volunteer Site"
+  config.site_title = "PALS Database"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -16,7 +16,7 @@ ActiveAdmin.setup do |config|
   #
   # Note: Aim for an image that's 21px high so it fits in the header.
   #
-  # config.site_title_image = "logo.png"
+  config.site_title_image = "palslogotpsmall.png"
 
   # == Default Namespace
   #
@@ -193,7 +193,7 @@ ActiveAdmin.setup do |config|
   # and feel.
   #
   # To load a stylesheet:
-  #   config.register_stylesheet 'my_stylesheet.css'
+  #   config.register_stylesheet 'application.css'
   #
   # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
   #   config.register_stylesheet 'my_print_stylesheet.css', media: :print
@@ -282,7 +282,7 @@ ActiveAdmin.setup do |config|
   # By default, the footer shows the current Active Admin version. You can
   # override the content of the footer here.
   #
-  # config.footer = 'my custom footer text'
+  config.footer = ''
 
   # == Sorting
   #
@@ -294,3 +294,49 @@ ActiveAdmin.setup do |config|
   # Setup Chartkick
   config.register_javascript 'https://www.google.com/jsapi'
 end
+
+module AdminPageLayoutOverride
+  def build_page
+    within body do
+      build_unsupported_browser
+      div class: 'background' do
+        render 'head'
+        render 'main'
+        div class: 'container full grad-border-white', style: 'background-color:white;height:100%' do
+          div class: 'header_padding' do
+            build_flash_messages
+            div id: "active_admin_content", class: (skip_sidebar? ? "without_sidebar" : "with_sidebar") do
+              build_main_content_wrapper
+              sidebar sidebar_sections_for_action, id: 'sidebar' unless skip_sidebar?
+            end
+          end
+        end
+      end
+    end
+  end
+end
+ActiveAdmin::Views::Pages::Base.send :prepend, AdminPageLayoutOverride
+
+# module ActiveAdmin
+#   module Views
+#     module Pages
+      # class Base < Arbre::HTML::Document
+
+#         alias_method :original_build_active_admin_head, :build_active_admin_head unless method_defined?(:original_build_active_admin_head)
+#         #alias_method :original_build_active_admin_body, :build_active_admin_body unless method_defined?(:original_build_active_admin_body)
+        
+#         def build_active_admin_head
+#             within @head do
+#                 render 'head'
+#             end
+#         end
+        
+#         #def build_active_admin_body
+#         #    within @body do
+#         #        render 'main'
+#         #    end
+#         #end
+#       end
+#     end
+#   end
+# end

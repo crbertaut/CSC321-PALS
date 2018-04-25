@@ -1,0 +1,39 @@
+%div.container.title
+  %div.row.title
+    %div.col-md-6
+      %nav.navbar.navbar-expand-md.navbar-light
+        %img{src: '/assets/palslogotp.png', alt: 'PALS', width: '115', height: '56'}
+        %span.h1.title Volunteer/Donor Database
+    %div.col-md-6
+      %nav.navbar.navbar-expand-md.navbar-light.navbar-toggleable-sm
+        %button.navbar-toggler.navbar-toggler-right{type:"button", "data-toggle" => "collapse", "data-target" => "#navbarSupportedContent", "aria-controls" => "#navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
+          %span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          %ul.navbar-nav.ml-md-auto
+            - if user_signed_in?
+              %li.nav-item{style:"display:inline-block"}
+                = button_to 'Volunteers', users_path, {method: :get, class: "purple default"}
+              %li.nav-item{style:"display:inline-block"}
+                = button_to 'My Profile', user_path(current_user), {method: :get, class: "purple default"}
+              %li.nav-item{style:"display:inline-block"}
+                = button_to 'Log Out', destroy_user_session_path, {method: :delete, class:"purple default"}
+            - elsif admin_user_signed_in?
+              %li.nav-item{style:"display:inline-block"}
+                = button_to 'Dashboard', admin_root_path, {method: :get, class: "purple default"}
+              %li.nav-item{style:"display:inline-block"}
+                = button_to 'Log Out', destroy_admin_user_session_path, {method: :delete, class:"purple default"}
+            - else
+              %li.nav-item{style:"display:inline-block"}
+                =button_to 'Sign up', new_user_registration_path, {method: :get, class: "purple default"}
+              %li.nav-item{style:"display:inline-block"}
+                =button_to 'Log in', user_session_path, {method: :get, class: "purple default"}
+              
+#main.full
+  %head
+    / Include Bootstrap and HTML Kickstart (for style)
+    %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css", :integrity => "sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb", :rel => "stylesheet"}/
+    %link{:href => "/assets/kickstart.css", :media => "all", :rel => "stylesheet"}/
+    = stylesheet_link_tag 'active_admin'
+  %body
+    = yield
+
