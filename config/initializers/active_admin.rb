@@ -282,7 +282,7 @@ ActiveAdmin.setup do |config|
   # By default, the footer shows the current Active Admin version. You can
   # override the content of the footer here.
   #
-  config.footer = ''
+  config.footer = "Created by PALSGALS"
 
   # == Sorting
   #
@@ -295,48 +295,34 @@ ActiveAdmin.setup do |config|
   config.register_javascript 'https://www.google.com/jsapi'
 end
 
-module AdminPageLayoutOverride
-  def build_page
-    within body do
-      build_unsupported_browser
-      div class: 'background' do
-        render 'head'
-        render 'main'
-        div class: 'container full grad-border-white', style: 'background-color:white;height:100%' do
-          div class: 'header_padding' do
-            build_flash_messages
-            div id: "active_admin_content", class: (skip_sidebar? ? "without_sidebar" : "with_sidebar") do
-              build_main_content_wrapper
-              sidebar sidebar_sections_for_action, id: 'sidebar' unless skip_sidebar?
-            end
-          end
-        end
-      end
-    end
-  end
-end
-ActiveAdmin::Views::Pages::Base.send :prepend, AdminPageLayoutOverride
-
-# module ActiveAdmin
-#   module Views
-#     module Pages
-      # class Base < Arbre::HTML::Document
-
-#         alias_method :original_build_active_admin_head, :build_active_admin_head unless method_defined?(:original_build_active_admin_head)
-#         #alias_method :original_build_active_admin_body, :build_active_admin_body unless method_defined?(:original_build_active_admin_body)
-        
-#         def build_active_admin_head
-#             within @head do
-#                 render 'head'
+# module AdminPageLayoutOverride
+#   def body_classes
+#     Arbre::HTML::ClassList.new [
+#       params[:action],
+#       params[:controller].tr('/', '_'),
+#       'active_admin', 'logged_in',
+#       active_admin_namespace.name.to_s + '_namespace'
+#     ]
+#   end
+  
+#   def build_page
+#     within body(class: body_classes) do
+#       div id: "wrapper" do
+#         build_unsupported_browser
+#         div class: 'background' do
+#           render 'head'
+#           render 'main'
+#           div class: 'container full grad-border-white', style: 'background-color:white;height:100%' do
+#             div class: 'header_padding' do
+#               build_flash_messages
+#               div id: "active_admin_content", class: (skip_sidebar? ? "without_sidebar" : "with_sidebar") do
+#                 build_main_content_wrapper
+#               end
 #             end
+#           end
 #         end
-        
-#         #def build_active_admin_body
-#         #    within @body do
-#         #        render 'main'
-#         #    end
-#         #end
 #       end
 #     end
 #   end
 # end
+# ActiveAdmin::Views::Pages::Base.send :prepend, AdminPageLayoutOverride
