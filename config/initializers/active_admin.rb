@@ -296,31 +296,10 @@ ActiveAdmin.setup do |config|
 end
 
 # module AdminPageLayoutOverride
-#   def body_classes
-#     Arbre::HTML::ClassList.new [
-#       params[:action],
-#       params[:controller].tr('/', '_'),
-#       'active_admin', 'logged_in',
-#       active_admin_namespace.name.to_s + '_namespace'
-#     ]
-#   end
-  
 #   def build_page
-#     within body(class: body_classes) do
-#       div id: "wrapper" do
-#         build_unsupported_browser
-#         div class: 'background' do
-#           render 'head'
-#           render 'main'
-#           div class: 'container full grad-border-white', style: 'background-color:white;height:100%' do
-#             div class: 'header_padding' do
-#               build_flash_messages
-#               div id: "active_admin_content", class: (skip_sidebar? ? "without_sidebar" : "with_sidebar") do
-#                 build_main_content_wrapper
-#               end
-#             end
-#           end
-#         end
+#     within body do
+#       super
+#       div class: 'grad-border-white' do
 #       end
 #     end
 #   end

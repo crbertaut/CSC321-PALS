@@ -20,7 +20,8 @@ html, body {
   font-family: Georgia;
   font-size: 1.1em;
   height:100vh;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 div#main {
   margin: 0;
@@ -31,11 +32,11 @@ a {
   color: #420199;
   text-decoration: underline;
   font-weight: bold;
-  transition: color .25s;
-  -moz-transition: color .25s;
-  -ms-transition: color .25s;
-  -webkit-transition: color .25s;
-  -o-transition: color .25s;
+  transition: color .25s; /* fallback */
+  -moz-transition: color .25s; /* firefox */
+  -ms-transition: color .25s; /* IE 10 */
+  -webkit-transition: color .25s; /*safari and chrome */
+  -o-transition: color .25s; /* opera */
   
   &:hover {
     color: #000 !important;
@@ -43,19 +44,19 @@ a {
   }
 }
 a.scales {
-  transition: transform .25s;
-  -moz-transition: transform .25s;
-  -ms-transition: transform .25s;
-  -webkit-transition: transform .25s;
-  -o-transition: transform .25s;
+  transition: transform .25s; /* fallback */
+  -moz-transition: transform .25s; /* firefox */
+  -ms-transition: transform .25s; /* IE 10 */
+  -webkit-transition: transform .25s; /*safari and chrome */
+  -o-transition: transform .25s; /* opera */
   position: absolute;
   
     &:hover {
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -o-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05); /*safari and chrome */
+    -moz-transform: scale(1.05); /* firefox */
+    -o-transform: scale(1.05); /* opera */
+    -ms-transform: scale(1.05); /* IE 10 */
+    transform: scale(1.05); /* fallback */
     }
 }
 a.title {
@@ -117,7 +118,6 @@ h2{
 }
 .container.full {
   min-height:calc(100vh - 80px);
-  //background-image: radial-gradient(farthest-corner at center center, #ADA2D1 50%, #fff 100%);
 }
 .grad-border-white {
   position: relative;
@@ -133,8 +133,6 @@ h2{
   top: 0;
   bottom: 0;
   width: 100px;
-}
-.grad-border-white:after {
   right: -100px;
 }
 .grad-border-white:before {
@@ -148,8 +146,6 @@ h2{
   top: 0;
   bottom: 0;
   width: 100px;
-}
-.grad-border-white:before {
   left: -100px;
 }
 .line {
