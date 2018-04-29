@@ -19,6 +19,13 @@ class UsersController < ApplicationController
     def show
         id = params[:id] # retrieve post ID from URI route
         @user = User.find(id) # look up movie by unique ID
+        respond_to do |format|
+            
+        format.html
+        format.json
+        format.pdf {render template: 'users/report', pdf: 'Report' } # Excluding ".pdf" extension.
+
+        end
     end
   
     # GET /users/new
@@ -43,4 +50,5 @@ class UsersController < ApplicationController
         end
         redirect_to user_path(@user)
     end
+
 end
