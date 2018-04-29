@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "PALS Volunteer Site"
+  config.site_title = "PALS Database"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -16,7 +16,7 @@ ActiveAdmin.setup do |config|
   #
   # Note: Aim for an image that's 21px high so it fits in the header.
   #
-  # config.site_title_image = "logo.png"
+  config.site_title_image = "palslogotpsmall.png"
 
   # == Default Namespace
   #
@@ -193,7 +193,7 @@ ActiveAdmin.setup do |config|
   # and feel.
   #
   # To load a stylesheet:
-  #   config.register_stylesheet 'my_stylesheet.css'
+  #   config.register_stylesheet 'application.css'
   #
   # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
   #   config.register_stylesheet 'my_print_stylesheet.css', media: :print
@@ -282,7 +282,7 @@ ActiveAdmin.setup do |config|
   # By default, the footer shows the current Active Admin version. You can
   # override the content of the footer here.
   #
-  # config.footer = 'my custom footer text'
+  config.footer = "Created by PALSGALS"
 
   # == Sorting
   #
@@ -294,3 +294,14 @@ ActiveAdmin.setup do |config|
   # Setup Chartkick
   config.register_javascript 'https://www.google.com/jsapi'
 end
+
+# module AdminPageLayoutOverride
+#   def build_page
+#     within body do
+#       super
+#       div class: 'grad-border-white' do
+#       end
+#     end
+#   end
+# end
+# ActiveAdmin::Views::Pages::Base.send :prepend, AdminPageLayoutOverride
