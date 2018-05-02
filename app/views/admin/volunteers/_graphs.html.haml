@@ -1,0 +1,6 @@
+%h3 Graphs
+= label_tag :date_range, "Date range"
+= select_tag :date_range, options_for_select(["All time", "Yearly", "Monthly", "Weekly"])
+
+= line_chart day_counts, label: "Shifts", curve: false,
+                         library: {vAxis: {ticks: day_counts.values}, title: "Shifts"}
