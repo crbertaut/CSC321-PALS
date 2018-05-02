@@ -31,7 +31,7 @@
             = f.text_field :home_phone, :id => "home_phone", placeholder: "(___) ___-____", size: "16"
             .padded
               = check_box_tag "textable", nil, true
-              = label_tag :home_phone, "This phone is capable of<br/>receiving texts.".html_safe, for: "textable", class: "inline", style: "font-size:16px"
+              = label_tag :home_phone, "This phone is capable of receiving texts.", for: "textable", class: "inline", style: "font-size:16px"
         .row
           .col-md-1
           .col-md-4.left-col
@@ -41,7 +41,7 @@
             .padded
               = f.email_field :home_email, size: "37"
         .row
-          .col-md-12.center{style: "margin-left: 20%"}
+          .col-md-12.center{style: "margin-left: 15%"}
             %label Preferred contact method:
             %br/
             %label{style:"font-size:16px"} Email
@@ -114,8 +114,8 @@
                 %label.inline{:for => "dogs"} Dogs
               %td{:style => "width:30%"}
                 - @dogs.each do |interest|
-                  = check_box_tag "dog_interests[]", interest, false, id: "dog_" + interest, disabled: true
-                  = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline faded", name: "dog_interests[]"
+                  = check_box_tag "dog_interests[]", interest, false, id: "dog_" + interest
+                  = label_tag :interests, "#{interest}", for: "dog_#{interest}", class: "inline", name: "dog_interests[]"
                   %br/
               %td{:rowspan => "2"}
                 - @other.each do |interest|
@@ -126,13 +126,12 @@
                 = text_field_tag "other_interests", nil, class: "inline", placeholder: "Other...", size: "18", style: "height:25px; font-size:17px", onclick: "toggleOther('other')"
             %tr
               %td
-                /%input#cats{:onclick => "toggleCheckboxes('cat_interests[]')", :type => "checkbox"}/
                 = check_box_tag "cats", "cats", false, onclick: "toggleCheckboxes('cat_interests[]')"
                 %label.inline{:for => "cats"} Cats
               %td{:style => "width:30%"}
                 - @cats.each do |interest|
-                  = check_box_tag "cat_interests[]", interest, false, id: "cat_" + interest, disabled: true
-                  = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline faded", name: "cat_interests[]"
+                  = check_box_tag "cat_interests[]", interest, false, id: "cat_" + interest
+                  = label_tag :interests, "#{interest}", for: "cat_#{interest}", class: "inline", name: "cat_interests[]"
                   %br/
     .row.center
       .col-md-12
@@ -182,6 +181,45 @@
             }
         }
     }
+  / check whether dog/cat section should initially be disabled
+  :javascript
+    function disabled(name) {
+      var elem = document.getElementsByName(name)[0];
+      if (elem.checked) {
+        if (elem.name == 'cats') {
+          var elems = document.getElementsByName('cat_interests[]');
+          for(i=0; i<elems.length; i++) {
+            elems[i].disabled = false;
+            elems[i].setAttribute("class", "inline");
+          }
+        } else {
+         var elems = document.getElementsByName('dog_interests[]');
+          for(i=0; i<elems.length; i++) {
+            elems[i].disabled = false;
+            elems[i].setAttribute("class", "inline");
+          }
+        }
+      } else {
+        if (elem.name == 'cats') {
+          var elems = document.getElementsByName('cat_interests[]');
+          for(i=0; i<elems.length; i++) {
+            elems[i].disabled = true;
+            elems[i].setAttribute("class", "inline faded");
+          }
+        } else {
+         var elems = document.getElementsByName('dog_interests[]');
+          for(i=0; i<elems.length; i++) {
+            elems[i].disabled = true;
+            elems[i].setAttribute("class", "inline faded");
+          }
+        }
+      }
+    }
+  :javascript
+    $(document).ready(function() {
+      disabled('cats');
+      disabled('dogs');
+    });
   / toggleOther function to check 'other' checkbox when 'other' field is clicked
   :javascript
     function toggleOther(name) {
