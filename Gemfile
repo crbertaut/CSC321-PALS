@@ -50,8 +50,10 @@ gem 'maskedinput-rails'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
 # For images
-#gem "mini_magick"
 gem "paperclip", "~> 5.2.1"
+
+# For numeric range filter
+gem 'activeadmin_addons'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

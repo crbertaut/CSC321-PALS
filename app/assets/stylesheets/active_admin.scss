@@ -1,3 +1,4 @@
+//= require activeadmin_addons/all
 // SASS variable overrides must be declared before loading up Active Admin's styles.
 //
 // To view the variables that Active Admin provides, take a look at
@@ -14,6 +15,7 @@ $hover-menu-item-background: none;
 @import "active_admin/base";
 // for styling: https://github.com/blocknotes/activeadmin_blaze_theme
 // @import "activeadmin_blaze_theme/theme";
+@import "kickstart-buttons.scss";
 
 
 // Overriding any non-variable SASS must be done after the fact.
@@ -44,6 +46,7 @@ div#main {
     margin:0 0 0 -5px;
     font-size: 1.1em;
     border-bottom: 4px solid #A88BD7;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
     padding: 9px 0 2px 0;
     width: calc(100% + 5px);
 }
@@ -57,12 +60,16 @@ div#main {
   position: relative;
 }
 
+th.col.col-phone {
+  min-width:131px;
+}
+
 #active_admin_content #main_content_wrapper {
   width: 86.2%;
   margin: 0 0 0 6.9vw;
   background-color: #fff;
   position: relative;
-  padding:20px 0;
+  padding:10px 0;
   min-height:calc(100vh - 120px);
   
   &:after {
@@ -99,8 +106,113 @@ div#main {
   padding: 30px 0;
 }
 
-#title_bar, #footer {
+#footer {
   display: none;
+}
+
+#title_bar {
+  text-shadow: none;
+  box-shadow: none;
+  background-image: none;
+  border: none;
+  width: 86.2%;
+  margin: 0 0 0 6.9vw;
+  background-color: #fff;
+  position: relative;
+  
+  &:after {
+    content: "";
+    position: absolute;
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#fff), to(transparent));
+    background-image: -webkit-linear-gradient(left, #fff, transparent);
+    background-image: -moz-linear-gradient(left, #fff, transparent);
+    background-image: -o-linear-gradient(left, #fff, transparent);
+    background-image: linear-gradient(left, #fff, transparent);
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    right: -100px;
+    visibility: visible;
+    height: auto;
+  }
+  
+  &:before {
+    content: "";
+    position: absolute;
+    background-image: -webkit-gradient(linear, 100% 0, 0 0, from(#fff), to(transparent));
+    background-image: -webkit-linear-gradient(right, #fff, transparent);
+    background-image: -moz-linear-gradient(right, #fff, transparent);
+    background-image: -o-linear-gradient(right, #fff, transparent);
+    background-image: linear-gradient(right, #fff, transparent);
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    left: -100px;
+  }
+}
+
+#title_bar h2 {
+  font-size: 2em;
+}
+
+form input[type=number] {
+  width: 80px;  
+}
+
+#title_bar .action_items span.action_item > a, #title_bar .action_items span.action_item > .dropdown_menu > a {
+  position:relative;
+  top:0;
+  left:0;
+  vertical-align: middle;
+  margin:0;
+  padding:10px 15px;
+  line-height:100% !important;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border-radius:5px !important;
+  cursor: pointer;
+  width:auto;
+  overflow:visible;
+  font-weight:bold;
+  font-size:18px;
+  font-family:Georgia !important;
+  box-shadow: none;
+  color:#666;
+  text-decoration:none;
+  text-align:center;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display:inline-block;
+  *display:inline;/*IE ONLY*/
+  zoom:1;
+  text-shadow:0 -1px 0 #5A22C7;
+  color:#fff;
+  border:1px solid #5A22C7;
+  background: rgb(169, 125, 255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(169,125,255,1) 0%, rgba(151,100,249,1) 44%, rgba(127,69,240,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(169,125,255,1)), color-stop(44%,rgba(151,100,249,1)), color-stop(100%,rgba(64,150,238,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(169,125,255,1) 0%,rgba(151,100,249,1) 44%,rgba(127,69,240,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(169,125,255,1) 0%,rgba(151,100,249,1) 44%,rgba(127,69,240,1) 100%); /* Opera11.10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A97DFF', endColorstr='#7F45F0',GradientType=0 ); /* IE6-9 */
+  background: linear-gradient(top, rgba(169,125,255,1) 0%,rgba(151,100,249,1) 44%,rgba(127,69,240,1) 100%); /* W3C */
+
+  &:before {
+    display: none;
+  }
+	&:hover {
+	  color: #fff !important;
+  	text-shadow:0 1px 0 #5A22C7 !important;
+  	border:1px solid #5A22C7 !important;
+  	background: rgb(190, 158, 255) !important; /* Old browsers */
+  	background: -moz-linear-gradient(top, rgba(190, 158, 255,1) 0%, rgba(175, 138, 250, 1) 44%, rgba(156, 114, 243,1) 100%) !important; /* FF3.6+ */
+  	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(190, 158, 255,1)), color-stop(44%,rgba(251, 126, 207,1)), color-stop(100%,rgba(110,176,242,1))) !important; /* Chrome,Safari4+ */
+  	background: -webkit-linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%)!important; /* Chrome10+,Safari5.1+ */
+  	background: -o-linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* Opera 11.10+ */
+  	background: linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* W3C */
+  	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BE9EFF', endColorstr='#9C72F3',GradientType=0 ) !important; /* IE6-9 */
+  }
 }
 
 a {
@@ -214,39 +326,6 @@ a {
 // }
 // .container.full {
 //   min-height:calc(100vh - 80px);
-// }
-// .grad-border-white {
-//   position: relative;
-// }
-// .grad-border-white:after {
-//   content: "";
-//   position: absolute;
-//   background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#fff), to(transparent));
-//   background-image: -webkit-linear-gradient(left, #fff, transparent);
-//   background-image: -moz-linear-gradient(left, #fff, transparent);
-//   background-image: -o-linear-gradient(left, #fff, transparent);
-//   background-image: linear-gradient(left, #fff, transparent);
-//   top: 0;
-//   bottom: 0;
-//   width: 100px;
-// }
-// .grad-border-white:after {
-//   right: -100px;
-// }
-// .grad-border-white:before {
-//   content: "";
-//   position: absolute;
-//   background-image: -webkit-gradient(linear, 100% 0, 0 0, from(#fff), to(transparent));
-//   background-image: -webkit-linear-gradient(right, #fff, transparent);
-//   background-image: -moz-linear-gradient(right, #fff, transparent);
-//   background-image: -o-linear-gradient(right, #fff, transparent);
-//   background-image: linear-gradient(right, #fff, transparent);
-//   top: 0;
-//   bottom: 0;
-//   width: 100px;
-// }
-// .grad-border-white:before {
-//   left: -100px;
 // }
 // .line {
 //   width: 70%;

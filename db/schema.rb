@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409200656) do
+ActiveRecord::Schema.define(version: 20180502193612) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.integer "organization_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
@@ -55,6 +57,7 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "donated", default: 0.0
     t.index ["name"], name: "index_organizations_on_name"
   end
 
@@ -69,7 +72,7 @@ ActiveRecord::Schema.define(version: 20180409200656) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "home_email", default: "", null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -101,7 +104,6 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.string "zipcode"
     t.integer "contactmethod", default: 3
     t.string "work_phone"
-    t.string "work_email"
     t.integer "contact_method", default: 0
     t.float "latitude"
     t.float "longitude"
@@ -111,8 +113,9 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.string "emergency_phone_other"
     t.integer "organization_id", default: 0
     t.string "street_address"
+    t.float "donated", default: 0.0
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-    t.index ["home_email"], name: "index_users_on_home_email", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

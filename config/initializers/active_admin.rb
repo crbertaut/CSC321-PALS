@@ -294,14 +294,3 @@ ActiveAdmin.setup do |config|
   # Setup Chartkick
   config.register_javascript 'https://www.google.com/jsapi'
 end
-
-# module AdminPageLayoutOverride
-#   def build_page
-#     within body do
-#       super
-#       div class: 'grad-border-white' do
-#       end
-#     end
-#   end
-# end
-# ActiveAdmin::Views::Pages::Base.send :prepend, AdminPageLayoutOverride

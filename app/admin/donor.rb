@@ -1,27 +1,45 @@
-ActiveAdmin.register User, as: 'Volunteer' do
-    permit_params do
-        params = [:home_email, :name, :phone, :dob, :password, :password_confirmation, :other_interests, interest_ids:[]]
-        params
-    end
-
-    menu priority: 2
+ActiveAdmin.register Donation, as: 'Donor' do
+    menu false
+    # menu priority: 3
+    permit_params :donation
     
-    index title: 'Volunteers' do
+    index title: 'Donors' do
         selectable_column
-        id_column
-        column :name
-        column :home_email
-        column :phone
-        column "Interests" do |user|
-            user.interests.collect(&:name)
+        column "Donor" do |don|
+            if (:user_id != 0) then
+                user = User.find_by id: don.user_id
+                link_to "#{user.name}", admin_donor_path(user)
+            elsif (:organization_id != 0) then
+                org = Organization.find_by id: don.organization_id
+                link_to "#{org.name}", admin_organization_path(org)
+            end
         end
-        actions
+        column :email
+        column "Phone" do |user|
+            simple_format("H: " + user.home_phone.to_s + "\nW: " + user.work_phone.to_s)
+        end
+        column "Interests" do |user|
+            user.interests.map(&:name).join(", ")
+        end
+        column "Donated" do |user|
+            # sum = 0
+            # user.donations.each do |don|
+            #     sum += don[:amount]
+            # end
+            # user.donated = sum
+            # number_with_precision(sum, :precision => 2)
+            number_with_precision(user.donated, :precision => 2)
+        end
+        actions defaults: false do |user|
+          button_to('Edit', edit_admin_volunteer_path(user), class: "purple", style:"font-size:0.8em;padding:5px 10px") +
+          button_to('Delete', admin_volunteer_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: "red", style:"font-size:0.8em;padding:5px 10px")
+        end
     end
     
     filter :name
-    filter :home_email
-    filter :created_at
+    filter :email, as: :string
     filter :interests, collection: proc { Interest.all }
+    filter :donated, as: :range_select
     
     form do |f| 
         f.inputs do
@@ -72,11 +90,11 @@ ActiveAdmin.register User, as: 'Volunteer' do
     show do
         attributes_table title: "Profile" do
           row :name
-          row :home_email
+          row :email
           row :phone
           row :dob
           row "Interests" do |user|
-            user.interests.collect(&:name)
+            user.interests.map(&:name).join(", ")
           end
           row :bio
           row :avatar_file_name

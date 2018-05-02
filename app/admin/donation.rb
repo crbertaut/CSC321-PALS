@@ -1,0 +1,78 @@
+ActiveAdmin.register Donation do
+    menu priority: 4
+    permit_params :donation
+    
+    index title: 'Donations' do
+        selectable_column
+        column :date
+        column "Amount" do |don|
+            number_with_precision(don.amount, :precision => 2)
+        end
+        column "Donor" do |don|
+            if (:user_id != 0) then
+                user = User.find_by id: don.user_id
+                link_to "#{user.name}", admin_volunteer_path(user)
+            elsif (:organization_id != 0) then
+                org = Organization.find_by id: don.organization_id
+                link_to "#{org.name}", admin_organization_path(org)
+            end
+        end
+        actions defaults: false do |don|
+          button_to('Edit', edit_admin_donation_path(don), class: "purple", style:"font-size:0.8em;padding:5px 10px") +
+          button_to('Delete', admin_donation_path(don), data: { confirm: "Are you sure you want to delete this?" }, method: :delete, class: "red", style:"font-size:0.8em;padding:5px 10px")
+        end
+    end
+
+    filter :user, label: "Donor", collection: proc { User.all + Organization.all }
+    filter :amount, as: :range_select
+    filter :date
+    
+    
+    form do |f|
+      f.inputs do
+        f.input :user_id, collection: ['Organization', 'Individual'], as: :radio
+        f.input :organization_id, as: :string
+        f.input :amount
+        f.input :date, as: :date_time_picker,  
+              picker_options: {  
+               min_date: '2007/01/01',
+               max_date: Date.current,
+               timepicker: false
+              }  
+      end
+      f.actions
+    end
+    
+    controller do 
+        def create
+            if (params[:donation][:user_id] != 0) then
+                donor = User.find_by id: params[:donation][:user_id]
+            end
+        end
+    end
+    # controller do
+    #   def update
+    #     int_original = Interest.find_by id: params[:id]
+    #     int = params[:interest][:name].strip.downcase.capitalize
+    #     if (Interest.find_by name: int) == nil
+    #       int_original.update(name: int)
+    #       flash[:notice] = "Interest was successfully updated."
+    #       redirect_to admin_interests_path
+    #     else
+    #       flash[:notice] = "Interest already exists!"
+    #       redirect_to admin_interests_path
+    #     end
+    #   end
+    #   def create
+    #     int = params[:interest][:name].strip.downcase.capitalize
+    #     if (Interest.find_by name: int) == nil
+    #       Interest.create!(name: int)
+    #       flash[:notice] = "Interest was successfully created."
+    #       redirect_to admin_interests_path
+    #     else
+    #       flash[:notice] = "Interest already exists!"
+    #       redirect_to admin_interests_path
+    #     end
+    #   end
+    # end
+end

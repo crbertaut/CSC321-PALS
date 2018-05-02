@@ -1,5 +1,5 @@
 ActiveAdmin.register Organization do
-    menu priority: 3
+    menu priority: 5
     
     permit_params [:email, :name]
     

@@ -25,7 +25,7 @@ padding:10px 15px;
 line-height:100% !important;
 -moz-border-radius:5px;
 -webkit-border-radius:5px;
-border-radius:5px;
+border-radius:5px !important;
 cursor: pointer;
 width:auto;
 overflow:visible;
@@ -396,14 +396,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e53c16', end
 
 	button.red:hover,
 	a.btn.red:hover,
-	a.button.red:hover{
-	text-shadow:0 1px 0 #B21203;
-	border:1px solid #B21203;
-	background: rgb(238,106,76); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(238,106,76,1) 0%, rgba(251,33,33,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,106,76,1)), color-stop(100%,rgba(251,33,33,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(238,106,76,1) 0%,rgba(251,33,33,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(238,106,76,1) 0%,rgba(251,33,33,1) 100%); /* Opera 11.10+ */
-	background: linear-gradient(top, rgba(238,106,76,1) 0%,rgba(251,33,33,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee6a4c', endColorstr='#fb2121',GradientType=0 ); /* IE6-9 */
+	a.button.red:hover,
+	input[type="submit"].red:hover,
+	input[type="reset"].red:hover,
+	input[type="button"].red:hover {
+	text-shadow:0 1px 0 #B21203 !important;
+	border:1px solid #B21203 !important;
+	background: rgb(238,106,76) !important; /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(238,106,76,1) 0%, rgba(251,33,33,1) 100%) !important; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,106,76,1)), color-stop(100%,rgba(251,33,33,1))) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(238,106,76,1) 0%,rgba(251,33,33,1) 100%) !important; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(238,106,76,1) 0%,rgba(251,33,33,1) 100%) !important; /* Opera 11.10+ */
+	background: linear-gradient(top, rgba(238,106,76,1) 0%,rgba(251,33,33,1) 100%) !important; /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee6a4c', endColorstr='#fb2121',GradientType=0 ) !important; /* IE6-9 */
 	}

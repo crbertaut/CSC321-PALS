@@ -9,16 +9,14 @@ Interest.create!([{ name: 'Dog shifts' }, { name: 'Dog transport' }, { name: 'Do
 if Rails.env.development?
     AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
-    user1 = User.create!(name: 'Rocky Williams', home_email: 'rockyrd@example.com', password: 'password', home_phone: '(641) 895-5555', dob:'1990-01-25', bio: 'We own two dogs at home!', city: 'Grinnell', state: 'IA')
+    user1 = User.create!(name: 'Rocky Williams', email: 'rockyrd@example.com', password: 'password', home_phone: '(641) 895-5555', dob:'1990-01-25', bio: 'We own two dogs at home!', city: 'Grinnell', state: 'IA')
     user1.interests << (Interest.find_by name: 'Dog shifts')
-    
     user1.shifts.create!(kind: 0, start: "2018-04-05 15:00:00", finish: "2018-04-05 15:30:00")
     user1.shifts.create!(kind: 0, start: "2018-04-06 15:00:00", finish: "2018-04-06 15:30:00")
     user1.shifts.create!(kind: 0, start: "2018-04-06 17:00:00", finish: "2018-04-06 18:30:00")
     user1.shifts.create!(kind: 0, start: "2018-04-09 15:00:00", finish: "2018-04-09 15:30:00")
     
-    user2 = User.create!(name: 'Matilda Simmion', home_email: 'msims@example.com', password: 'password', home_phone: '(641) 894-3365', dob:'1990-07-10', bio: 'I have volunteered at PALS for 10 years now--it is a wonderful place to volunteer at.', city: 'Grinnell', state: 'IA')
-
+    user2 = User.create!(name: 'Matilda Simmion', email: 'msims@example.com', password: 'password', home_phone: '(641) 894-3365', dob:'1990-07-10', bio: 'I have volunteered at PALS for 10 years now--it is a wonderful place to volunteer at.', city: 'Grinnell', state: 'IA')
     user2.interests << (Interest.find_by name: 'Organizing events')
     user2.interests << (Interest.find_by name: 'Cat fostering')
     user2.interests << (Interest.find_by name: 'Cat shifts')
@@ -27,10 +25,13 @@ if Rails.env.development?
     user2.interests << (Interest.find_by name: 'Dog transport')
     user2.interests << (Interest.find_by name: 'Cooking/baking')
     user2.interests << (Interest.find_by name: 'Machine maintenance')
+    user2.donations.create!(amount: 50.00, date: '2018-04-25')
     
-    User.create!(name: 'Virginia Potts', password: 'babydonthurtme', home_email: 'whatislove@babydonthurtme.com', home_phone: '', dob: '1976-03-14', city: 'Grinnell', state: 'IA')
-    User.create!(name: 'Jane Foster', password: 'science!', home_email: 'fostersaucester@science.com', home_phone: '(123) 456-7890', dob: '1989-04-16', city: 'Grinnell', state: 'IA')
-    User.create!(name: 'Marina Diamondis', password: 'iamnotarobot', home_email: 'diamondis@marinara.com', home_phone: '', dob: '1992-06-30', city: 'Grinnell', state: 'IA')
+    User.create!(name: 'Virginia Potts', password: 'babydonthurtme', email: 'whatislove@babydonthurtme.com', home_phone: '', dob: '1976-03-14', city: 'Grinnell', state: 'IA')
+    
+    User.create!(name: 'Jane Foster', password: 'science!', email: 'fostersaucester@science.com', home_phone: '(123) 456-7890', dob: '1989-04-16', city: 'Grinnell', state: 'IA')
+    
+    User.create!(name: 'Marina Diamondis', password: 'iamnotarobot', email: 'diamondis@marinara.com', home_phone: '', dob: '1992-06-30', city: 'Grinnell', state: 'IA')
 
 end
 
