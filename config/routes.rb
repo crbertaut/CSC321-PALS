@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :users, path: 'volunteers', path_names: { sign_in: 'login', sign_out: 'logout', registration: 'register' }, controllers: { registrations: "users/registrations" }
+  devise_for :persons, path: 'volunteers', path_names: { sign_in: 'login', sign_out: 'logout', registration: 'register' }, controllers: { registrations: "persons/registrations" }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
     
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'users#index'
   
-  get '/volunteers/profiles/:id', to: 'users#show', as: :user
-  get '/volunteers', to: 'users#index', as: :users
+  get '/volunteers/profiles/:id', to: 'persons#show', as: :person
+  get '/volunteers', to: 'persons#index', as: :persons
 
 end

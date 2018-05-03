@@ -55,6 +55,9 @@ gem "paperclip", "~> 5.2.1"
 # For numeric range filter
 gem 'activeadmin_addons'
 
+# For simulting MTI (multiple-table inheritance)
+gem 'active_record-acts_as'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

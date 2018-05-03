@@ -1,5 +1,8 @@
 class Organization < ApplicationRecord
-  has_many :users
-  validates :name, uniqueness: true
-  validates :name, presence: true
+  acts_as :user
+  
+  has_many :people
+  
+  validates :phone, presence: true
+  validates :phone, uniqueness: true
 end

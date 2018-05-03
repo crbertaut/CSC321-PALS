@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :auth_user!
     
     def user_params
-        params.require(:name, :password, :email, :phone, :dob).permit(:avatar)
+        params.require(:name, :password, :email, :phone, :person).permit(:avatar, :dob)
     end
     
     def index
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   
     def show
         id = params[:id] # retrieve post ID from URI route
-        @user = User.find(id) # look up movie by unique ID
+        @user = User.find(id) # look up user by unique ID
         respond_to do |format|
             
         format.html
@@ -38,6 +38,7 @@ class UsersController < ApplicationController
     end
     
     def create
+        if (user_params[:type] == true)
         @user = User.create!(user_params)
         respond_to do |format|
           if @user.save

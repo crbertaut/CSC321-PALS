@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   protected
   
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:interests, :home_phone, :dob, :name, :email, :password, :password_confirmation, :street_address, :city, :state, :organization])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:home_phone, :dob, :name, :email, :password, :password_confirmation, :interests, :avatar, :bio, :street_address, :city, :state, :organization])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:interests, :home_phone, :dob, :name, :email, :password, :password_confirmation, :person, :street_address, :city, :state, :organization])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:home_phone, :dob, :name, :email, :password, :password_confirmation, :interests, :avatar, :person, :bio, :street_address, :city, :state, :organization])
   end
   
   def check_for_mobile

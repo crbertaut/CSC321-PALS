@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502193612) do
+ActiveRecord::Schema.define(version: 20180503210434) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20180502193612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "date"
-    t.integer "organization_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
@@ -45,30 +44,39 @@ ActiveRecord::Schema.define(version: 20180502193612) do
     t.datetime "updated_at"
   end
 
-  create_table "interests_users", id: false, force: :cascade do |t|
+  create_table "interests_people", id: false, force: :cascade do |t|
     t.integer "interest_id", null: false
-    t.integer "user_id", null: false
-    t.index ["interest_id"], name: "index_interests_users_on_interest_id"
-    t.index ["user_id"], name: "index_interests_users_on_user_id"
+    t.integer "person_id", null: false
+    t.index ["interest_id"], name: "index_interests_people_on_interest_id"
+    t.index ["person_id"], name: "index_interests_people_on_person_id"
   end
 
   create_table "organizations", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "donated", default: 0.0
-    t.index ["name"], name: "index_organizations_on_name"
+    t.string "phone"
+    t.integer "shifts_worked"
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "home_phone"
+    t.string "work_phone"
+    t.date "dob"
+    t.integer "gender", default: 3
+    t.string "other_gender"
+    t.string "emergency_contact"
+    t.string "emergency_phone"
+    t.string "emergency_relationship"
+    t.string "emergency_phone_other"
+    t.integer "organization_id", default: 0
   end
 
   create_table "shifts", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "kind", null: false
     t.datetime "start", null: false
     t.datetime "finish", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_shifts_on_user_id"
+    t.integer "person_id"
+    t.index ["person_id"], name: "index_shifts_on_person_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,31 +97,24 @@ ActiveRecord::Schema.define(version: 20180502193612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.string "home_phone"
-    t.date "dob"
-    t.text "interests"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text "bio"
-    t.integer "gender", default: 3
-    t.string "other_gender"
     t.string "city"
     t.string "state"
     t.string "zipcode"
     t.integer "contactmethod", default: 3
-    t.string "work_phone"
     t.integer "contact_method", default: 0
     t.float "latitude"
     t.float "longitude"
-    t.string "emergency_contact"
-    t.string "emergency_phone"
-    t.string "emergency_relationship"
-    t.string "emergency_phone_other"
-    t.integer "organization_id", default: 0
     t.string "street_address"
     t.float "donated", default: 0.0
+    t.boolean "type"
+    t.string "actable_type"
+    t.integer "actable_id"
+    t.index ["actable_type", "actable_id"], name: "index_users_on_actable_type_and_actable_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
