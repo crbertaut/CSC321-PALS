@@ -3,6 +3,20 @@ ActiveAdmin.register User, as: 'Volunteer' do
         params = [:home_email, :name, :phone, :dob, :password, :password_confirmation, :other_interests, interest_ids:[]]
         params
     end
+    
+    member_action :shifts, method: :get do
+        Chartkick.options = { html: '<div id="%{id}" style="height: %{height};">Loading...</div>' }
+        render status: 500 unless params.has_key?(:id) and params.has_key?(:sort_by)
+        
+        groupdate_params = { permit: %w[year quarter month week day hour_of_day] }
+        if params[:sort_by] == "hour_of_day"
+            groupdate_params[:format] = "%-l %P"
+        end
+        render json: User.find(params[:id]).shifts
+                         .group_by_period(params[:sort_by].downcase, :start,
+                                          groupdate_params)
+                         .count
+    end
 
     menu priority: 2
     
