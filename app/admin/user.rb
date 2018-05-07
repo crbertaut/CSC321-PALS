@@ -114,6 +114,10 @@ ActiveAdmin.register User, as: 'Volunteer' do
           row :reset_password_sent_at
         end
 
-        render partial: 'graphs', locals: {day_counts: User.find(params[:id]).shifts.group_by_day(:start).count}
+        render partial: 'graphs',
+               locals: {
+                   day_counts: User.find(params[:id]).shifts.group_by_day(:start).count,
+                   selected: "Day"
+               }
     end
 end
