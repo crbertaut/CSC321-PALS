@@ -117,7 +117,8 @@ ActiveAdmin.register User, as: 'Volunteer' do
         render partial: 'graphs',
                locals: {
                    day_counts: User.find(params[:id]).shifts.group_by_day(:start).count,
-                   selected: "Day"
-               }
+                   selected: "day",
+                   disabled: ("quarter" if Rails.env.development?) # doesn't work on sqlite
+               }.compact
     end
 end
