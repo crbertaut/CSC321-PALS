@@ -6,12 +6,22 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Recently registered volunteers" do
-          table_for User.order(created_at: :desc) do
+          table_for User.where(actable_type: 'Person').order(created_at: :desc) do
+            column :name 
+            column :email 
+            column "Registered", :created_at 
+            column "Details" do |pers|
+              button_to("View", admin_volunteer_path(pers), class: "purple", style:"font-size:0.8em;padding:5px 10px")
+            end
+          end
+        end
+        panel "Recently registered organizations" do
+          table_for User.where(actable_type: 'Organization').order(created_at: :desc) do
             column :name
-            column :email
-            column "Registered at", :created_at
-            column "Details" do |user|
-              link_to "View info", admin_volunteer_path(user)
+            column :email 
+            column "Registered", :created_at 
+            column "Details" do |org|
+              button_to("View", admin_organization_path(org), class: "purple", style:"font-size:0.8em;padding:5px 10px")
             end
           end
         end

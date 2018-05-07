@@ -3,6 +3,7 @@ ActiveAdmin.register Interest do
     
     permit_params :interest
     
+    config.sort_order = 'name_asc'
     index title: 'Interests' do
       selectable_column
       column "Interests" do |int|

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :auth_user!
     
     def user_params
-        params.require(:name, :password, :email, :phone, :person).permit(:avatar, :dob)
+        params.require(:name, :password, :email, :phone).permit(:avatar, :dob)
     end
     
     def index
@@ -39,17 +39,17 @@ class UsersController < ApplicationController
     
     def create
         if (user_params[:type] == true)
-        @user = User.create!(user_params)
-        respond_to do |format|
-          if @user.save
-            format.html { redirect_to @user, notice: 'Interest was successfully created.' }
-            format.json { render :show, status: :created, location: @user }
-          else
-            format.html { render :new }
-            format.json { render json: @user.errors, status: :unprocessable_entity }
-          end
+            @user = User.create!(user_params)
+            respond_to do |format|
+              if @user.save
+                format.html { redirect_to @user, notice: 'User was successfully created.' }
+                format.json { render :show, status: :created, location: @user }
+              else
+                format.html { render :new }
+                format.json { render json: @user.errors, status: :unprocessable_entity }
+              end
+            end
+            redirect_to user_path(@user)
         end
-        redirect_to user_path(@user)
     end
-
 end

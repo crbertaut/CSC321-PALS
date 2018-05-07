@@ -1,4 +1,4 @@
-ActiveAdmin.register User, as: 'Volunteer' do
+ActiveAdmin.register Person, as: 'Volunteer' do
     permit_params do
         params = [:email, :name, :home_phone, :dob, :password, :password_confirmation, :other_interests, interest_ids:[]]
         params
@@ -6,6 +6,8 @@ ActiveAdmin.register User, as: 'Volunteer' do
 
     menu priority: 2
     
+    #TODO: config.sort_order NOT WORKING here
+    config.sort_order = 'name_asc'
     index title: 'Volunteers' do
         selectable_column
         column :name do |user|
@@ -24,6 +26,7 @@ ActiveAdmin.register User, as: 'Volunteer' do
       end
     end
     
+    #TODO: All filters EXCEPT interests BROKEN
     filter :name
     filter :email
     filter :created_at
@@ -49,27 +52,27 @@ ActiveAdmin.register User, as: 'Volunteer' do
     controller do
         def update
             super
-            if params[:user][:other_interests] then
-                @int_params = params[:user][:other_interests].split(',')
+            if params[:person][:other_interests] then
+                @int_params = params[:person][:other_interests].split(',')
                 @int_params.each do |int|
                     int = int.strip.downcase.capitalize
                     if !(Interest.find_by name: int)
                         Interest.create!(name: int)
                     end
-                    (User.find_by id: params[:id]).interests << (Interest.find_by name: int)
+                    (Person.find_by email: params[:person][:email]).interests << (Interest.find_by name: int)
                 end
             end
         end
         def create
             super
-            if params[:user][:other_interests] then
-                @int_params = params[:user][:other_interests].split(',')
+            if params[:person][:other_interests] then
+                @int_params = params[:person][:other_interests].split(',')
                 @int_params.each do |int|
                     int = int.strip.downcase.capitalize
                     if !(Interest.find_by name: int)
                         Interest.create!(name: int)
                     end
-                    (User.find_by id: params[:id]).interests << (Interest.find_by name: int)
+                    (Person.find_by email: params[:person][:email]).interests << (Interest.find_by name: int)
                 end
             end
         end

@@ -3,6 +3,7 @@ ActiveAdmin.register Donation, as: 'Donor' do
     # menu priority: 3
     permit_params :donation
     
+    config.sort_order = 'name_asc'
     index title: 'Donors' do
         selectable_column
         column "Donor" do |don|
@@ -39,7 +40,7 @@ ActiveAdmin.register Donation, as: 'Donor' do
     filter :name
     filter :email, as: :string
     filter :interests, collection: proc { Interest.all }
-    filter :donated, as: :range_select
+    filter :donated, as: :numeric_range_filter
     
     form do |f| 
         f.inputs do

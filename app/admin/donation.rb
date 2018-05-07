@@ -1,7 +1,8 @@
 ActiveAdmin.register Donation do
     menu priority: 4
-    permit_params :donation
+    permit_params :user_id, :amount, :date
     
+    config.sort_order = 'date_desc'
     index title: 'Donations' do
         selectable_column
         column :date
@@ -9,12 +10,11 @@ ActiveAdmin.register Donation do
             number_with_precision(don.amount, :precision => 2)
         end
         column "Donor" do |don|
-            if (:user_id != 0) then
-                user = User.find_by id: don.user_id
+            user = User.find_by id: don.user_id
+            if (user.specific.is_a? Person)
                 link_to "#{user.name}", admin_volunteer_path(user)
-            elsif (:organization_id != 0) then
-                org = Organization.find_by id: don.organization_id
-                link_to "#{org.name}", admin_organization_path(org)
+            elsif (user.specific.is_a? Organization)
+                link_to "#{user.name}", admin_organization_path(user)
             end
         end
         actions defaults: false do |don|
@@ -24,14 +24,14 @@ ActiveAdmin.register Donation do
     end
 
     filter :user, label: "Donor", collection: proc { User.all + Organization.all }
-    filter :amount, as: :range_select
+    filter :amount, as: :numeric_range_filter
     filter :date
     
     
     form do |f|
       f.inputs do
-        f.input :user_id, collection: ['Organization', 'Individual'], as: :radio
-        f.input :organization_id, as: :string
+        #f.input "Donor Type", collection: ['Organization', 'Individual'], as: :radio
+        f.input :user, label: 'Donor', collection: User.all.order(:name)
         f.input :amount
         f.input :date, as: :date_time_picker,  
               picker_options: {  
@@ -45,9 +45,9 @@ ActiveAdmin.register Donation do
     
     controller do 
         def create
-            if (params[:donation][:user_id] != 0) then
-                donor = User.find_by id: params[:donation][:user_id]
-            end
+            Donation.create!(user_id: params[:donation][:user_id], amount: params[:donation][:amount], date: params[:donation][:date])
+            flash[:notice] = "Donation was successfully created."
+            redirect_to admin_donations_path
         end
     end
     # controller do

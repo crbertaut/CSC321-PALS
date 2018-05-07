@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503210434) do
+ActiveRecord::Schema.define(version: 20180504005635) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20180503210434) do
 
   create_table "organizations", force: :cascade do |t|
     t.string "phone"
-    t.integer "shifts_worked"
+    t.integer "shifts_worked", default: 0
   end
 
   create_table "people", force: :cascade do |t|
@@ -111,7 +111,6 @@ ActiveRecord::Schema.define(version: 20180503210434) do
     t.float "longitude"
     t.string "street_address"
     t.float "donated", default: 0.0
-    t.boolean "type"
     t.string "actable_type"
     t.integer "actable_id"
     t.index ["actable_type", "actable_id"], name: "index_users_on_actable_type_and_actable_id"
