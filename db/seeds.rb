@@ -27,6 +27,9 @@ if Rails.env.development?
     user2.interests << (Interest.find_by name: 'Cooking/baking')
     user2.interests << (Interest.find_by name: 'Machine maintenance')
     user2.donations.create!(amount: 50.00, date: '2018-04-25')
+    user2.shifts.create!(kind: 0, start: "2018-04-05 15:00:00", finish: "2018-04-05 15:30:00")
+    user2.shifts.create!(kind: 0, start: "2018-04-07 15:00:00", finish: "2018-04-07 15:30:00")
+    user2.shifts.create!(kind: 0, start: "2018-04-07 17:00:00", finish: "2018-04-07 18:30:00")
     
     User.create!(name: 'Virginia Potts', password: 'babydonthurtme', email: 'whatislove@babydonthurtme.com', home_phone: '(888) 888-8888', dob: '1976-03-14', city: 'Grinnell', state: 'IA')
     
