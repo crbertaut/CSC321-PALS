@@ -13,8 +13,7 @@ FactoryBot.define do
     name 'Gwen Poole'
     home_phone { generate(:phone) }
     work_phone { generate(:phone) }
-    home_email { generate(:email) }
-    work_email { generate(:email) }
+    email { generate(:email) }
     password '12345678'
     password_confirmation '12345678'
     gender 3

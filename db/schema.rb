@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409200656) do
+ActiveRecord::Schema.define(version: 20180509204544) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.integer "organization_id"
+    t.index ["organization_id"], name: "index_donations_on_organization_id"
     t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
@@ -51,25 +54,54 @@ ActiveRecord::Schema.define(version: 20180409200656) do
   end
 
   create_table "organizations", force: :cascade do |t|
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string "city"
+    t.string "state"
+    t.string "street_address"
+    t.string "zipcode"
+    t.float "latitude"
+    t.float "longitude"
+    t.text "bio"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.string "name"
     t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_organizations_on_name"
+    t.string "phone"
+    t.float "donated", default: 0.0
+    t.datetime "created_at", default: "2018-05-07 21:59:39", null: false
+    t.datetime "updated_at", default: "2018-05-07 21:59:39", null: false
+    t.integer "shifts", default: 0
+    t.index ["confirmation_token"], name: "index_organizations_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_organizations_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_organizations_on_reset_password_token", unique: true
   end
 
   create_table "shifts", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.integer "kind", null: false
     t.datetime "start", null: false
     t.datetime "finish", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
     t.index ["user_id"], name: "index_shifts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "home_email", default: "", null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -86,33 +118,32 @@ ActiveRecord::Schema.define(version: 20180409200656) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
-    t.string "home_phone"
-    t.date "dob"
-    t.text "interests"
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text "bio"
-    t.integer "gender", default: 3
-    t.string "other_gender"
     t.string "city"
     t.string "state"
     t.string "zipcode"
     t.integer "contactmethod", default: 3
-    t.string "work_phone"
-    t.string "work_email"
     t.integer "contact_method", default: 0
     t.float "latitude"
     t.float "longitude"
+    t.string "street_address"
+    t.float "donated", default: 0.0
+    t.string "home_phone"
+    t.string "work_phone"
+    t.date "dob"
+    t.integer "gender", default: 3
+    t.string "other_gender"
     t.string "emergency_contact"
     t.string "emergency_phone"
     t.string "emergency_relationship"
     t.string "emergency_phone_other"
     t.integer "organization_id", default: 0
-    t.string "street_address"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-    t.index ["home_email"], name: "index_users_on_home_email", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

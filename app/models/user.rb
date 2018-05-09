@@ -9,26 +9,21 @@ class User < ApplicationRecord
   enum contact_method: [:phone, :email]
          
   attr_accessor :other_interests
-  validates :home_email, uniqueness: true, allow_nil: true
-  validates :work_email, uniqueness: true, allow_nil: true
+  validates :email, uniqueness: true, allow_nil: true
   validates :name, uniqueness: true
   validates :name, presence: true
   validates :other_gender, presence: true, if: Proc.new {|u| u.other?}
   validates :city, format: { with: /\A[a-zA-Z]+\z/ }, allow_blank: true
   validates :state, format: { with: /\A[a-zA-Z]{2}\z/ }, allow_blank: true
   
-  validate :different_home_work_phone, :different_home_work_email, :home_or_work_email
+  validate :different_home_work_phone, :home_or_work_phone
   
   def different_home_work_phone
     errors.add(:home_phone) if home_phone == work_phone
   end
   
-  def different_home_work_email
-    errors.add(:home_email) if home_email == work_email
-  end
-  
-  def home_or_work_email
-    errors.add(:home_email) if home_email.blank? and work_email.blank?
+  def home_or_work_phone
+    errors.add(:home_phone) if home_phone.blank? and work_phone.blank?
   end
   
   has_attached_file :avatar, styles: { medium: "180x180>", thumb: "50x50>" }, default_url: "/assets/blank-avatar.png"
