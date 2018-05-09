@@ -1,6 +1,6 @@
 ActiveAdmin.register Donation, as: 'Donor' do
     menu false
-    # menu priority: 3
+    # menu priority: 4
     permit_params :donation
     
     index title: 'Donors' do

@@ -19,9 +19,9 @@ ActiveAdmin.register User, as: 'Volunteer' do
             user.interests.map(&:name).join(", ")
         end
         actions defaults: false do |user|
-          button_to('Edit', edit_admin_volunteer_path(user), class: "purple", style:"font-size:0.8em;padding:5px 10px") +
+          button_to('Edit', edit_admin_volunteer_path(user), method: :get, class: "purple", style:"font-size:0.8em;padding:5px 10px") +
           button_to('Delete', admin_volunteer_path(user), data: { confirm: "Are you sure?" }, method: :delete, class: "red", style:"font-size:0.8em;padding:5px 10px")
-      end
+        end
     end
     
     filter :name

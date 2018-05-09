@@ -1,5 +1,5 @@
 ActiveAdmin.register Interest do
-    menu priority: 6
+    menu priority: 5
     
     permit_params :interest
     
