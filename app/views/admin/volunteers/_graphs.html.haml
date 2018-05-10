@@ -1,3 +1,6 @@
+= javascript_include_tag "//www.google.com/jsapi"
+= javascript_include_tag "application", "chartkick"
+
 %h3 Graphs
 = label_tag :sort_by, "Sort by"
 = select_tag :sort_by, options_for_select(["year", "quarter", "month", "week", "day", ["hour", "hour_of_day"]],
