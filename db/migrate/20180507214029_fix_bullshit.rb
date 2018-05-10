@@ -1,7 +1,6 @@
 class FixBullshit < ActiveRecord::Migration[5.1]
   def change
     add_column :organizations, :phone, :string
-    add_column :organizations, :donated, :float, default: 0
     add_timestamps :organizations, default: DateTime.now, null: false
     
     remove_column :shifts, :person_id
