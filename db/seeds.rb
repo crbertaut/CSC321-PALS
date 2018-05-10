@@ -6,7 +6,7 @@ Interest.create!([{ name: 'Dog shifts' }, { name: 'Dog transport' }, { name: 'Do
     { name: 'Organizing events'}, { name: 'Cooking/baking' }, { name: 'Machine maintenance' }, { name: 'Cat shifts' }, 
     { name: 'Cat transport' }, { name: 'Cat fostering' }, {name: 'Dog grooming'}, {name: 'Dog training'}])
 
-if Rails.env.development?
+# if Rails.env.development?
     AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
     user1 = User.create!(name: 'Rocky Williams', email: 'rockyrd@example.com', password: 'password', home_phone: '(641) 895-5555', dob:'1990-01-25', bio: 'We own two dogs at home!', city: 'Grinnell', state: 'IA')
@@ -38,5 +38,5 @@ if Rails.env.development?
     User.create!(name: 'Marina Diamondis', password: 'iamnotarobot', email: 'diamondis@marinara.com', home_phone: '(134) 134-1344', dob: '1992-06-30', city: 'Grinnell', state: 'IA')
 
     Organization.create!(name: 'The Men\'s Group of Manliness', password: 'muscles', email: 'muscles@manshake.com', phone: '(641) 000-0000', city: 'Grinnell', state: 'IA')
-end
+# end
 
