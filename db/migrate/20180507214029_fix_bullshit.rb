@@ -2,7 +2,6 @@ class FixBullshit < ActiveRecord::Migration[5.1]
   def change
     add_column :organizations, :phone, :string
 
-    add_column :shifts, :user_id, :integer
     add_index :shifts, :user_id
     
     add_column :users, :home_phone, :string
