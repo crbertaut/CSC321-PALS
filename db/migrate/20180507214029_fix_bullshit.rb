@@ -1,9 +1,5 @@
 class FixBullshit < ActiveRecord::Migration[5.1]
   def change
-    drop_table :organization_companions
-    drop_table :people
-    drop_table :person_companions
-    
     add_column :organizations, :name, :string
     add_column :organizations, :email, :string
     add_column :organizations, :phone, :string
