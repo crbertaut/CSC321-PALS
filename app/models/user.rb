@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  require 'csv'
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -39,6 +40,12 @@ class User < ApplicationRecord
   
   has_many :donations
   has_many :shifts
+  
+  def self_import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      User.create! row.to_hash
+    end
+  end
   
   def email_required?
     false

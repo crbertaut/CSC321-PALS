@@ -33,6 +33,10 @@ if Rails.env.development?
     user2.interests << (Interest.find_by name: 'Cooking/baking')
     user2.interests << (Interest.find_by name: 'Machine maintenance')
     
+    User.second.donations.create!(amount: 50)
+    User.second.donations.create!(amount: 100)
+    User.second.donations.create!(amount: 25)
+    
     User.create!(name: 'Virginia Potts', password: 'babydonthurtme', home_email: 'whatislove@babydonthurtme.com', home_phone: '', dob: '1976-03-14')
     User.create!(name: 'Jane Foster', password: 'science!', home_email: 'fostersaucester@science.com', home_phone: '(123) 456-7890', dob: '1989-04-16')
     User.create!(name: 'Marina Diamondis', password: 'iamnotarobot', home_email: 'diamondis@marinara.com', home_phone: '', dob: '1992-06-30')

@@ -15,5 +15,10 @@
             = link_to user.name, user_path(user), class:"link"
           %td
             = user.created_at.in_time_zone('Central Time (US & Canada)').strftime("%b %e, %Y")
+            
     %br/
     %br/
+      
+    = form_tag shifts_import_path, multipart: true do
+      = file_field_tag "file"
+      = submit_tag "Import CSV"
