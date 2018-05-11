@@ -4,7 +4,8 @@
 %h3 Graphs
 = label_tag :sort_by, "Sort by"
 = select_tag :sort_by, options_for_select(["year", "quarter", "month", "week", "day", ["hour", "hour_of_day"]],
-                                          selected: selected, disabled: disabled)
+                                          selected: selected, disabled: disabled),
+                       { class: 'default-select' }
 
 = line_chart day_counts, id: "shifts-chart", label: "Shifts", curve: false, title: "Shifts by Day",
                          library: {vAxis: {ticks: day_counts.values}}
