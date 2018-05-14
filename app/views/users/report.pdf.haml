@@ -10,7 +10,7 @@
           background-image:#{wicked_pdf_image_tag 'CatDogBanner.PNG'} ;
       }
       profile{
-          position:absolute;
+          position: absolute;
           TOP:700px; 
           LEFT:400px;
           border: 7px solid #41009A ;
@@ -76,26 +76,24 @@
     %h1
       %font{:color => "#B3B3B3", :size => "30"}
         Volunteer Report
-      %img{:style => "position:absolute; TOP:0px; RIGHT:0px; HEIGHT:100; WIDTH:230;"}/
-      wicked_pdf_image_tag 'palslogopdf.jpg'
-    %img{:style => "position:absolute; TOP:320px; LEFT:400px; HEIGHT:280px; WIDTH:280px; border-radius: 50%;"}/
-    wicked_pdf_image_tag 'blank-avatar.png'
+      = wicked_pdf_image_tag 'palslogopdf.jpg', :style => "position:absolute; TOP:0px; RIGHT:0px; HEIGHT:100; WIDTH:230;"
+      = wicked_pdf_image_tag 'blank-avatar.png', :style => "position:absolute; TOP:320px; LEFT:400px; HEIGHT:280px; WIDTH:280px; border-radius: 50%;"
     %name{:align => "center"}
       = @user.name
     %profile{:align => "center"}
       %br/
       %br/
-      Date of birth:#{@user.dob}
+      Date of birth: #{@user.dob}
       %br/
       Email: #{@user.email}
       %br/
-      Organization:
+      Organization: 
       %br/
-      Phone Number:#{@user.phone}
+      Phone: #{@user.home_phone}
       %br/
-      Shifts Worked:
+      Shifts Worked: 
       %br/
-      Hours Worked:
+      Hours Worked: 
       %br/
     %weekly-hours{:align => "center"}
       Graph of Hours worked daily
