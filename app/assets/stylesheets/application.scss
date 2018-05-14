@@ -303,3 +303,41 @@ fieldset.shrunk {
   min-width:300px;
   display: inline;
 }
+
+/*-----------------------------------------------
+	PURPLE BUTTONS (in the style of HTML Kickstart)
+-------------------------------------------------*/
+button.purple,
+a.btn.purple,
+a.button.purple,
+input[type=submit].purple,
+input[type=reset].purple,
+input[type=button].purple{
+text-shadow:0 -1px 0 #5A22C7;
+color:#fff;
+border:1px solid #5A22C7;
+background: rgb(169, 125, 255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(169,125,255,1) 0%, rgba(151,100,249,1) 44%, rgba(127,69,240,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(169,125,255,1)), color-stop(44%,rgba(151,100,249,1)), color-stop(100%,rgba(64,150,238,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(169,125,255,1) 0%,rgba(151,100,249,1) 44%,rgba(127,69,240,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(169,125,255,1) 0%,rgba(151,100,249,1) 44%,rgba(127,69,240,1) 100%); /* Opera11.10+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#A97DFF', endColorstr='#7F45F0',GradientType=0 ); /* IE6-9 */
+background: linear-gradient(top, rgba(169,125,255,1) 0%,rgba(151,100,249,1) 44%,rgba(127,69,240,1) 100%); /* W3C */
+}
+
+button.purple:hover,
+a.btn.purple:hover,
+a.button.purple:hover,
+input[type="submit"].purple:hover,
+input[type="reset"].purple:hover,
+input[type="button"].purple:hover{
+text-shadow:0 1px 0 #5A22C7 !important;
+border:1px solid #5A22C7 !important;
+background: rgb(190, 158, 255) !important; /* Old browsers */
+background: -moz-linear-gradient(top, rgba(190, 158, 255,1) 0%, rgba(175, 138, 250, 1) 44%, rgba(156, 114, 243,1) 100%) !important; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(190, 158, 255,1)), color-stop(44%,rgba(251, 126, 207,1)), color-stop(100%,rgba(110,176,242,1))) !important; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%)!important; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* Opera 11.10+ */
+background: linear-gradient(top, rgba(190, 158, 255,1) 0%,rgba(175, 138, 250,1) 44%,rgba(156, 114, 243,1) 100%) !important; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BE9EFF', endColorstr='#9C72F3',GradientType=0 ) !important; /* IE6-9 */
+}

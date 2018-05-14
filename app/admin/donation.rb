@@ -12,10 +12,10 @@ ActiveAdmin.register Donation do
             number_with_precision(don.amount, :precision => 2)
         end
         column "Donor" do |don|
-            if (:user_id != 0) then
+            if (don.user_id) then
                 user = User.find_by id: don.user_id
                 link_to "#{user.name}", admin_volunteer_path(user)
-            elsif (:organization_id != 0) then
+            elsif (don.organization_id) then
                 org = Organization.find_by id: don.organization_id
                 link_to "#{org.name}", admin_organization_path(org)
             end
