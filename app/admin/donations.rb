@@ -1,9 +1,5 @@
 ActiveAdmin.register_page "Donations" do
   
-
-  
-  
-  
   content do
     day_counts = Donation.group_by_day(:created_at).sum(:amount)
     
