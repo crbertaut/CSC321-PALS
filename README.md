@@ -2,6 +2,7 @@
 
 # <span style="font-family:Impact;font-size:1.5em;background-image:-webkit-linear-gradient(bottom, #420199 35%, #A88BD7 80%); background-image:-moz-linear-gradient(bottom, #420199 35%, #A88BD7 80%); background-image:-ms-linear-gradient(bottom, #420199 35%, #A88BD7 80%); background-image:-o-linear-gradient(bottom, #420199 35%, #A88BD7 80%); background-image:linear-gradient(to top, #420199 35%, #A88BD7 80%); -webkit-background-clip:text; background-clip: text; color: transparent">THE PALSGALS' GUIDE TO<br>RUBY ON RAILS</span>
 
+##### &emsp;<a href="#instructions">Project Instructions</a>
 #### <span style="color:#420199; text-shadow:-1px 1px 0 #A88BD7">RAILS</span>
 ##### &emsp;<a href="#assets">Assets</a>
 ##### &emsp;<a href="#controllers">Controllers</a>
@@ -24,6 +25,18 @@
 ##### &emsp;<a href="#wickedpdf">Wicked PDF</a>
 #### <span style="color:#420199; text-shadow:-1px 1px 0 #A88BD7">OTHER</span>
 ##### &emsp;<a href="#git">Git</a>
+
+<br><br>
+
+<div style="line-height:8px; background-image:radial-gradient(#420199 5%, #A88BD7 40%, #fff 75%)">&ensp;</div>
+
+<br>
+
+## <span id="instructions" style="color:#A88BD7; text-shadow:-1px 1px 0 #420199">Project Instructions</span>
+
+Here's how to get the PALS project running on your local Cloud9 workspace.
+
+[To come.]
 
 <br><br>
 
@@ -300,14 +313,18 @@ recommends <a href="https://nosir.github.io/cleave.js/">Cleave.js</a>.
 ## <span id="paperclip" style="color:#A88BD7; text-shadow:-1px 1px 0 #420199">Paperclip</span>
 <a href="https://github.com/thoughtbot/paperclip/blob/master/README.md">(documentation)</a>
 
-We're using this gem for attaching
+We're using this gem for attaching user avatars. Should double check with the 
+client that avatars are something they're okay with.
 
 <br>
 
 ## <span id="wickedpdf" style="color:#A88BD7; text-shadow:-1px 1px 0 #420199">Wicked PDF</span>
 <a href="https://github.com/mileszs/wicked_pdf/blob/master/README.md">(documentation)</a>
 
-<br>
+Generates PDFs from HTML. Utilized in the 'show' method of the Users Controller 
+to create individual volunteer reports. Still need to design and implement an 
+individual  donor report, a collective 'Donors' report, and a collective 
+'Volunteers' report.
 
 <br><br>
 
@@ -316,18 +333,32 @@ We're using this gem for attaching
 <br>
 
 ## <span id="git" style="color:#A88BD7; text-shadow:-1px 1px 0 #420199">Git</span>
-Here are some of the most common Git commands you may need:
+Here are some of the most common Git commands you may need.
 
 #### ---Branching---
 You should <b><u>always work on a non-master branch.</u></b> Additionally, if 
 you're making significant changes to a particular section of the code, you should
 create a new, appropriately-titled branch for your work.
 
-<p><code style="color:red">&emsp;git branch</code></p>
+<code style="color:red">&emsp;git branch</code> 
+• Lists all the branches in your local git repo.</p>
 
-<p><code style="color:red">&emsp;git checkout BranchName</code></p>
+<code style="color:red">&emsp;git branch -a</code> 
+• Lists all branches in your local git repo <b>and</b> remotes.</p>
 
-<p><code style="color:red">&emsp;git checkout -b BranchName</code></p>
+<p><code style="color:red">&emsp;git checkout BranchName</code>
+• Transitions to the specified (existing) branch.</p>
+
+<p><code style="color:red">&emsp;git checkout -b BranchName</code>
+• Creates a new local branch, 'BranchName', and switches to it.</p>
+
+<p><code style="color:red">&emsp;git branch -d BranchName</code>
+• Deletes a local branch.</p>
+
+<p><code style="color:red">&emsp;git remote prune RemoteName</code>
+• Deletes local versions of remote branches that no longer exist. 'RemoteName' 
+is usually 'origin' (see results of <code style="color:red">git branch 
+-a</code>).</p>
 
 #### ---Pulling---
 <p><code style="color:red">&emsp;git pull origin master</code></p>
@@ -338,12 +369,12 @@ You should <b><u>always pull first.</u></b>
 
 
 #### ---Committing---
-<p><code style="color:red">&ensp;git status</code></p>
+<p><code style="color:red">&ensp;git status</code>
 • Displays all files modified since the last commit, and tells whether they are 
 currently 'staged' for commit (will be included in the next commit), tracked
 (not staged, but git is paying attention to them), or untracked (new files that
 git doesn't know what to do with. You should <code style="color:red">git 
-add</code> them or stick them in the <i>.gitignore</i>).
+add</code> them or stick them in the <i>.gitignore</i>).</p>
 
 <p><code style="color:red">&emsp;git log</code></p>
 
