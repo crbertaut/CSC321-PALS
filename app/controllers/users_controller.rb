@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :auth_user!
     
     def user_params
-        params.require(:name, :password, :home_email, :phone, :dob).permit(:avatar)
+        params.require(:name, :password, :email, :phone, :dob).permit(:avatar)
     end
     
     def index
@@ -19,6 +19,13 @@ class UsersController < ApplicationController
     def show
         id = params[:id] # retrieve post ID from URI route
         @user = User.find(id) # look up movie by unique ID
+        respond_to do |format|
+            
+        format.html
+        format.json
+        format.pdf {render template: 'users/report', pdf: 'Report' } # Excluding ".pdf" extension.
+
+        end
     end
   
     # GET /users/new
@@ -43,7 +50,7 @@ class UsersController < ApplicationController
         end
         redirect_to user_path(@user)
     end
-    
+  
     def import 
         User.import(params[:file])
         redirect_to root_url, notice: "Activity Data imported!"

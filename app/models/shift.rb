@@ -1,7 +1,7 @@
 class Shift < ApplicationRecord
   belongs_to :user
   
-  enum kind: [:dog_walking, :dog_cleaning, :cat_walking, :cat_cleaning]
+  enum kind: [:dog_shift, :cat_shift]
   # TODO: expand shift types
   
   validates :user, presence: true
