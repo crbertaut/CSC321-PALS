@@ -124,7 +124,7 @@ ActiveAdmin.register User, as: 'Volunteer' do
                locals: {
                    day_counts: User.find(params[:id]).shifts.group_by_day(:start).count,
                    selected: "day",
-                   disabled: ("quarter" if Rails.env.development?) # doesn't work on sqlite
+                   disabled: Rails.env.development? ? "quarter" : [] # doesn't work on sqlite
                }.compact
     end
 end
