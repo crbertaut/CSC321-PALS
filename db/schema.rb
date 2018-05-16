@@ -126,7 +126,6 @@ ActiveRecord::Schema.define(version: 20180509204544) do
     t.string "city"
     t.string "state"
     t.string "zipcode"
-    t.integer "contactmethod", default: 3
     t.integer "contact_method", default: 0
     t.float "latitude"
     t.float "longitude"

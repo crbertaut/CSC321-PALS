@@ -50,5 +50,9 @@ class UsersController < ApplicationController
         end
         redirect_to user_path(@user)
     end
-
+  
+    def import 
+        User.import(params[:file])
+        redirect_to root_url, notice: "Activity Data imported!"
+    end
 end
