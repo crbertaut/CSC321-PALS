@@ -18,7 +18,8 @@
             
     %br/
     %br/
-      
+    
+    / Import CSV button added to the home page 
     = form_tag shifts_import_path, multipart: true do
       = file_field_tag "file"
       = submit_tag "Import CSV"
