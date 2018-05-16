@@ -1,7 +1,9 @@
+-# include the chartkick library
 = javascript_include_tag "//www.google.com/jsapi"
 = javascript_include_tag "application", "chartkick"
 
 %h3 Graphs
+-# for getting desired sort by period
 = label_tag :sort_by, "Sort by"
 = select_tag :sort_by, options_for_select(["year", "quarter", "month", "week", "day", ["hour", "hour_of_day"]],
                                           selected: selected, disabled: disabled),
@@ -15,6 +17,7 @@
     function options_default(sb) {
       return { label: "Shifts", curve: false, title: "Shifts by " + sb };
     }
+    -# updates the charts with the user's select choice
     $("#sort_by").change(function() {
       $.ajax("#{shifts_admin_volunteer_path(params[:id])}", {
                data: { sort_by: $("#sort_by").val() },
