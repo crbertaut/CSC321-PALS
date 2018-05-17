@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :auth_user!
     
     def user_params
-        params.require(:name, :password, :email, :phone, :dob).permit(:avatar)
+        params.require(:name, :password, :email, :home_phone, :dob).permit(:avatar)
     end
     
     def index
@@ -21,9 +21,9 @@ class UsersController < ApplicationController
         @user = User.find(id) # look up movie by unique ID
         respond_to do |format|
             
-        format.html
-        format.json
-        format.pdf {render template: 'users/report', pdf: 'Report' } # Excluding ".pdf" extension.
+            format.html
+            format.json
+            format.pdf {render template: 'users/report', pdf: 'Report' } # Excluding ".pdf" extension.
 
         end
     end

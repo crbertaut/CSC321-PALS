@@ -1,0 +1,107 @@
+!!!
+%html
+  %body
+    :css
+      h1{
+          border-bottom: 7px solid #41009A;
+          
+      }
+      body{
+          background-image:#{wicked_pdf_image_tag 'CatDogBanner.PNG'} ;
+      }
+      profile{
+          position: absolute;
+          TOP:700px; 
+          LEFT:400px;
+          border: 7px solid #41009A ;
+          border-radius: 25px;
+          width: 280px;
+          height: 280px; 
+          background-color:#B3B3B3
+      }
+      
+      name {
+          font-size: 30px;
+          color:#41009A ;
+          position: absolute; 
+          TOP:620px; 
+          LEFT:400px;
+          width: 280px;
+          height: 30px;
+      }
+      
+      shifts {
+          position: absolute; 
+          TOP:500px; 
+          RIGHT:400px;
+          width: 280px;
+          height: 480px;
+          border: 7px solid #41009A ;
+          border-radius: 25px;
+      }
+      monthly-hours {
+          position: absolute; 
+          TOP:115px; 
+          RIGHT:400px;
+          width: 280px;
+          height: 180px;
+          background-color:#B3B3B3
+          
+      }
+      
+      weekly-hours {
+          position: absolute; 
+          TOP:310px; 
+          RIGHT:400px;
+          width: 280px;
+          height: 180px;
+          background-color:#B3B3B3
+          
+      }
+      
+      graph-description{
+          position: absolute; 
+          TOP:115px; 
+          LEFT:400px;
+          width: 280px;
+          height: 180px;
+          border: 7px solid #41009A ;
+          border-radius: 25px;
+          
+      }
+    %title
+      Volunteer Report for #{@user.name}
+    %div{:align => "left"}
+      = @user.name
+    %h1
+      %font{:color => "#B3B3B3", :size => "30"}
+        Volunteer Report
+      = wicked_pdf_image_tag 'palslogopdf.jpg', :style => "position:absolute; TOP:0px; RIGHT:0px; HEIGHT:100; WIDTH:230;"
+      = wicked_pdf_image_tag 'blank-avatar.png', :style => "position:absolute; TOP:320px; LEFT:400px; HEIGHT:280px; WIDTH:280px; border-radius: 50%;"
+    %name{:align => "center"}
+      = @user.name
+    %profile{:align => "center"}
+      %br/
+      %br/
+      Date of birth: #{@user.dob}
+      %br/
+      Email: #{@user.email}
+      %br/
+      Organization: 
+      %br/
+      Phone: #{@user.home_phone}
+      %br/
+      Shifts Worked: 
+      %br/
+      Hours Worked: 
+      %br/
+    %weekly-hours{:align => "center"}
+      Graph of Hours worked daily
+    %monthly-hours{:align => "center"}
+      Graph of Hours worked weekly
+    %graph-description
+      Stats on Weekly Graph:
+      %br/
+      Stats on Daily Graph:
+    %shifts
+      Shifts column;
