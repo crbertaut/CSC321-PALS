@@ -4,14 +4,18 @@ ActiveAdmin.register User, as: 'Volunteer' do
         params
     end
     
+    # For requests to /admin/volunteers/:id/shifts, produces json data about shifts with requested sorting
     member_action :shifts, method: :get do
         Chartkick.options = { html: '<div id="%{id}" style="height: %{height};">Loading...</div>' }
+        # required keys: id and sort_by
         render status: 500 unless params.has_key?(:id) and params.has_key?(:sort_by)
         
         groupdate_params = { permit: %w[year quarter month week day hour_of_day] }
         if params[:sort_by] == "hour_of_day"
+            # formats as 12 pm
             groupdate_params[:format] = "%-l %P"
         end
+        # outputs as json because it is accessed via ajax
         render json: User.find(params[:id]).shifts
                          .group_by_period(params[:sort_by].downcase, :start,
                                           groupdate_params)
@@ -124,7 +128,7 @@ ActiveAdmin.register User, as: 'Volunteer' do
                locals: {
                    day_counts: User.find(params[:id]).shifts.group_by_day(:start).count,
                    selected: "day",
-                   disabled: ("quarter" if Rails.env.development?) # doesn't work on sqlite
+                   disabled: Rails.env.development? ? "quarter" : [] # quarter doesn't work on sqlite
                }.compact
     end
 end

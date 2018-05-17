@@ -6,7 +6,7 @@ Interest.create!([{ name: 'Dog shifts' }, { name: 'Dog transport' }, { name: 'Do
     { name: 'Organizing events'}, { name: 'Cooking/baking' }, { name: 'Machine maintenance' }, { name: 'Cat shifts' }, 
     { name: 'Cat transport' }, { name: 'Cat fostering' }, {name: 'Dog grooming'}, {name: 'Dog training'}])
 
-if Rails.env.development?
+# if Rails.env.development?
     AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
     user1 = User.create!(name: 'Tony Stark', email: 'manofiron@marvelous.com', password: 'password', home_phone: '(641) 895-5555', dob:'1990-01-25', bio: 'I hate animals.', city: 'Grinnell', state: 'IA')
@@ -15,7 +15,10 @@ if Rails.env.development?
     user1.shifts.create!(kind: 0, start: "2018-04-06 15:00:00", finish: "2018-04-06 15:30:00")
     user1.shifts.create!(kind: 0, start: "2018-04-06 17:00:00", finish: "2018-04-06 18:30:00")
     user1.shifts.create!(kind: 0, start: "2018-04-09 15:00:00", finish: "2018-04-09 15:30:00")
-    user1.donations.create!(amount: 1.00, date: '2018-01-22')
+    user1.donations.create!(amount: 5, date: '2018-01-22')
+    User.first.donations.create!(amount: 50, date: '2018-01-23')
+    User.first.donations.create!(amount: 100, date: '2017-05-01')
+    User.first.donations.create!(amount: 25, date: '2015-12-11')
     
     user2 = User.create!(name: 'Natasha Romanov', email: 'nottheblackwidow@marvelous.com', password: 'password', home_phone: '(641) 894-3365', dob:'1990-07-10', bio: 'I am not and have never been in love with Bruce Banner. I don\'t know where these malicious accusations are coming from.', city: 'Grinnell', state: 'IA')
     user2.interests << (Interest.find_by name: 'Organizing events')
@@ -39,5 +42,5 @@ if Rails.env.development?
 
     org1 = Organization.create!(name: 'The Avengers', password: 'avengers', email: 'hulksmash@marvelous.com', phone: '(641) 000-0000', city: 'New York', state: 'NY')
     org1.donations.create!(amount: 0.99, date: '2017-11-04')
-end
+# end
 

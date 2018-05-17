@@ -103,6 +103,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem "active_admin_import", '3.0.0'
+
 # Creation of PDF documents for reports
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'

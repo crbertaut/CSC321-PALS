@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  post 'shifts/import', to: 'shifts#import'
+
   devise_for :users, path: 'volunteers', path_names: { sign_in: 'login', sign_out: 'logout', registration: 'register' }, controllers: { registrations: "users/registrations" }
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
