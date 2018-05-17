@@ -16,9 +16,9 @@ Interest.create!([{ name: 'Dog shifts' }, { name: 'Dog transport' }, { name: 'Do
     user1.shifts.create!(kind: 0, start: "2018-04-06 17:00:00", finish: "2018-04-06 18:30:00")
     user1.shifts.create!(kind: 0, start: "2018-04-09 15:00:00", finish: "2018-04-09 15:30:00")
     user1.donations.create!(amount: 5, date: '2018-01-22')
-    User.first.donations.create!(amount: 50)
-    User.first.donations.create!(amount: 100)
-    User.first.donations.create!(amount: 25)
+    User.first.donations.create!(amount: 50, date: '2018-01-23')
+    User.first.donations.create!(amount: 100, date: '2017-05-01')
+    User.first.donations.create!(amount: 25, date: '2015-12-11')
     
     user2 = User.create!(name: 'Matilda Simmion', email: 'msims@example.com', password: 'password', home_phone: '(641) 894-3365', dob:'1990-07-10', bio: 'I have volunteered at PALS for 10 years now--it is a wonderful place to volunteer at.', city: 'Grinnell', state: 'IA')
     user2.interests << (Interest.find_by name: 'Organizing events')
